@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interface do editor — Kizuri Engine</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div class="brand">
+    <div class="logo">K</div>
+    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+  </div>
+  <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
+  <nav id="toc">
+<div class="group">Introdução</div>
+<a href="index.html" class="">Visão geral</a>
+<a href="instalacao.html" class="">Instalação</a>
+<a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
+<div class="group">Conceitos</div>
+<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
+<a href="hierarquia.html" class="">Hierarquia e transform</a>
+<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<div class="group">Editor</div>
+<a href="interface.html" class="active">Interface do editor</a>
+<a href="viewport.html" class="">Viewport e câmera</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="content-browser.html" class="">Content Browser</a>
+<a href="configuracoes.html" class="">Configurações</a>
+<a href="atalhos.html" class="">Atalhos de teclado</a>
+<div class="group">Componentes</div>
+<a href="transform.html" class="">Transform</a>
+<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
+<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="luzes.html" class="">Luzes</a>
+<a href="particulas.html" class="">Partículas</a>
+<a href="animacao-3d.html" class="">Animação esquelética</a>
+<a href="audio-source.html" class="">AudioSource</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
+<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
+<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
+<div class="group">Renderização</div>
+<a href="pipeline-3d.html" class="">Pipeline 3D</a>
+<a href="pipeline-2d.html" class="">Pipeline 2D</a>
+<a href="qualidade.html" class="">Qualidade gráfica</a>
+<div class="group">Scripting C#</div>
+<a href="scripting.html" class="">Introdução ao C#</a>
+<a href="script.html" class="">Classe Script e corrotinas</a>
+<a href="entity.html" class="">Entity — referência</a>
+<a href="scene.html" class="">Scene — referência</a>
+<a href="input.html" class="">Input</a>
+<a href="time.html" class="">Time</a>
+<a href="mathf.html" class="">Mathf</a>
+<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
+<a href="audio-api.html" class="">Audio (API)</a>
+<a href="save.html" class="">SaveSystem</a>
+<a href="rand-log.html" class="">Rand e Log</a>
+<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
+<a href="exemplos.html" class="">Exemplos completos</a>
+<div class="group">Distribuição</div>
+<a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="faq.html" class="">Perguntas frequentes</a>
+  </nav>
+</aside>
+<main>
+<header class="top">
+  <div class="crumbs"><span class="crumb">Editor</span><span class="sep">/</span><span>Interface do editor</span></div>
+  <div class="toggles">
+    <a href="busca.html" class="btn">🔎 Buscar</a>
+    <a href="index.html" class="btn">Início</a>
+  </div>
+</header>
+<article>
+<h1 id="interface-do-editor">Interface do editor</h1>
+<p>O editor é dividido em um <strong>dockspace</strong> com painéis arrastáveis e redimensionáveis. O layout padrão é:</p>
+<pre><code class="language-">┌──────────────────┬─────────────────────┬─────────────────────┐
+│  HIERARQUIA      │   VIEWPORT          │   INSPETOR          │
+│                  │                     │                     │
+│  CONTENT         │   CONSOLE           │                     │
+│  BROWSER         │                     │                     │
+└──────────────────┴─────────────────────┴─────────────────────┘</code></pre>
+<table><thead><tr><th>Painel</th><th>Função</th></tr></thead><tbody><tr><td><strong>Hierarquia</strong></td><td>Árvore de entidades da cena + busca</td></tr><tr><td><strong>Inspetor</strong></td><td>Propriedades da entidade selecionada</td></tr><tr><td><strong>Viewport</strong></td><td>Pré-visualização em tempo real (2D/3D)</td></tr><tr><td><strong>Content Browser</strong></td><td>Arquivos do projeto, com drag & drop</td></tr><tr><td><strong>Console</strong></td><td>Logs da engine e dos scripts, com filtro</td></tr></tbody></table>
+<p>Você pode arrastar as abas para reorganizar. O layout persiste durante a sessão.</p>
+<h2 id="barra-de-menus">Barra de menus</h2>
+<table><thead><tr><th>Menu</th><th>Ações</th></tr></thead><tbody><tr><td><strong>Arquivo</strong></td><td>Novo/Abrir Projeto, Voltar ao Início, Exportar Jogo, Salvar Cena, Salvar Como, Carregar GameModule, Sair</td></tr><tr><td><strong>Editar</strong></td><td>Desfazer (Ctrl+Z), Refazer (Ctrl+Y), Duplicar (Ctrl+D), Excluir (Del)</td></tr><tr><td><strong>Cena</strong></td><td>Nova Cena, Abrir Cena, Cenas de demonstração 2D / 2.5D / 3D</td></tr><tr><td><strong>Exibir</strong></td><td>Viewport 2D/3D, Fullscreen do viewport (F11), Configurações (Ctrl+,)</td></tr><tr><td><strong>Ajuda</strong></td><td>Atalhos do editor</td></tr></tbody></table>
+<h2 id="toolbar-do-viewport">Toolbar do viewport</h2>
+<ul>
+<li>Botões de <strong>gizmo</strong>: Mover / Rotacionar / Escalar (<code>W</code>/<code>E</code>/<code>R</code>);</li>
+<li>Alternância <strong>2D / 3D</strong>;</li>
+<li><strong>Play / Stop</strong> (F5 / Shift+F5);</li>
+<li>Ícone de <strong>fullscreen</strong> (F11).</li>
+</ul>
+<h2 id="dicas-rápidas">Dicas rápidas</h2>
+<ul>
+<li><strong>Clique</strong> num objeto do viewport para selecionar (picking por raycast 3D /</li>
+</ul>
+<p>  ponto 2D);</p>
+<ul>
+<li><strong>Botão direito arrastando</strong> navega a câmera de edição;</li>
+<li>A tela inicial (hub) aparece ao abrir o editor ou em **Arquivo → Voltar ao</li>
+</ul>
+<p>  Início**.</p>
+
+</article>
+<div class="pager">
+<a class="navbtn prev" href="recursos-embutidos.html">← Assets padrão</a>
+<a class="navbtn next" href="viewport.html">Viewport e câmera →</a>
+</div>
+<footer class="footer">
+  © Kizuri Studio. Todos os direitos reservados.
+</footer>
+</main>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

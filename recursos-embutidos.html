@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assets padrão — Kizuri Engine</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div class="brand">
+    <div class="logo">K</div>
+    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+  </div>
+  <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
+  <nav id="toc">
+<div class="group">Introdução</div>
+<a href="index.html" class="">Visão geral</a>
+<a href="instalacao.html" class="">Instalação</a>
+<a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
+<div class="group">Conceitos</div>
+<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
+<a href="hierarquia.html" class="">Hierarquia e transform</a>
+<a href="recursos-embutidos.html" class="active">Assets padrão</a>
+<div class="group">Editor</div>
+<a href="interface.html" class="">Interface do editor</a>
+<a href="viewport.html" class="">Viewport e câmera</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="content-browser.html" class="">Content Browser</a>
+<a href="configuracoes.html" class="">Configurações</a>
+<a href="atalhos.html" class="">Atalhos de teclado</a>
+<div class="group">Componentes</div>
+<a href="transform.html" class="">Transform</a>
+<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
+<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="luzes.html" class="">Luzes</a>
+<a href="particulas.html" class="">Partículas</a>
+<a href="animacao-3d.html" class="">Animação esquelética</a>
+<a href="audio-source.html" class="">AudioSource</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
+<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
+<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
+<div class="group">Renderização</div>
+<a href="pipeline-3d.html" class="">Pipeline 3D</a>
+<a href="pipeline-2d.html" class="">Pipeline 2D</a>
+<a href="qualidade.html" class="">Qualidade gráfica</a>
+<div class="group">Scripting C#</div>
+<a href="scripting.html" class="">Introdução ao C#</a>
+<a href="script.html" class="">Classe Script e corrotinas</a>
+<a href="entity.html" class="">Entity — referência</a>
+<a href="scene.html" class="">Scene — referência</a>
+<a href="input.html" class="">Input</a>
+<a href="time.html" class="">Time</a>
+<a href="mathf.html" class="">Mathf</a>
+<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
+<a href="audio-api.html" class="">Audio (API)</a>
+<a href="save.html" class="">SaveSystem</a>
+<a href="rand-log.html" class="">Rand e Log</a>
+<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
+<a href="exemplos.html" class="">Exemplos completos</a>
+<div class="group">Distribuição</div>
+<a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="faq.html" class="">Perguntas frequentes</a>
+  </nav>
+</aside>
+<main>
+<header class="top">
+  <div class="crumbs"><span class="crumb">Conceitos</span><span class="sep">/</span><span>Assets padrão</span></div>
+  <div class="toggles">
+    <a href="busca.html" class="btn">🔎 Buscar</a>
+    <a href="index.html" class="btn">Início</a>
+  </div>
+</header>
+<article>
+<h1 id="assets-padrão">Assets padrão</h1>
+<p>O editor <strong>já vem com tudo pronto</strong> para você começar a criar — sem baixar nada separado.</p>
+<h2 id="o-que-já-vem-junto">O que já vem junto</h2>
+<ul>
+<li><strong>Modelos 3D</strong> — cubo, plano, esfera, cilindro, cone, cápsula e toro</li>
+</ul>
+<p>  (gerados pelo motor);</p>
+<ul>
+<li><strong>Cenas de demonstração</strong> — 2D, 2.5D e 3D (com personagem animado e</li>
+</ul>
+<p>  objetos PBR), prontas no menu <strong>Cena</strong>;</p>
+<ul>
+<li><strong>Céu</strong> — HDRI padrão;</li>
+<li><strong>Fonte</strong> — a fonte de texto dos HUDs já está incluída;</li>
+<li><strong>Textura de partículas</strong> — o efeito de partículas funciona sem textura</li>
+</ul>
+<p>  (usa um brilho suave gerado pelo motor).</p>
+<h2 id="caminhos-prontos">Caminhos prontos</h2>
+<p>Alguns campos de asset aceitam caminhos especiais que <strong>sempre funcionam</strong>:</p>
+<table><thead><tr><th>Caminho</th><th>O que é</th></tr></thead><tbody><tr><td><code>builtin:cube</code> / <code>builtin:plane</code> / <code>builtin:sphere</code> / …</td><td>Malhas geradas pelo motor</td></tr><tr><td><code>kzres://…</code></td><td>Asset padrão do editor (ex.: <code>kzres://models/Fox.glb</code>)</td></tr></tbody></table>
+<div class="callout ok"><strong>Nada quebra se você apagar um arquivo.</strong> Os padrões usados pelas funções e demonstrações não dependem de arquivos soltos — remova o que quiser que as funções continuam funcionando.</div>
+<h2 id="seus-próprios-assets">Seus próprios assets</h2>
+<p>Seus arquivos (modelos <code>.obj</code>/<code>.glb</code>, imagens, sons) ficam na pasta do seu projeto e são vistos no <a href="content-browser.html">Content Browser</a>. O Content Pack da distribuição só <strong>enriquece</strong> as demos com assets extras — nunca é obrigatório.</p>
+
+</article>
+<div class="pager">
+<a class="navbtn prev" href="hierarquia.html">← Hierarquia e transform</a>
+<a class="navbtn next" href="interface.html">Interface do editor →</a>
+</div>
+<footer class="footer">
+  © Kizuri Studio. Todos os direitos reservados.
+</footer>
+</main>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

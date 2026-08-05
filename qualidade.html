@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qualidade gráfica — Kizuri Engine</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div class="brand">
+    <div class="logo">K</div>
+    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+  </div>
+  <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
+  <nav id="toc">
+<div class="group">Introdução</div>
+<a href="index.html" class="">Visão geral</a>
+<a href="instalacao.html" class="">Instalação</a>
+<a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
+<div class="group">Conceitos</div>
+<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
+<a href="hierarquia.html" class="">Hierarquia e transform</a>
+<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<div class="group">Editor</div>
+<a href="interface.html" class="">Interface do editor</a>
+<a href="viewport.html" class="">Viewport e câmera</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="content-browser.html" class="">Content Browser</a>
+<a href="configuracoes.html" class="">Configurações</a>
+<a href="atalhos.html" class="">Atalhos de teclado</a>
+<div class="group">Componentes</div>
+<a href="transform.html" class="">Transform</a>
+<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
+<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="luzes.html" class="">Luzes</a>
+<a href="particulas.html" class="">Partículas</a>
+<a href="animacao-3d.html" class="">Animação esquelética</a>
+<a href="audio-source.html" class="">AudioSource</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
+<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
+<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
+<div class="group">Renderização</div>
+<a href="pipeline-3d.html" class="">Pipeline 3D</a>
+<a href="pipeline-2d.html" class="">Pipeline 2D</a>
+<a href="qualidade.html" class="active">Qualidade gráfica</a>
+<div class="group">Scripting C#</div>
+<a href="scripting.html" class="">Introdução ao C#</a>
+<a href="script.html" class="">Classe Script e corrotinas</a>
+<a href="entity.html" class="">Entity — referência</a>
+<a href="scene.html" class="">Scene — referência</a>
+<a href="input.html" class="">Input</a>
+<a href="time.html" class="">Time</a>
+<a href="mathf.html" class="">Mathf</a>
+<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
+<a href="audio-api.html" class="">Audio (API)</a>
+<a href="save.html" class="">SaveSystem</a>
+<a href="rand-log.html" class="">Rand e Log</a>
+<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
+<a href="exemplos.html" class="">Exemplos completos</a>
+<div class="group">Distribuição</div>
+<a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="faq.html" class="">Perguntas frequentes</a>
+  </nav>
+</aside>
+<main>
+<header class="top">
+  <div class="crumbs"><span class="crumb">Renderização</span><span class="sep">/</span><span>Qualidade gráfica</span></div>
+  <div class="toggles">
+    <a href="busca.html" class="btn">🔎 Buscar</a>
+    <a href="index.html" class="btn">Início</a>
+  </div>
+</header>
+<article>
+<h1 id="qualidade-gráfica">Qualidade gráfica</h1>
+<p>Ajuste a aparência e o desempenho em <strong>Configurações → Gráficos</strong> (<kbd>Ctrl+,</kbd>). Tudo é aplicado <strong>na hora</strong>, sem reiniciar o editor.</p>
+<h2 id="presets">Presets</h2>
+<table><thead><tr><th>Preset</th><th>Uso</th></tr></thead><tbody><tr><td><strong>Ultra</strong></td><td>Máximo de fidelidade (para máquinas fortes)</td></tr><tr><td><strong>High</strong></td><td>Balanceado</td></tr><tr><td><strong>Medium</strong></td><td>Bom meio-termo</td></tr><tr><td><strong>Low</strong></td><td>Máquina fraca / integrada</td></tr><tr><td><strong>Custom</strong></td><td>Você ajustou manualmente</td></tr></tbody></table>
+<p>O editor já começa com o preset adequado ao seu hardware — em geral você não precisa mexer em nada.</p>
+<h2 id="configurações">Configurações</h2>
+<table><thead><tr><th>Opção</th><th>O que faz</th></tr></thead><tbody><tr><td><strong>Resolução interna</strong></td><td>Renderiza em resolução menor e amplia (ganho grande de FPS); >1 = superamostragem</td></tr><tr><td><strong>MSAA</strong></td><td>Suaviza as bordas (2x, 4x, 8x)</td></tr><tr><td><strong>Shadow map (CSM)</strong></td><td>Resolução das sombras (512–4096)</td></tr><tr><td><strong>Suavização de sombra</strong></td><td>Bordas de sombra mais suaves</td></tr><tr><td><strong>Bloom</strong></td><td>Brilho dos objetos luminosos (limiar, intensidade, largura)</td></tr><tr><td><strong>Tonemapping</strong></td><td>Acabamento de cor: ACES (cinematográfico) / Reinhard (suave) / Filmic (contraste)</td></tr><tr><td><strong>SSAO</strong></td><td>Sombras de contato entre objetos (amostras, raio)</td></tr><tr><td><strong>Exposição</strong></td><td>Brilho geral da imagem</td></tr><tr><td><strong>VSync</strong></td><td>Trava ao refresh do monitor (evita "rasgo" de tela)</td></tr><tr><td><strong>Névoa</strong></td><td>Atmosfera por distância (densidade)</td></tr><tr><td><strong>Vinheta / Aberração / Grão</strong></td><td>Efeitos de câmera de filme</td></tr></tbody></table>
+<h2 id="ajuste-automático">Ajuste automático</h2>
+<p>O editor escolhe padrões adequados pela <strong>sua</strong> placa de vídeo e depois aplica suas escolhas manuais por cima. As configurações ficam salvas e são mantidas entre sessões.</p>
+<h2 id="dicas-de-desempenho">Dicas de desempenho</h2>
+<ul>
+<li><strong>Resolução interna 0.75</strong> é o ganho mais rápido em máquinas fracas;</li>
+<li><strong>SSAO</strong> e <strong>bloom</strong> são os efeitos que mais pesam — desligue no Low;</li>
+<li><strong>Sombras em 2048</strong> é um bom equilíbrio;</li>
+<li>Se o jogo estiver lento, diminua primeiro o preset — <strong>Low</strong> costuma</li>
+</ul>
+<p>  resolver.</p>
+
+</article>
+<div class="pager">
+<a class="navbtn prev" href="pipeline-2d.html">← Pipeline 2D</a>
+<a class="navbtn next" href="scripting.html">Introdução ao C# →</a>
+</div>
+<footer class="footer">
+  © Kizuri Studio. Todos os direitos reservados.
+</footer>
+</main>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

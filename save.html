@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaveSystem — Kizuri Engine</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div class="brand">
+    <div class="logo">K</div>
+    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+  </div>
+  <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
+  <nav id="toc">
+<div class="group">Introdução</div>
+<a href="index.html" class="">Visão geral</a>
+<a href="instalacao.html" class="">Instalação</a>
+<a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
+<div class="group">Conceitos</div>
+<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
+<a href="hierarquia.html" class="">Hierarquia e transform</a>
+<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<div class="group">Editor</div>
+<a href="interface.html" class="">Interface do editor</a>
+<a href="viewport.html" class="">Viewport e câmera</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="content-browser.html" class="">Content Browser</a>
+<a href="configuracoes.html" class="">Configurações</a>
+<a href="atalhos.html" class="">Atalhos de teclado</a>
+<div class="group">Componentes</div>
+<a href="transform.html" class="">Transform</a>
+<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
+<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="luzes.html" class="">Luzes</a>
+<a href="particulas.html" class="">Partículas</a>
+<a href="animacao-3d.html" class="">Animação esquelética</a>
+<a href="audio-source.html" class="">AudioSource</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
+<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
+<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
+<div class="group">Renderização</div>
+<a href="pipeline-3d.html" class="">Pipeline 3D</a>
+<a href="pipeline-2d.html" class="">Pipeline 2D</a>
+<a href="qualidade.html" class="">Qualidade gráfica</a>
+<div class="group">Scripting C#</div>
+<a href="scripting.html" class="">Introdução ao C#</a>
+<a href="script.html" class="">Classe Script e corrotinas</a>
+<a href="entity.html" class="">Entity — referência</a>
+<a href="scene.html" class="">Scene — referência</a>
+<a href="input.html" class="">Input</a>
+<a href="time.html" class="">Time</a>
+<a href="mathf.html" class="">Mathf</a>
+<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
+<a href="audio-api.html" class="">Audio (API)</a>
+<a href="save.html" class="active">SaveSystem</a>
+<a href="rand-log.html" class="">Rand e Log</a>
+<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
+<a href="exemplos.html" class="">Exemplos completos</a>
+<div class="group">Distribuição</div>
+<a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="faq.html" class="">Perguntas frequentes</a>
+  </nav>
+</aside>
+<main>
+<header class="top">
+  <div class="crumbs"><span class="crumb">Scripting C#</span><span class="sep">/</span><span>SaveSystem</span></div>
+  <div class="toggles">
+    <a href="busca.html" class="btn">🔎 Buscar</a>
+    <a href="index.html" class="btn">Início</a>
+  </div>
+</header>
+<article>
+<h1 id="savesystem">SaveSystem</h1>
+<p>Persistência simples de jogo em um arquivo <strong>JSON</strong> (<code>save.json</code> no diretório de trabalho por padrão).</p>
+<h2 id="guardar-valores">Guardar valores</h2>
+<pre><code class="language-csharp">SaveSystem.Set("score", 100);                      // int
+SaveSystem.Set("nome", "Kizuri");                  // string
+SaveSystem.Set("volume", 0.7f);                    // float
+SaveSystem.Set("som", true);                       // bool
+SaveSystem.Set("pos", new Vector3(1f, 2f, 3f));    // vetores
+SaveSystem.Set("ponto", new Vector2(5f, 0f));</code></pre>
+<h2 id="gravar-em-disco">Gravar em disco</h2>
+<pre><code class="language-csharp">SaveSystem.Save();   // escreve save.json</code></pre>
+<p>Chame ao passar de fase, no pause, ou ao fechar.</p>
+<h2 id="ler-auto-carrega">Ler (auto-carrega)</h2>
+<p>Os <code>Get*</code> <strong>carregam do disco automaticamente</strong> na primeira consulta:</p>
+<pre><code class="language-csharp">var score  = SaveSystem.GetFloat("score", 0f);        // fallback se não existir
+var nome   = SaveSystem.GetString("nome", "sem nome");
+var volume = SaveSystem.GetFloat("volume", 1f);
+var som    = SaveSystem.GetBool("som", true);
+
+if (SaveSystem.Has("pos"))
+{
+    var pos = SaveSystem.GetVector3("pos");
+    jogador.SetPosition(pos);
+}
+var ponto = SaveSystem.GetVector2("ponto");</code></pre>
+<h2 id="outros-arquivos">Outros arquivos</h2>
+<pre><code class="language-csharp">SaveSystem.SetPath("jogos/fase1.save");   // muda o arquivo (limpa o cache)</code></pre>
+<h2 id="referência">Referência</h2>
+<table><thead><tr><th>Método</th><th>Descrição</th></tr></thead><tbody><tr><td><code>Set(key, string/int/float/bool/Vector2/Vector3)</code></td><td>Guarda um valor</td></tr><tr><td><code>Has(key)</code></td><td>Existe a chave?</td></tr><tr><td><code>GetString(key, fallback)</code></td><td>Lê string</td></tr><tr><td><code>GetInt(key, fallback)</code></td><td>Lê int (aceita float salvo)</td></tr><tr><td><code>GetFloat(key, fallback)</code></td><td>Lê float (aceita int salvo)</td></tr><tr><td><code>GetBool(key, fallback)</code></td><td>Lê bool</td></tr><tr><td><code>GetVector2(key, fallback)</code> / <code>GetVector3(key, fallback)</code></td><td>Lê vetor</td></tr><tr><td><code>Save()</code></td><td>Grava em disco</td></tr><tr><td><code>Load()</code></td><td>Recarrega do disco</td></tr><tr><td><code>SetPath(path)</code></td><td>Muda o arquivo de save</td></tr><tr><td><code>FilePath</code></td><td>Caminho atual</td></tr></tbody></table>
+<div class="callout warn"><code>Save()</code> grava o estado <strong>atual</strong> do cache. Depois de <code>Set</code>, lembre de chamar <code>Save()</code> — os valores não são persistidos sozinhos.</div>
+<h2 id="exemplo-de-jogo">Exemplo de jogo</h2>
+<pre><code class="language-csharp">// OnDestroy do jogador: salva a posição
+public override void OnDestroy()
+{
+    if (Entity.TryGetWorldPosition(out var p))
+    {
+        SaveSystem.Set("pos", p);
+        SaveSystem.Set("vidas", vidas);
+        SaveSystem.Save();
+    }
+}
+
+// Na abertura de uma fase, carregar a posição salva
+public override void OnCreate()
+{
+    if (SaveSystem.Has("pos"))
+        Entity.SetPosition(SaveSystem.GetVector3("pos"));
+}</code></pre>
+
+</article>
+<div class="pager">
+<a class="navbtn prev" href="audio-api.html">← Audio (API)</a>
+<a class="navbtn next" href="rand-log.html">Rand e Log →</a>
+</div>
+<footer class="footer">
+  © Kizuri Studio. Todos os direitos reservados.
+</footer>
+</main>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

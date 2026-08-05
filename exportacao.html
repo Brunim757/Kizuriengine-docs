@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exportar o jogo — Kizuri Engine</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div class="brand">
+    <div class="logo">K</div>
+    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+  </div>
+  <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
+  <nav id="toc">
+<div class="group">Introdução</div>
+<a href="index.html" class="">Visão geral</a>
+<a href="instalacao.html" class="">Instalação</a>
+<a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
+<div class="group">Conceitos</div>
+<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
+<a href="hierarquia.html" class="">Hierarquia e transform</a>
+<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<div class="group">Editor</div>
+<a href="interface.html" class="">Interface do editor</a>
+<a href="viewport.html" class="">Viewport e câmera</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="content-browser.html" class="">Content Browser</a>
+<a href="configuracoes.html" class="">Configurações</a>
+<a href="atalhos.html" class="">Atalhos de teclado</a>
+<div class="group">Componentes</div>
+<a href="transform.html" class="">Transform</a>
+<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
+<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="luzes.html" class="">Luzes</a>
+<a href="particulas.html" class="">Partículas</a>
+<a href="animacao-3d.html" class="">Animação esquelética</a>
+<a href="audio-source.html" class="">AudioSource</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
+<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
+<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
+<div class="group">Renderização</div>
+<a href="pipeline-3d.html" class="">Pipeline 3D</a>
+<a href="pipeline-2d.html" class="">Pipeline 2D</a>
+<a href="qualidade.html" class="">Qualidade gráfica</a>
+<div class="group">Scripting C#</div>
+<a href="scripting.html" class="">Introdução ao C#</a>
+<a href="script.html" class="">Classe Script e corrotinas</a>
+<a href="entity.html" class="">Entity — referência</a>
+<a href="scene.html" class="">Scene — referência</a>
+<a href="input.html" class="">Input</a>
+<a href="time.html" class="">Time</a>
+<a href="mathf.html" class="">Mathf</a>
+<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
+<a href="audio-api.html" class="">Audio (API)</a>
+<a href="save.html" class="">SaveSystem</a>
+<a href="rand-log.html" class="">Rand e Log</a>
+<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
+<a href="exemplos.html" class="">Exemplos completos</a>
+<div class="group">Distribuição</div>
+<a href="exportacao.html" class="active">Exportar o jogo</a>
+<a href="faq.html" class="">Perguntas frequentes</a>
+  </nav>
+</aside>
+<main>
+<header class="top">
+  <div class="crumbs"><span class="crumb">Distribuição</span><span class="sep">/</span><span>Exportar o jogo</span></div>
+  <div class="toggles">
+    <a href="busca.html" class="btn">🔎 Buscar</a>
+    <a href="index.html" class="btn">Início</a>
+  </div>
+</header>
+<article>
+<h1 id="exportar-o-jogo">Exportar o jogo</h1>
+<p>O editor gera um <strong>executável standalone</strong> com a cena inicial e o assembly C# do jogo.</p>
+<h2 id="como-exportar">Como exportar</h2>
+<ol>
+<li>Deixe a cena inicial aberta (é ela que o jogo abre).</li>
+<li><strong>Arquivo → Exportar Jogo…</strong></li>
+<li>Escolha a pasta de destino.</li>
+<li>O exportador gera:</li>
+</ol>
+<ul>
+<li>O executável (<code>KizuriGame</code>) que abre a cena inicial;</li>
+<li>O assembly C# do jogo;</li>
+<li>O <strong>Content Pack</strong> (se ativado) com os assets ricos.</li>
+</ul>
+<h2 id="o-que-o-jogo-roda">O que o jogo roda</h2>
+<ul>
+<li>Abre a <strong>cena inicial</strong> e roda o <strong>GameModule</strong> registrado;</li>
+<li>Usa a <strong>câmera da própria cena</strong> — o que você viu no Play é o que sai;</li>
+<li>Física, scripts, partículas e áudio rodam de verdade.</li>
+</ul>
+<h2 id="distribuição">Distribuição</h2>
+<ul>
+<li><strong>Sem content</strong>: o binário já embute os assets padrão (<code>kzres://</code>) — o jogo</li>
+</ul>
+<p>  funciona sozinho, só com a cena e o assembly;</p>
+<ul>
+<li><strong>Com content</strong>: copie a pasta <code>content/</code> junto para as demos/assets ricos.</li>
+</ul>
+<div class="callout ok">Como os padrões são embutidos, um jogo que só usa builtins e <code>kzres://</code> distribui um <strong>único executável</strong> (mais a DLL do jogo).</div>
+<h2 id="checklist-final">Checklist final</h2>
+<ul>
+<li>[ ] Cena inicial salva e com a câmera primária configurada</li>
+<li>[ ] GameModule registra todos os scripts usados</li>
+<li>[ ] Testou o Play de ponta a ponta</li>
+<li>[ ] (Opcional) Content Pack junto para os assets ricos</li>
+</ul>
+
+</article>
+<div class="pager">
+<a class="navbtn prev" href="exemplos.html">← Exemplos completos</a>
+<a class="navbtn next" href="faq.html">Perguntas frequentes →</a>
+</div>
+<footer class="footer">
+  © Kizuri Studio. Todos os direitos reservados.
+</footer>
+</main>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

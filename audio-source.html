@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AudioSource — Kizuri Engine</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div class="brand">
+    <div class="logo">K</div>
+    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+  </div>
+  <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
+  <nav id="toc">
+<div class="group">Introdução</div>
+<a href="index.html" class="">Visão geral</a>
+<a href="instalacao.html" class="">Instalação</a>
+<a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
+<div class="group">Conceitos</div>
+<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
+<a href="hierarquia.html" class="">Hierarquia e transform</a>
+<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<div class="group">Editor</div>
+<a href="interface.html" class="">Interface do editor</a>
+<a href="viewport.html" class="">Viewport e câmera</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="content-browser.html" class="">Content Browser</a>
+<a href="configuracoes.html" class="">Configurações</a>
+<a href="atalhos.html" class="">Atalhos de teclado</a>
+<div class="group">Componentes</div>
+<a href="transform.html" class="">Transform</a>
+<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
+<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="luzes.html" class="">Luzes</a>
+<a href="particulas.html" class="">Partículas</a>
+<a href="animacao-3d.html" class="">Animação esquelética</a>
+<a href="audio-source.html" class="active">AudioSource</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
+<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
+<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
+<div class="group">Renderização</div>
+<a href="pipeline-3d.html" class="">Pipeline 3D</a>
+<a href="pipeline-2d.html" class="">Pipeline 2D</a>
+<a href="qualidade.html" class="">Qualidade gráfica</a>
+<div class="group">Scripting C#</div>
+<a href="scripting.html" class="">Introdução ao C#</a>
+<a href="script.html" class="">Classe Script e corrotinas</a>
+<a href="entity.html" class="">Entity — referência</a>
+<a href="scene.html" class="">Scene — referência</a>
+<a href="input.html" class="">Input</a>
+<a href="time.html" class="">Time</a>
+<a href="mathf.html" class="">Mathf</a>
+<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
+<a href="audio-api.html" class="">Audio (API)</a>
+<a href="save.html" class="">SaveSystem</a>
+<a href="rand-log.html" class="">Rand e Log</a>
+<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
+<a href="exemplos.html" class="">Exemplos completos</a>
+<div class="group">Distribuição</div>
+<a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="faq.html" class="">Perguntas frequentes</a>
+  </nav>
+</aside>
+<main>
+<header class="top">
+  <div class="crumbs"><span class="crumb">Componentes</span><span class="sep">/</span><span>AudioSource</span></div>
+  <div class="toggles">
+    <a href="busca.html" class="btn">🔎 Buscar</a>
+    <a href="index.html" class="btn">Início</a>
+  </div>
+</header>
+<article>
+<h1 id="audiosource">AudioSource</h1>
+<p>Emissor de som ligado a uma entidade — usa o <strong>AudioEngine</strong> (miniaudio por baixo).</p>
+<h2 id="audiosourcecomponent">AudioSourceComponent</h2>
+<table><thead><tr><th>Campo</th><th>Descrição</th></tr></thead><tbody><tr><td><strong>ClipPath</strong></td><td>Arquivo de áudio (wav, mp3, ogg, flac…)</td></tr><tr><td><strong>Loop</strong></td><td>Repete ao fim</td></tr><tr><td><strong>PlayOnStart</strong></td><td>Toca ao entrar no Play</td></tr><tr><td><strong>Spatial</strong></td><td><code>true</code> = atenua por distância + panorâmica 3D; <code>false</code> = volume fixo (música/UI)</td></tr><tr><td><strong>Volume</strong></td><td>Volume do source (0..1)</td></tr><tr><td><strong>MinDistance / MaxDistance</strong></td><td>Faixa de atenuação espacial</td></tr></tbody></table>
+<h2 id="como-usar">Como usar</h2>
+<ol>
+<li>Adicione o componente à entidade;</li>
+<li>Escolha o <code>ClipPath</code> (relativo ao projeto);</li>
+<li>No Play, o som toca (se <code>PlayOnStart</code>) e é <strong>posicional</strong> — mais perto da</li>
+</ol>
+<p>   câmera = mais alto.</p>
+<h2 id="em-c">Em C#</h2>
+<pre><code class="language-csharp">Entity.AddAudio("Assets/Sounds/passo.wav", loop: true, playOnStart: true);
+Entity.PlayAudio();
+Entity.StopAudio();</code></pre>
+<h2 id="sons-avulsos-sem-entidade">Sons avulsos (sem entidade)</h2>
+<p>Para SFX desamarrados de uma posição:</p>
+<pre><code class="language-csharp">Audio.PlayOneShot("Assets/Sounds/tiro.wav");               // avulso
+Audio.PlayOneShot("Assets/Sounds/tiro.wav", volume: 0.8f);
+
+// POSICIONAL 3D — toca no ponto do mundo, atenua pela distância
+// ao ouvinte (câmera). Perfeito para impactos, passos, tiros.
+Audio.PlayOneShotAt("Assets/Sounds/impacto.wav", 1f, position);
+
+Audio.StopAll();                     // para tudo (troca de cena)
+Audio.SetMasterVolume(0.5f);         // volume mestre global</code></pre>
+<div class="callout warn"><strong>Só toca no Play.</strong> Fontes de áudio (como física e partículas) só são processadas durante o <strong>Play</strong> / jogo exportado.</div>
+<h2 id="o-ouvinte">O ouvinte</h2>
+<p>O ouvinte é a <strong>câmera primária</strong> da cena. Movendo a câmera, o som espacial acompanha.</p>
+
+</article>
+<div class="pager">
+<a class="navbtn prev" href="animacao-3d.html">← Animação esquelética</a>
+<a class="navbtn next" href="camera.html">Câmera →</a>
+</div>
+<footer class="footer">
+  © Kizuri Studio. Todos os direitos reservados.
+</footer>
+</main>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

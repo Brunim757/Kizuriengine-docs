@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luzes — Kizuri Engine</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div class="brand">
+    <div class="logo">K</div>
+    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+  </div>
+  <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
+  <nav id="toc">
+<div class="group">Introdução</div>
+<a href="index.html" class="">Visão geral</a>
+<a href="instalacao.html" class="">Instalação</a>
+<a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
+<div class="group">Conceitos</div>
+<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
+<a href="hierarquia.html" class="">Hierarquia e transform</a>
+<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<div class="group">Editor</div>
+<a href="interface.html" class="">Interface do editor</a>
+<a href="viewport.html" class="">Viewport e câmera</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="content-browser.html" class="">Content Browser</a>
+<a href="configuracoes.html" class="">Configurações</a>
+<a href="atalhos.html" class="">Atalhos de teclado</a>
+<div class="group">Componentes</div>
+<a href="transform.html" class="">Transform</a>
+<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
+<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="luzes.html" class="active">Luzes</a>
+<a href="particulas.html" class="">Partículas</a>
+<a href="animacao-3d.html" class="">Animação esquelética</a>
+<a href="audio-source.html" class="">AudioSource</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
+<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
+<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
+<div class="group">Renderização</div>
+<a href="pipeline-3d.html" class="">Pipeline 3D</a>
+<a href="pipeline-2d.html" class="">Pipeline 2D</a>
+<a href="qualidade.html" class="">Qualidade gráfica</a>
+<div class="group">Scripting C#</div>
+<a href="scripting.html" class="">Introdução ao C#</a>
+<a href="script.html" class="">Classe Script e corrotinas</a>
+<a href="entity.html" class="">Entity — referência</a>
+<a href="scene.html" class="">Scene — referência</a>
+<a href="input.html" class="">Input</a>
+<a href="time.html" class="">Time</a>
+<a href="mathf.html" class="">Mathf</a>
+<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
+<a href="audio-api.html" class="">Audio (API)</a>
+<a href="save.html" class="">SaveSystem</a>
+<a href="rand-log.html" class="">Rand e Log</a>
+<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
+<a href="exemplos.html" class="">Exemplos completos</a>
+<div class="group">Distribuição</div>
+<a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="faq.html" class="">Perguntas frequentes</a>
+  </nav>
+</aside>
+<main>
+<header class="top">
+  <div class="crumbs"><span class="crumb">Componentes</span><span class="sep">/</span><span>Luzes</span></div>
+  <div class="toggles">
+    <a href="busca.html" class="btn">🔎 Buscar</a>
+    <a href="index.html" class="btn">Início</a>
+  </div>
+</header>
+<article>
+<h1 id="luzes">Luzes</h1>
+<p>Entidades com <strong>LightComponent</strong> são luzes reais na cena. Há três tipos.</p>
+<h2 id="tipos">Tipos</h2>
+<table><thead><tr><th>Tipo</th><th>Descrição</th></tr></thead><tbody><tr><td><strong>Direcional</strong></td><td>Luz paralela sem posição (o "sol"). A <strong>direção</strong> vem da rotação da entidade. A <strong>primeira</strong> direcional da cena projeta sombra em cascata.</td></tr><tr><td><strong>Ponto</strong></td><td>Luz radial com alcance (<code>Range</code>). Projeta sombra quando o hardware suporta.</td></tr><tr><td><strong>Spot</strong></td><td>Cone com ângulos interno/externo em graus. Projeta sombra se <code>CastsShadow</code>.</td></tr></tbody></table>
+<h2 id="propriedades">Propriedades</h2>
+<table><thead><tr><th>Campo</th><th>Descrição</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Direcional / Ponto / Spot</td></tr><tr><td><strong>Color</strong></td><td>Cor RGB</td></tr><tr><td><strong>Intensity</strong></td><td>Intensidade (multiplicador HDR)</td></tr><tr><td><strong>Range</strong></td><td>Alcance (Ponto/Spot)</td></tr><tr><td><strong>InnerConeDeg / OuterConeDeg</strong></td><td>Ângulos do cone do spot, em graus</td></tr><tr><td><strong>CastsShadow</strong></td><td>Ponto/Spot projetam sombra? (automático pelo hardware)</td></tr></tbody></table>
+<h2 id="limites">Limites</h2>
+<ul>
+<li>Até <strong>16 luzes</strong> por frame (todas avaliadas no forward pass);</li>
+<li>O custo das luzes é por pixel — luzes de ponto com <code>Range</code> grande custam</li>
+</ul>
+<p>  mais.</p>
+<h2 id="em-c">Em C#</h2>
+<pre><code class="language-csharp">var sol = Scene.CreateEntity("Sol");
+sol.AddLight(LightType.Directional, r: 1f, g: 0.95f, b: 0.85f, intensity: 2f);
+sol.SetRotation(new Vector3(Mathf.Deg2Rad…, 0f, 0f)); // aponta a luz
+
+var lanterna = Scene.CreateEntity("Lanterna");
+lanterna.AddLight(LightType.Spot, intensity: 5f,
+                  innerConeDeg: 20f, outerConeDeg: 30f, castsShadow: true);
+
+lanterna.SetLightColor(1f, 0.8f, 0.5f);
+lanterna.SetLightIntensity(8f);</code></pre>
+<h2 id="no-editor">No editor</h2>
+<p>Selecione a luz e use o <strong>gizmo de luz</strong> no viewport para posicionar e apontar. O gizmo mostra a direção (direcional) ou o cone/alcance (ponto/spot).</p>
+<div class="callout info">Sombras de luz pontual dependem do hardware — o motor liga automaticamente quando a placa suporta.</div>
+
+</article>
+<div class="pager">
+<a class="navbtn prev" href="meshes-3d.html">← MeshRenderer e materiais</a>
+<a class="navbtn next" href="particulas.html">Partículas →</a>
+</div>
+<footer class="footer">
+  © Kizuri Studio. Todos os direitos reservados.
+</footer>
+</main>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

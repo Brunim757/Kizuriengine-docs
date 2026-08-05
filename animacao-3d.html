@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animação esquelética — Kizuri Engine</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div class="brand">
+    <div class="logo">K</div>
+    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+  </div>
+  <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
+  <nav id="toc">
+<div class="group">Introdução</div>
+<a href="index.html" class="">Visão geral</a>
+<a href="instalacao.html" class="">Instalação</a>
+<a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
+<div class="group">Conceitos</div>
+<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
+<a href="hierarquia.html" class="">Hierarquia e transform</a>
+<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<div class="group">Editor</div>
+<a href="interface.html" class="">Interface do editor</a>
+<a href="viewport.html" class="">Viewport e câmera</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="content-browser.html" class="">Content Browser</a>
+<a href="configuracoes.html" class="">Configurações</a>
+<a href="atalhos.html" class="">Atalhos de teclado</a>
+<div class="group">Componentes</div>
+<a href="transform.html" class="">Transform</a>
+<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
+<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="luzes.html" class="">Luzes</a>
+<a href="particulas.html" class="">Partículas</a>
+<a href="animacao-3d.html" class="active">Animação esquelética</a>
+<a href="audio-source.html" class="">AudioSource</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
+<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
+<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
+<div class="group">Renderização</div>
+<a href="pipeline-3d.html" class="">Pipeline 3D</a>
+<a href="pipeline-2d.html" class="">Pipeline 2D</a>
+<a href="qualidade.html" class="">Qualidade gráfica</a>
+<div class="group">Scripting C#</div>
+<a href="scripting.html" class="">Introdução ao C#</a>
+<a href="script.html" class="">Classe Script e corrotinas</a>
+<a href="entity.html" class="">Entity — referência</a>
+<a href="scene.html" class="">Scene — referência</a>
+<a href="input.html" class="">Input</a>
+<a href="time.html" class="">Time</a>
+<a href="mathf.html" class="">Mathf</a>
+<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
+<a href="audio-api.html" class="">Audio (API)</a>
+<a href="save.html" class="">SaveSystem</a>
+<a href="rand-log.html" class="">Rand e Log</a>
+<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
+<a href="exemplos.html" class="">Exemplos completos</a>
+<div class="group">Distribuição</div>
+<a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="faq.html" class="">Perguntas frequentes</a>
+  </nav>
+</aside>
+<main>
+<header class="top">
+  <div class="crumbs"><span class="crumb">Componentes</span><span class="sep">/</span><span>Animação esquelética</span></div>
+  <div class="toggles">
+    <a href="busca.html" class="btn">🔎 Buscar</a>
+    <a href="index.html" class="btn">Início</a>
+  </div>
+</header>
+<article>
+<h1 id="animação-esquelética-skinning">Animação esquelética (skinning)</h1>
+<p>Toca **animações de um <code>.glb</code>/<code>.gltf</code>** em uma malha com skeleton — personagens e criaturas modelados em Blender etc. funcionam direto.</p>
+<h2 id="animatorcomponent">AnimatorComponent</h2>
+<table><thead><tr><th>Campo</th><th>Descrição</th></tr></thead><tbody><tr><td><strong>MeshPath</strong></td><td>Fonte <code>.glb</code>/<code>.gltf</code> (o mesmo arquivo do MeshRenderer)</td></tr><tr><td><strong>ClipName</strong></td><td>Animação atual (nome da <code>animation</code> no arquivo)</td></tr><tr><td><strong>Playing</strong></td><td>Toca/pausa</td></tr><tr><td><strong>Loop</strong></td><td>Repete ao fim</td></tr><tr><td><strong>Speed</strong></td><td>Velocidade de reprodução</td></tr><tr><td><strong>Time</strong></td><td>Posição na animação (segundos)</td></tr></tbody></table>
+<h2 id="configurando">Configurando</h2>
+<ol>
+<li>Adicione <strong>MeshRenderer</strong> apontando para <code>Assets/Models/Personagem.glb</code>;</li>
+<li>Adicione <strong>Animator</strong> com o mesmo caminho;</li>
+<li>Escolha o <strong>ClipName</strong> (ex.: <code>"Run"</code>, <code>"Idle"</code> — os nomes vêm do arquivo).</li>
+</ol>
+<p>O renderer aplica a <strong>skin</strong> (matrizes de junta) no vertex shader — e também no <strong>shader de sombra</strong>, então a sombra "anda" junto com o personagem.</p>
+<h2 id="em-c">Em C#</h2>
+<pre><code class="language-csharp">Entity.AddMeshRenderer("Assets/Models/Fox.glb");
+Entity.AddAnimator("Assets/Models/Fox.glb");
+if (Entity.PlayAnimation("Survey")) { }
+Entity.SetAnimationSpeed(1.5f);
+Entity.SetAnimationLoop(true);
+Entity.SetAnimationPlaying(true);
+Entity.SetAnimationTime(2f);
+var t = Entity.AnimationTime;</code></pre>
+<h2 id="sobre-a-skin">Sobre a skin</h2>
+<ul>
+<li><code>SkinData</code> suporta juntas, pesos por vértice e múltiplos <strong>clips</strong>;</li>
+<li>O Fox de demonstração tem 19 juntas e ~8 animações — experimente na</li>
+</ul>
+<p>  <a href="interface.html">demonstração 3D</a> (menu <strong>Cena</strong>).</p>
+<div class="callout info"><strong>Clip vazio = pose de repouso.</strong> Deixe <code>ClipName</code> vazio para mostrar a malha na pose do arquivo sem animar.</div>
+
+</article>
+<div class="pager">
+<a class="navbtn prev" href="particulas.html">← Partículas</a>
+<a class="navbtn next" href="audio-source.html">AudioSource →</a>
+</div>
+<footer class="footer">
+  © Kizuri Studio. Todos os direitos reservados.
+</footer>
+</main>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

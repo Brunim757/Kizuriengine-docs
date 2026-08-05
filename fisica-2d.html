@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Física 2D (Box2D) — Kizuri Engine</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div class="brand">
+    <div class="logo">K</div>
+    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+  </div>
+  <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
+  <nav id="toc">
+<div class="group">Introdução</div>
+<a href="index.html" class="">Visão geral</a>
+<a href="instalacao.html" class="">Instalação</a>
+<a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
+<div class="group">Conceitos</div>
+<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
+<a href="hierarquia.html" class="">Hierarquia e transform</a>
+<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<div class="group">Editor</div>
+<a href="interface.html" class="">Interface do editor</a>
+<a href="viewport.html" class="">Viewport e câmera</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="content-browser.html" class="">Content Browser</a>
+<a href="configuracoes.html" class="">Configurações</a>
+<a href="atalhos.html" class="">Atalhos de teclado</a>
+<div class="group">Componentes</div>
+<a href="transform.html" class="">Transform</a>
+<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
+<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="luzes.html" class="">Luzes</a>
+<a href="particulas.html" class="">Partículas</a>
+<a href="animacao-3d.html" class="">Animação esquelética</a>
+<a href="audio-source.html" class="">AudioSource</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="fisica-2d.html" class="active">Física 2D (Box2D)</a>
+<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
+<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
+<div class="group">Renderização</div>
+<a href="pipeline-3d.html" class="">Pipeline 3D</a>
+<a href="pipeline-2d.html" class="">Pipeline 2D</a>
+<a href="qualidade.html" class="">Qualidade gráfica</a>
+<div class="group">Scripting C#</div>
+<a href="scripting.html" class="">Introdução ao C#</a>
+<a href="script.html" class="">Classe Script e corrotinas</a>
+<a href="entity.html" class="">Entity — referência</a>
+<a href="scene.html" class="">Scene — referência</a>
+<a href="input.html" class="">Input</a>
+<a href="time.html" class="">Time</a>
+<a href="mathf.html" class="">Mathf</a>
+<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
+<a href="audio-api.html" class="">Audio (API)</a>
+<a href="save.html" class="">SaveSystem</a>
+<a href="rand-log.html" class="">Rand e Log</a>
+<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
+<a href="exemplos.html" class="">Exemplos completos</a>
+<div class="group">Distribuição</div>
+<a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="faq.html" class="">Perguntas frequentes</a>
+  </nav>
+</aside>
+<main>
+<header class="top">
+  <div class="crumbs"><span class="crumb">Componentes</span><span class="sep">/</span><span>Física 2D (Box2D)</span></div>
+  <div class="toggles">
+    <a href="busca.html" class="btn">🔎 Buscar</a>
+    <a href="index.html" class="btn">Início</a>
+  </div>
+</header>
+<article>
+<h1 id="física-2d-box2d">Física 2D (Box2D)</h1>
+<p>Corpos rígidos e colliders em 2D, simulados pelo <strong>Box2D</strong> durante o Play.</p>
+<h2 id="rigidbody2dcomponent">Rigidbody2DComponent</h2>
+<table><thead><tr><th>Campo</th><th>Descrição</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td><code>Static</code> (não move), <code>Dynamic</code> (responde a forças), <code>Kinematic</code> (move via script)</td></tr><tr><td><strong>FixedRotation</strong></td><td>Trava a rotação do corpo</td></tr><tr><td><strong>GravityScale</strong></td><td>Multiplicador da gravidade: <strong><0 inverte</strong>, <strong>0 desliga</strong></td></tr></tbody></table>
+<h3 id="gravityscale-a-chave-do-platformer">GravityScale — a chave do platformer</h3>
+<pre><code class="language-csharp">Entity.SetGravityScale(0f);    // sem gravidade (personagem aéreo)
+Entity.SetGravityScale(-1f);   // gravidade INVERTIDA (teto!);
+Entity.SetGravityScale(0.5f);  // gravidade mais leve (lua)</code></pre>
+<h2 id="colliders-2d">Colliders 2D</h2>
+<table><thead><tr><th>Componente</th><th>Campos</th></tr></thead><tbody><tr><td><strong>BoxCollider2D</strong></td><td>Offset, Size, Density, Friction, Restitution, RestitutionThreshold</td></tr><tr><td><strong>CircleCollider2D</strong></td><td>Offset, Radius, Density, Friction, Restitution</td></tr></tbody></table>
+<h2 id="controlando-o-corpo">Controlando o corpo</h2>
+<pre><code class="language-csharp">if (Entity.TryGetRigidbody2D(out var rb))
+{
+    var v = rb.GetLinearVelocity();
+    rb.SetLinearVelocity(new Vector2(wish.X, v.Y));  // controle lateral
+    rb.ApplyLinearImpulse(new Vector2(0f, 8f));      // pulo
+    rb.SetTransform(new Vector2(x, y), angleRad);    // teleportar
+}</code></pre>
+<h2 id="queries">Queries</h2>
+<pre><code class="language-csharp">// raio de A até B — devolve entidade e ponto do impacto
+if (Scene.Raycast2D(from, to, out var hit, out var point))
+    Log.Info($"Atingiu {hit.Id} em {point}");
+
+// algum collider toca o círculo?
+if (Scene.OverlapCircle2D(center, radius, out var closest))
+    Log.Info($"Círculo tocou {closest.Id}");</code></pre>
+<h2 id="tilemap-sólido">Tilemap sólido</h2>
+<p>No <a href="tilemap.html">Tilemap</a>, os valores em <code>SolidTileValues</code> geram colliders estáticos automaticamente — níveis de platformer sem montar colisor a colisor.</p>
+<h2 id="callbacks-de-colisão">Callbacks de colisão</h2>
+<p>No script:</p>
+<pre><code class="language-csharp">public override void OnCollisionBegin(Entity other) { }
+public override void OnCollisionEnd(Entity other) { }</code></pre>
+<div class="callout warn">A física 2D <strong>só simula no Play</strong> — no modo de edição os corpos ficam parados no Transform.</div>
+<h2 id="dicas">Dicas</h2>
+<ul>
+<li><strong>Dynamic + Kinematic</strong>: use Kinematic para plataformas móveis; o</li>
+</ul>
+<p>  <code>SetTransform</code> sincroniza o corpo com o Transform (teleporte limpo);</p>
+<ul>
+<li><strong>Restitution > 0</strong> para objetos que quicam (bolas);</li>
+<li><strong>Friction baixa</strong> (0.1) para objetos que deslizam.</li>
+</ul>
+
+</article>
+<div class="pager">
+<a class="navbtn prev" href="camera.html">← Câmera</a>
+<a class="navbtn next" href="fisica-3d.html">Física 3D (Bullet3) →</a>
+</div>
+<footer class="footer">
+  © Kizuri Studio. Todos os direitos reservados.
+</footer>
+</main>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

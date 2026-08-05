@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hierarquia e Inspetor — Kizuri Engine</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div class="brand">
+    <div class="logo">K</div>
+    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+  </div>
+  <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
+  <nav id="toc">
+<div class="group">Introdução</div>
+<a href="index.html" class="">Visão geral</a>
+<a href="instalacao.html" class="">Instalação</a>
+<a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
+<div class="group">Conceitos</div>
+<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
+<a href="hierarquia.html" class="">Hierarquia e transform</a>
+<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<div class="group">Editor</div>
+<a href="interface.html" class="">Interface do editor</a>
+<a href="viewport.html" class="">Viewport e câmera</a>
+<a href="hierarquia-inspetor.html" class="active">Hierarquia e Inspetor</a>
+<a href="content-browser.html" class="">Content Browser</a>
+<a href="configuracoes.html" class="">Configurações</a>
+<a href="atalhos.html" class="">Atalhos de teclado</a>
+<div class="group">Componentes</div>
+<a href="transform.html" class="">Transform</a>
+<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
+<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="luzes.html" class="">Luzes</a>
+<a href="particulas.html" class="">Partículas</a>
+<a href="animacao-3d.html" class="">Animação esquelética</a>
+<a href="audio-source.html" class="">AudioSource</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
+<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
+<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
+<div class="group">Renderização</div>
+<a href="pipeline-3d.html" class="">Pipeline 3D</a>
+<a href="pipeline-2d.html" class="">Pipeline 2D</a>
+<a href="qualidade.html" class="">Qualidade gráfica</a>
+<div class="group">Scripting C#</div>
+<a href="scripting.html" class="">Introdução ao C#</a>
+<a href="script.html" class="">Classe Script e corrotinas</a>
+<a href="entity.html" class="">Entity — referência</a>
+<a href="scene.html" class="">Scene — referência</a>
+<a href="input.html" class="">Input</a>
+<a href="time.html" class="">Time</a>
+<a href="mathf.html" class="">Mathf</a>
+<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
+<a href="audio-api.html" class="">Audio (API)</a>
+<a href="save.html" class="">SaveSystem</a>
+<a href="rand-log.html" class="">Rand e Log</a>
+<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
+<a href="exemplos.html" class="">Exemplos completos</a>
+<div class="group">Distribuição</div>
+<a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="faq.html" class="">Perguntas frequentes</a>
+  </nav>
+</aside>
+<main>
+<header class="top">
+  <div class="crumbs"><span class="crumb">Editor</span><span class="sep">/</span><span>Hierarquia e Inspetor</span></div>
+  <div class="toggles">
+    <a href="busca.html" class="btn">🔎 Buscar</a>
+    <a href="index.html" class="btn">Início</a>
+  </div>
+</header>
+<article>
+<h1 id="hierarquia-e-inspetor">Hierarquia e Inspetor</h1>
+<h2 id="hierarquia">Hierarquia</h2>
+<p>O painel <strong>Hierarquia</strong> lista todas as entidades da cena em árvore. Você pode:</p>
+<ul>
+<li><strong>Selecionar</strong> (clicando) — o Inspetor mostra a entidade;</li>
+<li><strong>Parentar</strong> (arrastar sobre outra) e <strong>destacar</strong>;</li>
+<li><strong>Renomear</strong> — duplo clique no nome;</li>
+<li><strong>Buscar</strong> — o campo de filtro filtra a árvore pelo nome;</li>
+<li><strong>Duplicar</strong> (<code>Ctrl+D</code>) e <strong>Excluir</strong> (<code>Del</code>).</li>
+</ul>
+<p>Novas entidades podem ser criadas pelo botão no painel, pelo menu <strong>Editar</strong>, ou em runtime via <code>Scene.CreateEntity</code>.</p>
+<h2 id="inspetor">Inspetor</h2>
+<p>O Inspetor mostra a entidade selecionada e seus componentes. Para cada componente há uma seção colapsável com seus campos:</p>
+<ul>
+<li><strong>Transform</strong> — posição, rotação (graus), escala;</li>
+<li><strong>Componentes de render</strong> — cor, textura, material, ordenação;</li>
+<li><strong>Física</strong> — tipo de corpo, massa, colliders;</li>
+<li><strong>Scripts</strong> — botão para adicionar um script registrado no GameModule.</li>
+</ul>
+<h3 id="adicionar-um-componente">Adicionar um componente</h3>
+<ol>
+<li>Selecione a entidade.</li>
+<li>No Inspetor, clique em <strong>Adicionar</strong> e escolha o componente (ou digite o</li>
+</ol>
+<p>   nome para buscar).</p>
+<ol>
+<li>Ajuste as propriedades.</li>
+</ol>
+<div class="callout info">A maioria dos componentes tem <strong>gizmo no viewport</strong> quando selecionado — colliders desenham o contorno, luzes desenham a direção/alcance, partículas mostram o cone de emissão.</div>
+<h2 id="estados-de-edição">Estados de edição</h2>
+<p>O editor tem dois estados:</p>
+<ul>
+<li><strong>Edit</strong> — você monta a cena; física/scripts <strong>não</strong> rodam;</li>
+<li><strong>Play</strong> — cópia isolada da cena com física, scripts, partículas e áudio</li>
+</ul>
+<p>  rodando de verdade.</p>
+<p>Os dois compartilham o mesmo Inspetor: durante o Play você vê o estado runtime dos componentes (posições, velocidades, tempos).</p>
+
+</article>
+<div class="pager">
+<a class="navbtn prev" href="viewport.html">← Viewport e câmera</a>
+<a class="navbtn next" href="content-browser.html">Content Browser →</a>
+</div>
+<footer class="footer">
+  © Kizuri Studio. Todos os direitos reservados.
+</footer>
+</main>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

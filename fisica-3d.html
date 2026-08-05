@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Física 3D (Bullet3) — Kizuri Engine</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div class="brand">
+    <div class="logo">K</div>
+    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+  </div>
+  <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
+  <nav id="toc">
+<div class="group">Introdução</div>
+<a href="index.html" class="">Visão geral</a>
+<a href="instalacao.html" class="">Instalação</a>
+<a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
+<div class="group">Conceitos</div>
+<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
+<a href="hierarquia.html" class="">Hierarquia e transform</a>
+<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<div class="group">Editor</div>
+<a href="interface.html" class="">Interface do editor</a>
+<a href="viewport.html" class="">Viewport e câmera</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="content-browser.html" class="">Content Browser</a>
+<a href="configuracoes.html" class="">Configurações</a>
+<a href="atalhos.html" class="">Atalhos de teclado</a>
+<div class="group">Componentes</div>
+<a href="transform.html" class="">Transform</a>
+<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
+<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="luzes.html" class="">Luzes</a>
+<a href="particulas.html" class="">Partículas</a>
+<a href="animacao-3d.html" class="">Animação esquelética</a>
+<a href="audio-source.html" class="">AudioSource</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
+<a href="fisica-3d.html" class="active">Física 3D (Bullet3)</a>
+<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
+<div class="group">Renderização</div>
+<a href="pipeline-3d.html" class="">Pipeline 3D</a>
+<a href="pipeline-2d.html" class="">Pipeline 2D</a>
+<a href="qualidade.html" class="">Qualidade gráfica</a>
+<div class="group">Scripting C#</div>
+<a href="scripting.html" class="">Introdução ao C#</a>
+<a href="script.html" class="">Classe Script e corrotinas</a>
+<a href="entity.html" class="">Entity — referência</a>
+<a href="scene.html" class="">Scene — referência</a>
+<a href="input.html" class="">Input</a>
+<a href="time.html" class="">Time</a>
+<a href="mathf.html" class="">Mathf</a>
+<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
+<a href="audio-api.html" class="">Audio (API)</a>
+<a href="save.html" class="">SaveSystem</a>
+<a href="rand-log.html" class="">Rand e Log</a>
+<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
+<a href="exemplos.html" class="">Exemplos completos</a>
+<div class="group">Distribuição</div>
+<a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="faq.html" class="">Perguntas frequentes</a>
+  </nav>
+</aside>
+<main>
+<header class="top">
+  <div class="crumbs"><span class="crumb">Componentes</span><span class="sep">/</span><span>Física 3D (Bullet3)</span></div>
+  <div class="toggles">
+    <a href="busca.html" class="btn">🔎 Buscar</a>
+    <a href="index.html" class="btn">Início</a>
+  </div>
+</header>
+<article>
+<h1 id="física-3d-bullet3">Física 3D (Bullet3)</h1>
+<p>Corpos rígidos e colliders em 3D, simulados pelo <strong>Bullet3</strong> durante o Play.</p>
+<h2 id="rigidbody3dcomponent">Rigidbody3DComponent</h2>
+<table><thead><tr><th>Campo</th><th>Descrição</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td><code>Static</code> / <code>Dynamic</code> / <code>Kinematic</code></td></tr><tr><td><strong>Mass</strong></td><td>Massa do corpo (para Dynamic)</td></tr></tbody></table>
+<h2 id="colliders-3d">Colliders 3D</h2>
+<table><thead><tr><th>Componente</th><th>Campos</th></tr></thead><tbody><tr><td><strong>BoxCollider3D</strong></td><td><code>HalfExtents</code> (meias-dimensões: 0.5,0.5,0.5 = cubo de 1×1×1)</td></tr><tr><td><strong>SphereCollider3D</strong></td><td><code>Radius</code></td></tr></tbody></table>
+<div class="callout warn"><strong>HalfExtents ≠ tamanho.</strong> O collider de caixa usa <strong>meias-dimensões</strong>. Para uma caixa de 2×2×2 use <code>HalfExtents = (1, 1, 1)</code>.</div>
+<h2 id="forças-e-movimento">Forças e movimento</h2>
+<pre><code class="language-csharp">Entity.AddRigidbody3D(BodyType3D.Dynamic, mass: 1f);
+Entity.AddBoxCollider3D(0.5f, 0.5f, 0.5f);
+// ou
+Entity.AddSphereCollider3D(radius: 0.5f);
+
+Entity.ApplyForce(new Vector3(0f, 10f, 0f));       // força contínua
+Entity.ApplyImpulse(new Vector3(0f, 5f, 0f));      // impulso instantâneo
+Entity.ApplyTorque(new Vector3(0f, 3f, 0f));       // giro
+
+Entity.SetVelocity(new Vector3(1f, 0f, 0f));       // velocidade linear
+Entity.SetAngularVelocity(new Vector3(0f, 1f, 0f));// velocidade angular
+
+if (Entity.TryGetVelocity(out var v)) { }
+if (Entity.TryGetAngularVelocity(out var w)) { }</code></pre>
+<h2 id="queries-3d">Queries 3D</h2>
+<pre><code class="language-csharp">// raio no espaço 3D — devolve entidade, ponto e fração [0,1]
+if (Scene.Raycast3D(from, to, out var hit, out var point, out var fraction))
+    Log.Info($"Atingiu {hit.Id} em {point} (fracão {fraction:0.00})");
+
+// esfera de área
+if (Scene.OverlapSphere3D(center, radius, out var hit))
+    Log.Info($"Esfera tocou {hit.Id}");</code></pre>
+<h2 id="raycast-vs-overlap">Raycast vs. Overlap</h2>
+<table><thead><tr><th>Query</th><th>Uso típico</th></tr></thead><tbody><tr><td><code>Raycast3D</code></td><td>Tiro, mira, "olhando para", detecção de chão</td></tr><tr><td><code>OverlapSphere3D</code></td><td>Explosões, área de dano, sensor de proximidade</td></tr></tbody></table>
+<div class="callout warn">A física 3D <strong>só simula no Play</strong>.</div>
+<h2 id="dicas">Dicas</h2>
+<ul>
+<li><strong>Mass pequena</strong> = corpo leve que voa com facilidade; <strong>mass alta</strong> = pesado;</li>
+<li><strong>Kinematic</strong> não responde a forças — mova pelo <code>SetTransform</code>/posição;</li>
+<li>Combine com <a href="meshes-3d.html">MeshRenderer</a>: a posição do corpo 3D segue o</li>
+</ul>
+<p>  Transform da entidade.</p>
+
+</article>
+<div class="pager">
+<a class="navbtn prev" href="fisica-2d.html">← Física 2D (Box2D)</a>
+<a class="navbtn next" href="ui.html">UI (Canvas/Rect/Button/Text) →</a>
+</div>
+<footer class="footer">
+  © Kizuri Studio. Todos os direitos reservados.
+</footer>
+</main>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>
