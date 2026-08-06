@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scene — referência — Kizuri Engine</title>
+<title>Scene (API) — Kizuri Engine</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -11,115 +11,114 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
 <div class="group">Introdução</div>
-<a href="index.html" class="">Visão geral</a>
+<a href="index.html" class="">Bem-vindo</a>
 <a href="instalacao.html" class="">Instalação</a>
 <a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
-<div class="group">Conceitos</div>
-<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
-<a href="hierarquia.html" class="">Hierarquia e transform</a>
-<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<a href="projeto.html" class="">Gerenciamento de projetos</a>
 <div class="group">Editor</div>
 <a href="interface.html" class="">Interface do editor</a>
-<a href="viewport.html" class="">Viewport e câmera</a>
-<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="paineis.html" class="">Painéis do editor</a>
+<a href="viewport.html" class="">Viewport</a>
 <a href="content-browser.html" class="">Content Browser</a>
-<a href="configuracoes.html" class="">Configurações</a>
+<a href="project-settings.html" class="">Project Settings</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
-<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
-<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
-<a href="tilemap.html" class="">Tilemap</a>
-<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="meshes-3d.html" class="">Malhas 3D</a>
+<a href="sprites-2d.html" class="">Sprites 2D</a>
 <a href="luzes.html" class="">Luzes</a>
 <a href="particulas.html" class="">Partículas</a>
-<a href="animacao-3d.html" class="">Animação esquelética</a>
-<a href="audio-source.html" class="">AudioSource</a>
-<a href="camera.html" class="">Câmera</a>
-<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
-<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
-<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
-<div class="group">Renderização</div>
-<a href="pipeline-3d.html" class="">Pipeline 3D</a>
-<a href="pipeline-2d.html" class="">Pipeline 2D</a>
-<a href="qualidade.html" class="">Qualidade gráfica</a>
+<a href="fisica-2d.html" class="">Física 2D</a>
+<a href="fisica-3d.html" class="">Física 3D</a>
+<a href="audio-source.html" class="">Áudio</a>
+<a href="ui.html" class="">Interface (UI)</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="animacao-2d.html" class="">Animação 2D</a>
+<a href="animacao-3d.html" class="">Animação 3D</a>
 <div class="group">Scripting C#</div>
-<a href="scripting.html" class="">Introdução ao C#</a>
-<a href="script.html" class="">Classe Script e corrotinas</a>
-<a href="entity.html" class="">Entity — referência</a>
-<a href="scene.html" class="active">Scene — referência</a>
-<a href="input.html" class="">Input</a>
-<a href="time.html" class="">Time</a>
-<a href="mathf.html" class="">Mathf</a>
-<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
-<a href="audio-api.html" class="">Audio (API)</a>
+<a href="scripting.html" class="">Scripting C#</a>
+<a href="entity.html" class="">Entity (API)</a>
+<a href="scene.html" class="active">Scene (API)</a>
+<a href="input.html" class="">Input (API)</a>
+<a href="time.html" class="">Time (API)</a>
+<a href="mathf.html" class="">Mathf, Rand e Vetores</a>
 <a href="save.html" class="">SaveSystem</a>
-<a href="rand-log.html" class="">Rand e Log</a>
-<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
-<a href="exemplos.html" class="">Exemplos completos</a>
+<a href="fisica-api.html" class="">Física (API C#)</a>
+<a href="audio-api.html" class="">Áudio (API C#)</a>
+<a href="ui-api.html" class="">UI (API C#)</a>
+<div class="group">Gráficos</div>
+<a href="qualidade.html" class="">Qualidade e presets</a>
+<a href="reflexos.html" class="">Reflexos</a>
+<a href="iluminacao.html" class="">Iluminação</a>
+<a href="ceu.html" class="">Céu</a>
+<a href="sombras.html" class="">Sombras</a>
+<a href="pos-processamento.html" class="">Pós-processamento</a>
 <div class="group">Distribuição</div>
 <a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
 <a href="faq.html" class="">Perguntas frequentes</a>
   </nav>
 </aside>
+<div class="overlay" id="overlay"></div>
 <main>
 <header class="top">
-  <div class="crumbs"><span class="crumb">Scripting C#</span><span class="sep">/</span><span>Scene — referência</span></div>
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+  <div class="crumbs"><span class="crumb">Scripting C#</span><span class="sep">/</span><span>Scene (API)</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
+    <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
+    <button class="btn" id="printBtn" title="Imprimir">🖨️</button>
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#criar-e-destruir-entidades" class="t2">Criar e destruir entidades</a><a href="#prefabs" class="t2">Prefabs</a><a href="#trocar-de-cena" class="t2">Trocar de cena</a><a href="#cmera" class="t2">Câmera</a><a href="#consultas-raycasts" class="t2">Consultas (raycasts)</a><a href="#corrotinas" class="t2">Corrotinas</a></nav>
 <article>
-<h1 id="scene-referência">Scene — referência</h1>
-<p><code>Scene</code> dá acesso à cena ativa em runtime.</p>
-<h2 id="criar-e-instanciar">Criar e instanciar</h2>
-<table><thead><tr><th>Método</th><th>Descrição</th></tr></thead><tbody><tr><td><code>CreateEntity(string name = "")</code></td><td>Cria entidade vazia (Transform + Tag)</td></tr><tr><td><code>InstantiatePrefab(string path)</code></td><td>Instancia <code>.kzprefab</code></td></tr><tr><td><code>InstantiatePrefab(string path, Vector3 position)</code></td><td>Instancia em uma posição</td></tr><tr><td><code>InstantiatePrefab(string path, Vector3 position, Vector3 rotation)</code></td><td>Instancia com posição <strong>e rotação</strong> (euler, rad)</td></tr><tr><td><code>Duplicate(Entity)</code></td><td>Duplica a entidade (com a subárvore), com leve deslocamento</td></tr></tbody></table>
-<pre><code class="language-csharp">var tiro = Scene.InstantiatePrefab("Assets/Tiro.kzprefab", new Vector3(3f, 0f, 0f));
-var fogo = Scene.InstantiatePrefab("Assets/Fogo.kzprefab", pos, new Vector3(0f, 0f, 0.5f));</code></pre>
-<div class="callout info">Em runtime, a prefab instanciada <strong>ganha corpos de física</strong> e **dispara <code>OnCreate</code>** dos scripts — exatamente como se estivesse na cena.</div>
-<h2 id="buscar-e-navegar">Buscar e navegar</h2>
-<table><thead><tr><th>Método</th><th>Descrição</th></tr></thead><tbody><tr><td><code>Find(string name)</code></td><td>Primeira entidade com o nome (Tag). <code>Entity.Invalid</code> se não achar</td></tr><tr><td><code>GetPrimaryCamera()</code></td><td>Entidade com <code>CameraComponent</code> marcada como Primary</td></tr><tr><td><code>Load(string scenePath)</code></td><td><strong>Pedido</strong> de troca de cena (realizado no fim do frame)</td></tr></tbody></table>
-<pre><code class="language-csharp">var jogador = Scene.Find("Jogador");
-if (jogador.IsValid) { /* achou */ }
+<h1 id="scene-api">Scene — API</h1>
+<p>A <strong>Scene</strong> é o mundo do jogo. O script acessa a cena atual via <code>Scene</code>.</p>
+<h2 id="criar-e-destruir-entidades">Criar e destruir entidades</h2>
+<div class="codeblock"><pre><code class="language-csharp">var entidade = Scene.CreateEntity("Inimigo");
+entidade.AddSprite("Assets/imgs/zumbi.png");
+Scene.Destroy(entidade);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="prefabs">Prefabs</h2>
+<div class="codeblock"><pre><code class="language-csharp">Scene.InstantiatePrefab("Assets/Prefabs/tiro.kzprefab", x, y, z);
+Scene.InstantiatePrefab(path, x, y, z, rotX, rotY, rotZ);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="trocar-de-cena">Trocar de cena</h2>
+<div class="codeblock"><pre><code class="language-csharp">Scene.Load("Assets/Cenas/fase2.kzscene"); // carregamento diferido/assíncrono</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="cmera">Câmera</h2>
+<div class="codeblock"><pre><code class="language-csharp">var cam = Scene.GetPrimaryCamera();</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="consultas-raycasts">Consultas (raycasts)</h2>
+<div class="codeblock"><pre><code class="language-csharp">// 2D (Box2D)
+var hit = Scene.Raycast2D(origemX, origemY, dirX, dirY);
+var alvos = Scene.OverlapCircle2D(x, y, raio);
 
-var cam = Scene.GetPrimaryCamera();
-Scene.Load("Assets/Fase2.kzscene"); // troca no fim do frame</code></pre>
-<h2 id="queries-de-física">Queries de física</h2>
-<h3 id="2d-box2d">2D (Box2D)</h3>
-<pre><code class="language-csharp">bool Raycast2D(Vector2 from, Vector2 to, out Entity hit, out Vector2 point);</code></pre>
-<h3 id="3d-bullet3">3D (Bullet3)</h3>
-<pre><code class="language-csharp">bool Raycast3D(Vector3 from, Vector3 to,
-               out Entity hit, out Vector3 point, out float fraction);</code></pre>
-<h3 id="área">Área</h3>
-<pre><code class="language-csharp">bool OverlapCircle2D(Vector2 center, float radius, out Entity hit);
-bool OverlapSphere3D(Vector3 center, float radius, out Entity hit);</code></pre>
-<div class="callout warn"><strong>Só no Play.</strong> As queries e a simulação da física só funcionam durante o Play (ou no jogo exportado).</div>
-<h2 id="exemplo-de-uso">Exemplo de uso</h2>
-<pre><code class="language-csharp">// cria um projétil na frente do jogador
-if (Entity.TryGetWorldPosition(out var p))
+// 3D (Bullet)
+var hit3D = Scene.Raycast3D(origX, origY, origZ, dirX, dirY, dirZ);
+var corpos = Scene.OverlapSphere3D(x, y, z, raio);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="corrotinas">Corrotinas</h2>
+<div class="codeblock"><pre><code class="language-csharp">StartCoroutine(Contador());
+
+IEnumerator Contador()
 {
-    var tiro = Scene.CreateEntity("Tiro");
-    tiro.AddSprite("Assets/Textures/tiro.png");
-    tiro.SetPosition(p);
-
-    // tiro em linha reta até acertar algo
-    if (Scene.Raycast3D(p, p + new Vector3(0f, 0f, -50f), out var hit, out _, out _))
-        Log.Info($"Tiro acertou {hit.Name}");
-}</code></pre>
+    yield return new WaitForSeconds(2f);
+    Scene.Destroy(Entity);
+}</code></pre><button class="copy" title="Copiar">📋</button></div>
+<div class="callout dica">O <strong>Load</strong> de cena é assíncrono — o jogo não congela, e a conclusão religa o runtime automaticamente. Veja <a href="save.html">Save</a> para persistência.</div>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="entity.html">← Entity — referência</a>
-<a class="navbtn next" href="input.html">Input →</a>
+<a class="navbtn prev" href="entity.html"><small>← Anterior</small><span>Entity (API)</span></a>
+<a class="navbtn next" href="input.html"><small>Próximo →</small><span>Input (API)</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio. Todos os direitos reservados.
+  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

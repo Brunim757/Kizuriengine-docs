@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Entity — referência — Kizuri Engine</title>
+<title>Entity (API) — Kizuri Engine</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -11,116 +11,131 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
 <div class="group">Introdução</div>
-<a href="index.html" class="">Visão geral</a>
+<a href="index.html" class="">Bem-vindo</a>
 <a href="instalacao.html" class="">Instalação</a>
 <a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
-<div class="group">Conceitos</div>
-<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
-<a href="hierarquia.html" class="">Hierarquia e transform</a>
-<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<a href="projeto.html" class="">Gerenciamento de projetos</a>
 <div class="group">Editor</div>
 <a href="interface.html" class="">Interface do editor</a>
-<a href="viewport.html" class="">Viewport e câmera</a>
-<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="paineis.html" class="">Painéis do editor</a>
+<a href="viewport.html" class="">Viewport</a>
 <a href="content-browser.html" class="">Content Browser</a>
-<a href="configuracoes.html" class="">Configurações</a>
+<a href="project-settings.html" class="">Project Settings</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
-<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
-<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
-<a href="tilemap.html" class="">Tilemap</a>
-<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="meshes-3d.html" class="">Malhas 3D</a>
+<a href="sprites-2d.html" class="">Sprites 2D</a>
 <a href="luzes.html" class="">Luzes</a>
 <a href="particulas.html" class="">Partículas</a>
-<a href="animacao-3d.html" class="">Animação esquelética</a>
-<a href="audio-source.html" class="">AudioSource</a>
-<a href="camera.html" class="">Câmera</a>
-<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
-<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
-<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
-<div class="group">Renderização</div>
-<a href="pipeline-3d.html" class="">Pipeline 3D</a>
-<a href="pipeline-2d.html" class="">Pipeline 2D</a>
-<a href="qualidade.html" class="">Qualidade gráfica</a>
+<a href="fisica-2d.html" class="">Física 2D</a>
+<a href="fisica-3d.html" class="">Física 3D</a>
+<a href="audio-source.html" class="">Áudio</a>
+<a href="ui.html" class="">Interface (UI)</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="animacao-2d.html" class="">Animação 2D</a>
+<a href="animacao-3d.html" class="">Animação 3D</a>
 <div class="group">Scripting C#</div>
-<a href="scripting.html" class="">Introdução ao C#</a>
-<a href="script.html" class="">Classe Script e corrotinas</a>
-<a href="entity.html" class="active">Entity — referência</a>
-<a href="scene.html" class="">Scene — referência</a>
-<a href="input.html" class="">Input</a>
-<a href="time.html" class="">Time</a>
-<a href="mathf.html" class="">Mathf</a>
-<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
-<a href="audio-api.html" class="">Audio (API)</a>
+<a href="scripting.html" class="">Scripting C#</a>
+<a href="entity.html" class="active">Entity (API)</a>
+<a href="scene.html" class="">Scene (API)</a>
+<a href="input.html" class="">Input (API)</a>
+<a href="time.html" class="">Time (API)</a>
+<a href="mathf.html" class="">Mathf, Rand e Vetores</a>
 <a href="save.html" class="">SaveSystem</a>
-<a href="rand-log.html" class="">Rand e Log</a>
-<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
-<a href="exemplos.html" class="">Exemplos completos</a>
+<a href="fisica-api.html" class="">Física (API C#)</a>
+<a href="audio-api.html" class="">Áudio (API C#)</a>
+<a href="ui-api.html" class="">UI (API C#)</a>
+<div class="group">Gráficos</div>
+<a href="qualidade.html" class="">Qualidade e presets</a>
+<a href="reflexos.html" class="">Reflexos</a>
+<a href="iluminacao.html" class="">Iluminação</a>
+<a href="ceu.html" class="">Céu</a>
+<a href="sombras.html" class="">Sombras</a>
+<a href="pos-processamento.html" class="">Pós-processamento</a>
 <div class="group">Distribuição</div>
 <a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
 <a href="faq.html" class="">Perguntas frequentes</a>
   </nav>
 </aside>
+<div class="overlay" id="overlay"></div>
 <main>
 <header class="top">
-  <div class="crumbs"><span class="crumb">Scripting C#</span><span class="sep">/</span><span>Entity — referência</span></div>
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+  <div class="crumbs"><span class="crumb">Scripting C#</span><span class="sep">/</span><span>Entity (API)</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
+    <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
+    <button class="btn" id="printBtn" title="Imprimir">🖨️</button>
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#propriedades" class="t2">Propriedades</a><a href="#transform" class="t2">Transform</a><a href="#criar-contedo" class="t2">Criar conteúdo</a><a href="#fsica" class="t2">Física</a><a href="#material-e-luz" class="t2">Material e luz</a><a href="#duplicar-e-instanciar" class="t2">Duplicar e instanciar</a></nav>
 <article>
-<h1 id="entity-referência">Entity — referência</h1>
-<p><code>Entity</code> representa uma entidade da cena. Tudo que você faz com ela passa pela API — sem expor detalhes internos.</p>
+<h1 id="entity-api">Entity — API</h1>
+<p>A <strong>Entity</strong> é qualquer objeto da cena: personagem, inimigo, câmera, luz, UI. No script, <code>Entity</code> é a entidade que tem o script anexado.</p>
 <h2 id="propriedades">Propriedades</h2>
-<table><thead><tr><th>Membro</th><th>Tipo</th><th>Descrição</th></tr></thead><tbody><tr><td><code>Entity.Invalid</code></td><td><code>Entity</code></td><td>Handle inválido (não existe)</td></tr><tr><td><code>IsValid</code></td><td><code>bool</code></td><td><code>Handle != 0</code></td></tr><tr><td><code>Id</code></td><td><code>uint</code></td><td>Identificador numérico</td></tr><tr><td><code>Name</code></td><td><code>string</code></td><td>Nome (Tag) — <strong>leitura e renomeio em runtime</strong></td></tr></tbody></table>
-<pre><code class="language-csharp">Entity e = Scene.CreateEntity("Jogador");
-e.Name = "Herói";
-Log.Info($"Id={e.Id}, nome={e.Name}, válida={e.IsValid}");</code></pre>
-<h2 id="checagem-de-componentes">Checagem de componentes</h2>
-<table><thead><tr><th>Membro</th><th>Retorna</th></tr></thead><tbody><tr><td><code>HasComponent(ComponentType t)</code></td><td><code>bool</code> — tem o componente?</td></tr><tr><td><code>HasTransform</code> / <code>HasRigidbody2D</code> / <code>HasSprite</code> / <code>HasText</code> / <code>HasAudio</code> / <code>HasCamera</code></td><td>atalhos</td></tr></tbody></table>
+<div class="codeblock"><pre><code class="language-csharp">Entity.Name;                    // nome (get/set)
+Entity.Position;                // Vector3
+Entity.GetEulerAngles();        // rotação em graus (Vector3)
+Entity.Scale;                   // Vector3
+Entity.TryGetWorldPosition();   // posição de mundo (respeita o pai)</code></pre><button class="copy" title="Copiar">📋</button></div>
 <h2 id="transform">Transform</h2>
-<table><thead><tr><th>Método</th><th>Descrição</th></tr></thead><tbody><tr><td><code>TryGetTransform(out Transform t)</code></td><td>Transform local (Translation, Rotation em <strong>rad</strong>, Scale)</td></tr><tr><td><code>SetPosition(Vector3)</code></td><td>Posição local</td></tr><tr><td><code>SetRotation(Vector3)</code></td><td>Rotação local, euler em radianos</td></tr><tr><td><code>SetScale(Vector3)</code></td><td>Escala local</td></tr><tr><td><code>TryGetWorldPosition(out Vector3)</code></td><td><strong>Posição mundial</strong> (respeita hierarquia)</td></tr><tr><td><code>LookAt(Vector3 target)</code></td><td>Faz a entidade encarar um ponto</td></tr><tr><td><code>SetParent(Entity)</code> / <code>SetParent()</code></td><td>Parenta / destaca</td></tr></tbody></table>
-<h2 id="ciclo-de-vida-e-hierarquia">Ciclo de vida e hierarquia</h2>
-<table><thead><tr><th>Método</th><th>Descrição</th></tr></thead><tbody><tr><td><code>Destroy()</code></td><td>Destrói a entidade</td></tr><tr><td><code>SetParent(Entity parent)</code></td><td>Parenta a <code>parent</code></td></tr><tr><td><code>SetParent()</code></td><td>Destaca da hierarquia</td></tr></tbody></table>
-<h2 id="adicionar-componentes-em-runtime">Adicionar componentes em runtime</h2>
-<table><thead><tr><th>Método</th><th>Descrição</th></tr></thead><tbody><tr><td><code>AddSprite(string? texture = null)</code></td><td>Sprite 2D (sem textura = cor sólida)</td></tr><tr><td><code>AddText(string text, float size = 48)</code></td><td>Texto 2D</td></tr><tr><td><code>AddAudio(string clip, bool loop, bool playOnStart)</code></td><td>Áudio posicional</td></tr><tr><td><code>AddCamera(bool perspective3D = false)</code></td><td>Câmera</td></tr><tr><td><code>AddLight(LightType, …)</code></td><td>Luz (Direcional/Ponto/Spot)</td></tr><tr><td><code>AddMeshRenderer(string meshSource)</code></td><td>Mesh 3D</td></tr><tr><td><code>AddAnimator(string meshPath)</code></td><td>Animação esquelética</td></tr><tr><td><code>AddRigidbody3D(BodyType3D, float mass)</code></td><td>Corpo 3D</td></tr><tr><td><code>AddBoxCollider3D(hx, hy, hz)</code></td><td>Collider de caixa 3D</td></tr><tr><td><code>AddSphereCollider3D(radius)</code></td><td>Collider de esfera 3D</td></tr><tr><td><code>AddCircleCollider2D(radius, density, friction, restitution)</code></td><td>Collider circular 2D</td></tr><tr><td><code>AddUICanvas(orthoSize)</code></td><td>Canvas de UI</td></tr><tr><td><code>AddUIRect(x, y, w, h, r, g, b, a)</code></td><td>Retângulo de UI</td></tr><tr><td><code>AddUIButton(x, y, w, h, r, g, b, a)</code></td><td>Botão de UI</td></tr><tr><td><code>AddUIText(text, size, r, g, b, a)</code></td><td>Texto de UI</td></tr></tbody></table>
-<h2 id="mutação-em-runtime">Mutação em runtime</h2>
-<table><thead><tr><th>Método</th><th>Descrição</th></tr></thead><tbody><tr><td><code>SetSpriteTexture(string)</code></td><td>Troca a textura do sprite</td></tr><tr><td><code>SetSpriteColor(r, g, b, a)</code></td><td>Cor do sprite</td></tr><tr><td><code>SetSpriteFlip(bool flipX, bool flipY)</code></td><td>Inverte o sprite</td></tr><tr><td><code>SetText(string)</code> / <code>SetTextSize(float)</code> / <code>SetTextColor(r, g, b, a)</code></td><td>Texto</td></tr><tr><td><code>SetMaterial(r, g, b, metallic, roughness)</code></td><td>Material PBR</td></tr><tr><td><code>SetMaterialAlbedoMap(path)</code> / <code>SetMaterialNormalMap(path)</code> / <code>SetMaterialMetallicRoughnessMap(path)</code></td><td>Mapas</td></tr><tr><td><code>SetMaterialEmissive(r, g, b, strength)</code></td><td>Emissão (bloom)</td></tr><tr><td><code>SetLightColor(r, g, b)</code> / <code>SetLightIntensity(float)</code></td><td>Luz</td></tr><tr><td><code>SetGravityScale(float)</code></td><td>Gravidade do corpo 2D</td></tr><tr><td><code>SetSortingLayer(int)</code></td><td>Ordenação 2D</td></tr><tr><td><code>PlayAudio()</code> / <code>StopAudio()</code></td><td>Áudio do source</td></tr><tr><td><code>SetCamera(fovDeg, near, far)</code></td><td>Parâmetros de câmera</td></tr><tr><td><code>SetParticleTexture(string)</code></td><td>Textura das partículas</td></tr><tr><td><code>UIButtonWasClicked()</code> / <code>UIButtonIsHovered()</code></td><td>Estado do botão</td></tr><tr><td><code>SetUIRect(x, y, w, h)</code> / <code>SetUIColor(r, g, b, a)</code></td><td>UI</td></tr></tbody></table>
-<h2 id="animação-esquelética">Animação esquelética</h2>
-<table><thead><tr><th>Método</th><th>Descrição</th></tr></thead><tbody><tr><td><code>PlayAnimation(string clipName)</code></td><td>Toca um clip da skin (retorna <code>true</code> se achou)</td></tr><tr><td><code>AnimationTime</code> / <code>SetAnimationTime(float)</code></td><td>Posição (segundos)</td></tr><tr><td><code>SetAnimationSpeed(float)</code></td><td>Velocidade</td></tr><tr><td><code>SetAnimationLoop(bool)</code></td><td>Loop</td></tr><tr><td><code>SetAnimationPlaying(bool)</code></td><td>Toca/pausa</td></tr></tbody></table>
-<h2 id="física-3d">Física 3D</h2>
-<table><thead><tr><th>Método</th><th>Descrição</th></tr></thead><tbody><tr><td><code>ApplyForce(Vector3)</code></td><td>Força contínua</td></tr><tr><td><code>ApplyImpulse(Vector3)</code></td><td>Impulso instantâneo</td></tr><tr><td><code>ApplyTorque(Vector3)</code></td><td>Torque</td></tr><tr><td><code>SetVelocity(Vector3)</code> / <code>TryGetVelocity(out Vector3)</code></td><td>Velocidade linear</td></tr><tr><td><code>SetAngularVelocity(Vector3)</code> / <code>TryGetAngularVelocity(out Vector3)</code></td><td>Velocidade angular</td></tr></tbody></table>
-<h2 id="enums">Enums</h2>
-<pre><code class="language-csharp">enum ComponentType { Transform, Rigidbody2D, Sprite, Text, Audio, Camera,
-                     Light, UIRect, UIButton, UICanvas, CircleCollider2D,
-                     MeshRenderer, ParticleSystem, Animator, Rigidbody3D,
-                     BoxCollider3D, SphereCollider3D }
-
-enum BodyType3D    { Static = 0, Dynamic, Kinematic }
-enum LightType     { Directional = 0, Point, Spot }</code></pre>
-<h2 id="estrutura-transform">Estrutura Transform</h2>
-<pre><code class="language-csharp">public struct Transform
-{
-    public Vector3 Translation;
-    public Vector3 Rotation; // euler, radianos
-    public Vector3 Scale;
-}</code></pre>
-<div class="callout info"><strong>Rotação em radianos.</strong> A API C# usa sempre radianos (o Inspetor mostra em graus). Converta com <code>graus * MathF.PI / 180f</code>.</div>
+<div class="codeblock"><pre><code class="language-csharp">Entity.Move(x, y, z);                  // translada (espaço local)
+Entity.SetPosition(x, y, z);
+Entity.Rotate(0f, 45f, 0f);
+Entity.SetEulerAngles(x, y, z);
+Entity.SetScale(x, y, z);
+Entity.LookAt(outro);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="criar-contedo">Criar conteúdo</h2>
+<div class="codeblock"><pre><code class="language-csharp">Entity.AddSprite("Assets/imgs/heroi.png");
+Entity.AddText("Olá!", 24f, 1f, 1f, 1f);
+Entity.AddAudio("Assets/sons/pulo.wav");
+Entity.AddCamera();
+Entity.AddLight(LightType.Directional, r, g, b, intensidade);
+Entity.AddMeshRenderer("builtin:cube");
+Entity.AddAnimator("Assets/Models/Fox.glb");</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="fsica">Física</h2>
+<div class="codeblock"><pre><code class="language-csharp">Entity.AddRigidbody2D();
+Entity.AddBoxCollider2D();
+Entity.AddCircleCollider2D();
+Entity.AddRigidbody3D();
+Entity.AddBoxCollider3D();
+Entity.AddSphereCollider3D();
+Entity.SetLinearVelocity(x, y);          // 2D
+Entity.ApplyForce(x, y, z);              // 3D
+Entity.ApplyImpulse(x, y, z);
+Entity.TryGetVelocity(out vx, out vy, out vz);
+Entity.SetVelocity(vx, vy, vz);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="material-e-luz">Material e luz</h2>
+<div class="codeblock"><pre><code class="language-csharp">Entity.SetMaterial(r, g, b, metallic, roughness);
+Entity.SetMaterialAlbedoMap(path);
+Entity.SetMaterialNormalMap(path);
+Entity.SetMaterialHeightMap(path);       // POM
+Entity.SetMaterialEmissive(r, g, b, strength);
+Entity.SetLightColor(r, g, b);
+Entity.SetLightIntensity(x);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="duplicar-e-instanciar">Duplicar e instanciar</h2>
+<div class="codeblock"><pre><code class="language-csharp">Entity.Duplicate();
+Scene.InstantiatePrefab("Assets/Prefabs/inimigo.kzprefab", x, y, z);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<p>Veja também <a href="scene.html">Scene</a>, <a href="fisica-api.html">Física API</a> e <a href="ui-api.html">UI API</a>.</p>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="script.html">← Classe Script e corrotinas</a>
-<a class="navbtn next" href="scene.html">Scene — referência →</a>
+<a class="navbtn prev" href="scripting.html"><small>← Anterior</small><span>Scripting C#</span></a>
+<a class="navbtn next" href="scene.html"><small>Próximo →</small><span>Scene (API)</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio. Todos os direitos reservados.
+  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

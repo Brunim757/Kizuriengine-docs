@@ -11,115 +11,114 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
 <div class="group">Introdução</div>
-<a href="index.html" class="">Visão geral</a>
+<a href="index.html" class="">Bem-vindo</a>
 <a href="instalacao.html" class="">Instalação</a>
 <a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
-<div class="group">Conceitos</div>
-<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
-<a href="hierarquia.html" class="">Hierarquia e transform</a>
-<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<a href="projeto.html" class="">Gerenciamento de projetos</a>
 <div class="group">Editor</div>
 <a href="interface.html" class="">Interface do editor</a>
-<a href="viewport.html" class="">Viewport e câmera</a>
-<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="paineis.html" class="">Painéis do editor</a>
+<a href="viewport.html" class="">Viewport</a>
 <a href="content-browser.html" class="">Content Browser</a>
-<a href="configuracoes.html" class="">Configurações</a>
+<a href="project-settings.html" class="">Project Settings</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
-<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
-<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
-<a href="tilemap.html" class="">Tilemap</a>
-<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="meshes-3d.html" class="">Malhas 3D</a>
+<a href="sprites-2d.html" class="">Sprites 2D</a>
 <a href="luzes.html" class="">Luzes</a>
 <a href="particulas.html" class="">Partículas</a>
-<a href="animacao-3d.html" class="">Animação esquelética</a>
-<a href="audio-source.html" class="">AudioSource</a>
-<a href="camera.html" class="">Câmera</a>
-<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
-<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
-<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
-<div class="group">Renderização</div>
-<a href="pipeline-3d.html" class="">Pipeline 3D</a>
-<a href="pipeline-2d.html" class="">Pipeline 2D</a>
-<a href="qualidade.html" class="">Qualidade gráfica</a>
+<a href="fisica-2d.html" class="">Física 2D</a>
+<a href="fisica-3d.html" class="">Física 3D</a>
+<a href="audio-source.html" class="">Áudio</a>
+<a href="ui.html" class="">Interface (UI)</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="animacao-2d.html" class="">Animação 2D</a>
+<a href="animacao-3d.html" class="">Animação 3D</a>
 <div class="group">Scripting C#</div>
-<a href="scripting.html" class="">Introdução ao C#</a>
-<a href="script.html" class="">Classe Script e corrotinas</a>
-<a href="entity.html" class="">Entity — referência</a>
-<a href="scene.html" class="">Scene — referência</a>
-<a href="input.html" class="">Input</a>
-<a href="time.html" class="">Time</a>
-<a href="mathf.html" class="">Mathf</a>
-<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
-<a href="audio-api.html" class="">Audio (API)</a>
+<a href="scripting.html" class="">Scripting C#</a>
+<a href="entity.html" class="">Entity (API)</a>
+<a href="scene.html" class="">Scene (API)</a>
+<a href="input.html" class="">Input (API)</a>
+<a href="time.html" class="">Time (API)</a>
+<a href="mathf.html" class="">Mathf, Rand e Vetores</a>
 <a href="save.html" class="">SaveSystem</a>
-<a href="rand-log.html" class="">Rand e Log</a>
-<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
-<a href="exemplos.html" class="">Exemplos completos</a>
+<a href="fisica-api.html" class="">Física (API C#)</a>
+<a href="audio-api.html" class="">Áudio (API C#)</a>
+<a href="ui-api.html" class="">UI (API C#)</a>
+<div class="group">Gráficos</div>
+<a href="qualidade.html" class="">Qualidade e presets</a>
+<a href="reflexos.html" class="">Reflexos</a>
+<a href="iluminacao.html" class="">Iluminação</a>
+<a href="ceu.html" class="">Céu</a>
+<a href="sombras.html" class="">Sombras</a>
+<a href="pos-processamento.html" class="">Pós-processamento</a>
 <div class="group">Distribuição</div>
 <a href="exportacao.html" class="active">Exportar o jogo</a>
+<a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
 <a href="faq.html" class="">Perguntas frequentes</a>
   </nav>
 </aside>
+<div class="overlay" id="overlay"></div>
 <main>
 <header class="top">
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
   <div class="crumbs"><span class="crumb">Distribuição</span><span class="sep">/</span><span>Exportar o jogo</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
+    <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
+    <button class="btn" id="printBtn" title="Imprimir">🖨️</button>
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#como-exportar" class="t2">Como exportar</a><a href="#o-que-sai" class="t2">O que sai</a><a href="#recursos-embutidos" class="t2">Recursos embutidos</a><a href="#publicao" class="t2">Publicação</a></nav>
 <article>
 <h1 id="exportar-o-jogo">Exportar o jogo</h1>
-<p>O editor gera um <strong>executável standalone</strong> com a cena inicial e o assembly C# do jogo.</p>
+<p>O menu <strong>Arquivo → Exportar Jogo...</strong> gera uma pasta com o <strong>jogo standalone</strong>: executável + cena + assets + seu código compilado.</p>
 <h2 id="como-exportar">Como exportar</h2>
 <ol>
-<li>Deixe a cena inicial aberta (é ela que o jogo abre).</li>
-<li><strong>Arquivo → Exportar Jogo…</strong></li>
-<li>Escolha a pasta de destino.</li>
-<li>O exportador gera:</li>
+<li>Tenha uma cena salva e defina-a como <strong>cena inicial</strong> (Arquivo → Definir</li>
 </ol>
+<p>   cena como inicial).</p>
+<ol>
+<li><strong>Arquivo → Exportar Jogo...</strong></li>
+<li>Escolha a pasta de destino.</li>
+<li>Opcional: marque <strong>embutir runtime .NET</strong> (gera o executável com o</li>
+</ol>
+<p>   runtime do C# incluído — o jogador não precisa instalar nada).</p>
+<h2 id="o-que-sai">O que sai</h2>
+<div class="codeblock"><pre><code class="language-">MinhaPasta/
+  KizuriGame.exe          ← o jogo
+  cena.kzscene            ← cena inicial
+  assets/...              ← modelos, texturas, áudios
+  Kizuri.Scripting.dll    ← seu código C# compilado</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="recursos-embutidos">Recursos embutidos</h2>
+<p>A engine embute os <strong>assets padrão</strong> (<code>kzres://</code>) no executável: modelos de demonstração, céu e fontes. Isso significa que o jogo não depende de pastas externas para as funções básicas — e você pode embutir os seus assets também.</p>
+<h2 id="publicao">Publicação</h2>
 <ul>
-<li>O executável (<code>KizuriGame</code>) que abre a cena inicial;</li>
-<li>O assembly C# do jogo;</li>
-<li>O <strong>Content Pack</strong> (se ativado) com os assets ricos.</li>
+<li>A pasta exportada é autocontida: copie para qualquer máquina (com GPU</li>
 </ul>
-<h2 id="o-que-o-jogo-roda">O que o jogo roda</h2>
+<p>  OpenGL 3.3) e rode.</p>
 <ul>
-<li>Abre a <strong>cena inicial</strong> e roda o <strong>GameModule</strong> registrado;</li>
-<li>Usa a <strong>câmera da própria cena</strong> — o que você viu no Play é o que sai;</li>
-<li>Física, scripts, partículas e áudio rodam de verdade.</li>
+<li>Para distribuir para lojas ou sites, compacte a pasta em um <code>.zip</code>.</li>
 </ul>
-<h2 id="distribuição">Distribuição</h2>
-<ul>
-<li><strong>Sem content</strong>: o binário já embute os assets padrão (<code>kzres://</code>) — o jogo</li>
-</ul>
-<p>  funciona sozinho, só com a cena e o assembly;</p>
-<ul>
-<li><strong>Com content</strong>: copie a pasta <code>content/</code> junto para as demos/assets ricos.</li>
-</ul>
-<div class="callout ok">Como os padrões são embutidos, um jogo que só usa builtins e <code>kzres://</code> distribui um <strong>único executável</strong> (mais a DLL do jogo).</div>
-<h2 id="checklist-final">Checklist final</h2>
-<ul>
-<li>[ ] Cena inicial salva e com a câmera primária configurada</li>
-<li>[ ] GameModule registra todos os scripts usados</li>
-<li>[ ] Testou o Play de ponta a ponta</li>
-<li>[ ] (Opcional) Content Pack junto para os assets ricos</li>
-</ul>
+<div class="callout dica">Teste o export cedo: defina a cena inicial, exporte e rode o executável. Só a cena inicial é carregada automaticamente — o resto é carregado por <code>Scene.Load</code> no jogo.</div>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="exemplos.html">← Exemplos completos</a>
-<a class="navbtn next" href="faq.html">Perguntas frequentes →</a>
+<a class="navbtn prev" href="pos-processamento.html"><small>← Anterior</small><span>Pós-processamento</span></a>
+<a class="navbtn next" href="recursos-embutidos.html"><small>Próximo →</small><span>Recursos embutidos (kzres://)</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio. Todos os direitos reservados.
+  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

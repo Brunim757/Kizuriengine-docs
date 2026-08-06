@@ -11,109 +11,107 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
 <div class="group">Introdução</div>
-<a href="index.html" class="">Visão geral</a>
+<a href="index.html" class="">Bem-vindo</a>
 <a href="instalacao.html" class="">Instalação</a>
 <a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
-<div class="group">Conceitos</div>
-<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
-<a href="hierarquia.html" class="">Hierarquia e transform</a>
-<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<a href="projeto.html" class="">Gerenciamento de projetos</a>
 <div class="group">Editor</div>
 <a href="interface.html" class="">Interface do editor</a>
-<a href="viewport.html" class="">Viewport e câmera</a>
-<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="paineis.html" class="">Painéis do editor</a>
+<a href="viewport.html" class="">Viewport</a>
 <a href="content-browser.html" class="">Content Browser</a>
-<a href="configuracoes.html" class="">Configurações</a>
+<a href="project-settings.html" class="">Project Settings</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
-<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
-<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
-<a href="tilemap.html" class="">Tilemap</a>
-<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="meshes-3d.html" class="">Malhas 3D</a>
+<a href="sprites-2d.html" class="">Sprites 2D</a>
 <a href="luzes.html" class="">Luzes</a>
 <a href="particulas.html" class="">Partículas</a>
-<a href="animacao-3d.html" class="">Animação esquelética</a>
-<a href="audio-source.html" class="">AudioSource</a>
-<a href="camera.html" class="">Câmera</a>
-<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
-<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
-<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
-<div class="group">Renderização</div>
-<a href="pipeline-3d.html" class="">Pipeline 3D</a>
-<a href="pipeline-2d.html" class="">Pipeline 2D</a>
-<a href="qualidade.html" class="">Qualidade gráfica</a>
+<a href="fisica-2d.html" class="">Física 2D</a>
+<a href="fisica-3d.html" class="">Física 3D</a>
+<a href="audio-source.html" class="">Áudio</a>
+<a href="ui.html" class="">Interface (UI)</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="animacao-2d.html" class="">Animação 2D</a>
+<a href="animacao-3d.html" class="">Animação 3D</a>
 <div class="group">Scripting C#</div>
-<a href="scripting.html" class="">Introdução ao C#</a>
-<a href="script.html" class="">Classe Script e corrotinas</a>
-<a href="entity.html" class="">Entity — referência</a>
-<a href="scene.html" class="">Scene — referência</a>
-<a href="input.html" class="">Input</a>
-<a href="time.html" class="">Time</a>
-<a href="mathf.html" class="">Mathf</a>
-<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
-<a href="audio-api.html" class="">Audio (API)</a>
+<a href="scripting.html" class="">Scripting C#</a>
+<a href="entity.html" class="">Entity (API)</a>
+<a href="scene.html" class="">Scene (API)</a>
+<a href="input.html" class="">Input (API)</a>
+<a href="time.html" class="">Time (API)</a>
+<a href="mathf.html" class="">Mathf, Rand e Vetores</a>
 <a href="save.html" class="">SaveSystem</a>
-<a href="rand-log.html" class="">Rand e Log</a>
-<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
-<a href="exemplos.html" class="">Exemplos completos</a>
+<a href="fisica-api.html" class="">Física (API C#)</a>
+<a href="audio-api.html" class="">Áudio (API C#)</a>
+<a href="ui-api.html" class="">UI (API C#)</a>
+<div class="group">Gráficos</div>
+<a href="qualidade.html" class="">Qualidade e presets</a>
+<a href="reflexos.html" class="">Reflexos</a>
+<a href="iluminacao.html" class="">Iluminação</a>
+<a href="ceu.html" class="">Céu</a>
+<a href="sombras.html" class="">Sombras</a>
+<a href="pos-processamento.html" class="">Pós-processamento</a>
 <div class="group">Distribuição</div>
 <a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
 <a href="faq.html" class="active">Perguntas frequentes</a>
   </nav>
 </aside>
+<div class="overlay" id="overlay"></div>
 <main>
 <header class="top">
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
   <div class="crumbs"><span class="crumb">Distribuição</span><span class="sep">/</span><span>Perguntas frequentes</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
+    <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
+    <button class="btn" id="printBtn" title="Imprimir">🖨️</button>
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#o-jogo-roda-em-qualquer-pc" class="t2">O jogo roda em qualquer PC?</a><a href="#preciso-saber-c-para-fazer-um-jogo" class="t2">Preciso saber C++ para fazer um jogo?</a><a href="#consigo-fazer-jogos-2d-e-3d" class="t2">Consigo fazer jogos 2D e 3D?</a><a href="#como-fica-o-desempenho-com-todos-os-efeitos-ligados" class="t2">Como fica o desempenho com todos os efeitos ligados?</a><a href="#posso-usar-meus-prprios-modelos-e-texturas" class="t2">Posso usar meus próprios modelos e texturas?</a><a href="#meu-jogo-trava-no-play-o-que-fao" class="t2">Meu jogo trava no Play. O que faço?</a><a href="#como-distribuo-meu-jogo" class="t2">Como distribuo meu jogo?</a><a href="#onde-fica-o-cdigo-do-meu-jogo" class="t2">Onde fica o código do meu jogo?</a></nav>
 <article>
 <h1 id="perguntas-frequentes">Perguntas frequentes</h1>
-<h2 id="a-engine-precisa-do-content-pack-para-funcionar">A engine precisa do Content Pack para funcionar?</h2>
-<p><strong>Não.</strong> Todos os padrões (modelos da demo 3D, céu, primitivas) estão <strong>embutidos no executável</strong> via <code>kzres://</code>. O Content Pack apenas enriquece as demos.</p>
-<h2 id="minha-placa-de-vídeo-é-antiga-perco-alguma-coisa">Minha placa de vídeo é antiga. Perco alguma coisa?</h2>
-<p>Só o acabamento mais sofisticado de sombras, que exige uma placa mais nova. Tudo o resto — luzes, céu, partículas, personagens animados, 2D e UI — funciona em qualquer placa que rode o editor. O motor escolhe o melhor automaticamente.</p>
-<h2 id="preciso-me-preocupar-com-placa-de-vídeo">Preciso me preocupar com placa de vídeo?</h2>
-<p>Só se ela tiver <strong>OpenGL 3.3</strong> ou mais (qualquer GPU razoável dos últimos ~15 anos). O motor ajusta a qualidade sozinho pelo seu hardware — em geral você não precisa mexer em nada.</p>
-<h2 id="como-escrevo-scripts">Como escrevo scripts?</h2>
-<p>Em um projeto C# que referencia <code>Kizuri.Scripting</code>. No editor, <strong>Arquivo → Carregar GameModule…</strong> aponta para a DLL. No Play, o C# é recompilado e recarregado automaticamente.</p>
-<h2 id="o-que-vejo-no-play-é-o-que-sai-no-build">O que vejo no Play é o que sai no build?</h2>
-<p><strong>Sim.</strong> O Play e o jogo exportado usam a câmera da própria cena, não a câmera livre de navegação do editor.</p>
-<h2 id="as-cenas-são-salvas-em-quê">As cenas são salvas em quê?</h2>
-<p>JSON legível (<code>.kzscene</code>), incluindo mesh, material e texturas. Dá para editar no bloco de notas e versionar no git.</p>
-<h2 id="rotação-graus-ou-radianos">Rotação: graus ou radianos?</h2>
-<ul>
-<li><strong>Inspetor</strong>: graus.</li>
-<li><strong>API C#</strong>: sempre <strong>radianos</strong> (converão <code>graus * MathF.PI / 180f</code>).</li>
-</ul>
-<h2 id="posso-fazer-25d">Posso fazer 2.5D?</h2>
-<p><strong>Sim.</strong> Uma cena com câmera de perspectiva <strong>e</strong> câmera ortográfica primária roda os passes 3D → 2D → UI. Há uma demo pronta no menu <strong>Cena</strong>.</p>
-<h2 id="física-em-modo-de-edição">Física em modo de edição?</h2>
-<p>Não — física, queries, partículas e áudio só rodam no <strong>Play</strong> / jogo exportado. No modo de edição os corpos ficam parados no Transform.</p>
-<h2 id="como-troco-de-cena-em-runtime">Como troco de cena em runtime?</h2>
-<p><code>Scene.Load("Assets/Fase2.kzscene")</code> — o pedido é processado no fim do frame.</p>
-<h2 id="como-instancio-uma-prefab">Como instancio uma prefab?</h2>
-<p><code>Scene.InstantiatePrefab("Assets/Inimigo.kzprefab", posicao, rotacao)</code> — a física e o <code>OnCreate</code> dos scripts rodam de verdade.</p>
-<h2 id="como-salvo-o-jogo">Como salvo o jogo?</h2>
-<p><code>SaveSystem.Set("chave", valor)</code> + <code>SaveSystem.Save()</code> grava um <code>save.json</code>; os <code>Get*</code> carregam automaticamente.</p>
-<h2 id="consigo-misturar-2d-e-3d-na-mesma-cena">Consigo misturar 2D e 3D na mesma cena?</h2>
-<p>Sim — cenas <strong>2.5D</strong> (fundo 3D, gameplay 2D, UI por cima) funcionam com duas câmeras. Há uma demonstração pronta no menu <strong>Cena</strong>.</p>
+<h2 id="o-jogo-roda-em-qualquer-pc">O jogo roda em qualquer PC?</h2>
+<p>A engine usa <strong>OpenGL 3.3</strong> — roda em qualquer placa de vídeo dos últimos ~15 anos, incluindo iGPUs, máquinas virtuais e até Wine. Se o editor abrir, seu jogo roda.</p>
+<h2 id="preciso-saber-c-para-fazer-um-jogo">Preciso saber C++ para fazer um jogo?</h2>
+<p>Não. O motor é em C++, mas você usa o <strong>editor</strong> e o <strong>C#</strong>. Tudo o que o jogo faz passa por scripts C# com API simples.</p>
+<h2 id="consigo-fazer-jogos-2d-e-3d">Consigo fazer jogos 2D e 3D?</h2>
+<p>Sim, na mesma cena (2.5D). Câmera ortográfica para o 2D, perspectiva para o 3D, e a engine compõe 3D → 2D → UI na ordem certa.</p>
+<h2 id="como-fica-o-desempenho-com-todos-os-efeitos-ligados">Como fica o desempenho com todos os efeitos ligados?</h2>
+<p>O preset <strong>Ultra</strong> liga tudo (reflexos, SSGI, nuvens, DOF...). Se precisar de mais FPS, desça o preset ou desligue os efeitos mais caros (MSAA, SSGI, SSR) em <strong>Project Settings → Gráficos</strong>. O <strong>Profiler</strong> mostra onde está o custo.</p>
+<h2 id="posso-usar-meus-prprios-modelos-e-texturas">Posso usar meus próprios modelos e texturas?</h2>
+<p>Sim. <strong>glTF (.glb/.gltf)</strong> traz malha, material PBR e animações; <strong>OBJ</strong> para geometria simples; e imagens comuns para texturas. Arraste do Content Browser para o viewport.</p>
+<h2 id="meu-jogo-trava-no-play-o-que-fao">Meu jogo trava no Play. O que faço?</h2>
+<ol>
+<li>Olhe o <strong>Console</strong> — os erros do script aparecem lá.</li>
+<li>Verifique se há <strong>câmera principal</strong> na cena (sem ela o 3D não renderiza).</li>
+<li>Verifique se o <strong>.NET SDK</strong> está instalado (o Play compila seu código).</li>
+<li>Se o viewport ficar preto, o diagnóstico aparece em <code>render_info.txt</code> ao</li>
+</ol>
+<p>   lado do editor.</p>
+<h2 id="como-distribuo-meu-jogo">Como distribuo meu jogo?</h2>
+<p><strong>Arquivo → Exportar Jogo...</strong> gera uma pasta executável autocontida. Basta compactar e distribuir.</p>
+<h2 id="onde-fica-o-cdigo-do-meu-jogo">Onde fica o código do meu jogo?</h2>
+<p>Em <code>Source/</code> dentro do projeto (arquivos <code>.cs</code>), compilados no Play e no export para <code>Kizuri.Scripting.dll</code>.</p>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="exportacao.html">← Exportar o jogo</a>
+<a class="navbtn prev" href="recursos-embutidos.html"><small>← Anterior</small><span>Recursos embutidos (kzres://)</span></a>
 <span class="navbtn"></span>
 </div>
 <footer class="footer">
-  © Kizuri Studio. Todos os direitos reservados.
+  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

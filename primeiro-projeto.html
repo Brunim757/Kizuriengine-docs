@@ -11,151 +11,121 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
 <div class="group">Introdução</div>
-<a href="index.html" class="">Visão geral</a>
+<a href="index.html" class="">Bem-vindo</a>
 <a href="instalacao.html" class="">Instalação</a>
 <a href="primeiro-projeto.html" class="active">Seu primeiro projeto</a>
-<div class="group">Conceitos</div>
-<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
-<a href="hierarquia.html" class="">Hierarquia e transform</a>
-<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<a href="projeto.html" class="">Gerenciamento de projetos</a>
 <div class="group">Editor</div>
 <a href="interface.html" class="">Interface do editor</a>
-<a href="viewport.html" class="">Viewport e câmera</a>
-<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="paineis.html" class="">Painéis do editor</a>
+<a href="viewport.html" class="">Viewport</a>
 <a href="content-browser.html" class="">Content Browser</a>
-<a href="configuracoes.html" class="">Configurações</a>
+<a href="project-settings.html" class="">Project Settings</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
-<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
-<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
-<a href="tilemap.html" class="">Tilemap</a>
-<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="meshes-3d.html" class="">Malhas 3D</a>
+<a href="sprites-2d.html" class="">Sprites 2D</a>
 <a href="luzes.html" class="">Luzes</a>
 <a href="particulas.html" class="">Partículas</a>
-<a href="animacao-3d.html" class="">Animação esquelética</a>
-<a href="audio-source.html" class="">AudioSource</a>
-<a href="camera.html" class="">Câmera</a>
-<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
-<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
-<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
-<div class="group">Renderização</div>
-<a href="pipeline-3d.html" class="">Pipeline 3D</a>
-<a href="pipeline-2d.html" class="">Pipeline 2D</a>
-<a href="qualidade.html" class="">Qualidade gráfica</a>
+<a href="fisica-2d.html" class="">Física 2D</a>
+<a href="fisica-3d.html" class="">Física 3D</a>
+<a href="audio-source.html" class="">Áudio</a>
+<a href="ui.html" class="">Interface (UI)</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="animacao-2d.html" class="">Animação 2D</a>
+<a href="animacao-3d.html" class="">Animação 3D</a>
 <div class="group">Scripting C#</div>
-<a href="scripting.html" class="">Introdução ao C#</a>
-<a href="script.html" class="">Classe Script e corrotinas</a>
-<a href="entity.html" class="">Entity — referência</a>
-<a href="scene.html" class="">Scene — referência</a>
-<a href="input.html" class="">Input</a>
-<a href="time.html" class="">Time</a>
-<a href="mathf.html" class="">Mathf</a>
-<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
-<a href="audio-api.html" class="">Audio (API)</a>
+<a href="scripting.html" class="">Scripting C#</a>
+<a href="entity.html" class="">Entity (API)</a>
+<a href="scene.html" class="">Scene (API)</a>
+<a href="input.html" class="">Input (API)</a>
+<a href="time.html" class="">Time (API)</a>
+<a href="mathf.html" class="">Mathf, Rand e Vetores</a>
 <a href="save.html" class="">SaveSystem</a>
-<a href="rand-log.html" class="">Rand e Log</a>
-<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
-<a href="exemplos.html" class="">Exemplos completos</a>
+<a href="fisica-api.html" class="">Física (API C#)</a>
+<a href="audio-api.html" class="">Áudio (API C#)</a>
+<a href="ui-api.html" class="">UI (API C#)</a>
+<div class="group">Gráficos</div>
+<a href="qualidade.html" class="">Qualidade e presets</a>
+<a href="reflexos.html" class="">Reflexos</a>
+<a href="iluminacao.html" class="">Iluminação</a>
+<a href="ceu.html" class="">Céu</a>
+<a href="sombras.html" class="">Sombras</a>
+<a href="pos-processamento.html" class="">Pós-processamento</a>
 <div class="group">Distribuição</div>
 <a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
 <a href="faq.html" class="">Perguntas frequentes</a>
   </nav>
 </aside>
+<div class="overlay" id="overlay"></div>
 <main>
 <header class="top">
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
   <div class="crumbs"><span class="crumb">Introdução</span><span class="sep">/</span><span>Seu primeiro projeto</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
+    <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
+    <button class="btn" id="printBtn" title="Imprimir">🖨️</button>
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#1-crie-o-projeto" class="t2">1. Crie o projeto</a><a href="#2-adicione-um-cho-e-um-cubo" class="t2">2. Adicione um chão e um cubo</a><a href="#3-d-fsica-ao-cubo" class="t2">3. Dê física ao cubo</a><a href="#4-escreva-um-script" class="t2">4. Escreva um script</a><a href="#5-exporte-o-jogo" class="t2">5. Exporte o jogo</a></nav>
 <article>
 <h1 id="seu-primeiro-projeto">Seu primeiro projeto</h1>
-<p>Este guia leva do zero a um jogo rodando com física e script C#, em ~10 minutos.</p>
+<p>Em ~10 minutos você terá um jogo 3D rodando com física e um script C#.</p>
 <h2 id="1-crie-o-projeto">1. Crie o projeto</h2>
+<p>No Hub do editor, escolha <strong>Novo Projeto</strong>, dê um nome (ex.: <code>MeuJogo</code>) e selecione o modo <strong>3D</strong>. O editor monta a estrutura de pastas e uma cena vazia.</p>
+<h2 id="2-adicione-um-cho-e-um-cubo">2. Adicione um chão e um cubo</h2>
 <ol>
-<li>Abra o <strong>KizuriEditor</strong>.</li>
-<li><strong>Novo Projeto</strong>, dê um nome e escolha o modo:</li>
+<li>No painel <strong>Hierarquia</strong>, abra o menu <strong>+</strong> e adicione <strong>Cubo 3D</strong>.</li>
+<li>No <strong>Inspetor</strong>, em Transform, posicione o cubo em <code>Y = 0.5</code>.</li>
+<li>Adicione um <strong>Plano 3D</strong> (serve de chão) na posição <code>(0, 0, 0)</code>.</li>
+<li>Adicione uma <strong>Luz Direcional</strong> (o sol) e uma <strong>Câmera 3D</strong> (posicione em <code>(0, 2, 5)</code> olhando para o cubo).</li>
 </ol>
-<ul>
-<li><strong>2D</strong> — cena já nasce com câmera ortográfica, chão com física e uma</li>
-</ul>
-<p>     caixa que cai;</p>
-<ul>
-<li><strong>3D</strong> — câmera de perspectiva, cubo de exemplo e sol direcional;</li>
-<li><strong>Vazio</strong> — só uma câmera.</li>
-</ul>
-<h2 id="2-teste-com-play">2. Teste com Play</h2>
-<p>Aperte <strong>F5</strong> (ou o botão ▶ da toolbar). A caixa do projeto 2D <strong>cai de verdade</strong> (Box2D). <strong>Shift+F5</strong> para voltar à edição.</p>
-<div class="callout info">O <strong>Play</strong> roda uma cópia isolada da cena — a edição nunca é tocada. Física, scripts, partículas e áudio só funcionam durante o Play.</div>
-<h2 id="3-adicione-coisas-ao-viewport">3. Adicione coisas ao viewport</h2>
-<ul>
-<li>Selecione a entidade <strong>Chão</strong> na Hierarquia.</li>
-<li>Use o <strong>Inspetor</strong> para mudar cor, tamanho e física.</li>
-<li>Crie entidades: botão direito na Hierarquia (ou menu Editar).</li>
-<li>Adicione componentes pelos botões <strong>Adicionar</strong> do Inspetor.</li>
-</ul>
-<h2 id="4-escreva-um-script-c">4. Escreva um script C#</h2>
-<p>Crie um projeto C# que referencia <code>Kizuri.Scripting</code>:</p>
-<pre><code class="language-csharp">using Kizuri;
-using Kizuri.Math;
+<div class="callout dica">O viewport 3D navega com <strong>botão direito + WASD</strong>. Selecione a câmera e use os <strong>gizmos</strong> (teclas W/E/R) para posicionar.</div>
+<h2 id="3-d-fsica-ao-cubo">3. Dê física ao cubo</h2>
+<p>No <strong>Inspetor</strong> do cubo, clique em <strong>Adicionar Componente → Rigidbody 3D</strong> e depois <strong>Colisor Box 3D</strong>. Agora aperte <strong>Play</strong> (F5): o cubo cai no chão e para. Aperte <strong>Stop</strong> (Shift+F5).</p>
+<h2 id="4-escreva-um-script">4. Escreva um script</h2>
+<ol>
+<li>No painel <strong>Content Browser</strong>, clique com o botão direito na pasta <code>Assets</code> → <strong>Novo Script C#</strong> e nomeie <code>Girar</code>.</li>
+<li>Abra o arquivo (o editor cria o esqueleto) e cole:</li>
+</ol>
+<div class="codeblock"><pre><code class="language-csharp">using Kizuri;
 
-public sealed class MeuJogador : Script
+public class Girar : KizuriScript
 {
-    public override void OnCreate() { }
-
-    public override void OnUpdate(float deltaSeconds)
+    public override void OnUpdate()
     {
-        if (Input.IsKeyPressed(Key.A)) Entity.SetPosition(new Vector3(-1f, 0f, 0f));
-        if (Input.IsKeyPressed(Key.D)) Entity.SetPosition(new Vector3( 1f, 0f, 0f));
+        // Rotaciona a entidade 90 graus por segundo
+        var euler = Entity.GetEulerAngles();
+        Entity.SetEulerAngles(euler.X, euler.Y + 90f * Time.deltaTime, euler.Z);
     }
-
-    public override void OnCollisionBegin(Entity other) { }
-    public override void OnCollisionEnd(Entity other) { }
-    public override void OnDestroy() { }
-}
-
-public static class MeuGameModule
-{
-    [Kizuri.GameEntryPoint]
-    public static void RegisterAll()
-    {
-        Kizuri.GameModule.Register&lt;MeuJogador&gt;("MeuJogador");
-    }
-}</code></pre>
-<h2 id="5-carregue-o-gamemodule">5. Carregue o GameModule</h2>
+}</code></pre><button class="copy" title="Copiar">📋</button></div>
 <ol>
-<li>Compile o projeto (a DLL é o que o editor carrega).</li>
-<li>No editor: <strong>Arquivo → Carregar GameModule…</strong> e escolha a DLL.</li>
-<li>Selecione a entidade do jogador no Inspetor e adicione o componente de</li>
+<li>Selecione o cubo e, no Inspetor, <strong>Adicionar Componente → Script C# → Girar</strong>.</li>
+<li>Aperte <strong>Play</strong>: o cubo cai e gira.</li>
 </ol>
-<p>   script <strong>MeuJogador</strong>.</p>
-<ol>
-<li>Aperte <strong>Play</strong> — o editor <strong>recompila e recarrega o C# automaticamente</strong></li>
-</ol>
-<p>   (se compilar com erro, o Play é abortado e o erro aparece no Console).</p>
-<h2 id="6-exporte">6. Exporte</h2>
-<p><strong>Arquivo → Exportar Jogo…</strong> gera um executável standalone com a cena inicial e o assembly. Veja <a href="exportacao.html">Exportar o jogo</a>.</p>
-<h2 id="próximos-passos">Próximos passos</h2>
-<ul>
-<li>Conheça os <a href="interface.html">painéis do editor</a>.</li>
-<li>Aprenda cada <a href="transform.html">componente</a>.</li>
-<li>A referência completa da <a href="scripting.html">API C#</a>.</li>
-</ul>
+<h2 id="5-exporte-o-jogo">5. Exporte o jogo</h2>
+<p>Menu <strong>Arquivo → Exportar Jogo...</strong>, escolha a pasta e pronto — um executável standalone com seu jogo.</p>
+<p>Continue na seção <a href="interface.html">Editor</a> para conhecer cada painel, ou <a href="transform.html">Transform</a> para os componentes de cena.</p>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="instalacao.html">← Instalação</a>
-<a class="navbtn next" href="projeto.html">Projetos, cenas e prefabs →</a>
+<a class="navbtn prev" href="instalacao.html"><small>← Anterior</small><span>Instalação</span></a>
+<a class="navbtn next" href="projeto.html"><small>Próximo →</small><span>Gerenciamento de projetos</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio. Todos os direitos reservados.
+  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

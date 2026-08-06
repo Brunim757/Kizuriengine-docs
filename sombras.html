@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Configurações — Kizuri Engine</title>
+<title>Sombras — Kizuri Engine</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -28,7 +28,7 @@
 <a href="project-settings.html" class="">Project Settings</a>
 <a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
-<a href="configuracoes.html" class="active">Configurações</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
 <a href="camera.html" class="">Câmera</a>
@@ -59,7 +59,7 @@
 <a href="reflexos.html" class="">Reflexos</a>
 <a href="iluminacao.html" class="">Iluminação</a>
 <a href="ceu.html" class="">Céu</a>
-<a href="sombras.html" class="">Sombras</a>
+<a href="sombras.html" class="active">Sombras</a>
 <a href="pos-processamento.html" class="">Pós-processamento</a>
 <div class="group">Distribuição</div>
 <a href="exportacao.html" class="">Exportar o jogo</a>
@@ -71,7 +71,7 @@
 <main>
 <header class="top">
   <button class="burger" id="burger" aria-label="Menu">☰</button>
-  <div class="crumbs"><span class="crumb">Editor</span><span class="sep">/</span><span>Configurações</span></div>
+  <div class="crumbs"><span class="crumb">Gráficos</span><span class="sep">/</span><span>Sombras</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
     <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
@@ -79,24 +79,36 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#grficos" class="t2">Gráficos</a><a href="#geral" class="t2">Geral</a><a href="#editor" class="t2">Editor</a><a href="#persistncia" class="t2">Persistência</a></nav>
+
 <article>
-<h1 id="configuraes">Configurações</h1>
-<p>A janela <strong>Configurações</strong> (menu <strong>Exibir → Configurações...</strong> ou <code>Ctrl+,</code>) reúne os ajustes da engine em seções com sidebar. É a versão completa do painel <a href="project-settings.html">Project Settings</a>.</p>
-<h2 id="grficos">Gráficos</h2>
-<p>Presets (Ultra/High/Medium/Low), resolução interna, MSAA, sombras (CSM/PCSS), SSAO/SSGI, reflexos (SSR), TAA/FXAA, bloom (com anamórfico), DOF, motion blur, god rays, nuvens, lens flare, exposição, tonemapping, saturação/ contraste, vinheta/aberração/grão, névoa e <strong>HDRI do céu</strong>.</p>
-<h2 id="geral">Geral</h2>
-<p>Resolução da janela (aplicar), maximizar/minimizar, <strong>VSync</strong> e informações do OpenGL (fabricante, renderer, versão).</p>
-<h2 id="editor">Editor</h2>
-<p>Velocidade da câmera livre, sensibilidade do mouse, snapping dos gizmos, demos (2D, 3D e 2.5D) e preferências de Play.</p>
-<h2 id="persistncia">Persistência</h2>
-<p>Os ajustes gráficos ficam salvos em <code>settings.json</code> ao lado do editor e são aplicados ao vivo — sem reiniciar.</p>
-<div class="callout nota">A janela <strong>Configurações</strong> e o painel <strong>Project Settings</strong> editam os mesmos valores — use o que for mais prático.</div>
+<h1 id="sombras">Sombras</h1>
+<p>A luz direcional projeta <strong>sombras em cascata (CSM)</strong>: três mapas de profundidade em distâncias crescente, para sombras nítidas perto da câmera e cobertura total ao longe.</p>
+<h2 id="ajustes">Ajustes</h2>
+<ul>
+<li><strong>Tamanho do shadow map (CSM)</strong> — 512 a 4096. Maior = sombra mais nítida,</li>
+</ul>
+<p>  mais custo.</p>
+<ul>
+<li><strong>PCF</strong> — amostras de suavização da borda (0 a 3).</li>
+<li><strong>Penumbra (PCSS)</strong> — <strong>sombras suaves de verdade</strong>: a largura da penumbra</li>
+</ul>
+<p>  é proporcional à distância do bloqueador. <code>0</code> desliga (usa PCF puro).</p>
+<div class="callout nota">O PCSS usa loops de passos <strong>fixos</strong> no shader — funciona em qualquer GPU OpenGL 3.3 (a versão antiga de raio dinâmico era o que quebrava em alguns drivers e foi substituída).</div>
+<h2 id="dicas-de-qualidade">Dicas de qualidade</h2>
+<ul>
+<li><strong>Acne</strong> (listras na sombra): aumenta o bias via valores de material ou</li>
+</ul>
+<p>  aproxime o mapa — geralmente 2048 resolve.</p>
+<ul>
+<li><strong>Sombras "blocadas" ao longe</strong>: aumente o tamanho do CSM.</li>
+<li><strong>Penumbra exagerada</strong>: reduza o valor de PCSS.</li>
+</ul>
+<div class="callout dica">Luzes de <strong>ponto</strong> e <strong>spot</strong> iluminam sem sombra projetada (a sombra é da luz direcional). Para efeito de "spot com sombra", use sombras falsas (texturas de silhueta) ou ilumine com a direcional.</div>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="atalhos.html"><small>← Anterior</small><span>Atalhos de teclado</span></a>
-<a class="navbtn next" href="transform.html"><small>Próximo →</small><span>Transform</span></a>
+<a class="navbtn prev" href="ceu.html"><small>← Anterior</small><span>Céu</span></a>
+<a class="navbtn next" href="pos-processamento.html"><small>Próximo →</small><span>Pós-processamento</span></a>
 </div>
 <footer class="footer">
   © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>

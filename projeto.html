@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projetos, cenas e prefabs — Kizuri Engine</title>
+<title>Gerenciamento de projetos — Kizuri Engine</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -11,119 +11,111 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
 <div class="group">Introdução</div>
-<a href="index.html" class="">Visão geral</a>
+<a href="index.html" class="">Bem-vindo</a>
 <a href="instalacao.html" class="">Instalação</a>
 <a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
-<div class="group">Conceitos</div>
-<a href="projeto.html" class="active">Projetos, cenas e prefabs</a>
-<a href="hierarquia.html" class="">Hierarquia e transform</a>
-<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<a href="projeto.html" class="active">Gerenciamento de projetos</a>
 <div class="group">Editor</div>
 <a href="interface.html" class="">Interface do editor</a>
-<a href="viewport.html" class="">Viewport e câmera</a>
-<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="paineis.html" class="">Painéis do editor</a>
+<a href="viewport.html" class="">Viewport</a>
 <a href="content-browser.html" class="">Content Browser</a>
-<a href="configuracoes.html" class="">Configurações</a>
+<a href="project-settings.html" class="">Project Settings</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
-<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
-<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
-<a href="tilemap.html" class="">Tilemap</a>
-<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="meshes-3d.html" class="">Malhas 3D</a>
+<a href="sprites-2d.html" class="">Sprites 2D</a>
 <a href="luzes.html" class="">Luzes</a>
 <a href="particulas.html" class="">Partículas</a>
-<a href="animacao-3d.html" class="">Animação esquelética</a>
-<a href="audio-source.html" class="">AudioSource</a>
-<a href="camera.html" class="">Câmera</a>
-<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
-<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
-<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
-<div class="group">Renderização</div>
-<a href="pipeline-3d.html" class="">Pipeline 3D</a>
-<a href="pipeline-2d.html" class="">Pipeline 2D</a>
-<a href="qualidade.html" class="">Qualidade gráfica</a>
+<a href="fisica-2d.html" class="">Física 2D</a>
+<a href="fisica-3d.html" class="">Física 3D</a>
+<a href="audio-source.html" class="">Áudio</a>
+<a href="ui.html" class="">Interface (UI)</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="animacao-2d.html" class="">Animação 2D</a>
+<a href="animacao-3d.html" class="">Animação 3D</a>
 <div class="group">Scripting C#</div>
-<a href="scripting.html" class="">Introdução ao C#</a>
-<a href="script.html" class="">Classe Script e corrotinas</a>
-<a href="entity.html" class="">Entity — referência</a>
-<a href="scene.html" class="">Scene — referência</a>
-<a href="input.html" class="">Input</a>
-<a href="time.html" class="">Time</a>
-<a href="mathf.html" class="">Mathf</a>
-<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
-<a href="audio-api.html" class="">Audio (API)</a>
+<a href="scripting.html" class="">Scripting C#</a>
+<a href="entity.html" class="">Entity (API)</a>
+<a href="scene.html" class="">Scene (API)</a>
+<a href="input.html" class="">Input (API)</a>
+<a href="time.html" class="">Time (API)</a>
+<a href="mathf.html" class="">Mathf, Rand e Vetores</a>
 <a href="save.html" class="">SaveSystem</a>
-<a href="rand-log.html" class="">Rand e Log</a>
-<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
-<a href="exemplos.html" class="">Exemplos completos</a>
+<a href="fisica-api.html" class="">Física (API C#)</a>
+<a href="audio-api.html" class="">Áudio (API C#)</a>
+<a href="ui-api.html" class="">UI (API C#)</a>
+<div class="group">Gráficos</div>
+<a href="qualidade.html" class="">Qualidade e presets</a>
+<a href="reflexos.html" class="">Reflexos</a>
+<a href="iluminacao.html" class="">Iluminação</a>
+<a href="ceu.html" class="">Céu</a>
+<a href="sombras.html" class="">Sombras</a>
+<a href="pos-processamento.html" class="">Pós-processamento</a>
 <div class="group">Distribuição</div>
 <a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
 <a href="faq.html" class="">Perguntas frequentes</a>
   </nav>
 </aside>
+<div class="overlay" id="overlay"></div>
 <main>
 <header class="top">
-  <div class="crumbs"><span class="crumb">Conceitos</span><span class="sep">/</span><span>Projetos, cenas e prefabs</span></div>
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+  <div class="crumbs"><span class="crumb">Introdução</span><span class="sep">/</span><span>Gerenciamento de projetos</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
+    <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
+    <button class="btn" id="printBtn" title="Imprimir">🖨️</button>
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#hub" class="t2">Hub</a><a href="#estrutura-do-projeto" class="t2">Estrutura do projeto</a><a href="#abrir-e-salvar-cenas" class="t2">Abrir e salvar cenas</a><a href="#prefabs" class="t2">Prefabs</a></nav>
 <article>
-<h1 id="projetos-cenas-e-prefabs">Projetos, cenas e prefabs</h1>
-<p>Tudo na Kizuri gira em torno de três arquivos de texto legível (JSON):</p>
-<table><thead><tr><th>Formato</th><th>O que é</th></tr></thead><tbody><tr><td>**<code>.kzproj</code>**</td><td>O <strong>projeto</strong> — modo padrão (2D/3D/Vazio) e configurações.</td></tr><tr><td>**<code>.kzscene</code>**</td><td>Uma <strong>cena</strong> — a lista de entidades e componentes.</td></tr><tr><td>**<code>.kzprefab</code>**</td><td>Uma <strong>entidade reutilizável</strong> — instanciada quantas vezes quiser.</td></tr></tbody></table>
-<h2 id="projeto-kzproj">Projeto (.kzproj)</h2>
-<p>É a raiz de tudo. Ao criar um projeto você escolhe o <strong>modo</strong>:</p>
+<h1 id="gerenciamento-de-projetos">Gerenciamento de projetos</h1>
+<p>Um <strong>projeto</strong> é a pasta de um jogo: cenas, assets, scripts e o arquivo do projeto (<code>.kzproj</code>).</p>
+<h2 id="hub">Hub</h2>
+<p>O editor abre no <strong>Hub</strong> (tela inicial), onde você:</p>
 <ul>
-<li><strong>2D</strong> — cenas novas nascem com câmera ortográfica + sprites + física 2D;</li>
-<li><strong>3D</strong> — cenas novas nascem com câmera de perspectiva + mesh;</li>
-<li><strong>Vazio</strong> — só uma câmera.</li>
+<li><strong>Cria um novo projeto</strong> (2D, 3D ou vazio)</li>
+<li><strong>Abre um recente</strong> (a lista fica salva)</li>
+<li><strong>Abre um projeto</strong> pelo caminho</li>
 </ul>
-<p>O modo não é uma camisa de força: você pode misturar 2D e 3D na mesma cena (cenas <strong>2.5D</strong>). Ele só define o que vem pronto no primeiro frame.</p>
-<h2 id="cena-kzscene">Cena (.kzscene)</h2>
-<p>Uma cena é uma lista de entidades, cada uma com seus componentes. O arquivo é JSON legível — dá para editar no bloco de notas e versionar no git:</p>
-<pre><code class="language-json">{
-  "entities": [
-    {
-      "id": "9f1c…",
-      "tag": "Jogador",
-      "parent": null,
-      "transform": { "t": [0, 0, 0], "r": [0, 0, 0], "s": [1, 1, 1] },
-      "components": [ … ]
-    }
-  ]
-}</code></pre>
-<h3 id="salvar-e-abrir">Salvar e abrir</h3>
+<h2 id="estrutura-do-projeto">Estrutura do projeto</h2>
+<div class="codeblock"><pre><code class="language-">MeuJogo/
+  MeuJogo.kzproj     ← arquivo do projeto (config + cena inicial)
+  Assets/            ← cenas, prefabs, modelos, texturas, áudios
+  Source/            ← scripts C# do jogo</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="abrir-e-salvar-cenas">Abrir e salvar cenas</h2>
 <ul>
-<li><strong>Arquivo → Salvar Cena</strong> (<code>Ctrl+S</code>) salva a cena atual.</li>
-<li><strong>Arquivo → Salvar Cena Como…</strong> salva em outro caminho.</li>
-<li><strong>Arquivo → Abrir Cena…</strong> / <strong>Cena → Nova Cena</strong> troca a cena.</li>
-<li>No jogo, <code>Scene.Load("Assets/Fase2.kzscene")</code> troca de cena em runtime.</li>
+<li><strong>Arquivo → Salvar Cena</strong> / <strong>Salvar Cena Como...</strong> (<code>.kzscene</code>)</li>
+<li><strong>Arquivo → Abrir Cena...</strong> — cenas grandes carregam de forma</li>
 </ul>
-<h2 id="prefab-kzprefab">Prefab (.kzprefab)</h2>
-<p>Uma prefab é uma entidade (com toda a subárvore de filhos) salva como arquivo. Serve como "molde": o mesmo inimigo, o mesmo projétil, o mesmo item.</p>
-<p>Em runtime:</p>
-<pre><code class="language-csharp">// instancia na posição dada (a física e o OnCreate rodam de verdade)
-var inimigo = Scene.InstantiatePrefab("Assets/Inimigo.kzprefab", new Vector3(3f, 0f, 0f));
-
-// com rotação (euler, radianos)
-var tiro = Scene.InstantiatePrefab("Assets/Tiro.kzprefab", pos, rot);</code></pre>
-<div class="callout info"><strong>Caminhos relativos.</strong> Todos os caminhos de asset (texturas, meshes, clips, prefabs, cenas) são resolvidos <strong>relativos ao projeto</strong>. Ex.: <code>Assets/Models/Cube.glb</code>. Também são aceitos os pseudo-caminhos <code>builtin:*</code> e <code>kzres://*</code> (veja <a href="recursos-embutidos.html">Recursos embutidos</a>).</div>
+<p>  <strong>incremental</strong> (sem travar o editor, com barra de progresso)</p>
+<ul>
+<li><strong>Arquivo → Definir cena como inicial</strong> — a cena que o jogo carrega ao</li>
+</ul>
+<p>  abrir/exportar</p>
+<h2 id="prefabs">Prefabs</h2>
+<p>No <strong>Inspetor</strong> (ou hierarquia), <strong>botão direito → Salvar como Prefab</strong> gera um <code>.kzprefab</code> reutilizável. Arraste o prefab para o viewport ou use <code>Scene.InstantiatePrefab</code> no código.</p>
+<div class="callout dica">Troque de projeto quando quiser: <strong>Arquivo → Voltar ao Início</strong> leva você de volta ao Hub sem perder nada.</div>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="primeiro-projeto.html">← Seu primeiro projeto</a>
-<a class="navbtn next" href="hierarquia.html">Hierarquia e transform →</a>
+<a class="navbtn prev" href="primeiro-projeto.html"><small>← Anterior</small><span>Seu primeiro projeto</span></a>
+<a class="navbtn next" href="interface.html"><small>Próximo →</small><span>Interface do editor</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio. Todos os direitos reservados.
+  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

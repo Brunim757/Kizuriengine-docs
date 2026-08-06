@@ -11,109 +11,105 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
 <div class="group">Introdução</div>
-<a href="index.html" class="">Visão geral</a>
+<a href="index.html" class="">Bem-vindo</a>
 <a href="instalacao.html" class="active">Instalação</a>
 <a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
-<div class="group">Conceitos</div>
-<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
-<a href="hierarquia.html" class="">Hierarquia e transform</a>
-<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<a href="projeto.html" class="">Gerenciamento de projetos</a>
 <div class="group">Editor</div>
 <a href="interface.html" class="">Interface do editor</a>
-<a href="viewport.html" class="">Viewport e câmera</a>
-<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="paineis.html" class="">Painéis do editor</a>
+<a href="viewport.html" class="">Viewport</a>
 <a href="content-browser.html" class="">Content Browser</a>
-<a href="configuracoes.html" class="">Configurações</a>
+<a href="project-settings.html" class="">Project Settings</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
-<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
-<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
-<a href="tilemap.html" class="">Tilemap</a>
-<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="meshes-3d.html" class="">Malhas 3D</a>
+<a href="sprites-2d.html" class="">Sprites 2D</a>
 <a href="luzes.html" class="">Luzes</a>
 <a href="particulas.html" class="">Partículas</a>
-<a href="animacao-3d.html" class="">Animação esquelética</a>
-<a href="audio-source.html" class="">AudioSource</a>
-<a href="camera.html" class="">Câmera</a>
-<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
-<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
-<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
-<div class="group">Renderização</div>
-<a href="pipeline-3d.html" class="">Pipeline 3D</a>
-<a href="pipeline-2d.html" class="">Pipeline 2D</a>
-<a href="qualidade.html" class="">Qualidade gráfica</a>
+<a href="fisica-2d.html" class="">Física 2D</a>
+<a href="fisica-3d.html" class="">Física 3D</a>
+<a href="audio-source.html" class="">Áudio</a>
+<a href="ui.html" class="">Interface (UI)</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="animacao-2d.html" class="">Animação 2D</a>
+<a href="animacao-3d.html" class="">Animação 3D</a>
 <div class="group">Scripting C#</div>
-<a href="scripting.html" class="">Introdução ao C#</a>
-<a href="script.html" class="">Classe Script e corrotinas</a>
-<a href="entity.html" class="">Entity — referência</a>
-<a href="scene.html" class="">Scene — referência</a>
-<a href="input.html" class="">Input</a>
-<a href="time.html" class="">Time</a>
-<a href="mathf.html" class="">Mathf</a>
-<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
-<a href="audio-api.html" class="">Audio (API)</a>
+<a href="scripting.html" class="">Scripting C#</a>
+<a href="entity.html" class="">Entity (API)</a>
+<a href="scene.html" class="">Scene (API)</a>
+<a href="input.html" class="">Input (API)</a>
+<a href="time.html" class="">Time (API)</a>
+<a href="mathf.html" class="">Mathf, Rand e Vetores</a>
 <a href="save.html" class="">SaveSystem</a>
-<a href="rand-log.html" class="">Rand e Log</a>
-<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
-<a href="exemplos.html" class="">Exemplos completos</a>
+<a href="fisica-api.html" class="">Física (API C#)</a>
+<a href="audio-api.html" class="">Áudio (API C#)</a>
+<a href="ui-api.html" class="">UI (API C#)</a>
+<div class="group">Gráficos</div>
+<a href="qualidade.html" class="">Qualidade e presets</a>
+<a href="reflexos.html" class="">Reflexos</a>
+<a href="iluminacao.html" class="">Iluminação</a>
+<a href="ceu.html" class="">Céu</a>
+<a href="sombras.html" class="">Sombras</a>
+<a href="pos-processamento.html" class="">Pós-processamento</a>
 <div class="group">Distribuição</div>
 <a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
 <a href="faq.html" class="">Perguntas frequentes</a>
   </nav>
 </aside>
+<div class="overlay" id="overlay"></div>
 <main>
 <header class="top">
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
   <div class="crumbs"><span class="crumb">Introdução</span><span class="sep">/</span><span>Instalação</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
+    <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
+    <button class="btn" id="printBtn" title="Imprimir">🖨️</button>
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#requisitos-mnimos" class="t2">Requisitos mínimos</a><a href="#como-executar" class="t2">Como executar</a><a href="#scripting-c-opcional-no-incio" class="t2">Scripting C# (opcional no início)</a><a href="#soluo-de-problemas" class="t2">Solução de problemas</a></nav>
 <article>
-<h1 id="instalação">Instalação</h1>
-<p>O <strong>Kizuri Editor</strong> é um programa pronto — você não compila nada. Basta baixar e abrir.</p>
-<h2 id="requisitos-do-sistema">Requisitos do sistema</h2>
-<table><thead><tr><th>Item</th><th>Mínimo</th></tr></thead><tbody><tr><td><strong>Sistema</strong></td><td>Windows 10+ ou Linux</td></tr><tr><td><strong>Placa de vídeo</strong></td><td>Qualquer placa com <strong>OpenGL 3.3</strong> ou superior (qualquer GPU dos últimos ~15 anos)</td></tr><tr><td><strong>Memória</strong></td><td>4 GB ou mais</td></tr></tbody></table>
-<div class="callout info"><strong>Qualidade automática.</strong> O editor ajusta a qualidade gráfica sozinho conforme a sua placa de vídeo. Em máquinas mais fracas ele reduz os efeitos para manter a fluidez; em máquinas fortes ele liga tudo. Você pode ajustar à mão em <strong>Configurações → Gráficos</strong>.</div>
-<h2 id="como-obter">Como obter</h2>
-<ol>
-<li>Pegue o pacote mais recente do <strong>Kizuri Editor</strong> (distribuição oficial);</li>
-<li>Extraia a pasta onde quiser (não precisa instalar);</li>
-<li>Abra o <strong>KizuriEditor</strong>.</li>
-</ol>
-<h2 id="primeiros-passos">Primeiros passos</h2>
-<ol>
-<li>Na tela inicial, escolha <strong>Novo Projeto</strong> e o modo (<strong>2D</strong>, <strong>3D</strong> ou</li>
-</ol>
-<p>   <strong>Vazio</strong>);</p>
-<ol>
-<li>Aperte <strong>F5</strong> para testar a cena com <strong>Play</strong>;</li>
-<li><strong>Shift+F5</strong> volta à edição.</li>
-</ol>
-<h2 id="se-der-problema-para-abrir">Se der problema para abrir</h2>
+<h1 id="instalao">Instalação</h1>
+<p>A Kizuri Engine é entregue como um pacote pronto para usar (Windows e Linux). Não há instalação de dependências — tudo vem junto.</p>
+<h2 id="requisitos-mnimos">Requisitos mínimos</h2>
 <ul>
-<li>Confirme que a placa de vídeo tem OpenGL 3.3+ (qualquer GPU razoável);</li>
-<li>Feche outros programas pesados — o editor é um programa de jogo e gosta de</li>
+<li><strong>GPU</strong> com suporte a <strong>OpenGL 3.3</strong> (qualquer placa dos últimos ~15 anos)</li>
+<li><strong>Windows 10/11</strong> ou <strong>Linux</strong></li>
+<li><strong>4 GB de RAM</strong> (recomendado 8 GB)</li>
+<li>Para scripts C#: <strong>.NET SDK 8+</strong> (o editor compila seu jogo no Play)</li>
 </ul>
-<p>  recursos livres;</p>
-<ul>
-<li>Atualize o driver da placa de vídeo.</li>
-</ul>
-<div class="callout ok">Nenhuma etapa extra é necessária: os assets de demonstração e as fontes já vêm com o editor.</div>
+<div class="callout nota"><b>O motor funciona até em máquinas modestas</b> O OpenGL 3.3 roda em iGPU, máquina virtual e até Wine. Se o editor abrir, ele roda.</div>
+<h2 id="como-executar">Como executar</h2>
+<ol>
+<li>Extraia o pacote em uma pasta de sua preferência.</li>
+<li>Execute o <strong>KizuriEditor</strong> (<code>.exe</code> no Windows, binário no Linux).</li>
+<li>Na tela inicial (Hub), crie um novo projeto ou abra um recente.</li>
+</ol>
+<h2 id="scripting-c-opcional-no-incio">Scripting C# (opcional no início)</h2>
+<p>Você pode fazer muito no editor sem escrever código. Quando quiser criar lógica de jogo (movimento, pontuação, respawn...), instale o <strong>.NET SDK</strong> e o editor cuidará do resto — no <strong>Play</strong>, ele compila seu código automaticamente.</p>
+<h2 id="soluo-de-problemas">Solução de problemas</h2>
+<div class="tablewrap"><table><thead><tr><th>Problema</th><th>Causa provável</th><th>Solução</th></tr></thead><tbody><tr><td>Janela preta ou mensagem de erro no início</td><td>GPU sem OpenGL 3.3</td><td>Atualize o driver de vídeo</td></tr><tr><td>Play não compila</td><td>.NET SDK ausente</td><td>Instale o .NET SDK 8+</td></tr><tr><td>Jogo lento</td><td>Preset de qualidade alto para a máquina</td><td>Baixe o preset em Project Settings → Gráficos</td></tr></tbody></table></div>
+<p>Precisa de mais ajuda? Veja as <a href="configuracoes.html">Configurações</a> e a seção de <a href="projeto.html">Gerenciamento de projetos</a>.</p>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="index.html">← Visão geral</a>
-<a class="navbtn next" href="primeiro-projeto.html">Seu primeiro projeto →</a>
+<a class="navbtn prev" href="index.html"><small>← Anterior</small><span>Bem-vindo</span></a>
+<a class="navbtn next" href="primeiro-projeto.html"><small>Próximo →</small><span>Seu primeiro projeto</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio. Todos os direitos reservados.
+  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

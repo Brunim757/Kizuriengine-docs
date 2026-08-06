@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Áudio — Kizuri Engine</title>
+<title>Pós-processamento — Kizuri Engine</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -38,7 +38,7 @@
 <a href="particulas.html" class="">Partículas</a>
 <a href="fisica-2d.html" class="">Física 2D</a>
 <a href="fisica-3d.html" class="">Física 3D</a>
-<a href="audio-source.html" class="active">Áudio</a>
+<a href="audio-source.html" class="">Áudio</a>
 <a href="ui.html" class="">Interface (UI)</a>
 <a href="tilemap.html" class="">Tilemap</a>
 <a href="animacao-2d.html" class="">Animação 2D</a>
@@ -60,7 +60,7 @@
 <a href="iluminacao.html" class="">Iluminação</a>
 <a href="ceu.html" class="">Céu</a>
 <a href="sombras.html" class="">Sombras</a>
-<a href="pos-processamento.html" class="">Pós-processamento</a>
+<a href="pos-processamento.html" class="active">Pós-processamento</a>
 <div class="group">Distribuição</div>
 <a href="exportacao.html" class="">Exportar o jogo</a>
 <a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
@@ -71,7 +71,7 @@
 <main>
 <header class="top">
   <button class="burger" id="burger" aria-label="Menu">☰</button>
-  <div class="crumbs"><span class="crumb">Componentes</span><span class="sep">/</span><span>Áudio</span></div>
+  <div class="crumbs"><span class="crumb">Gráficos</span><span class="sep">/</span><span>Pós-processamento</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
     <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
@@ -79,42 +79,47 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#componente-audiosource" class="t2">Componente AudioSource</a><a href="#do-script" class="t2">Do script</a><a href="#dicas" class="t2">Dicas</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#bloom" class="t2">Bloom</a><a href="#anti-aliasing" class="t2">Anti-aliasing</a><a href="#depth-of-field-bokeh" class="t2">Depth of field (bokeh)</a><a href="#motion-blur" class="t2">Motion blur</a><a href="#exposio-e-tonemapping" class="t2">Exposição e tonemapping</a><a href="#color-grading" class="t2">Color grading</a><a href="#filmico" class="t2">Filmico</a><a href="#nvoa-fog" class="t2">Névoa (fog)</a></nav>
 <article>
-<h1 id="udio">Áudio</h1>
-<p>O <strong>AudioSource</strong> toca sons na cena. Áudio 3D (posicional) é suportado para sons de mundo; sons de UI/menu usam one-shot simples.</p>
-<h2 id="componente-audiosource">Componente AudioSource</h2>
+<h1 id="ps-processamento">Pós-processamento</h1>
+<p>Toda a "pós-cena" roda em passes de tela cheia depois de renderizar a geometria — tudo em OpenGL 3.3.</p>
+<h2 id="bloom">Bloom</h2>
+<p>Brilho extra em superfícies emissivas e no sol (um bright-pass borrado somado à cena). Ajustes: <strong>limiar</strong>, <strong>intensidade</strong> e <strong>iterações</strong> (glow mais largo).</p>
+<p><strong>Bloom anamórfico</strong> alonga o blur horizontal — os highlights ganham "streaks" de cinema.</p>
+<h2 id="anti-aliasing">Anti-aliasing</h2>
 <ul>
-<li><strong>Clip</strong> — arquivo de áudio (<code>.wav</code>, <code>.ogg</code>, <code>.mp3</code>)</li>
-<li><strong>Volume</strong></li>
-<li><strong>Espacializado</strong> — o som diminui com a distância da câmera (3D)</li>
+<li><strong>TAA</strong> (temporal): o mais eficaz — desloca a câmera meio pixel por frame</li>
 </ul>
-<h2 id="do-script">Do script</h2>
-<div class="codeblock"><pre><code class="language-csharp">// tocar/parar um AudioSource na entidade
-Entity.PlayAudio();
-Entity.StopAudio();
-
-// um som avulso (sem entidade)
-Audio.PlayOneShot("Assets/sons/coin.wav");
-Audio.PlayOneShotAt("Assets/sons/explosao.wav", 0.6f, x, y, z);
-
-// parar tudo (troca de cena, por exemplo)
-Audio.StopAll();</code></pre><button class="copy" title="Copiar">📋</button></div>
-<h2 id="dicas">Dicas</h2>
+<p>  (sequência Halton) e mistura com o histórico, com clamp de vizinhança para   não borrar. Remove "estrelinhas" das silhuetas.</p>
 <ul>
-<li><strong>PlayOneShotAt</strong> usa um pool seguro de sons posicionais — pode chamar</li>
+<li><strong>FXAA</strong>: pós-processamento simples, ótimo como reforço em cima do TAA.</li>
 </ul>
-<p>  quantas vezes quiser.</p>
+<h2 id="depth-of-field-bokeh">Depth of field (bokeh)</h2>
+<p>Desfoca o que está fora do plano focal, com <strong>bokeh</strong> (disco de Poisson). Ajustes: <strong>distância focal</strong>, <strong>faixa em foco</strong> e <strong>força</strong> do desfoque.</p>
+<h2 id="motion-blur">Motion blur</h2>
+<p>Borrado de movimento por <strong>reprojeção</strong>: o ponto é reconstruído no depth e projetado com a câmera do frame anterior — o blur segue a direção do movimento real. Ajuste a <strong>intensidade</strong>.</p>
+<h2 id="exposio-e-tonemapping">Exposição e tonemapping</h2>
 <ul>
-<li>Sons se posicionam em relação à <strong>câmera principal</strong>.</li>
-<li>Para música, use um AudioSource com loop.</li>
+<li><strong>Exposição</strong> — brilho geral (antes do tonemap).</li>
+<li><strong>Tonemapping</strong>: <strong>ACES</strong> (cinematográfico), <strong>Reinhard</strong> (suave) ou</li>
 </ul>
-<div class="callout nota">A engine usa <strong>miniaudio</strong> — carrega formatos comuns sem dependência externa.</div>
+<p>  <strong>Filmic</strong> (contraste).</p>
+<h2 id="color-grading">Color grading</h2>
+<p><strong>Saturação</strong> e <strong>contraste</strong> aplicados depois do gamma — para dar identidade visual (menos saturado = mais sério, mais quente = mais acolhedor).</p>
+<h2 id="filmico">Filmico</h2>
+<ul>
+<li><strong>Vinheta</strong> — escurece as bordas</li>
+<li><strong>Aberração cromática</strong> — separa R/G/B nas bordas (lente)</li>
+<li><strong>Grão de filme</strong> — textura animada de filme</li>
+</ul>
+<h2 id="nvoa-fog">Névoa (fog)</h2>
+<p>Névoa exponencial por distância. Com <strong>altura</strong> e <strong>atenuação por altura</strong>, a névoa fica forte no chão e some para o alto — ótimo para névoa de vale.</p>
+<div class="callout dica">Combinação clássica de "cinema": TAA + bloom anamórfico leve + vinheta + grão sutil. Comece com os valores do preset <strong>Ultra</strong> e ajuste devagar.</div>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="fisica-3d.html"><small>← Anterior</small><span>Física 3D</span></a>
-<a class="navbtn next" href="ui.html"><small>Próximo →</small><span>Interface (UI)</span></a>
+<a class="navbtn prev" href="sombras.html"><small>← Anterior</small><span>Sombras</span></a>
+<a class="navbtn next" href="exportacao.html"><small>Próximo →</small><span>Exportar o jogo</span></a>
 </div>
 <footer class="footer">
   © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>

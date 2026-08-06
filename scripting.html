@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Introdução ao C# — Kizuri Engine</title>
+<title>Scripting C# — Kizuri Engine</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -11,125 +11,129 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
 <div class="group">Introdução</div>
-<a href="index.html" class="">Visão geral</a>
+<a href="index.html" class="">Bem-vindo</a>
 <a href="instalacao.html" class="">Instalação</a>
 <a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
-<div class="group">Conceitos</div>
-<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
-<a href="hierarquia.html" class="">Hierarquia e transform</a>
-<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<a href="projeto.html" class="">Gerenciamento de projetos</a>
 <div class="group">Editor</div>
 <a href="interface.html" class="">Interface do editor</a>
-<a href="viewport.html" class="">Viewport e câmera</a>
-<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="paineis.html" class="">Painéis do editor</a>
+<a href="viewport.html" class="">Viewport</a>
 <a href="content-browser.html" class="">Content Browser</a>
-<a href="configuracoes.html" class="">Configurações</a>
+<a href="project-settings.html" class="">Project Settings</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
-<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
-<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
-<a href="tilemap.html" class="">Tilemap</a>
-<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="meshes-3d.html" class="">Malhas 3D</a>
+<a href="sprites-2d.html" class="">Sprites 2D</a>
 <a href="luzes.html" class="">Luzes</a>
 <a href="particulas.html" class="">Partículas</a>
-<a href="animacao-3d.html" class="">Animação esquelética</a>
-<a href="audio-source.html" class="">AudioSource</a>
-<a href="camera.html" class="">Câmera</a>
-<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
-<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
-<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
-<div class="group">Renderização</div>
-<a href="pipeline-3d.html" class="">Pipeline 3D</a>
-<a href="pipeline-2d.html" class="">Pipeline 2D</a>
-<a href="qualidade.html" class="">Qualidade gráfica</a>
+<a href="fisica-2d.html" class="">Física 2D</a>
+<a href="fisica-3d.html" class="">Física 3D</a>
+<a href="audio-source.html" class="">Áudio</a>
+<a href="ui.html" class="">Interface (UI)</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="animacao-2d.html" class="">Animação 2D</a>
+<a href="animacao-3d.html" class="">Animação 3D</a>
 <div class="group">Scripting C#</div>
-<a href="scripting.html" class="active">Introdução ao C#</a>
-<a href="script.html" class="">Classe Script e corrotinas</a>
-<a href="entity.html" class="">Entity — referência</a>
-<a href="scene.html" class="">Scene — referência</a>
-<a href="input.html" class="">Input</a>
-<a href="time.html" class="">Time</a>
-<a href="mathf.html" class="">Mathf</a>
-<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
-<a href="audio-api.html" class="">Audio (API)</a>
+<a href="scripting.html" class="active">Scripting C#</a>
+<a href="entity.html" class="">Entity (API)</a>
+<a href="scene.html" class="">Scene (API)</a>
+<a href="input.html" class="">Input (API)</a>
+<a href="time.html" class="">Time (API)</a>
+<a href="mathf.html" class="">Mathf, Rand e Vetores</a>
 <a href="save.html" class="">SaveSystem</a>
-<a href="rand-log.html" class="">Rand e Log</a>
-<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
-<a href="exemplos.html" class="">Exemplos completos</a>
+<a href="fisica-api.html" class="">Física (API C#)</a>
+<a href="audio-api.html" class="">Áudio (API C#)</a>
+<a href="ui-api.html" class="">UI (API C#)</a>
+<div class="group">Gráficos</div>
+<a href="qualidade.html" class="">Qualidade e presets</a>
+<a href="reflexos.html" class="">Reflexos</a>
+<a href="iluminacao.html" class="">Iluminação</a>
+<a href="ceu.html" class="">Céu</a>
+<a href="sombras.html" class="">Sombras</a>
+<a href="pos-processamento.html" class="">Pós-processamento</a>
 <div class="group">Distribuição</div>
 <a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
 <a href="faq.html" class="">Perguntas frequentes</a>
   </nav>
 </aside>
+<div class="overlay" id="overlay"></div>
 <main>
 <header class="top">
-  <div class="crumbs"><span class="crumb">Scripting C#</span><span class="sep">/</span><span>Introdução ao C#</span></div>
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+  <div class="crumbs"><span class="crumb">Scripting C#</span><span class="sep">/</span><span>Scripting C#</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
+    <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
+    <button class="btn" id="printBtn" title="Imprimir">🖨️</button>
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#o-ciclo" class="t2">O ciclo</a><a href="#estrutura-de-um-script" class="t2">Estrutura de um script</a><a href="#o-que-a-api-oferece" class="t2">O que a API oferece</a><a href="#convenes" class="t2">Convenções</a></nav>
 <article>
 <h1 id="scripting-c">Scripting C#</h1>
-<p>A lógica do seu jogo é escrita em <strong>C#</strong>, com uma API simples e completa chamada <code>Kizuri.Scripting</code>. Você cria classes que respondem a eventos do jogo, e o editor cuida do resto.</p>
-<h2 id="como-funciona">Como funciona</h2>
+<p>O jogo é um assembly <strong>C#</strong> (<code>Kizuri.Scripting</code>): você escreve scripts, o editor compila no <strong>Play</strong> e o motor conversa com seu código por uma API estável. Você nunca mexe no C++ da engine.</p>
+<h2 id="o-ciclo">O ciclo</h2>
 <ol>
-<li>Você escreve uma classe que herda de <code>Script</code>;</li>
-<li>Você registra essa classe em um <strong>GameModule</strong>;</li>
-<li>O editor (ou o jogo exportado) cria as instâncias e chama seus métodos</li>
+<li>Crie um script no Content Browser (botão direito → <strong>Novo Script C#</strong>).</li>
+<li>Escreva a lógica herdando de <code>KizuriScript</code>.</li>
+<li>Anexe o script a uma entidade (Inspetor → Adicionar Componente → Script C#).</li>
+<li>Aperte <strong>Play</strong> — o editor compila e roda.</li>
 </ol>
-<p>   quando o jogo pede: quando a entidade nasce, a cada frame, quando colide…</p>
-<h2 id="um-script-mínimo">Um script mínimo</h2>
-<pre><code class="language-csharp">using Kizuri;
+<h2 id="estrutura-de-um-script">Estrutura de um script</h2>
+<div class="codeblock"><pre><code class="language-csharp">using Kizuri;
 
-public sealed class MeuJogador : Script
+public class MeuScript : KizuriScript
 {
-    public override void OnCreate() { }                        // quando nasceu
-    public override void OnUpdate(float deltaSeconds) { }      // a cada frame
-    public override void OnCollisionBegin(Entity other) { }    // colidiu
-    public override void OnCollisionEnd(Entity other) { }      // saiu da colisão
-    public override void OnDestroy() { }                       // quando morreu
-}</code></pre>
-<h2 id="registrando-seus-scripts">Registrando seus scripts</h2>
-<pre><code class="language-csharp">public static class MeuGameModule
-{
-    [Kizuri.GameEntryPoint]
-    public static void RegisterAll()
+    // roda uma vez, quando a entidade entra na cena
+    public override void OnStart() { }
+
+    // roda a cada frame
+    public override void OnUpdate()
     {
-        Kizuri.GameModule.Register&lt;MeuJogador&gt;("MeuJogador");
-        Kizuri.GameModule.Register&lt;Inimigo&gt;("Inimigo");
+        // entidade atual, cena, tempo...
+        Entity.Move(1f, 0f, 0f);
+        if (Input.IsKeyDown(KeyCode.Space)) Scene.Destroy(Entity);
     }
-}</code></pre>
-<h2 id="usando-no-editor">Usando no editor</h2>
-<ol>
-<li>Compile seu projeto C# — a <strong>DLL</strong> gerada é o que o editor carrega;</li>
-<li><strong>Arquivo → Carregar GameModule…</strong> e escolha a DLL;</li>
-<li>No <strong>Play</strong>, o editor <strong>recompila e recarrega seu código automaticamente</strong></li>
-</ol>
-<p>   — alterou o C#, salvou, apertou Play de novo, já rodou a versão nova. Se    houver erro de compilação, o Play é abortado e o erro aparece no Console.</p>
+
+    // opcional: callbacks de colisão
+    public override void OnCollisionBegin(Entity other) { }
+}</code></pre><button class="copy" title="Copiar">📋</button></div>
 <h2 id="o-que-a-api-oferece">O que a API oferece</h2>
-<table><thead><tr><th>Área</th><th>Classe/namespace</th></tr></thead><tbody><tr><td>Entidades e componentes</td><td><code>Entity</code></td></tr><tr><td>Cena, prefabs e queries</td><td><code>Scene</code></td></tr><tr><td>Teclado e mouse</td><td><code>Input</code></td></tr><tr><td>Tempo</td><td><code>Time</code></td></tr><tr><td>Matemática</td><td><code>Mathf</code> + <code>Kizuri.Math</code> (Vector2/3)</td></tr><tr><td>Áudio</td><td><code>Audio</code></td></tr><tr><td>Salvamento</td><td><code>SaveSystem</code></td></tr><tr><td>Aleatório e log</td><td><code>Rand</code>, <code>Log</code></td></tr></tbody></table>
-<h2 id="próximos-passos">Próximos passos</h2>
 <ul>
-<li><a href="script.html">Classe Script e corrotinas</a> — callbacks e ações com espera;</li>
-<li><a href="entity.html">Entity — referência</a> — o que dá para fazer com uma entidade;</li>
-<li><a href="scene.html">Scene — referência</a> — criar entidades, prefabs, detecção;</li>
-<li><a href="exemplos.html">Exemplos completos</a> — código de jogo pronto.</li>
+<li><strong>Entity</strong> — criar, destruir, transform, sprites, texto, áudio, malhas, física, animação</li>
+<li><strong>Scene</strong> — criar entidades, prefabs, trocar cena, raycasts</li>
+<li><strong>Input</strong> — teclado e mouse</li>
+<li><strong>Time</strong> — deltaTime, escala de tempo</li>
+<li><strong>Mathf / Rand / Vectors</strong> — matemática de jogo</li>
+<li><strong>SaveSystem</strong> — persistência em JSON</li>
+<li><strong>UI</strong> — canvas, botões e callbacks</li>
 </ul>
+<h2 id="convenes">Convenções</h2>
+<ul>
+<li>Tudo é <strong>público e simples</strong>: nada de ponteiros, nada de alocação manual.</li>
+<li>O namespace é <code>Kizuri</code>.</li>
+<li>C# moderno (.NET 8+): async/await, LINQ, etc. funcionam.</li>
+</ul>
+<p>Continue em <a href="entity.html">Entity</a> para a API completa.</p>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="qualidade.html">← Qualidade gráfica</a>
-<a class="navbtn next" href="script.html">Classe Script e corrotinas →</a>
+<a class="navbtn prev" href="animacao-3d.html"><small>← Anterior</small><span>Animação 3D</span></a>
+<a class="navbtn next" href="entity.html"><small>Próximo →</small><span>Entity (API)</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio. Todos os direitos reservados.
+  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

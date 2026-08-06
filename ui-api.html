@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Configurações — Kizuri Engine</title>
+<title>UI (API C#) — Kizuri Engine</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -28,7 +28,7 @@
 <a href="project-settings.html" class="">Project Settings</a>
 <a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
-<a href="configuracoes.html" class="active">Configurações</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
 <a href="camera.html" class="">Câmera</a>
@@ -53,7 +53,7 @@
 <a href="save.html" class="">SaveSystem</a>
 <a href="fisica-api.html" class="">Física (API C#)</a>
 <a href="audio-api.html" class="">Áudio (API C#)</a>
-<a href="ui-api.html" class="">UI (API C#)</a>
+<a href="ui-api.html" class="active">UI (API C#)</a>
 <div class="group">Gráficos</div>
 <a href="qualidade.html" class="">Qualidade e presets</a>
 <a href="reflexos.html" class="">Reflexos</a>
@@ -71,7 +71,7 @@
 <main>
 <header class="top">
   <button class="burger" id="burger" aria-label="Menu">☰</button>
-  <div class="crumbs"><span class="crumb">Editor</span><span class="sep">/</span><span>Configurações</span></div>
+  <div class="crumbs"><span class="crumb">Scripting C#</span><span class="sep">/</span><span>UI (API C#)</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
     <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
@@ -79,24 +79,38 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#grficos" class="t2">Gráficos</a><a href="#geral" class="t2">Geral</a><a href="#editor" class="t2">Editor</a><a href="#persistncia" class="t2">Persistência</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#criar-componentes-de-ui" class="t2">Criar componentes de UI</a><a href="#callback-de-boto" class="t2">Callback de botão</a><a href="#mutao-em-runtime" class="t2">Mutação em runtime</a></nav>
 <article>
-<h1 id="configuraes">Configurações</h1>
-<p>A janela <strong>Configurações</strong> (menu <strong>Exibir → Configurações...</strong> ou <code>Ctrl+,</code>) reúne os ajustes da engine em seções com sidebar. É a versão completa do painel <a href="project-settings.html">Project Settings</a>.</p>
-<h2 id="grficos">Gráficos</h2>
-<p>Presets (Ultra/High/Medium/Low), resolução interna, MSAA, sombras (CSM/PCSS), SSAO/SSGI, reflexos (SSR), TAA/FXAA, bloom (com anamórfico), DOF, motion blur, god rays, nuvens, lens flare, exposição, tonemapping, saturação/ contraste, vinheta/aberração/grão, névoa e <strong>HDRI do céu</strong>.</p>
-<h2 id="geral">Geral</h2>
-<p>Resolução da janela (aplicar), maximizar/minimizar, <strong>VSync</strong> e informações do OpenGL (fabricante, renderer, versão).</p>
-<h2 id="editor">Editor</h2>
-<p>Velocidade da câmera livre, sensibilidade do mouse, snapping dos gizmos, demos (2D, 3D e 2.5D) e preferências de Play.</p>
-<h2 id="persistncia">Persistência</h2>
-<p>Os ajustes gráficos ficam salvos em <code>settings.json</code> ao lado do editor e são aplicados ao vivo — sem reiniciar.</p>
-<div class="callout nota">A janela <strong>Configurações</strong> e o painel <strong>Project Settings</strong> editam os mesmos valores — use o que for mais prático.</div>
+<h1 id="ui-api-c">UI — API C#</h1>
+<p>Construa menus e HUDs no código, além de no editor.</p>
+<h2 id="criar-componentes-de-ui">Criar componentes de UI</h2>
+<div class="codeblock"><pre><code class="language-csharp">var canvas = Scene.CreateEntity("Canvas");
+canvas.AddUICanvas(10f);   // tamanho do mundo de UI
+
+var fundo = Scene.CreateEntity("Fundo");
+fundo.AddUIRect(0f, 0f, 2f, 1f, 0.1f, 0.1f, 0.1f, 1f);
+
+var botao = Scene.CreateEntity("Botao");
+botao.AddUIButton(-1f, 0f, 2f, 0.5f, 0.3f, 0.6f, 1f, 1f);
+
+var texto = Scene.CreateEntity("Titulo");
+texto.AddText("Kizuri!", 32f, 1f, 1f, 1f);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="callback-de-boto">Callback de botão</h2>
+<div class="codeblock"><pre><code class="language-csharp">botao.OnButtonClick(() =&gt;
+{
+    Scene.Load("Assets/Cenas/jogo.kzscene");
+});</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="mutao-em-runtime">Mutação em runtime</h2>
+<div class="codeblock"><pre><code class="language-csharp">texto.SetText("Fase 2");
+texto.SetTextSize(40f);
+texto.SetTextColor(1f, 0.8f, 0.2f);
+fundo.SetSpriteColor(1f, 0f, 0f, 1f);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<div class="callout dica">A UI é desenhada por cima do mundo (3D → 2D → UI) e o clique do mouse é entregue ao botão no Play — veja <a href="ui.html">Interface (UI)</a>.</div>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="atalhos.html"><small>← Anterior</small><span>Atalhos de teclado</span></a>
-<a class="navbtn next" href="transform.html"><small>Próximo →</small><span>Transform</span></a>
+<a class="navbtn prev" href="audio-api.html"><small>← Anterior</small><span>Áudio (API C#)</span></a>
+<a class="navbtn next" href="qualidade.html"><small>Próximo →</small><span>Qualidade e presets</span></a>
 </div>
 <footer class="footer">
   © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>

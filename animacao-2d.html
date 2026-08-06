@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Animação de sprite 2D — Kizuri Engine</title>
+<title>Animação 2D — Kizuri Engine</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -11,94 +11,105 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
 <div class="group">Introdução</div>
-<a href="index.html" class="">Visão geral</a>
+<a href="index.html" class="">Bem-vindo</a>
 <a href="instalacao.html" class="">Instalação</a>
 <a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
-<div class="group">Conceitos</div>
-<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
-<a href="hierarquia.html" class="">Hierarquia e transform</a>
-<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<a href="projeto.html" class="">Gerenciamento de projetos</a>
 <div class="group">Editor</div>
 <a href="interface.html" class="">Interface do editor</a>
-<a href="viewport.html" class="">Viewport e câmera</a>
-<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="paineis.html" class="">Painéis do editor</a>
+<a href="viewport.html" class="">Viewport</a>
 <a href="content-browser.html" class="">Content Browser</a>
-<a href="configuracoes.html" class="">Configurações</a>
+<a href="project-settings.html" class="">Project Settings</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
-<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
-<a href="animacao-2d.html" class="active">Animação de sprite 2D</a>
-<a href="tilemap.html" class="">Tilemap</a>
-<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="meshes-3d.html" class="">Malhas 3D</a>
+<a href="sprites-2d.html" class="">Sprites 2D</a>
 <a href="luzes.html" class="">Luzes</a>
 <a href="particulas.html" class="">Partículas</a>
-<a href="animacao-3d.html" class="">Animação esquelética</a>
-<a href="audio-source.html" class="">AudioSource</a>
-<a href="camera.html" class="">Câmera</a>
-<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
-<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
-<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
-<div class="group">Renderização</div>
-<a href="pipeline-3d.html" class="">Pipeline 3D</a>
-<a href="pipeline-2d.html" class="">Pipeline 2D</a>
-<a href="qualidade.html" class="">Qualidade gráfica</a>
+<a href="fisica-2d.html" class="">Física 2D</a>
+<a href="fisica-3d.html" class="">Física 3D</a>
+<a href="audio-source.html" class="">Áudio</a>
+<a href="ui.html" class="">Interface (UI)</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="animacao-2d.html" class="active">Animação 2D</a>
+<a href="animacao-3d.html" class="">Animação 3D</a>
 <div class="group">Scripting C#</div>
-<a href="scripting.html" class="">Introdução ao C#</a>
-<a href="script.html" class="">Classe Script e corrotinas</a>
-<a href="entity.html" class="">Entity — referência</a>
-<a href="scene.html" class="">Scene — referência</a>
-<a href="input.html" class="">Input</a>
-<a href="time.html" class="">Time</a>
-<a href="mathf.html" class="">Mathf</a>
-<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
-<a href="audio-api.html" class="">Audio (API)</a>
+<a href="scripting.html" class="">Scripting C#</a>
+<a href="entity.html" class="">Entity (API)</a>
+<a href="scene.html" class="">Scene (API)</a>
+<a href="input.html" class="">Input (API)</a>
+<a href="time.html" class="">Time (API)</a>
+<a href="mathf.html" class="">Mathf, Rand e Vetores</a>
 <a href="save.html" class="">SaveSystem</a>
-<a href="rand-log.html" class="">Rand e Log</a>
-<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
-<a href="exemplos.html" class="">Exemplos completos</a>
+<a href="fisica-api.html" class="">Física (API C#)</a>
+<a href="audio-api.html" class="">Áudio (API C#)</a>
+<a href="ui-api.html" class="">UI (API C#)</a>
+<div class="group">Gráficos</div>
+<a href="qualidade.html" class="">Qualidade e presets</a>
+<a href="reflexos.html" class="">Reflexos</a>
+<a href="iluminacao.html" class="">Iluminação</a>
+<a href="ceu.html" class="">Céu</a>
+<a href="sombras.html" class="">Sombras</a>
+<a href="pos-processamento.html" class="">Pós-processamento</a>
 <div class="group">Distribuição</div>
 <a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
 <a href="faq.html" class="">Perguntas frequentes</a>
   </nav>
 </aside>
+<div class="overlay" id="overlay"></div>
 <main>
 <header class="top">
-  <div class="crumbs"><span class="crumb">Componentes</span><span class="sep">/</span><span>Animação de sprite 2D</span></div>
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+  <div class="crumbs"><span class="crumb">Componentes</span><span class="sep">/</span><span>Animação 2D</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
+    <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
+    <button class="btn" id="printBtn" title="Imprimir">🖨️</button>
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#como-usar" class="t2">Como usar</a><a href="#no-script" class="t2">No script</a><a href="#dicas" class="t2">Dicas</a></nav>
 <article>
-<h1 id="animação-de-sprite-2d">Animação de sprite 2D</h1>
-<p>Anima por <strong>frames</strong> uma folha de sprites (sprite sheet) — os quadros são recortados da folha por UV.</p>
-<h2 id="spriteanimationcomponent">SpriteAnimationComponent</h2>
-<table><thead><tr><th>Campo</th><th>Descrição</th></tr></thead><tbody><tr><td><strong>SheetPath</strong></td><td>Caminho da folha (<code>.png</code>/<code>.jpg</code>)</td></tr><tr><td><strong>FramesPerRow</strong></td><td>Quantos quadros por linha na folha</td></tr><tr><td><strong>TotalFrames</strong></td><td>Total de quadros</td></tr><tr><td><strong>FPS</strong></td><td>Velocidade da animação</td></tr><tr><td><strong>Loop</strong></td><td>Repete ao chegar ao fim</td></tr><tr><td><strong>SortingLayer</strong></td><td>Ordenação 2D</td></tr><tr><td><strong>Playing</strong></td><td>Toca/pausa em runtime</td></tr></tbody></table>
-<h2 id="como-montar-uma-folha">Como montar uma folha</h2>
-<p>Organize os quadros em uma grade regular na imagem. Exemplo: uma folha de <strong>4 colunas × 2 linhas</strong> com um personagem de 8 quadros:</p>
-<pre><code class="language-">FramesPerRow = 4
-TotalFrames  = 8
-FPS          = 12</code></pre>
-<p>O renderer calcula as UVs pela posição do quadro atual na grade (row-major: quadro 0 = topo-esquerda, quadro 3 = topo-direita, quadro 4 = linha 2…).</p>
-<h2 id="no-editor">No editor</h2>
-<p>No Inspetor, o componente mostra a <strong>preview da animação</strong> no viewport — você vê o frame atual em tempo real enquanto ajusta FPS e total de frames.</p>
-<div class="callout warn"><strong>FramesPerRow e TotalFrames precisam bater com a imagem.</strong> Se a folha tem 4×2 = 8 quadros, informe <code>FramesPerRow = 4</code> e <code>TotalFrames = 8</code>. Valores errados recortam UVs erradas.</div>
-<h2 id="em-c">Em C#</h2>
-<p>A API C# ainda não expõe a criação da animação em runtime — monte a folha no editor. O renderer também respeita o <code>SetSortingLayer</code> para ordenar a animação junto com o resto da cena 2D.</p>
+<h1 id="animao-2d">Animação 2D</h1>
+<p>A animação 2D roda <strong>quadros de uma folha de sprite</strong> (sprite sheet): o componente avança automaticamente a região do atlas ao longo do tempo.</p>
+<h2 id="como-usar">Como usar</h2>
+<ol>
+<li>Importe uma <strong>sprite sheet</strong> (uma imagem com os quadros em grade).</li>
+<li>No sprite/atlas, defina <strong>colunas</strong> e <strong>linhas</strong> da grade.</li>
+<li>Configure a animação: <strong>velocidade</strong> (quadros por segundo) e <strong>loop</strong>.</li>
+</ol>
+<h2 id="no-script">No script</h2>
+<div class="codeblock"><pre><code class="language-csharp">// tocar a animação da entidade
+Entity.PlayAnimation();
+Entity.StopAnimation();
+// trocar a velocidade
+Entity.SetAnimationSpeed(8f);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="dicas">Dicas</h2>
+<ul>
+<li>Combine com <strong>FlipX</strong> para virar o personagem ao mudar de direção.</li>
+<li>Use <strong>SortingLayer</strong> para personagens na frente/atrás de cenários.</li>
+<li>Para <strong>animação esquelética 3D</strong>, veja <a href="animacao-3d.html">Animação 3D</a>.</li>
+</ul>
+<div class="callout dica">O viewport mostra o <strong>preview da animação</strong> em modo de edição — dê play e veja o personagem andando sem apertar Play.</div>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="sprites-2d.html">← Sprites, círculos e texto 2D</a>
-<a class="navbtn next" href="tilemap.html">Tilemap →</a>
+<a class="navbtn prev" href="tilemap.html"><small>← Anterior</small><span>Tilemap</span></a>
+<a class="navbtn next" href="animacao-3d.html"><small>Próximo →</small><span>Animação 3D</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio. Todos os direitos reservados.
+  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

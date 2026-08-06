@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painéis do editor — Kizuri Engine</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div class="brand">
+    <div class="logo">K</div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
+  </div>
+  <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
+  <nav id="toc">
+<div class="group">Introdução</div>
+<a href="index.html" class="">Bem-vindo</a>
+<a href="instalacao.html" class="">Instalação</a>
+<a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
+<a href="projeto.html" class="">Gerenciamento de projetos</a>
+<div class="group">Editor</div>
+<a href="interface.html" class="">Interface do editor</a>
+<a href="paineis.html" class="active">Painéis do editor</a>
+<a href="viewport.html" class="">Viewport</a>
+<a href="content-browser.html" class="">Content Browser</a>
+<a href="project-settings.html" class="">Project Settings</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="atalhos.html" class="">Atalhos de teclado</a>
+<a href="configuracoes.html" class="">Configurações</a>
+<div class="group">Componentes</div>
+<a href="transform.html" class="">Transform</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="meshes-3d.html" class="">Malhas 3D</a>
+<a href="sprites-2d.html" class="">Sprites 2D</a>
+<a href="luzes.html" class="">Luzes</a>
+<a href="particulas.html" class="">Partículas</a>
+<a href="fisica-2d.html" class="">Física 2D</a>
+<a href="fisica-3d.html" class="">Física 3D</a>
+<a href="audio-source.html" class="">Áudio</a>
+<a href="ui.html" class="">Interface (UI)</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="animacao-2d.html" class="">Animação 2D</a>
+<a href="animacao-3d.html" class="">Animação 3D</a>
+<div class="group">Scripting C#</div>
+<a href="scripting.html" class="">Scripting C#</a>
+<a href="entity.html" class="">Entity (API)</a>
+<a href="scene.html" class="">Scene (API)</a>
+<a href="input.html" class="">Input (API)</a>
+<a href="time.html" class="">Time (API)</a>
+<a href="mathf.html" class="">Mathf, Rand e Vetores</a>
+<a href="save.html" class="">SaveSystem</a>
+<a href="fisica-api.html" class="">Física (API C#)</a>
+<a href="audio-api.html" class="">Áudio (API C#)</a>
+<a href="ui-api.html" class="">UI (API C#)</a>
+<div class="group">Gráficos</div>
+<a href="qualidade.html" class="">Qualidade e presets</a>
+<a href="reflexos.html" class="">Reflexos</a>
+<a href="iluminacao.html" class="">Iluminação</a>
+<a href="ceu.html" class="">Céu</a>
+<a href="sombras.html" class="">Sombras</a>
+<a href="pos-processamento.html" class="">Pós-processamento</a>
+<div class="group">Distribuição</div>
+<a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
+<a href="faq.html" class="">Perguntas frequentes</a>
+  </nav>
+</aside>
+<div class="overlay" id="overlay"></div>
+<main>
+<header class="top">
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+  <div class="crumbs"><span class="crumb">Editor</span><span class="sep">/</span><span>Painéis do editor</span></div>
+  <div class="toggles">
+    <a href="busca.html" class="btn">🔎 Buscar</a>
+    <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
+    <button class="btn" id="printBtn" title="Imprimir">🖨️</button>
+    <a href="index.html" class="btn">Início</a>
+  </div>
+</header>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#viewport" class="t2">Viewport</a><a href="#game-view" class="t2">Game View</a><a href="#hierarquia" class="t2">Hierarquia</a><a href="#inspetor" class="t2">Inspetor</a><a href="#content-browser" class="t2">Content Browser</a><a href="#console" class="t2">Console</a><a href="#profiler" class="t2">Profiler</a><a href="#material-editor" class="t2">Material Editor</a><a href="#animator" class="t2">Animator</a><a href="#project-settings" class="t2">Project Settings</a></nav>
+<article>
+<h1 id="painis-do-editor">Painéis do editor</h1>
+<p>Todos os painéis podem ser abertos/fechados pelo menu <strong>Janelas</strong>. Você pode arrastá-los e agrupá-los em abas do jeito que preferir.</p>
+<h2 id="viewport">Viewport</h2>
+<p>O coração do editor: mostra a cena ao vivo.</p>
+<ul>
+<li>Navegação 3D: <strong>botão direito + WASD</strong>, <strong>Q/E</strong> sobe/desce, <strong>Shift</strong> acelera</li>
+<li>2D: botão direito arrasta (pan), scroll dá zoom</li>
+<li><strong>Gizmos</strong>: teclas <strong>W</strong> (mover), <strong>E</strong> (rotacionar), <strong>R</strong> (escalar)</li>
+<li><strong>F11</strong> deixa o viewport em tela cheia (esconde os painéis)</li>
+<li>Barra de ferramentas no topo: modo 2D/3D, Play/Stop, stats</li>
+</ul>
+<h2 id="game-view">Game View</h2>
+<p>Mostra o <strong>jogo</strong> como o jogador vai ver, durante o <strong>Play</strong>. É renderizado em um framebuffer separado — você pode editar a cena no viewport enquanto observa o resultado da câmera do jogo aqui.</p>
+<h2 id="hierarquia">Hierarquia</h2>
+<p>A árvore de entidades da cena, com busca por nome. Clique para selecionar, arraste para reordenar/parentar, botão direito para ações (duplicar, salvar prefab, excluir).</p>
+<h2 id="inspetor">Inspetor</h2>
+<p>Mostra os <strong>componentes</strong> da entidade selecionada: Transform, MeshRenderer, física, luz, câmera, script, etc. Use <strong>Adicionar Componente</strong> para novos. Toda edição aqui é desfazível (<strong>Ctrl+Z</strong>).</p>
+<h2 id="content-browser">Content Browser</h2>
+<p>Navega os arquivos do projeto. Clique com o botão direito para criar pastas, scripts, cenas e prefabs. <strong>Arraste um asset para o viewport</strong> (ou para os slots do Inspetor) para usá-lo.</p>
+<h2 id="console">Console</h2>
+<p>Logs do editor e dos scripts, com filtros por tipo (info/aviso/erro) e busca. Clique em uma mensagem para limpar ou acompanhar a execução.</p>
+<h2 id="profiler">Profiler</h2>
+<p>Acompanhe o desempenho em tempo real: <strong>FPS</strong>, <strong>tempo de frame</strong> (gráfico), <strong>draw calls</strong>, <strong>triângulos</strong> e <strong>entidades</strong>. Ótimo para encontrar gargalos.</p>
+<h2 id="material-editor">Material Editor</h2>
+<p>Selecione uma entidade com malha e ajuste o material aqui: albedo, metal, rugosidade, emissão, POM e espelho — com <strong>preview ao vivo em uma esfera</strong>.</p>
+<h2 id="animator">Animator</h2>
+<p>Para entidades com <strong>Animador</strong>: escolha o clip, play/pause, loop, velocidade e arraste a linha do tempo para pular para qualquer pose.</p>
+<h2 id="project-settings">Project Settings</h2>
+<p>Configurações do projeto em uma janela com seções:</p>
+<ul>
+<li><strong>Gráficos</strong> — preset, MSAA, sombras, reflexos, iluminação, pós-processamento e HDRI do céu</li>
+<li><strong>Geral</strong> — resolução da janela, VSync, informações do OpenGL</li>
+<li><strong>Editor</strong> — velocidade da câmera, sensibilidade, snapping dos gizmos</li>
+<li><strong>Sobre</strong> — versão e resumo</li>
+</ul>
+<div class="callout dica"><b>Dicas rápidas</b> - Menu <strong>Janelas</strong> liga/desliga qualquer painel (o botão <strong>X</strong> da janela também). - Arraste a borda de uma aba para criar uma nova coluna/linha de painéis. - O layout fica salvo entre sessões.</div>
+
+</article>
+<div class="pager">
+<a class="navbtn prev" href="interface.html"><small>← Anterior</small><span>Interface do editor</span></a>
+<a class="navbtn next" href="viewport.html"><small>Próximo →</small><span>Viewport</span></a>
+</div>
+<footer class="footer">
+  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
+</footer>
+</main>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

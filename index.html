@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Visão geral — Kizuri Engine</title>
+<title>Bem-vindo — Kizuri Engine</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -11,105 +11,109 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
 <div class="group">Introdução</div>
-<a href="index.html" class="active">Visão geral</a>
+<a href="index.html" class="active">Bem-vindo</a>
 <a href="instalacao.html" class="">Instalação</a>
 <a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
-<div class="group">Conceitos</div>
-<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
-<a href="hierarquia.html" class="">Hierarquia e transform</a>
-<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<a href="projeto.html" class="">Gerenciamento de projetos</a>
 <div class="group">Editor</div>
 <a href="interface.html" class="">Interface do editor</a>
-<a href="viewport.html" class="">Viewport e câmera</a>
-<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="paineis.html" class="">Painéis do editor</a>
+<a href="viewport.html" class="">Viewport</a>
 <a href="content-browser.html" class="">Content Browser</a>
-<a href="configuracoes.html" class="">Configurações</a>
+<a href="project-settings.html" class="">Project Settings</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
-<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
-<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
-<a href="tilemap.html" class="">Tilemap</a>
-<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="meshes-3d.html" class="">Malhas 3D</a>
+<a href="sprites-2d.html" class="">Sprites 2D</a>
 <a href="luzes.html" class="">Luzes</a>
 <a href="particulas.html" class="">Partículas</a>
-<a href="animacao-3d.html" class="">Animação esquelética</a>
-<a href="audio-source.html" class="">AudioSource</a>
-<a href="camera.html" class="">Câmera</a>
-<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
-<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
-<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
-<div class="group">Renderização</div>
-<a href="pipeline-3d.html" class="">Pipeline 3D</a>
-<a href="pipeline-2d.html" class="">Pipeline 2D</a>
-<a href="qualidade.html" class="">Qualidade gráfica</a>
+<a href="fisica-2d.html" class="">Física 2D</a>
+<a href="fisica-3d.html" class="">Física 3D</a>
+<a href="audio-source.html" class="">Áudio</a>
+<a href="ui.html" class="">Interface (UI)</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="animacao-2d.html" class="">Animação 2D</a>
+<a href="animacao-3d.html" class="">Animação 3D</a>
 <div class="group">Scripting C#</div>
-<a href="scripting.html" class="">Introdução ao C#</a>
-<a href="script.html" class="">Classe Script e corrotinas</a>
-<a href="entity.html" class="">Entity — referência</a>
-<a href="scene.html" class="">Scene — referência</a>
-<a href="input.html" class="">Input</a>
-<a href="time.html" class="">Time</a>
-<a href="mathf.html" class="">Mathf</a>
-<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
-<a href="audio-api.html" class="">Audio (API)</a>
+<a href="scripting.html" class="">Scripting C#</a>
+<a href="entity.html" class="">Entity (API)</a>
+<a href="scene.html" class="">Scene (API)</a>
+<a href="input.html" class="">Input (API)</a>
+<a href="time.html" class="">Time (API)</a>
+<a href="mathf.html" class="">Mathf, Rand e Vetores</a>
 <a href="save.html" class="">SaveSystem</a>
-<a href="rand-log.html" class="">Rand e Log</a>
-<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
-<a href="exemplos.html" class="">Exemplos completos</a>
+<a href="fisica-api.html" class="">Física (API C#)</a>
+<a href="audio-api.html" class="">Áudio (API C#)</a>
+<a href="ui-api.html" class="">UI (API C#)</a>
+<div class="group">Gráficos</div>
+<a href="qualidade.html" class="">Qualidade e presets</a>
+<a href="reflexos.html" class="">Reflexos</a>
+<a href="iluminacao.html" class="">Iluminação</a>
+<a href="ceu.html" class="">Céu</a>
+<a href="sombras.html" class="">Sombras</a>
+<a href="pos-processamento.html" class="">Pós-processamento</a>
 <div class="group">Distribuição</div>
 <a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
 <a href="faq.html" class="">Perguntas frequentes</a>
   </nav>
 </aside>
+<div class="overlay" id="overlay"></div>
 <main>
 <header class="top">
-  <div class="crumbs"><span class="crumb">Introdução</span><span class="sep">/</span><span>Visão geral</span></div>
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+  <div class="crumbs"><span class="crumb">Introdução</span><span class="sep">/</span><span>Bem-vindo</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
+    <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
+    <button class="btn" id="printBtn" title="Imprimir">🖨️</button>
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
+
 <article>
 <h1 id="kizuri-engine">Kizuri Engine</h1>
-<p>A <strong>Kizuri Engine</strong> é uma engine de jogos <strong>2D + 3D</strong> para criar e publicar seus próprios jogos: monte a cena no editor visual, programe a lógica em <strong>C#</strong> e exporte um jogo executável — sem se preocupar com nada além do jogo.</p>
-<h2 id="o-que-ela-faz-por-você">O que ela faz por você</h2>
-<table><thead><tr><th>Área</th><th>Recursos</th></tr></thead><tbody><tr><td><strong>Criação de cenas</strong></td><td>Editor visual com arrastar-e-soltar, gizmos, hierarquia e pré-visualização em tempo real</td></tr><tr><td><strong>Renderer 3D</strong></td><td>PBR, céu (IBL), sombras em cascata, bloom, luzes dinâmicas, partículas, personagens animados</td></tr><tr><td><strong>Renderer 2D</strong></td><td>Sprites, círculos, texto, tilemaps, animação por frames e ordenação por camadas</td></tr><tr><td><strong>Interface (UI)</strong></td><td>Menus e HUD em espaço de tela, com botões clicáveis</td></tr><tr><td><strong>Física</strong></td><td>2D e 3D — corpos, colisões, forças, raios de detecção, impulso de pulo</td></tr><tr><td><strong>Áudio</strong></td><td>Sons e músicas, inclusive <strong>posicionados no mundo</strong> (sons 3D)</td></tr><tr><td><strong>Programação</strong></td><td>C# com API completa: entidades, cena, input, tempo, matemática, salvamento</td></tr><tr><td><strong>Publicação</strong></td><td>Exporta um executável do seu jogo com um clique</td></tr></tbody></table>
-<h2 id="como-se-trabalha">Como se trabalha</h2>
-<ol>
-<li><strong>Editor</strong> — você constrói a cena visualmente: adicione entidades,</li>
-</ol>
-<p>   componentes, luzes, física e UI. Aperte <strong>Play</strong> para testar com física e    scripts reais.</p>
-<ol>
-<li><strong>C#</strong> — a lógica do jogo fica em classes simples. O editor compila e</li>
-</ol>
-<p>   carrega seu código automaticamente no Play.</p>
-<ol>
-<li><strong>Exportar</strong> — <code>Arquivo → Exportar Jogo…</code> gera um executável pronto para</li>
-</ol>
-<p>   distribuir.</p>
-<h2 id="tudo-já-vem-pronto">Tudo já vem pronto</h2>
-<p>As cenas de demonstração e os assets padrão (modelos 3D, céu, primitivas) <strong>já acompanham o editor</strong> — você não precisa baixar nem instalar nada separado, e nenhuma função padrão deixa de funcionar se um arquivo for removido.</p>
-<h2 id="por-onde-começar">Por onde começar</h2>
+<p>A <strong>Kizuri Engine</strong> é um motor de jogos 2D e 3D completo — criado para você fazer o jogo inteiro dentro do editor, <strong>sem mexer em C++</strong>.</p>
 <ul>
-<li><strong><a href="instalacao.html">Instalação</a></strong> — baixar e abrir o editor.</li>
-<li><strong><a href="primeiro-projeto.html">Seu primeiro projeto</a></strong> — do zero ao Play.</li>
-<li><strong><a href="interface.html">Interface do editor</a></strong> — conheça os painéis.</li>
-<li><strong><a href="scripting.html">Scripting C#</a></strong> — como programar seu jogo.</li>
+<li><strong>Motor em C++</strong>, 100% <strong>OpenGL 3.3</strong> — roda em praticamente qualquer máquina, sem drivers especiais</li>
+<li><strong>Jogo em C#</strong> (<code>Kizuri.Scripting</code>) — você escreve a lógica em uma linguagem simples e moderna</li>
+<li><strong>Editor visual completo</strong> com 10+ painéis (Hierarquia, Inspetor, Viewport, Game View, Profiler, Content Browser, Console, Material Editor, Animator, Project Settings)</li>
+<li><strong>Gráficos de respeito</strong> no 3.3: PBR, reflexos por raio, iluminação global, céu físico, sombras suaves, nuvens volumétricas, DOF, motion blur...</li>
+<li><strong>Física 2D e 3D</strong> (Box2D e Bullet), áudio, partículas, tilemap, UI e exportação do jogo como executável standalone</li>
 </ul>
+<h2 id="para-quem-esta-documentao">Para quem é esta documentação</h2>
+<ul>
+<li><strong>Comece aqui</strong> → <a href="instalacao.html">Instalação</a> e <a href="primeiro-projeto.html">Seu primeiro projeto</a></li>
+<li><strong>Conheça o editor</strong> → seção <a href="interface.html">Editor</a></li>
+<li><strong>Aprenda a criar jogos</strong> → seção <a href="transform.html">Componentes</a></li>
+<li><strong>Escreva scripts</strong> → seção <a href="scripting.html">Scripting C#</a></li>
+<li><strong>Capriche nos gráficos</strong> → seção <a href="qualidade.html">Gráficos</a></li>
+</ul>
+<h2 id="o-ciclo-de-trabalho">O ciclo de trabalho</h2>
+<ol>
+<li><strong>Crie um projeto</strong> no editor (2D, 3D ou vazio).</li>
+<li><strong>Monte a cena</strong>: adicione entidades, meshes, luzes, física, áudio, UI...</li>
+<li><strong>Escreva scripts C#</strong> e aperte <strong>Play</strong> — o editor compila e roda o jogo.</li>
+<li><strong>Exporte o jogo</strong>: um executável standalone com seus assets embutidos.</li>
+</ol>
+<div class="callout dica"><b>Quer ver tudo funcionando?</b> Abra o menu <strong>Arquivo → Cena de Demonstração 3D</strong> no editor — uma cena pronta com esqueleto animado, material PBR, reflexos e céu físico.</div>
 
 </article>
 <div class="pager">
 <span class="navbtn"></span>
-<a class="navbtn next" href="instalacao.html">Instalação →</a>
+<a class="navbtn next" href="instalacao.html"><small>Próximo →</small><span>Instalação</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio. Todos os direitos reservados.
+  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

@@ -11,127 +11,106 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
 <div class="group">Introdução</div>
-<a href="index.html" class="">Visão geral</a>
+<a href="index.html" class="">Bem-vindo</a>
 <a href="instalacao.html" class="">Instalação</a>
 <a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
-<div class="group">Conceitos</div>
-<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
-<a href="hierarquia.html" class="">Hierarquia e transform</a>
-<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<a href="projeto.html" class="">Gerenciamento de projetos</a>
 <div class="group">Editor</div>
 <a href="interface.html" class="">Interface do editor</a>
-<a href="viewport.html" class="">Viewport e câmera</a>
-<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="paineis.html" class="">Painéis do editor</a>
+<a href="viewport.html" class="">Viewport</a>
 <a href="content-browser.html" class="">Content Browser</a>
-<a href="configuracoes.html" class="">Configurações</a>
+<a href="project-settings.html" class="">Project Settings</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
-<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
-<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
-<a href="tilemap.html" class="">Tilemap</a>
-<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="meshes-3d.html" class="">Malhas 3D</a>
+<a href="sprites-2d.html" class="">Sprites 2D</a>
 <a href="luzes.html" class="">Luzes</a>
 <a href="particulas.html" class="">Partículas</a>
-<a href="animacao-3d.html" class="">Animação esquelética</a>
-<a href="audio-source.html" class="">AudioSource</a>
-<a href="camera.html" class="">Câmera</a>
-<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
-<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
-<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
-<div class="group">Renderização</div>
-<a href="pipeline-3d.html" class="">Pipeline 3D</a>
-<a href="pipeline-2d.html" class="">Pipeline 2D</a>
-<a href="qualidade.html" class="">Qualidade gráfica</a>
+<a href="fisica-2d.html" class="">Física 2D</a>
+<a href="fisica-3d.html" class="">Física 3D</a>
+<a href="audio-source.html" class="">Áudio</a>
+<a href="ui.html" class="">Interface (UI)</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="animacao-2d.html" class="">Animação 2D</a>
+<a href="animacao-3d.html" class="">Animação 3D</a>
 <div class="group">Scripting C#</div>
-<a href="scripting.html" class="">Introdução ao C#</a>
-<a href="script.html" class="">Classe Script e corrotinas</a>
-<a href="entity.html" class="">Entity — referência</a>
-<a href="scene.html" class="">Scene — referência</a>
-<a href="input.html" class="">Input</a>
-<a href="time.html" class="">Time</a>
-<a href="mathf.html" class="">Mathf</a>
-<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
-<a href="audio-api.html" class="">Audio (API)</a>
+<a href="scripting.html" class="">Scripting C#</a>
+<a href="entity.html" class="">Entity (API)</a>
+<a href="scene.html" class="">Scene (API)</a>
+<a href="input.html" class="">Input (API)</a>
+<a href="time.html" class="">Time (API)</a>
+<a href="mathf.html" class="">Mathf, Rand e Vetores</a>
 <a href="save.html" class="active">SaveSystem</a>
-<a href="rand-log.html" class="">Rand e Log</a>
-<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
-<a href="exemplos.html" class="">Exemplos completos</a>
+<a href="fisica-api.html" class="">Física (API C#)</a>
+<a href="audio-api.html" class="">Áudio (API C#)</a>
+<a href="ui-api.html" class="">UI (API C#)</a>
+<div class="group">Gráficos</div>
+<a href="qualidade.html" class="">Qualidade e presets</a>
+<a href="reflexos.html" class="">Reflexos</a>
+<a href="iluminacao.html" class="">Iluminação</a>
+<a href="ceu.html" class="">Céu</a>
+<a href="sombras.html" class="">Sombras</a>
+<a href="pos-processamento.html" class="">Pós-processamento</a>
 <div class="group">Distribuição</div>
 <a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
 <a href="faq.html" class="">Perguntas frequentes</a>
   </nav>
 </aside>
+<div class="overlay" id="overlay"></div>
 <main>
 <header class="top">
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
   <div class="crumbs"><span class="crumb">Scripting C#</span><span class="sep">/</span><span>SaveSystem</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
+    <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
+    <button class="btn" id="printBtn" title="Imprimir">🖨️</button>
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#salvar" class="t2">Salvar</a><a href="#carregar" class="t2">Carregar</a><a href="#o-que-funciona" class="t2">O que funciona</a></nav>
 <article>
 <h1 id="savesystem">SaveSystem</h1>
-<p>Persistência simples de jogo em um arquivo <strong>JSON</strong> (<code>save.json</code> no diretório de trabalho por padrão).</p>
-<h2 id="guardar-valores">Guardar valores</h2>
-<pre><code class="language-csharp">SaveSystem.Set("score", 100);                      // int
-SaveSystem.Set("nome", "Kizuri");                  // string
-SaveSystem.Set("volume", 0.7f);                    // float
-SaveSystem.Set("som", true);                       // bool
-SaveSystem.Set("pos", new Vector3(1f, 2f, 3f));    // vetores
-SaveSystem.Set("ponto", new Vector2(5f, 0f));</code></pre>
-<h2 id="gravar-em-disco">Gravar em disco</h2>
-<pre><code class="language-csharp">SaveSystem.Save();   // escreve save.json</code></pre>
-<p>Chame ao passar de fase, no pause, ou ao fechar.</p>
-<h2 id="ler-auto-carrega">Ler (auto-carrega)</h2>
-<p>Os <code>Get*</code> <strong>carregam do disco automaticamente</strong> na primeira consulta:</p>
-<pre><code class="language-csharp">var score  = SaveSystem.GetFloat("score", 0f);        // fallback se não existir
-var nome   = SaveSystem.GetString("nome", "sem nome");
-var volume = SaveSystem.GetFloat("volume", 1f);
-var som    = SaveSystem.GetBool("som", true);
-
-if (SaveSystem.Has("pos"))
+<p>Salve e carregue o progresso do jogador em <strong>JSON</strong>, sem depender da engine — é 100% gerenciado (puro C#).</p>
+<h2 id="salvar">Salvar</h2>
+<div class="codeblock"><pre><code class="language-csharp">public class Progresso
 {
-    var pos = SaveSystem.GetVector3("pos");
-    jogador.SetPosition(pos);
-}
-var ponto = SaveSystem.GetVector2("ponto");</code></pre>
-<h2 id="outros-arquivos">Outros arquivos</h2>
-<pre><code class="language-csharp">SaveSystem.SetPath("jogos/fase1.save");   // muda o arquivo (limpa o cache)</code></pre>
-<h2 id="referência">Referência</h2>
-<table><thead><tr><th>Método</th><th>Descrição</th></tr></thead><tbody><tr><td><code>Set(key, string/int/float/bool/Vector2/Vector3)</code></td><td>Guarda um valor</td></tr><tr><td><code>Has(key)</code></td><td>Existe a chave?</td></tr><tr><td><code>GetString(key, fallback)</code></td><td>Lê string</td></tr><tr><td><code>GetInt(key, fallback)</code></td><td>Lê int (aceita float salvo)</td></tr><tr><td><code>GetFloat(key, fallback)</code></td><td>Lê float (aceita int salvo)</td></tr><tr><td><code>GetBool(key, fallback)</code></td><td>Lê bool</td></tr><tr><td><code>GetVector2(key, fallback)</code> / <code>GetVector3(key, fallback)</code></td><td>Lê vetor</td></tr><tr><td><code>Save()</code></td><td>Grava em disco</td></tr><tr><td><code>Load()</code></td><td>Recarrega do disco</td></tr><tr><td><code>SetPath(path)</code></td><td>Muda o arquivo de save</td></tr><tr><td><code>FilePath</code></td><td>Caminho atual</td></tr></tbody></table>
-<div class="callout warn"><code>Save()</code> grava o estado <strong>atual</strong> do cache. Depois de <code>Set</code>, lembre de chamar <code>Save()</code> — os valores não são persistidos sozinhos.</div>
-<h2 id="exemplo-de-jogo">Exemplo de jogo</h2>
-<pre><code class="language-csharp">// OnDestroy do jogador: salva a posição
-public override void OnDestroy()
-{
-    if (Entity.TryGetWorldPosition(out var p))
-    {
-        SaveSystem.Set("pos", p);
-        SaveSystem.Set("vidas", vidas);
-        SaveSystem.Save();
-    }
+    public int Fase = 1;
+    public int Moedas = 0;
+    public string Nome = "";
 }
 
-// Na abertura de uma fase, carregar a posição salva
-public override void OnCreate()
-{
-    if (SaveSystem.Has("pos"))
-        Entity.SetPosition(SaveSystem.GetVector3("pos"));
-}</code></pre>
+// salvar num arquivo (o caminho é relativo ao jogo)
+SaveSystem.Save("save.json", new Progresso { Fase = 3, Moedas = 42 });</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="carregar">Carregar</h2>
+<div class="codeblock"><pre><code class="language-csharp">var p = SaveSystem.Load&lt;Progresso&gt;("save.json");
+if (p != null) Debug.Log($"Fase {p.Fase}, moedas {p.Moedas}");</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="o-que-funciona">O que funciona</h2>
+<ul>
+<li>Objetos simples com campos públicos (serializados automaticamente)</li>
+<li>Listas e dicionários</li>
+<li>Tipos básicos (int, float, string, bool)</li>
+</ul>
+<div class="callout dica">Use <code>SaveSystem</code> para <strong>checkpoints</strong> e <strong>configurações</strong> do jogador. Para salvar a cena inteira (nível montado no editor), use arquivos <code>.kzscene</code>.</div>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="audio-api.html">← Audio (API)</a>
-<a class="navbtn next" href="rand-log.html">Rand e Log →</a>
+<a class="navbtn prev" href="mathf.html"><small>← Anterior</small><span>Mathf, Rand e Vetores</span></a>
+<a class="navbtn next" href="fisica-api.html"><small>Próximo →</small><span>Física (API C#)</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio. Todos os direitos reservados.
+  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

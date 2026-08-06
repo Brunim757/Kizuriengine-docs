@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mathf — Kizuri Engine</title>
+<title>Mathf, Rand e Vetores — Kizuri Engine</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -11,114 +11,111 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
 <div class="group">Introdução</div>
-<a href="index.html" class="">Visão geral</a>
+<a href="index.html" class="">Bem-vindo</a>
 <a href="instalacao.html" class="">Instalação</a>
 <a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
-<div class="group">Conceitos</div>
-<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
-<a href="hierarquia.html" class="">Hierarquia e transform</a>
-<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<a href="projeto.html" class="">Gerenciamento de projetos</a>
 <div class="group">Editor</div>
 <a href="interface.html" class="">Interface do editor</a>
-<a href="viewport.html" class="">Viewport e câmera</a>
-<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="paineis.html" class="">Painéis do editor</a>
+<a href="viewport.html" class="">Viewport</a>
 <a href="content-browser.html" class="">Content Browser</a>
-<a href="configuracoes.html" class="">Configurações</a>
+<a href="project-settings.html" class="">Project Settings</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
-<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
-<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
-<a href="tilemap.html" class="">Tilemap</a>
-<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="meshes-3d.html" class="">Malhas 3D</a>
+<a href="sprites-2d.html" class="">Sprites 2D</a>
 <a href="luzes.html" class="">Luzes</a>
 <a href="particulas.html" class="">Partículas</a>
-<a href="animacao-3d.html" class="">Animação esquelética</a>
-<a href="audio-source.html" class="">AudioSource</a>
-<a href="camera.html" class="">Câmera</a>
-<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
-<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
-<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
-<div class="group">Renderização</div>
-<a href="pipeline-3d.html" class="">Pipeline 3D</a>
-<a href="pipeline-2d.html" class="">Pipeline 2D</a>
-<a href="qualidade.html" class="">Qualidade gráfica</a>
+<a href="fisica-2d.html" class="">Física 2D</a>
+<a href="fisica-3d.html" class="">Física 3D</a>
+<a href="audio-source.html" class="">Áudio</a>
+<a href="ui.html" class="">Interface (UI)</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="animacao-2d.html" class="">Animação 2D</a>
+<a href="animacao-3d.html" class="">Animação 3D</a>
 <div class="group">Scripting C#</div>
-<a href="scripting.html" class="">Introdução ao C#</a>
-<a href="script.html" class="">Classe Script e corrotinas</a>
-<a href="entity.html" class="">Entity — referência</a>
-<a href="scene.html" class="">Scene — referência</a>
-<a href="input.html" class="">Input</a>
-<a href="time.html" class="">Time</a>
-<a href="mathf.html" class="active">Mathf</a>
-<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
-<a href="audio-api.html" class="">Audio (API)</a>
+<a href="scripting.html" class="">Scripting C#</a>
+<a href="entity.html" class="">Entity (API)</a>
+<a href="scene.html" class="">Scene (API)</a>
+<a href="input.html" class="">Input (API)</a>
+<a href="time.html" class="">Time (API)</a>
+<a href="mathf.html" class="active">Mathf, Rand e Vetores</a>
 <a href="save.html" class="">SaveSystem</a>
-<a href="rand-log.html" class="">Rand e Log</a>
-<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
-<a href="exemplos.html" class="">Exemplos completos</a>
+<a href="fisica-api.html" class="">Física (API C#)</a>
+<a href="audio-api.html" class="">Áudio (API C#)</a>
+<a href="ui-api.html" class="">UI (API C#)</a>
+<div class="group">Gráficos</div>
+<a href="qualidade.html" class="">Qualidade e presets</a>
+<a href="reflexos.html" class="">Reflexos</a>
+<a href="iluminacao.html" class="">Iluminação</a>
+<a href="ceu.html" class="">Céu</a>
+<a href="sombras.html" class="">Sombras</a>
+<a href="pos-processamento.html" class="">Pós-processamento</a>
 <div class="group">Distribuição</div>
 <a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
 <a href="faq.html" class="">Perguntas frequentes</a>
   </nav>
 </aside>
+<div class="overlay" id="overlay"></div>
 <main>
 <header class="top">
-  <div class="crumbs"><span class="crumb">Scripting C#</span><span class="sep">/</span><span>Mathf</span></div>
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+  <div class="crumbs"><span class="crumb">Scripting C#</span><span class="sep">/</span><span>Mathf, Rand e Vetores</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
+    <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
+    <button class="btn" id="printBtn" title="Imprimir">🖨️</button>
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#mathf" class="t2">Mathf</a><a href="#rand" class="t2">Rand</a><a href="#vetores" class="t2">Vetores</a></nav>
 <article>
-<h1 id="mathf">Mathf</h1>
-<p>Helpers matemáticos comuns de gameplay, estilo Unity. <strong>Puramente managed.</strong></p>
-<h2 id="interpolação-e-suavização">Interpolação e suavização</h2>
-<table><thead><tr><th>Método</th><th>Descrição</th></tr></thead><tbody><tr><td><code>Clamp(v, min, max)</code></td><td>Limita entre min e max (float e int)</td></tr><tr><td><code>Lerp(a, b, t)</code></td><td>Interpola com <code>t</code> clampeado em [0,1]</td></tr><tr><td><code>LerpUnclamped(a, b, t)</code></td><td>Interpola sem clamar <code>t</code></td></tr><tr><td><code>MoveTowards(cur, target, maxDelta)</code></td><td>Move em direção ao alvo no máximo <code>maxDelta</code> por chamada</td></tr><tr><td><code>SmoothDamp(cur, target, ref vel, smoothTime, dt)</code></td><td>Seguimento suave (independe do framerate)</td></tr><tr><td><code>SmoothStep(a, b, t)</code></td><td>S-curve sem overshoot</td></tr></tbody></table>
-<pre><code class="language-csharp">pos = Mathf.Lerp(pos, alvo, 0.05f);            // aproximação suave
-pos = Mathf.MoveTowards(pos, alvo, 10f * dt);  // velocidade constante
-Mathf.SmoothDamp(pos, alvo, ref velocidade, 0.3f, dt);</code></pre>
-<h2 id="ciclos-e-ondas">Ciclos e ondas</h2>
-<table><thead><tr><th>Método</th><th>Descrição</th></tr></thead><tbody><tr><td><code>Repeat(t, length)</code></td><td>Valor em [0, length] que repete</td></tr><tr><td><code>PingPong(t, length)</code></td><td>Oscila 0→length→0 no ritmo de <code>t</code></td></tr><tr><td><code>Sin(v)</code> / <code>Cos(v)</code></td><td>Seno/cosseno</td></tr></tbody></table>
-<pre><code class="language-csharp">float f = Mathf.PingPong(Time.time, 2f);  // 0 → 2 → 0 → 2 → …
-float wave = Mathf.Sin(Time.time * 3f);   // oscilação suave</code></pre>
-<h2 id="ângulos">Ângulos</h2>
-<table><thead><tr><th>Método</th><th>Descrição</th></tr></thead><tbody><tr><td><code>LerpAngle(a, b, t)</code></td><td>Interpola ângulos pegando o <strong>caminho curto</strong> (350°→10°)</td></tr><tr><td><code>Angle(Vector2 a, Vector2 b)</code></td><td>Ângulo (graus) entre dois vetores 2D</td></tr></tbody></table>
-<h2 id="re-mapeamento">Re-mapeamento</h2>
-<table><thead><tr><th>Método</th><th>Descrição</th></tr></thead><tbody><tr><td><code>Remap(value, fromMin, fromMax, toMin, toMax)</code></td><td>Mapeia de um intervalo para outro</td></tr></tbody></table>
-<pre><code class="language-csharp">// 0..1 → -90..90
-float angulo = Mathf.Remap(progresso, 0f, 1f, -90f, 90f);</code></pre>
-<h2 id="aritmética-e-distância">Aritmética e distância</h2>
-<table><thead><tr><th>Método</th><th>Descrição</th></tr></thead><tbody><tr><td><code>Abs(v)</code> / <code>Sign(v)</code> / <code>Min(a,b)</code> / <code>Max(a,b)</code></td><td>Básicos</td></tr><tr><td><code>Sqrt(v)</code> / <code>Pow(v, e)</code></td><td>Potência</td></tr><tr><td><code>Distance(Vector2 a, Vector2 b)</code></td><td>Distância 2D</td></tr><tr><td><code>Distance(Vector3 a, Vector3 b)</code></td><td>Distância 3D</td></tr></tbody></table>
-<pre><code class="language-csharp">if (Mathf.Distance(jogadorPos, alvoPos) &lt; 2f) { }</code></pre>
-<h2 id="referência-rápida-assinaturas">Referência rápida (assinaturas)</h2>
-<pre><code class="language-csharp">float Clamp(float v, float min, float max);
-int   Clamp(int v, int min, int max);
-float Lerp(float a, float b, float t);
-float LerpUnclamped(float a, float b, float t);
-float MoveTowards(float current, float target, float maxDelta);
-float SmoothDamp(float current, float target, ref float velocity, float smoothTime, float dt);
-float SmoothStep(float a, float b, float t);
-float Repeat(float t, float length);
-float PingPong(float t, float length);
-float Remap(float value, float fromMin, float fromMax, float toMin, float toMax);
-float LerpAngle(float a, float b, float t);
-float Angle(Vector2 a, Vector2 b);
-float Distance(Vector2 a, Vector2 b);
-float Distance(Vector3 a, Vector3 b);</code></pre>
+<h1 id="mathf-rand-e-vetores">Mathf, Rand e Vetores</h1>
+<p>Utilitários matemáticos para jogos.</p>
+<h2 id="mathf">Mathf</h2>
+<div class="codeblock"><pre><code class="language-csharp">Mathf.Clamp(valor, min, max);
+Mathf.Lerp(a, b, t);            // interpolação linear
+Mathf.LerpAngle(a, b, t);       // interpolação de ângulos (curto caminho)
+Mathf.SmoothStep(a, b, t);      // interpolação suave
+Mathf.PingPong(t, comprimento); // vai e volta entre 0 e comprimento
+Mathf.Remap(valor, a1, b1, a2, b2); // re-mapeia de uma faixa para outra
+Mathf.Angle(de, para);          // menor diferença angular</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="rand">Rand</h2>
+<div class="codeblock"><pre><code class="language-csharp">Rand.Float(0f, 1f);     // float aleatório
+Rand.Int(1, 6);         // int aleatório (1..5)
+Rand.Range(-1f, 1f);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="vetores">Vetores</h2>
+<p>As entidades usam <code>Vector3</code>:</p>
+<div class="codeblock"><pre><code class="language-csharp">var v = Entity.Position;
+v.X += 1f;
+Entity.Position = v;
+
+var dir = new Vector3(0f, 1f, 0f);
+Vector3.Distance(a, b);
+Vector3.Dot(a, b);
+Vector3.Cross(a, b);
+Vector3.Normalize(a);
+Vector3.Lerp(a, b, t);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<div class="callout dica"><code>Mathf.Remap</code> é ouro para barras de vida: remapeie a vida (0..100) para a largura da barra (0..1).</div>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="time.html">← Time</a>
-<a class="navbtn next" href="vectors.html">Vetores (Vector2/3/4) →</a>
+<a class="navbtn prev" href="time.html"><small>← Anterior</small><span>Time (API)</span></a>
+<a class="navbtn next" href="save.html"><small>Próximo →</small><span>SaveSystem</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio. Todos os direitos reservados.
+  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

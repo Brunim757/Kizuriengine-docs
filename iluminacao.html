@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Configurações — Kizuri Engine</title>
+<title>Iluminação — Kizuri Engine</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -28,7 +28,7 @@
 <a href="project-settings.html" class="">Project Settings</a>
 <a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
-<a href="configuracoes.html" class="active">Configurações</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
 <a href="camera.html" class="">Câmera</a>
@@ -57,7 +57,7 @@
 <div class="group">Gráficos</div>
 <a href="qualidade.html" class="">Qualidade e presets</a>
 <a href="reflexos.html" class="">Reflexos</a>
-<a href="iluminacao.html" class="">Iluminação</a>
+<a href="iluminacao.html" class="active">Iluminação</a>
 <a href="ceu.html" class="">Céu</a>
 <a href="sombras.html" class="">Sombras</a>
 <a href="pos-processamento.html" class="">Pós-processamento</a>
@@ -71,7 +71,7 @@
 <main>
 <header class="top">
   <button class="burger" id="burger" aria-label="Menu">☰</button>
-  <div class="crumbs"><span class="crumb">Editor</span><span class="sep">/</span><span>Configurações</span></div>
+  <div class="crumbs"><span class="crumb">Gráficos</span><span class="sep">/</span><span>Iluminação</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
     <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
@@ -79,24 +79,29 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#grficos" class="t2">Gráficos</a><a href="#geral" class="t2">Geral</a><a href="#editor" class="t2">Editor</a><a href="#persistncia" class="t2">Persistência</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#luzes" class="t2">Luzes</a><a href="#ssao-ocluso-de-ambiente" class="t2">SSAO — oclusão de ambiente</a><a href="#ssgi-iluminao-global" class="t2">SSGI — iluminação global</a><a href="#ibl-iluminao-baseada-no-ambiente" class="t2">IBL — iluminação baseada no ambiente</a></nav>
 <article>
-<h1 id="configuraes">Configurações</h1>
-<p>A janela <strong>Configurações</strong> (menu <strong>Exibir → Configurações...</strong> ou <code>Ctrl+,</code>) reúne os ajustes da engine em seções com sidebar. É a versão completa do painel <a href="project-settings.html">Project Settings</a>.</p>
-<h2 id="grficos">Gráficos</h2>
-<p>Presets (Ultra/High/Medium/Low), resolução interna, MSAA, sombras (CSM/PCSS), SSAO/SSGI, reflexos (SSR), TAA/FXAA, bloom (com anamórfico), DOF, motion blur, god rays, nuvens, lens flare, exposição, tonemapping, saturação/ contraste, vinheta/aberração/grão, névoa e <strong>HDRI do céu</strong>.</p>
-<h2 id="geral">Geral</h2>
-<p>Resolução da janela (aplicar), maximizar/minimizar, <strong>VSync</strong> e informações do OpenGL (fabricante, renderer, versão).</p>
-<h2 id="editor">Editor</h2>
-<p>Velocidade da câmera livre, sensibilidade do mouse, snapping dos gizmos, demos (2D, 3D e 2.5D) e preferências de Play.</p>
-<h2 id="persistncia">Persistência</h2>
-<p>Os ajustes gráficos ficam salvos em <code>settings.json</code> ao lado do editor e são aplicados ao vivo — sem reiniciar.</p>
-<div class="callout nota">A janela <strong>Configurações</strong> e o painel <strong>Project Settings</strong> editam os mesmos valores — use o que for mais prático.</div>
+<h1 id="iluminao">Iluminação</h1>
+<p>A iluminação da Kizuri é <strong>física</strong> (PBR) com luzes diretas, reflexos do ambiente (IBL) e iluminação indireta aproximada.</p>
+<h2 id="luzes">Luzes</h2>
+<p>Cada entidade pode ter uma luz:</p>
+<div class="tablewrap"><table><thead><tr><th>Tipo</th><th>Uso</th></tr></thead><tbody><tr><td><strong>Direcional</strong></td><td>O sol: ilumina tudo de uma direção, projeta sombras (CSM)</td></tr><tr><td><strong>Ponto</strong></td><td>Lâmpada: ilumina a partir de um ponto, com alcance</td></tr><tr><td><strong>Spot</strong></td><td>Holofote: cone com ângulo interno/externo</td></tr></tbody></table></div>
+<p>No Inspetor: cor, intensidade, alcance (ponto/spot) e cone (spot).</p>
+<h2 id="ssao-ocluso-de-ambiente">SSAO — oclusão de ambiente</h2>
+<p>Escurece cantos e frestas onde a luz não chega, dando "peso" aos objetos. Ajustes: <strong>amostras</strong> e <strong>raio</strong>.</p>
+<h2 id="ssgi-iluminao-global">SSGI — iluminação global</h2>
+<p>A <strong>luz indireta</strong>: o SSR marcha raios no hemisfério e coleta a <strong>cor</strong> dos objetos vizinhos, devolvendo aquela "luz que quica" entre superfícies — paredes coloridas tingem o ambiente, sombras ganham preenchimento.</p>
+<ul>
+<li>Ajuste: <strong>intensidade</strong> (exagere devagar; valores ~0,4 já fazem efeito)</li>
+</ul>
+<h2 id="ibl-iluminao-baseada-no-ambiente">IBL — iluminação baseada no ambiente</h2>
+<p>O céu (físico ou HDRI) vira uma fonte de luz para os materiais PBR: <strong>irradiância</strong> para o difuso e <strong>reflexos pré-filtrados</strong> para o especular. Ou seja: a cor do céu ilumina e reflete nos objetos automaticamente.</p>
+<div class="callout dica">Para a "hora mágica", baixe o sol (rotacione a luz direcional) — o céu físico muda para laranja/vermelho e a iluminação acompanha.</div>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="atalhos.html"><small>← Anterior</small><span>Atalhos de teclado</span></a>
-<a class="navbtn next" href="transform.html"><small>Próximo →</small><span>Transform</span></a>
+<a class="navbtn prev" href="reflexos.html"><small>← Anterior</small><span>Reflexos</span></a>
+<a class="navbtn next" href="ceu.html"><small>Próximo →</small><span>Céu</span></a>
 </div>
 <footer class="footer">
   © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>

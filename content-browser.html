@@ -11,103 +11,112 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
 <div class="group">Introdução</div>
-<a href="index.html" class="">Visão geral</a>
+<a href="index.html" class="">Bem-vindo</a>
 <a href="instalacao.html" class="">Instalação</a>
 <a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
-<div class="group">Conceitos</div>
-<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
-<a href="hierarquia.html" class="">Hierarquia e transform</a>
-<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<a href="projeto.html" class="">Gerenciamento de projetos</a>
 <div class="group">Editor</div>
 <a href="interface.html" class="">Interface do editor</a>
-<a href="viewport.html" class="">Viewport e câmera</a>
-<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="paineis.html" class="">Painéis do editor</a>
+<a href="viewport.html" class="">Viewport</a>
 <a href="content-browser.html" class="active">Content Browser</a>
-<a href="configuracoes.html" class="">Configurações</a>
+<a href="project-settings.html" class="">Project Settings</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
-<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
-<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
-<a href="tilemap.html" class="">Tilemap</a>
-<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="meshes-3d.html" class="">Malhas 3D</a>
+<a href="sprites-2d.html" class="">Sprites 2D</a>
 <a href="luzes.html" class="">Luzes</a>
 <a href="particulas.html" class="">Partículas</a>
-<a href="animacao-3d.html" class="">Animação esquelética</a>
-<a href="audio-source.html" class="">AudioSource</a>
-<a href="camera.html" class="">Câmera</a>
-<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
-<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
-<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
-<div class="group">Renderização</div>
-<a href="pipeline-3d.html" class="">Pipeline 3D</a>
-<a href="pipeline-2d.html" class="">Pipeline 2D</a>
-<a href="qualidade.html" class="">Qualidade gráfica</a>
+<a href="fisica-2d.html" class="">Física 2D</a>
+<a href="fisica-3d.html" class="">Física 3D</a>
+<a href="audio-source.html" class="">Áudio</a>
+<a href="ui.html" class="">Interface (UI)</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="animacao-2d.html" class="">Animação 2D</a>
+<a href="animacao-3d.html" class="">Animação 3D</a>
 <div class="group">Scripting C#</div>
-<a href="scripting.html" class="">Introdução ao C#</a>
-<a href="script.html" class="">Classe Script e corrotinas</a>
-<a href="entity.html" class="">Entity — referência</a>
-<a href="scene.html" class="">Scene — referência</a>
-<a href="input.html" class="">Input</a>
-<a href="time.html" class="">Time</a>
-<a href="mathf.html" class="">Mathf</a>
-<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
-<a href="audio-api.html" class="">Audio (API)</a>
+<a href="scripting.html" class="">Scripting C#</a>
+<a href="entity.html" class="">Entity (API)</a>
+<a href="scene.html" class="">Scene (API)</a>
+<a href="input.html" class="">Input (API)</a>
+<a href="time.html" class="">Time (API)</a>
+<a href="mathf.html" class="">Mathf, Rand e Vetores</a>
 <a href="save.html" class="">SaveSystem</a>
-<a href="rand-log.html" class="">Rand e Log</a>
-<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
-<a href="exemplos.html" class="">Exemplos completos</a>
+<a href="fisica-api.html" class="">Física (API C#)</a>
+<a href="audio-api.html" class="">Áudio (API C#)</a>
+<a href="ui-api.html" class="">UI (API C#)</a>
+<div class="group">Gráficos</div>
+<a href="qualidade.html" class="">Qualidade e presets</a>
+<a href="reflexos.html" class="">Reflexos</a>
+<a href="iluminacao.html" class="">Iluminação</a>
+<a href="ceu.html" class="">Céu</a>
+<a href="sombras.html" class="">Sombras</a>
+<a href="pos-processamento.html" class="">Pós-processamento</a>
 <div class="group">Distribuição</div>
 <a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
 <a href="faq.html" class="">Perguntas frequentes</a>
   </nav>
 </aside>
+<div class="overlay" id="overlay"></div>
 <main>
 <header class="top">
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
   <div class="crumbs"><span class="crumb">Editor</span><span class="sep">/</span><span>Content Browser</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
+    <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
+    <button class="btn" id="printBtn" title="Imprimir">🖨️</button>
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#atalhos-de-uso" class="t2">Atalhos de uso</a><a href="#estrutura-tpica-de-um-projeto" class="t2">Estrutura típica de um projeto</a><a href="#previews" class="t2">Previews</a><a href="#importao" class="t2">Importação</a></nav>
 <article>
 <h1 id="content-browser">Content Browser</h1>
-<p>O <strong>Content Browser</strong> mostra os arquivos da pasta atual do projeto. É a sua "caixa de assets".</p>
-<h2 id="drag-drop">Drag & drop</h2>
-<p>Arraste um asset direto para o <strong>viewport</strong> e a entidade nasce pronta:</p>
-<table><thead><tr><th>Asset</th><th>O que cria</th></tr></thead><tbody><tr><td><code>.obj</code> / <code>.glb</code> / <code>.gltf</code></td><td>Entidade com <code>MeshRenderer</code> + material extraído do modelo</td></tr><tr><td><code>.png</code> / <code>.jpg</code></td><td>Entidade com <code>SpriteRenderer</code> usando a textura</td></tr><tr><td><code>.wav</code> / <code>.ogg</code></td><td>Entidade com <code>AudioSource</code></td></tr><tr><td><code>.kzprefab</code></td><td>Entidade instanciada da prefab</td></tr></tbody></table>
-<h2 id="ícones-por-tipo">Ícones por tipo</h2>
-<p>Cada tipo de arquivo tem um ícone colorido para reconhecimento rápido: modelos, texturas, áudio, prefabs, cenas.</p>
-<h2 id="renomear-e-organizar">Renomear e organizar</h2>
+<p>O painel <strong>Content Browser</strong> mostra os arquivos do projeto: modelos, texturas, áudios, cenas, prefabs e scripts.</p>
+<h2 id="atalhos-de-uso">Atalhos de uso</h2>
 <ul>
-<li><strong>Renomeie</strong> assets e entidades diretamente (duplo clique no nome).</li>
-<li>Crie pastas para organizar (<code>Assets/Models</code>, <code>Assets/Sounds</code>, …).</li>
+<li><strong>Clique</strong> seleciona o arquivo; <strong>duplo clique</strong> abre (cena/prefab) ou mostra o preview</li>
+<li><strong>Botão direito</strong> abre o menu de contexto: Novo (Pasta, Script C#, Cena, Prefab), Renomear, Excluir</li>
+<li><strong>Arraste um asset para o viewport</strong> para criar a entidade:</li>
+<li><code>.obj/.glb/.gltf</code> → <strong>MeshRenderer</strong></li>
+<li>imagem (<code>.png/.jpg/...</code>) → <strong>SpriteRenderer</strong></li>
+<li><strong>Arraste um asset para um slot do Inspetor</strong> (ex.: campo de textura) para aplicá-lo</li>
 </ul>
-<h2 id="campos-de-arquivo">Campos de arquivo</h2>
-<p>Nos componentes, os campos de caminho têm um botão <strong>…</strong> que abre o diálogo nativo de seleção (Windows). No Linux/macOS, digite o caminho manualmente.</p>
-<h2 id="caminhos">Caminhos</h2>
-<p>Todos os caminhos são <strong>relativos ao projeto</strong>:</p>
-<pre><code class="language-">Assets/Models/Cube.glb
-Assets/Textures/piso.png
-Assets/Sounds/tiro.wav</code></pre>
-<p>Também são aceitos:</p>
+<h2 id="estrutura-tpica-de-um-projeto">Estrutura típica de um projeto</h2>
+<div class="codeblock"><pre><code class="language-">MeuJogo/
+  MeuJogo.kzproj     ← arquivo do projeto
+  Assets/            ← seus arquivos (modelos, texturas, scripts, cenas)
+  Source/            ← código C# do jogo (compilado no Play)</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="previews">Previews</h2>
+<p>O Content Browser mostra <strong>miniaturas reais</strong> de imagens (com cache por caminho). Pastas gigantes não travam o editor: as miniaturas são geradas com orçamento por frame.</p>
+<h2 id="importao">Importação</h2>
+<p>A engine importa diretamente:</p>
 <ul>
-<li><code>builtin:cube|plane|sphere|cylinder|cone|capsule|torus</code> — meshes geradas;</li>
-<li><code>kzres://…</code> — <a href="recursos-embutidos.html">recursos embutidos</a>.</li>
+<li><strong>Modelos</strong>: <code>.obj</code>, <code>.glb</code>, <code>.gltf</code> (o glTF traz materiais PBR, skins e animações)</li>
+<li><strong>Imagens</strong>: <code>.png</code>, <code>.jpg</code>, <code>.jpeg</code>, <code>.bmp</code>, <code>.tga</code></li>
+<li><strong>Céus</strong>: <code>.hdr</code>, <code>.exr</code> (equirectangular)</li>
+<li><strong>Áudio</strong>: <code>.wav</code>, <code>.ogg</code>, <code>.mp3</code></li>
+<li><strong>Cenas</strong>: <code>.kzscene</code> · <strong>Prefabs</strong>: <code>.kzprefab</code></li>
 </ul>
+<div class="callout dica">Assets embutidos da engine usam o prefixo <code>kzres://</code> (ex.: <code>kzres://skies/sky_gradient.hdr</code>).</div>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="hierarquia-inspetor.html">← Hierarquia e Inspetor</a>
-<a class="navbtn next" href="configuracoes.html">Configurações →</a>
+<a class="navbtn prev" href="viewport.html"><small>← Anterior</small><span>Viewport</span></a>
+<a class="navbtn next" href="project-settings.html"><small>Próximo →</small><span>Project Settings</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio. Todos os direitos reservados.
+  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MeshRenderer e materiais — Kizuri Engine</title>
+<title>Malhas 3D — Kizuri Engine</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -11,103 +11,108 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
 <div class="group">Introdução</div>
-<a href="index.html" class="">Visão geral</a>
+<a href="index.html" class="">Bem-vindo</a>
 <a href="instalacao.html" class="">Instalação</a>
 <a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
-<div class="group">Conceitos</div>
-<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
-<a href="hierarquia.html" class="">Hierarquia e transform</a>
-<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<a href="projeto.html" class="">Gerenciamento de projetos</a>
 <div class="group">Editor</div>
 <a href="interface.html" class="">Interface do editor</a>
-<a href="viewport.html" class="">Viewport e câmera</a>
-<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="paineis.html" class="">Painéis do editor</a>
+<a href="viewport.html" class="">Viewport</a>
 <a href="content-browser.html" class="">Content Browser</a>
-<a href="configuracoes.html" class="">Configurações</a>
+<a href="project-settings.html" class="">Project Settings</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
-<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
-<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
-<a href="tilemap.html" class="">Tilemap</a>
-<a href="meshes-3d.html" class="active">MeshRenderer e materiais</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="meshes-3d.html" class="active">Malhas 3D</a>
+<a href="sprites-2d.html" class="">Sprites 2D</a>
 <a href="luzes.html" class="">Luzes</a>
 <a href="particulas.html" class="">Partículas</a>
-<a href="animacao-3d.html" class="">Animação esquelética</a>
-<a href="audio-source.html" class="">AudioSource</a>
-<a href="camera.html" class="">Câmera</a>
-<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
-<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
-<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
-<div class="group">Renderização</div>
-<a href="pipeline-3d.html" class="">Pipeline 3D</a>
-<a href="pipeline-2d.html" class="">Pipeline 2D</a>
-<a href="qualidade.html" class="">Qualidade gráfica</a>
+<a href="fisica-2d.html" class="">Física 2D</a>
+<a href="fisica-3d.html" class="">Física 3D</a>
+<a href="audio-source.html" class="">Áudio</a>
+<a href="ui.html" class="">Interface (UI)</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="animacao-2d.html" class="">Animação 2D</a>
+<a href="animacao-3d.html" class="">Animação 3D</a>
 <div class="group">Scripting C#</div>
-<a href="scripting.html" class="">Introdução ao C#</a>
-<a href="script.html" class="">Classe Script e corrotinas</a>
-<a href="entity.html" class="">Entity — referência</a>
-<a href="scene.html" class="">Scene — referência</a>
-<a href="input.html" class="">Input</a>
-<a href="time.html" class="">Time</a>
-<a href="mathf.html" class="">Mathf</a>
-<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
-<a href="audio-api.html" class="">Audio (API)</a>
+<a href="scripting.html" class="">Scripting C#</a>
+<a href="entity.html" class="">Entity (API)</a>
+<a href="scene.html" class="">Scene (API)</a>
+<a href="input.html" class="">Input (API)</a>
+<a href="time.html" class="">Time (API)</a>
+<a href="mathf.html" class="">Mathf, Rand e Vetores</a>
 <a href="save.html" class="">SaveSystem</a>
-<a href="rand-log.html" class="">Rand e Log</a>
-<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
-<a href="exemplos.html" class="">Exemplos completos</a>
+<a href="fisica-api.html" class="">Física (API C#)</a>
+<a href="audio-api.html" class="">Áudio (API C#)</a>
+<a href="ui-api.html" class="">UI (API C#)</a>
+<div class="group">Gráficos</div>
+<a href="qualidade.html" class="">Qualidade e presets</a>
+<a href="reflexos.html" class="">Reflexos</a>
+<a href="iluminacao.html" class="">Iluminação</a>
+<a href="ceu.html" class="">Céu</a>
+<a href="sombras.html" class="">Sombras</a>
+<a href="pos-processamento.html" class="">Pós-processamento</a>
 <div class="group">Distribuição</div>
 <a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
 <a href="faq.html" class="">Perguntas frequentes</a>
   </nav>
 </aside>
+<div class="overlay" id="overlay"></div>
 <main>
 <header class="top">
-  <div class="crumbs"><span class="crumb">Componentes</span><span class="sep">/</span><span>MeshRenderer e materiais</span></div>
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+  <div class="crumbs"><span class="crumb">Componentes</span><span class="sep">/</span><span>Malhas 3D</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
+    <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
+    <button class="btn" id="printBtn" title="Imprimir">🖨️</button>
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#malhas-prontas" class="t2">Malhas prontas</a><a href="#material" class="t2">Material</a><a href="#pom-relevo-de-superfcie" class="t2">POM — relevo de superfície</a></nav>
 <article>
-<h1 id="meshrenderer-e-materiais">MeshRenderer e materiais</h1>
-<p>Desenha uma <strong>mesh 3D</strong> com um <strong>material PBR</strong>.</p>
-<h2 id="meshrenderercomponent">MeshRendererComponent</h2>
-<table><thead><tr><th>Campo</th><th>Descrição</th></tr></thead><tbody><tr><td><strong>MeshSource</strong></td><td>`builtin:cube\</td><td>plane\</td><td>…<code> ou caminho de </code>.obj<code> / </code>.glb<code> / </code>.gltf`</td></tr><tr><td><strong>Material</strong></td><td>Cor base, metálico, rugosidade, emissão e mapas de textura</td></tr></tbody></table>
-<h2 id="meshes-builtin">Meshes builtin</h2>
-<p>Todas geradas em código — funcionam sem nenhum arquivo:</p>
-<pre><code class="language-">builtin:cube · builtin:plane · builtin:sphere · builtin:cylinder
-builtin:cone · builtin:capsule · builtin:torus</code></pre>
-<h2 id="importando-modelos">Importando modelos</h2>
+<h1 id="malhas-3d">Malhas 3D</h1>
+<p>O componente <strong>MeshRenderer</strong> desenha uma malha 3D com um material PBR.</p>
+<h2 id="malhas-prontas">Malhas prontas</h2>
+<p>No Inspetor, o campo <strong>MeshSource</strong> aceita:</p>
 <ul>
-<li>**<code>.obj</code>** — geometria + material serializável;</li>
-<li>**<code>.glb</code> / <code>.gltf</code><strong> — geometria, </strong>animações esqueléticas**, e o material</li>
+<li><code>builtin:cube</code>, <code>builtin:plane</code>, <code>builtin:sphere</code></li>
+<li><code>builtin:cylinder</code>, <code>builtin:cone</code>, <code>builtin:capsule</code>, <code>builtin:torus</code></li>
+<li>um arquivo <code>.obj</code>, <code>.glb</code> ou <code>.gltf</code> do seu projeto</li>
 </ul>
-<p>  PBR <strong>extraído automaticamente</strong> (fatores + texturas embutidas no arquivo).</p>
-<p>Para modelos animados, veja <a href="animacao-3d.html">Animação esquelética</a>.</p>
-<h2 id="material-pbr">Material PBR</h2>
-<table><thead><tr><th>Campo</th><th>Descrição</th></tr></thead><tbody><tr><td><strong>Albedo</strong></td><td>Cor base</td></tr><tr><td><strong>Metallic</strong></td><td>0 = dielétrico, 1 = metal</td></tr><tr><td><strong>Roughness</strong></td><td>0 = espelhado, 1 = rugoso</td></tr><tr><td><strong>AO</strong></td><td>Oclusão ambiente (afeta só o IBL)</td></tr><tr><td><strong>Emissive / EmissiveStrength</strong></td><td>Emissão (alimenta o <strong>bloom</strong>)</td></tr><tr><td><strong>AlbedoMap</strong></td><td>Textura de cor</td></tr><tr><td><strong>NormalMap</strong></td><td>Normal mapping (tangent-space, sem tangentes na mesh)</td></tr><tr><td><strong>MetallicRoughnessMap</strong></td><td>Canal <strong>G = rugosidade</strong>, <strong>B = metálico</strong> (convenção glTF)</td></tr><tr><td><strong>EmissiveMap</strong></td><td>Textura emissiva</td></tr></tbody></table>
-<pre><code class="language-csharp">Entity.AddMeshRenderer("builtin:torus");
-Entity.SetMaterial(0.75f, 0.55f, 0.2f, metallic: 1f, roughness: 0.25f);
-Entity.SetMaterialAlbedoMap("Assets/Textures/metal.png");
-Entity.SetMaterialEmissive(0.1f, 0.6f, 1f, strength: 6f); // brilha no bloom</code></pre>
-<h2 id="no-editor">No editor</h2>
-<p>Arraste um <code>.obj</code>/<code>.glb</code> do <a href="content-browser.html">Content Browser</a> para o viewport — a entidade nasce com a mesh e o material já extraídos. Use os campos do Inspetor para afinar o material, e o material PBR atualiza no viewport em tempo real.</p>
-<div class="callout ok"><strong>Texturas nunca se perdem.</strong> O material extraído de um <code>.glb</code> guarda os caminhos serializáveis — ao reabrir a cena, os mapas são reextraídos do arquivo fonte automaticamente.</div>
+<h2 id="material">Material</h2>
+<p>O material PBR controla:</p>
+<ul>
+<li><strong>Albedo</strong> — cor base (e textura)</li>
+<li><strong>Metallic</strong> — 0 = plástico, 1 = metal</li>
+<li><strong>Roughness</strong> — 0 = polido, 1 = áspero</li>
+<li><strong>AO</strong> — oclusão ambiente local</li>
+<li><strong>Emissive</strong> — brilho próprio (alimenta o bloom)</li>
+<li><strong>Mapas</strong> — albedo, normais, metallic/roughness, emissivo e <strong>altura (POM)</strong></li>
+<li><strong>Reflexão planar</strong> — transforma a superfície em espelho</li>
+</ul>
+<div class="callout dica">Ao arrastar um <code>.glb</code> para o viewport, a engine importa a malha <strong>e</strong> o material PBR (fatores + texturas) automaticamente.</div>
+<h2 id="pom-relevo-de-superfcie">POM — relevo de superfície</h2>
+<p>Com um <strong>mapa de altura</strong>, a superfície ganha relevo real que acompanha o ângulo da câmera (parallax occlusion mapping) — paredes de pedra, tijolos, chão com desnível.</p>
+<p>Veja mais em <a href="iluminacao.html">Iluminação</a> e <a href="reflexos.html">Reflexos</a>.</p>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="tilemap.html">← Tilemap</a>
-<a class="navbtn next" href="luzes.html">Luzes →</a>
+<a class="navbtn prev" href="camera.html"><small>← Anterior</small><span>Câmera</span></a>
+<a class="navbtn next" href="sprites-2d.html"><small>Próximo →</small><span>Sprites 2D</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio. Todos os direitos reservados.
+  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

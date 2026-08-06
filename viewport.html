@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Viewport e câmera — Kizuri Engine</title>
+<title>Viewport — Kizuri Engine</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -11,106 +11,120 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
 <div class="group">Introdução</div>
-<a href="index.html" class="">Visão geral</a>
+<a href="index.html" class="">Bem-vindo</a>
 <a href="instalacao.html" class="">Instalação</a>
 <a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
-<div class="group">Conceitos</div>
-<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
-<a href="hierarquia.html" class="">Hierarquia e transform</a>
-<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<a href="projeto.html" class="">Gerenciamento de projetos</a>
 <div class="group">Editor</div>
 <a href="interface.html" class="">Interface do editor</a>
-<a href="viewport.html" class="active">Viewport e câmera</a>
-<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="paineis.html" class="">Painéis do editor</a>
+<a href="viewport.html" class="active">Viewport</a>
 <a href="content-browser.html" class="">Content Browser</a>
-<a href="configuracoes.html" class="">Configurações</a>
+<a href="project-settings.html" class="">Project Settings</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
-<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
-<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
-<a href="tilemap.html" class="">Tilemap</a>
-<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="meshes-3d.html" class="">Malhas 3D</a>
+<a href="sprites-2d.html" class="">Sprites 2D</a>
 <a href="luzes.html" class="">Luzes</a>
 <a href="particulas.html" class="">Partículas</a>
-<a href="animacao-3d.html" class="">Animação esquelética</a>
-<a href="audio-source.html" class="">AudioSource</a>
-<a href="camera.html" class="">Câmera</a>
-<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
-<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
-<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
-<div class="group">Renderização</div>
-<a href="pipeline-3d.html" class="">Pipeline 3D</a>
-<a href="pipeline-2d.html" class="">Pipeline 2D</a>
-<a href="qualidade.html" class="">Qualidade gráfica</a>
+<a href="fisica-2d.html" class="">Física 2D</a>
+<a href="fisica-3d.html" class="">Física 3D</a>
+<a href="audio-source.html" class="">Áudio</a>
+<a href="ui.html" class="">Interface (UI)</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="animacao-2d.html" class="">Animação 2D</a>
+<a href="animacao-3d.html" class="">Animação 3D</a>
 <div class="group">Scripting C#</div>
-<a href="scripting.html" class="">Introdução ao C#</a>
-<a href="script.html" class="">Classe Script e corrotinas</a>
-<a href="entity.html" class="">Entity — referência</a>
-<a href="scene.html" class="">Scene — referência</a>
-<a href="input.html" class="">Input</a>
-<a href="time.html" class="">Time</a>
-<a href="mathf.html" class="">Mathf</a>
-<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
-<a href="audio-api.html" class="">Audio (API)</a>
+<a href="scripting.html" class="">Scripting C#</a>
+<a href="entity.html" class="">Entity (API)</a>
+<a href="scene.html" class="">Scene (API)</a>
+<a href="input.html" class="">Input (API)</a>
+<a href="time.html" class="">Time (API)</a>
+<a href="mathf.html" class="">Mathf, Rand e Vetores</a>
 <a href="save.html" class="">SaveSystem</a>
-<a href="rand-log.html" class="">Rand e Log</a>
-<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
-<a href="exemplos.html" class="">Exemplos completos</a>
+<a href="fisica-api.html" class="">Física (API C#)</a>
+<a href="audio-api.html" class="">Áudio (API C#)</a>
+<a href="ui-api.html" class="">UI (API C#)</a>
+<div class="group">Gráficos</div>
+<a href="qualidade.html" class="">Qualidade e presets</a>
+<a href="reflexos.html" class="">Reflexos</a>
+<a href="iluminacao.html" class="">Iluminação</a>
+<a href="ceu.html" class="">Céu</a>
+<a href="sombras.html" class="">Sombras</a>
+<a href="pos-processamento.html" class="">Pós-processamento</a>
 <div class="group">Distribuição</div>
 <a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
 <a href="faq.html" class="">Perguntas frequentes</a>
   </nav>
 </aside>
+<div class="overlay" id="overlay"></div>
 <main>
 <header class="top">
-  <div class="crumbs"><span class="crumb">Editor</span><span class="sep">/</span><span>Viewport e câmera</span></div>
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+  <div class="crumbs"><span class="crumb">Editor</span><span class="sep">/</span><span>Viewport</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
+    <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
+    <button class="btn" id="printBtn" title="Imprimir">🖨️</button>
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#navegao-3d" class="t2">Navegação 3D</a><a href="#navegao-2d" class="t2">Navegação 2D</a><a href="#gizmos" class="t2">Gizmos</a><a href="#modo-2d-3d" class="t2">Modo 2D / 3D</a><a href="#fullscreen" class="t2">Fullscreen</a><a href="#seleo" class="t2">Seleção</a></nav>
 <article>
-<h1 id="viewport-e-câmera">Viewport e câmera</h1>
-<p>O <strong>Viewport</strong> é a pré-visualização em tempo real da cena. Ele tem dois modos de navegação do editor (independentes da câmera do jogo).</p>
-<h2 id="modos-2d-e-3d">Modos 2D e 3D</h2>
+<h1 id="viewport">Viewport</h1>
+<p>O painel <strong>Viewport</strong> é onde você vê e edita a cena.</p>
+<h2 id="navegao-3d">Navegação 3D</h2>
+<div class="tablewrap"><table><thead><tr><th>Ação</th><th>Controle</th></tr></thead><tbody><tr><td>Olhar ao redor</td><td>Botão direito + mover o mouse</td></tr><tr><td>Mover</td><td>Botão direito + <strong>WASD</strong></td></tr><tr><td>Subir / descer</td><td>Botão direito + <strong>Q / E</strong></td></tr><tr><td>Acelerar</td><td>Segurar <strong>Shift</strong> enquanto move</td></tr><tr><td>Foco</td><td>Selecione na Hierarquia e use o gizmo</td></tr></tbody></table></div>
+<h2 id="navegao-2d">Navegação 2D</h2>
 <ul>
-<li><strong>3D</strong> — navegação orbital: <strong>botão direito arrastando</strong> gira a câmera de</li>
-</ul>
-<p>  edição; a roda do mouse aproxima/afasta.</p>
-<ul>
-<li><strong>2D</strong> — arraste com <strong>botão direito</strong> para pan e use a <strong>roda</strong> para zoom.</li>
-</ul>
-<p>  A câmera de edição é ortográfica, alinhada ao plano XY.</p>
-<p>Alternne pela toolbar do viewport ou pelo menu <strong>Exibir</strong>.</p>
-<h2 id="câmera-do-jogo">Câmera do jogo</h2>
-<p>No <strong>Play</strong> (e no jogo exportado), quem renderiza é a <strong>câmera da própria cena</strong> — não a câmera de navegação do editor. O que você vê no Play é o que sai no build.</p>
-<p>Veja o componente <a href="camera.html">Câmera</a> para configurar perspectiva vs. ortográfica, FOV, near/far e qual câmera é a primária.</p>
-<h2 id="fullscreen">Fullscreen</h2>
-<p><kbd>F11</kbd> (ou o ícone da toolbar) maximiza o viewport para a janela inteira — útil para testar a cena "de verdade".</p>
-<h2 id="picking">Picking</h2>
-<ul>
-<li><strong>Clique esquerdo</strong> em um objeto seleciona a entidade.</li>
-<li>Em 3D, a seleção usa <strong>raycast</strong> contra as meshes (mesh picking).</li>
-<li>Em 2D, a seleção usa o ponto de clique sobre os sprites.</li>
+<li><strong>Botão direito + arrastar</strong> move a câmera (pan)</li>
+<li><strong>Scroll</strong> dá zoom</li>
+<li>O zoom centraliza no ponteiro do mouse</li>
 </ul>
 <h2 id="gizmos">Gizmos</h2>
-<p>Com uma entidade selecionada, aparecem os gizmos:</p>
-<table><thead><tr><th>Tecla</th><th>Gizmo</th><th>Ação</th></tr></thead><tbody><tr><td><kbd>W</kbd></td><td>Mover</td><td>Arraste as setas dos eixos</td></tr><tr><td><kbd>E</kbd></td><td>Rotacionar</td><td>Arraste os anéis</td></tr><tr><td><kbd>R</kbd></td><td>Escalar</td><td>Arraste as alças</td></tr></tbody></table>
-<p>Luzes e colliders também têm gizmos próprios (posição/direção da luz, e o contorno do colisor na entidade selecionada).</p>
+<p>Com uma entidade selecionada, use as teclas:</p>
+<ul>
+<li><strong>W</strong> — mover (setas de translação)</li>
+<li><strong>E</strong> — rotacionar (esferas)</li>
+<li><strong>R</strong> — escalar (cubos)</li>
+</ul>
+<p>Segure <strong>Ctrl</strong> durante o arrasto para <strong>snap</strong> (incrementos de 0,5 unidade, 15° de rotação — configuráveis em Project Settings → Editor).</p>
+<h2 id="modo-2d-3d">Modo 2D / 3D</h2>
+<p>A barra de ferramentas do viewport alterna entre os modos:</p>
+<ul>
+<li><strong>2D</strong> — câmera ortográfica, ideal para sprites, tilemaps e UI</li>
+<li><strong>3D</strong> — câmera em perspectiva, para meshes e luzes</li>
+</ul>
+<p>O editor muda automaticamente o modo conforme o componente selecionado (malha 3D → 3D; sprite → 2D).</p>
+<h2 id="fullscreen">Fullscreen</h2>
+<ul>
+<li>Botão de ícone na toolbar ou <strong>F11</strong> esconde os painéis laterais e o</li>
+</ul>
+<p>  viewport ocupa a janela inteira — bom para jogar/testar.</p>
+<h2 id="seleo">Seleção</h2>
+<ul>
+<li>Clique em um objeto no viewport para selecionar (raio contra as malhas).</li>
+<li>Selecione na <strong>Hierarquia</strong> e pressione <strong>F</strong> (ou use o gizmo) para focar.</li>
+</ul>
+<div class="callout nota">O viewport mostra a cena <strong>de edição</strong>; o <strong>Game View</strong> mostra a cena do jogo durante o Play.</div>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="interface.html">← Interface do editor</a>
-<a class="navbtn next" href="hierarquia-inspetor.html">Hierarquia e Inspetor →</a>
+<a class="navbtn prev" href="paineis.html"><small>← Anterior</small><span>Painéis do editor</span></a>
+<a class="navbtn next" href="content-browser.html"><small>Próximo →</small><span>Content Browser</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio. Todos os direitos reservados.
+  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

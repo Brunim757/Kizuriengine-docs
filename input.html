@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Input — Kizuri Engine</title>
+<title>Input (API) — Kizuri Engine</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -11,116 +11,101 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
 <div class="group">Introdução</div>
-<a href="index.html" class="">Visão geral</a>
+<a href="index.html" class="">Bem-vindo</a>
 <a href="instalacao.html" class="">Instalação</a>
 <a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
-<div class="group">Conceitos</div>
-<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
-<a href="hierarquia.html" class="">Hierarquia e transform</a>
-<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<a href="projeto.html" class="">Gerenciamento de projetos</a>
 <div class="group">Editor</div>
 <a href="interface.html" class="">Interface do editor</a>
-<a href="viewport.html" class="">Viewport e câmera</a>
-<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="paineis.html" class="">Painéis do editor</a>
+<a href="viewport.html" class="">Viewport</a>
 <a href="content-browser.html" class="">Content Browser</a>
-<a href="configuracoes.html" class="">Configurações</a>
+<a href="project-settings.html" class="">Project Settings</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
-<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
-<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
-<a href="tilemap.html" class="">Tilemap</a>
-<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="meshes-3d.html" class="">Malhas 3D</a>
+<a href="sprites-2d.html" class="">Sprites 2D</a>
 <a href="luzes.html" class="">Luzes</a>
 <a href="particulas.html" class="">Partículas</a>
-<a href="animacao-3d.html" class="">Animação esquelética</a>
-<a href="audio-source.html" class="">AudioSource</a>
-<a href="camera.html" class="">Câmera</a>
-<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
-<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
-<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
-<div class="group">Renderização</div>
-<a href="pipeline-3d.html" class="">Pipeline 3D</a>
-<a href="pipeline-2d.html" class="">Pipeline 2D</a>
-<a href="qualidade.html" class="">Qualidade gráfica</a>
+<a href="fisica-2d.html" class="">Física 2D</a>
+<a href="fisica-3d.html" class="">Física 3D</a>
+<a href="audio-source.html" class="">Áudio</a>
+<a href="ui.html" class="">Interface (UI)</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="animacao-2d.html" class="">Animação 2D</a>
+<a href="animacao-3d.html" class="">Animação 3D</a>
 <div class="group">Scripting C#</div>
-<a href="scripting.html" class="">Introdução ao C#</a>
-<a href="script.html" class="">Classe Script e corrotinas</a>
-<a href="entity.html" class="">Entity — referência</a>
-<a href="scene.html" class="">Scene — referência</a>
-<a href="input.html" class="active">Input</a>
-<a href="time.html" class="">Time</a>
-<a href="mathf.html" class="">Mathf</a>
-<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
-<a href="audio-api.html" class="">Audio (API)</a>
+<a href="scripting.html" class="">Scripting C#</a>
+<a href="entity.html" class="">Entity (API)</a>
+<a href="scene.html" class="">Scene (API)</a>
+<a href="input.html" class="active">Input (API)</a>
+<a href="time.html" class="">Time (API)</a>
+<a href="mathf.html" class="">Mathf, Rand e Vetores</a>
 <a href="save.html" class="">SaveSystem</a>
-<a href="rand-log.html" class="">Rand e Log</a>
-<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
-<a href="exemplos.html" class="">Exemplos completos</a>
+<a href="fisica-api.html" class="">Física (API C#)</a>
+<a href="audio-api.html" class="">Áudio (API C#)</a>
+<a href="ui-api.html" class="">UI (API C#)</a>
+<div class="group">Gráficos</div>
+<a href="qualidade.html" class="">Qualidade e presets</a>
+<a href="reflexos.html" class="">Reflexos</a>
+<a href="iluminacao.html" class="">Iluminação</a>
+<a href="ceu.html" class="">Céu</a>
+<a href="sombras.html" class="">Sombras</a>
+<a href="pos-processamento.html" class="">Pós-processamento</a>
 <div class="group">Distribuição</div>
 <a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
 <a href="faq.html" class="">Perguntas frequentes</a>
   </nav>
 </aside>
+<div class="overlay" id="overlay"></div>
 <main>
 <header class="top">
-  <div class="crumbs"><span class="crumb">Scripting C#</span><span class="sep">/</span><span>Input</span></div>
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+  <div class="crumbs"><span class="crumb">Scripting C#</span><span class="sep">/</span><span>Input (API)</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
+    <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
+    <button class="btn" id="printBtn" title="Imprimir">🖨️</button>
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#teclado" class="t2">Teclado</a><a href="#mouse" class="t2">Mouse</a><a href="#eixo-simples" class="t2">Eixo simples</a><a href="#cdigos-comuns" class="t2">Códigos comuns</a></nav>
 <article>
-<h1 id="input">Input</h1>
-<p>Leitura de teclado e mouse. Os códigos de tecla são os do <strong>GLFW</strong> (os mesmos da engine), expostos como enum <code>Key</code>.</p>
+<h1 id="input-api">Input — API</h1>
+<p>Leitura de <strong>teclado</strong> e <strong>mouse</strong> para controlar o jogo.</p>
 <h2 id="teclado">Teclado</h2>
-<pre><code class="language-csharp">// pressionado AGORA (estado contínuo) — uso em movimento
-if (Input.IsKeyPressed(Key.A)) wish.X -= 1f;
-
-// verdadeiro SÓ no frame em que a tecla desceu (edge-detect, GetKeyDown)
-if (Input.IsKeyDown(Key.Space)) Pular();</code></pre>
-<h3 id="enum-key">Enum Key</h3>
-<pre><code class="language-csharp">Key.A .. Key.Z            // letras
-Key.D0 .. Key.D9          // números
-Key.Space, Key.Enter, Key.Tab, Key.Backspace, Key.Delete, Key.Escape
-Key.Up, Key.Down, Key.Left, Key.Right        // setas
-Key.F1 .. Key.F12
-Key.LeftShift, Key.RightShift, Key.LeftControl, Key.LeftAlt
-Key.LeftSuper, Key.RightSuper, …
-Key.Minus, Key.Equal, Key.Semicolon, Key.Comma, Key.Period, Key.Slash</code></pre>
+<div class="codeblock"><pre><code class="language-csharp">if (Input.IsKeyDown(KeyCode.Space)) Pular();
+if (Input.IsKeyPressed(KeyCode.Left)) MoverEsquerda();</code></pre><button class="copy" title="Copiar">📋</button></div>
 <h2 id="mouse">Mouse</h2>
-<pre><code class="language-csharp">if (Input.IsMouseButtonPressed(MouseButton.Left)) { }   // botão esquerdo
-if (Input.IsMouseButtonPressed(MouseButton.Right)) { }  // direito
-if (Input.IsMouseButtonPressed(MouseButton.Middle)) { } // meio
-
-var mouse = Input.GetMousePosition();  // Vector2</code></pre>
-<h2 id="combinações-comuns">Combinações comuns</h2>
-<pre><code class="language-csharp">// clicar SÓ uma vez (não repetido a cada frame segurando)
-if (Input.IsMouseButtonPressed(MouseButton.Left) &amp;&amp; !_mouseDown)
-{
-    _mouseDown = true;
-    Atirar();
-}
-if (!Input.IsMouseButtonPressed(MouseButton.Left)) _mouseDown = false;</code></pre>
-<pre><code class="language-csharp">// movimento com WASD + setas
-var wish = Vector2.Zero;
-if (Input.IsKeyPressed(Key.A) || Input.IsKeyPressed(Key.Left))  wish.X -= 1f;
-if (Input.IsKeyPressed(Key.D) || Input.IsKeyPressed(Key.Right)) wish.X += 1f;
-if (Input.IsKeyPressed(Key.W) || Input.IsKeyPressed(Key.Up))    wish.Y += 1f;
-if (Input.IsKeyPressed(Key.S) || Input.IsKeyPressed(Key.Down))  wish.Y -= 1f;</code></pre>
+<div class="codeblock"><pre><code class="language-csharp">if (Input.IsMousePressed(0)) Atirar();          // 0 = esquerdo, 1 = direito
+var (x, y) = Input.GetMousePosition();          // posição em pixels na janela</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="eixo-simples">Eixo simples</h2>
+<p>Para movimento, combine teclas:</p>
+<div class="codeblock"><pre><code class="language-csharp">float mover = 0f;
+if (Input.IsKeyDown(KeyCode.A)) mover -= 1f;
+if (Input.IsKeyDown(KeyCode.D)) mover += 1f;
+Entity.Move(mover * Time.deltaTime * velocidade, 0f, 0f);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="cdigos-comuns">Códigos comuns</h2>
+<div class="tablewrap"><table><thead><tr><th>Código</th><th>Tecla</th></tr></thead><tbody><tr><td><code>KeyCode.Space</code></td><td>Espaço</td></tr><tr><td><code>KeyCode.W/A/S/D</code></td><td>WASD</td></tr><tr><td><code>KeyCode.Up/Down/Left/Right</code></td><td>Setas</td></tr><tr><td><code>KeyCode.Enter</code> / <code>KeyCode.Escape</code></td><td>Enter / Esc</td></tr><tr><td><code>KeyCode.Shift</code> / <code>KeyCode.Ctrl</code></td><td>Shift / Ctrl</td></tr></tbody></table></div>
+<div class="callout nota">O mouse do <strong>Play</strong> acompanha o viewport (e o Game View) — os cliques de UI e do jogo funcionam na janela do editor.</div>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="scene.html">← Scene — referência</a>
-<a class="navbtn next" href="time.html">Time →</a>
+<a class="navbtn prev" href="scene.html"><small>← Anterior</small><span>Scene (API)</span></a>
+<a class="navbtn next" href="time.html"><small>Próximo →</small><span>Time (API)</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio. Todos os direitos reservados.
+  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

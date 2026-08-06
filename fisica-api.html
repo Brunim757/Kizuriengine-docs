@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rigidbody2D e queries — Kizuri Engine</title>
+<title>Física (API C#) — Kizuri Engine</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -11,121 +11,114 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
 <div class="group">Introdução</div>
-<a href="index.html" class="">Visão geral</a>
+<a href="index.html" class="">Bem-vindo</a>
 <a href="instalacao.html" class="">Instalação</a>
 <a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
-<div class="group">Conceitos</div>
-<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
-<a href="hierarquia.html" class="">Hierarquia e transform</a>
-<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<a href="projeto.html" class="">Gerenciamento de projetos</a>
 <div class="group">Editor</div>
 <a href="interface.html" class="">Interface do editor</a>
-<a href="viewport.html" class="">Viewport e câmera</a>
-<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="paineis.html" class="">Painéis do editor</a>
+<a href="viewport.html" class="">Viewport</a>
 <a href="content-browser.html" class="">Content Browser</a>
-<a href="configuracoes.html" class="">Configurações</a>
+<a href="project-settings.html" class="">Project Settings</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
-<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
-<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
-<a href="tilemap.html" class="">Tilemap</a>
-<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="meshes-3d.html" class="">Malhas 3D</a>
+<a href="sprites-2d.html" class="">Sprites 2D</a>
 <a href="luzes.html" class="">Luzes</a>
 <a href="particulas.html" class="">Partículas</a>
-<a href="animacao-3d.html" class="">Animação esquelética</a>
-<a href="audio-source.html" class="">AudioSource</a>
-<a href="camera.html" class="">Câmera</a>
-<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
-<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
-<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
-<div class="group">Renderização</div>
-<a href="pipeline-3d.html" class="">Pipeline 3D</a>
-<a href="pipeline-2d.html" class="">Pipeline 2D</a>
-<a href="qualidade.html" class="">Qualidade gráfica</a>
+<a href="fisica-2d.html" class="">Física 2D</a>
+<a href="fisica-3d.html" class="">Física 3D</a>
+<a href="audio-source.html" class="">Áudio</a>
+<a href="ui.html" class="">Interface (UI)</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="animacao-2d.html" class="">Animação 2D</a>
+<a href="animacao-3d.html" class="">Animação 3D</a>
 <div class="group">Scripting C#</div>
-<a href="scripting.html" class="">Introdução ao C#</a>
-<a href="script.html" class="">Classe Script e corrotinas</a>
-<a href="entity.html" class="">Entity — referência</a>
-<a href="scene.html" class="">Scene — referência</a>
-<a href="input.html" class="">Input</a>
-<a href="time.html" class="">Time</a>
-<a href="mathf.html" class="">Mathf</a>
-<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
-<a href="audio-api.html" class="">Audio (API)</a>
+<a href="scripting.html" class="">Scripting C#</a>
+<a href="entity.html" class="">Entity (API)</a>
+<a href="scene.html" class="">Scene (API)</a>
+<a href="input.html" class="">Input (API)</a>
+<a href="time.html" class="">Time (API)</a>
+<a href="mathf.html" class="">Mathf, Rand e Vetores</a>
 <a href="save.html" class="">SaveSystem</a>
-<a href="rand-log.html" class="">Rand e Log</a>
-<a href="fisica-api.html" class="active">Rigidbody2D e queries</a>
-<a href="exemplos.html" class="">Exemplos completos</a>
+<a href="fisica-api.html" class="active">Física (API C#)</a>
+<a href="audio-api.html" class="">Áudio (API C#)</a>
+<a href="ui-api.html" class="">UI (API C#)</a>
+<div class="group">Gráficos</div>
+<a href="qualidade.html" class="">Qualidade e presets</a>
+<a href="reflexos.html" class="">Reflexos</a>
+<a href="iluminacao.html" class="">Iluminação</a>
+<a href="ceu.html" class="">Céu</a>
+<a href="sombras.html" class="">Sombras</a>
+<a href="pos-processamento.html" class="">Pós-processamento</a>
 <div class="group">Distribuição</div>
 <a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
 <a href="faq.html" class="">Perguntas frequentes</a>
   </nav>
 </aside>
+<div class="overlay" id="overlay"></div>
 <main>
 <header class="top">
-  <div class="crumbs"><span class="crumb">Scripting C#</span><span class="sep">/</span><span>Rigidbody2D e queries</span></div>
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+  <div class="crumbs"><span class="crumb">Scripting C#</span><span class="sep">/</span><span>Física (API C#)</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
+    <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
+    <button class="btn" id="printBtn" title="Imprimir">🖨️</button>
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#rigidbody2d" class="t2">Rigidbody2D</a><a href="#rigidbody3d" class="t2">Rigidbody3D</a><a href="#colises" class="t2">Colisões</a><a href="#consultas" class="t2">Consultas</a></nav>
 <article>
-<h1 id="física-na-api-c">Física na API C#</h1>
-<p>A struct <code>Rigidbody2D</code> é devolvida por <code>Entity.TryGetRigidbody2D</code> — controle direto do corpo 2D.</p>
+<h1 id="fsica-api-c">Física — API C#</h1>
+<p>Acesse física 2D e 3D direto do script.</p>
 <h2 id="rigidbody2d">Rigidbody2D</h2>
-<table><thead><tr><th>Membro</th><th>Descrição</th></tr></thead><tbody><tr><td><code>Type</code></td><td><code>BodyType</code> (Static/Dynamic/Kinematic)</td></tr><tr><td><code>GetLinearVelocity()</code></td><td>Velocidade atual (<code>Vector2</code>)</td></tr><tr><td><code>SetLinearVelocity(Vector2)</code></td><td>Define a velocidade</td></tr><tr><td><code>ApplyLinearImpulse(Vector2, bool wake = true)</code></td><td>Impulso instantâneo</td></tr><tr><td><code>SetTransform(Vector2 pos, float angleRad)</code></td><td>Sincroniza/teleporta o corpo</td></tr></tbody></table>
-<pre><code class="language-csharp">public override void OnUpdate(float deltaSeconds)
+<div class="codeblock"><pre><code class="language-csharp">Entity.AddRigidbody2D();               // dinâmico por padrão
+Entity.SetLinearVelocity(vx, vy);      // velocidade linear
+Entity.GravityScale = 0.5f;            // &lt;0 flutua, 0 sem gravidade</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="rigidbody3d">Rigidbody3D</h2>
+<div class="codeblock"><pre><code class="language-csharp">Entity.AddRigidbody3D();
+Entity.ApplyForce(fx, fy, fz);
+Entity.ApplyImpulse(ix, iy, iz);
+Entity.ApplyTorque(tx, ty, tz);
+Entity.TryGetVelocity(out vx, out vy, out vz);
+Entity.SetVelocity(vx, vy, vz);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="colises">Colisões</h2>
+<div class="codeblock"><pre><code class="language-csharp">public override void OnCollisionBegin(Entity other)
 {
-    var wish = Vector2.Zero;
-    if (Input.IsKeyPressed(Key.A)) wish.X -= 1f;
-    if (Input.IsKeyPressed(Key.D)) wish.X += 1f;
+    if (other.Name == "Chão") noChao = true;
+}
 
-    if (Entity.TryGetRigidbody2D(out var rb))
-    {
-        var v = rb.GetLinearVelocity();
-        rb.SetLinearVelocity(new Vector2(wish.X * 5f, v.Y));  // controle lateral
-    }
-}</code></pre>
-<h3 id="pulo">Pulo</h3>
-<pre><code class="language-csharp">if (Input.IsKeyDown(Key.Space))
-    if (Entity.TryGetRigidbody2D(out var rb))
-        rb.ApplyLinearImpulse(new Vector2(0f, 8f));</code></pre>
-<h2 id="queries-de-física">Queries de física</h2>
-<p>Todas devolvem <code>false</code>/<code>Entity.Invalid</code> quando nada foi atingido. <strong>Só funcionam no Play.</strong></p>
-<table><thead><tr><th>Query</th><th>Assinatura</th></tr></thead><tbody><tr><td><code>Scene.Raycast2D</code></td><td><code>(Vector2 from, Vector2 to, out Entity hit, out Vector2 point)</code></td></tr><tr><td><code>Scene.Raycast3D</code></td><td><code>(Vector3 from, Vector3 to, out Entity hit, out Vector3 point, out float fraction)</code></td></tr><tr><td><code>Scene.OverlapCircle2D</code></td><td><code>(Vector2 center, float radius, out Entity hit)</code></td></tr><tr><td><code>Scene.OverlapSphere3D</code></td><td><code>(Vector3 center, float radius, out Entity hit)</code></td></tr></tbody></table>
-<pre><code class="language-csharp">// 2D — raio para baixo
-if (Scene.Raycast2D(pos2d, pos2d + new Vector2(0f, -20f), out var chao, out var ponto))
-    if (chao.Name == "Chão") estaNoChao = true;
+public override void OnCollisionEnd(Entity other) { }</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="consultas">Consultas</h2>
+<div class="codeblock"><pre><code class="language-csharp">// 2D
+var hit = Scene.Raycast2D(ox, oy, dx, dy);
+var circles = Scene.OverlapCircle2D(x, y, raio);
 
-// 3D — área de explosão
-if (Scene.OverlapSphere3D(centro, 5f, out var alvo))
-    alvo.Destroy();</code></pre>
-<h2 id="corpos-3d">Corpos 3D</h2>
-<p>A física 3D (Bullet3) é controlada por métodos diretos da <code>Entity</code>:</p>
-<ul>
-<li><code>AddRigidbody3D(BodyType3D, mass)</code> + <code>AddBoxCollider3D</code> / <code>AddSphereCollider3D</code>;</li>
-<li><code>ApplyForce</code> / <code>ApplyImpulse</code> / <code>ApplyTorque</code>;</li>
-<li><code>SetVelocity</code> / <code>SetAngularVelocity</code> / <code>TryGetVelocity</code> / <code>TryGetAngularVelocity</code>.</li>
-</ul>
-<p>Ver <a href="fisica-3d.html">Física 3D</a>.</p>
-<h2 id="tipos-de-corpo">Tipos de corpo</h2>
-<pre><code class="language-csharp">enum BodyType   { Static = 0, Dynamic, Kinematic }   // 2D
-enum BodyType3D { Static = 0, Dynamic, Kinematic }   // 3D</code></pre>
-<table><thead><tr><th>Tipo</th><th>Responde a forças?</th><th>Move por script?</th></tr></thead><tbody><tr><td><strong>Static</strong></td><td>não</td><td>não (cena fixa)</td></tr><tr><td><strong>Dynamic</strong></td><td>sim</td><td>sim (mas a física manda)</td></tr><tr><td><strong>Kinematic</strong></td><td>não</td><td>sim (<code>SetTransform</code>/posição)</td></tr></tbody></table>
+// 3D
+var hit3D = Scene.Raycast3D(ox, oy, oz, dx, dy, dz);
+var spheres = Scene.OverlapSphere3D(x, y, z, raio);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<div class="callout dica">Corpos criados em <strong>runtime</strong> entram na física no primeiro frame — pode <code>InstantiatePrefab</code> um inimigo com rigidbody sem se preocupar com registro.</div>
+<p>Veja também <a href="entity.html">Entity</a> e <a href="fisica-2d.html">Física 2D</a> / <a href="fisica-3d.html">Física 3D</a>.</p>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="rand-log.html">← Rand e Log</a>
-<a class="navbtn next" href="exemplos.html">Exemplos completos →</a>
+<a class="navbtn prev" href="save.html"><small>← Anterior</small><span>SaveSystem</span></a>
+<a class="navbtn next" href="audio-api.html"><small>Próximo →</small><span>Áudio (API C#)</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio. Todos os direitos reservados.
+  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

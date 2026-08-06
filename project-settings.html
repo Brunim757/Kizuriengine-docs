@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Configurações — Kizuri Engine</title>
+<title>Project Settings — Kizuri Engine</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -25,10 +25,10 @@
 <a href="paineis.html" class="">Painéis do editor</a>
 <a href="viewport.html" class="">Viewport</a>
 <a href="content-browser.html" class="">Content Browser</a>
-<a href="project-settings.html" class="">Project Settings</a>
+<a href="project-settings.html" class="active">Project Settings</a>
 <a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
-<a href="configuracoes.html" class="active">Configurações</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
 <a href="camera.html" class="">Câmera</a>
@@ -71,7 +71,7 @@
 <main>
 <header class="top">
   <button class="burger" id="burger" aria-label="Menu">☰</button>
-  <div class="crumbs"><span class="crumb">Editor</span><span class="sep">/</span><span>Configurações</span></div>
+  <div class="crumbs"><span class="crumb">Editor</span><span class="sep">/</span><span>Project Settings</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
     <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
@@ -79,24 +79,48 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#grficos" class="t2">Gráficos</a><a href="#geral" class="t2">Geral</a><a href="#editor" class="t2">Editor</a><a href="#persistncia" class="t2">Persistência</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#grficos" class="t2">Gráficos</a><a href="#geral" class="t2">Geral</a><a href="#editor" class="t2">Editor</a><a href="#sobre" class="t2">Sobre</a></nav>
 <article>
-<h1 id="configuraes">Configurações</h1>
-<p>A janela <strong>Configurações</strong> (menu <strong>Exibir → Configurações...</strong> ou <code>Ctrl+,</code>) reúne os ajustes da engine em seções com sidebar. É a versão completa do painel <a href="project-settings.html">Project Settings</a>.</p>
+<h1 id="project-settings">Project Settings</h1>
+<p>O painel <strong>Project Settings</strong> concentra as configurações do projeto, com seções na lateral.</p>
 <h2 id="grficos">Gráficos</h2>
-<p>Presets (Ultra/High/Medium/Low), resolução interna, MSAA, sombras (CSM/PCSS), SSAO/SSGI, reflexos (SSR), TAA/FXAA, bloom (com anamórfico), DOF, motion blur, god rays, nuvens, lens flare, exposição, tonemapping, saturação/ contraste, vinheta/aberração/grão, névoa e <strong>HDRI do céu</strong>.</p>
+<p>Comece por um <strong>preset</strong> (Ultra, High, Medium, Low) e ajuste o que quiser:</p>
+<ul>
+<li><strong>Resolução interna</strong> (render scale) e <strong>MSAA</strong></li>
+<li><strong>Sombras</strong>: tamanho do shadow map (CSM), PCF e <strong>PCSS</strong> (penumbra)</li>
+<li><strong>Iluminação</strong>: SSAO, SSR (reflexos), <strong>SSGI</strong> (iluminação global)</li>
+<li><strong>Anti-aliasing</strong>: <strong>TAA</strong> e <strong>FXAA</strong></li>
+<li><strong>Atmosfera</strong>: God rays, <strong>nuvens volumétricas</strong>, <strong>lens flare</strong></li>
+<li><strong>Pós</strong>: bloom, bloom anamórfico, <strong>DOF</strong>, <strong>motion blur</strong>, exposição,</li>
+</ul>
+<p>  tonemapping, saturação/contraste, vinheta e névoa</p>
+<ul>
+<li><strong>HDRI do céu</strong> — vazio = céu físico Rayleigh/Mie; um <code>.hdr</code> = ambiente</li>
+</ul>
+<div class="callout dica">Tudo é aplicado <strong>ao vivo</strong> e salvo em <code>settings.json</code> — não precisa reiniciar.</div>
 <h2 id="geral">Geral</h2>
-<p>Resolução da janela (aplicar), maximizar/minimizar, <strong>VSync</strong> e informações do OpenGL (fabricante, renderer, versão).</p>
+<ul>
+<li><strong>Janela</strong>: largura/altura, maximizar/minimizar, VSync</li>
+<li><strong>Informações do OpenGL</strong>: fabricante, renderer e versão (útil para</li>
+</ul>
+<p>  reportar problemas)</p>
 <h2 id="editor">Editor</h2>
-<p>Velocidade da câmera livre, sensibilidade do mouse, snapping dos gizmos, demos (2D, 3D e 2.5D) e preferências de Play.</p>
-<h2 id="persistncia">Persistência</h2>
-<p>Os ajustes gráficos ficam salvos em <code>settings.json</code> ao lado do editor e são aplicados ao vivo — sem reiniciar.</p>
-<div class="callout nota">A janela <strong>Configurações</strong> e o painel <strong>Project Settings</strong> editam os mesmos valores — use o que for mais prático.</div>
+<p>Preferências de uso:</p>
+<ul>
+<li><strong>Velocidade da câmera livre</strong> do viewport</li>
+<li><strong>Sensibilidade do mouse</strong></li>
+<li><strong>Snap</strong> de translação e de rotação dos gizmos</li>
+<li>Compilar C# automaticamente antes do <strong>Play</strong></li>
+<li>Desenhar colisores (overlay de física)</li>
+</ul>
+<h2 id="sobre">Sobre</h2>
+<p>Versão da engine e um resumo das capacidades.</p>
+<div class="callout nota">A janela <strong>Configurações</strong> (menu Exibir) mostra a versão completa dos mesmos ajustes. O Project Settings é a versão dockável e rápida.</div>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="atalhos.html"><small>← Anterior</small><span>Atalhos de teclado</span></a>
-<a class="navbtn next" href="transform.html"><small>Próximo →</small><span>Transform</span></a>
+<a class="navbtn prev" href="content-browser.html"><small>← Anterior</small><span>Content Browser</span></a>
+<a class="navbtn next" href="hierarquia-inspetor.html"><small>Próximo →</small><span>Hierarquia e Inspetor</span></a>
 </div>
 <footer class="footer">
   © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>

@@ -11,107 +11,111 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
 <div class="group">Introdução</div>
-<a href="index.html" class="">Visão geral</a>
+<a href="index.html" class="">Bem-vindo</a>
 <a href="instalacao.html" class="">Instalação</a>
 <a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
-<div class="group">Conceitos</div>
-<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
-<a href="hierarquia.html" class="">Hierarquia e transform</a>
-<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<a href="projeto.html" class="">Gerenciamento de projetos</a>
 <div class="group">Editor</div>
 <a href="interface.html" class="">Interface do editor</a>
-<a href="viewport.html" class="">Viewport e câmera</a>
-<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="paineis.html" class="">Painéis do editor</a>
+<a href="viewport.html" class="">Viewport</a>
 <a href="content-browser.html" class="">Content Browser</a>
-<a href="configuracoes.html" class="">Configurações</a>
+<a href="project-settings.html" class="">Project Settings</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
-<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
-<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
-<a href="tilemap.html" class="">Tilemap</a>
-<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="camera.html" class="active">Câmera</a>
+<a href="meshes-3d.html" class="">Malhas 3D</a>
+<a href="sprites-2d.html" class="">Sprites 2D</a>
 <a href="luzes.html" class="">Luzes</a>
 <a href="particulas.html" class="">Partículas</a>
-<a href="animacao-3d.html" class="">Animação esquelética</a>
-<a href="audio-source.html" class="">AudioSource</a>
-<a href="camera.html" class="active">Câmera</a>
-<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
-<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
-<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
-<div class="group">Renderização</div>
-<a href="pipeline-3d.html" class="">Pipeline 3D</a>
-<a href="pipeline-2d.html" class="">Pipeline 2D</a>
-<a href="qualidade.html" class="">Qualidade gráfica</a>
+<a href="fisica-2d.html" class="">Física 2D</a>
+<a href="fisica-3d.html" class="">Física 3D</a>
+<a href="audio-source.html" class="">Áudio</a>
+<a href="ui.html" class="">Interface (UI)</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="animacao-2d.html" class="">Animação 2D</a>
+<a href="animacao-3d.html" class="">Animação 3D</a>
 <div class="group">Scripting C#</div>
-<a href="scripting.html" class="">Introdução ao C#</a>
-<a href="script.html" class="">Classe Script e corrotinas</a>
-<a href="entity.html" class="">Entity — referência</a>
-<a href="scene.html" class="">Scene — referência</a>
-<a href="input.html" class="">Input</a>
-<a href="time.html" class="">Time</a>
-<a href="mathf.html" class="">Mathf</a>
-<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
-<a href="audio-api.html" class="">Audio (API)</a>
+<a href="scripting.html" class="">Scripting C#</a>
+<a href="entity.html" class="">Entity (API)</a>
+<a href="scene.html" class="">Scene (API)</a>
+<a href="input.html" class="">Input (API)</a>
+<a href="time.html" class="">Time (API)</a>
+<a href="mathf.html" class="">Mathf, Rand e Vetores</a>
 <a href="save.html" class="">SaveSystem</a>
-<a href="rand-log.html" class="">Rand e Log</a>
-<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
-<a href="exemplos.html" class="">Exemplos completos</a>
+<a href="fisica-api.html" class="">Física (API C#)</a>
+<a href="audio-api.html" class="">Áudio (API C#)</a>
+<a href="ui-api.html" class="">UI (API C#)</a>
+<div class="group">Gráficos</div>
+<a href="qualidade.html" class="">Qualidade e presets</a>
+<a href="reflexos.html" class="">Reflexos</a>
+<a href="iluminacao.html" class="">Iluminação</a>
+<a href="ceu.html" class="">Céu</a>
+<a href="sombras.html" class="">Sombras</a>
+<a href="pos-processamento.html" class="">Pós-processamento</a>
 <div class="group">Distribuição</div>
 <a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
 <a href="faq.html" class="">Perguntas frequentes</a>
   </nav>
 </aside>
+<div class="overlay" id="overlay"></div>
 <main>
 <header class="top">
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
   <div class="crumbs"><span class="crumb">Componentes</span><span class="sep">/</span><span>Câmera</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
+    <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
+    <button class="btn" id="printBtn" title="Imprimir">🖨️</button>
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#tipos" class="t2">Tipos</a><a href="#propriedades" class="t2">Propriedades</a><a href="#dicas" class="t2">Dicas</a></nav>
 <article>
-<h1 id="câmera">Câmera</h1>
-<p>Define <strong>o que</strong> e <strong>como</strong> a cena é renderizada. Uma cena pode ter várias câmeras; a marcada como <strong>Primary</strong> é a que renderiza.</p>
-<h2 id="cameracomponent">CameraComponent</h2>
-<table><thead><tr><th>Campo</th><th>Descrição</th></tr></thead><tbody><tr><td><strong>Type</strong></td><td><code>Orthographic2D</code> ou <code>Perspective3D</code></td></tr><tr><td><strong>OrthoSize</strong></td><td>Meia-altura da projeção ortográfica (unidades de mundo)</td></tr><tr><td><strong>PerspectiveFOV</strong></td><td>Campo de visão vertical (graus)</td></tr><tr><td><strong>NearClip / FarClip</strong></td><td>Plano próximo / distante</td></tr><tr><td><strong>Primary</strong></td><td>É a câmera que renderiza?</td></tr><tr><td><strong>FixedAspectRatio</strong></td><td>Trava a razão de aspecto</td></tr></tbody></table>
-<h2 id="modos">Modos</h2>
+<h1 id="cmera">Câmera</h1>
+<p>A <strong>câmera</strong> define o que o jogador vê. Um jogo pode ter várias, mas a que tiver <strong>Principal</strong> marcado é a usada pelo <strong>Game View</strong> no Play.</p>
+<h2 id="tipos">Tipos</h2>
 <ul>
-<li><strong>Orthographic2D</strong> — para jogos 2D / HUD. O tamanho do mundo visto depende</li>
+<li><strong>2D (Ortográfica)</strong> — sem perspectiva, ideal para sprites e UI</li>
+<li><strong>3D (Perspectiva)</strong> — profundidade real, FOV ajustável</li>
 </ul>
-<p>  do <code>OrthoSize</code> e da resolução da janela (a largura se ajusta pelo aspecto).</p>
+<h2 id="propriedades">Propriedades</h2>
 <ul>
-<li><strong>Perspective3D</strong> — para jogos 3D. <code>FOV</code> maior = visão mais aberta.</li>
+<li><strong>Primary</strong> — se é a câmera principal (usada no Play)</li>
+<li><strong>FOV</strong> (3D) — campo de visão (45° é o padrão)</li>
+<li><strong>Near / Far</strong> — planos de recorte (o que fica entre eles é renderizado)</li>
+<li><strong>OrthoSize</strong> (2D) — quanto do mundo aparece na tela</li>
 </ul>
-<h2 id="câmera-primária">Câmera primária</h2>
+<h2 id="dicas">Dicas</h2>
 <ul>
-<li>Se <strong>nenhuma</strong> câmera está marcada como primary, a primeira da cena é usada;</li>
-<li>A <strong>primeira câmera</strong> com primary decide o passe: se for ortográfica, o</li>
+<li><strong>Câmera do editor</strong> é independente das câmeras da cena — você pode voar</li>
 </ul>
-<p>  passe 2D roda; se perspectiva, o passe 3D roda. Cenas <strong>2.5D</strong> têm as duas   (3D de fundo + 2D na frente + UI por cima).</p>
-<h2 id="no-editor-vs-no-play">No editor vs. no Play</h2>
-<table><thead><tr><th>Estado</th><th>Quem renderiza</th></tr></thead><tbody><tr><td>Edição</td><td>A <strong>câmera de navegação</strong> do editor (livre)</td></tr><tr><td><strong>Play / exportado</strong></td><td>A <strong>câmera da própria cena</strong></td></tr></tbody></table>
-<div class="callout info"><strong>O Play é o que o jogo será.</strong> Configure a câmera da cena — a posição da câmera de edição não afeta o jogo.</div>
-<h2 id="em-c">Em C#</h2>
-<pre><code class="language-csharp">var cam = Scene.CreateEntity("Câmera");
-cam.AddCamera(perspective3D: true);
-cam.SetCamera(fovDeg: 55f, nearClip: 0.01f, farClip: 1000f);
-cam.SetPosition(new Vector3(0f, 2f, 6f));
-
-var principal = Scene.GetPrimaryCamera(); // pega a câmera primária</code></pre>
+<p>  pelo viewport sem mexer no jogo.</p>
+<ul>
+<li>Uma cena <strong>2.5D</strong> usa uma câmera perspectiva (fundo 3D) + uma câmera</li>
+</ul>
+<p>  ortográfica <strong>Principal</strong> para a camada 2D — a engine compõe 3D → 2D → UI   automaticamente.</p>
+<ul>
+<li>No código, veja a <a href="entity.html">API de câmera</a> (FOV, clipes e posição).</li>
+</ul>
+<div class="callout nota">Sem câmera principal, o <strong>Play</strong> não renderiza nada no 3D. Se a tela ficar vazia, adicione uma câmera e marque <strong>Primary</strong>.</div>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="audio-source.html">← AudioSource</a>
-<a class="navbtn next" href="fisica-2d.html">Física 2D (Box2D) →</a>
+<a class="navbtn prev" href="transform.html"><small>← Anterior</small><span>Transform</span></a>
+<a class="navbtn next" href="meshes-3d.html"><small>Próximo →</small><span>Malhas 3D</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio. Todos os direitos reservados.
+  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

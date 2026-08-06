@@ -11,89 +11,94 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
 <div class="group">Introdução</div>
-<a href="index.html" class="">Visão geral</a>
+<a href="index.html" class="">Bem-vindo</a>
 <a href="instalacao.html" class="">Instalação</a>
 <a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
-<div class="group">Conceitos</div>
-<a href="projeto.html" class="">Projetos, cenas e prefabs</a>
-<a href="hierarquia.html" class="">Hierarquia e transform</a>
-<a href="recursos-embutidos.html" class="">Assets padrão</a>
+<a href="projeto.html" class="">Gerenciamento de projetos</a>
 <div class="group">Editor</div>
 <a href="interface.html" class="">Interface do editor</a>
-<a href="viewport.html" class="">Viewport e câmera</a>
-<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="paineis.html" class="">Painéis do editor</a>
+<a href="viewport.html" class="">Viewport</a>
 <a href="content-browser.html" class="">Content Browser</a>
-<a href="configuracoes.html" class="">Configurações</a>
+<a href="project-settings.html" class="">Project Settings</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="active">Atalhos de teclado</a>
+<a href="configuracoes.html" class="">Configurações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
-<a href="sprites-2d.html" class="">Sprites, círculos e texto 2D</a>
-<a href="animacao-2d.html" class="">Animação de sprite 2D</a>
-<a href="tilemap.html" class="">Tilemap</a>
-<a href="meshes-3d.html" class="">MeshRenderer e materiais</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="meshes-3d.html" class="">Malhas 3D</a>
+<a href="sprites-2d.html" class="">Sprites 2D</a>
 <a href="luzes.html" class="">Luzes</a>
 <a href="particulas.html" class="">Partículas</a>
-<a href="animacao-3d.html" class="">Animação esquelética</a>
-<a href="audio-source.html" class="">AudioSource</a>
-<a href="camera.html" class="">Câmera</a>
-<a href="fisica-2d.html" class="">Física 2D (Box2D)</a>
-<a href="fisica-3d.html" class="">Física 3D (Bullet3)</a>
-<a href="ui.html" class="">UI (Canvas/Rect/Button/Text)</a>
-<div class="group">Renderização</div>
-<a href="pipeline-3d.html" class="">Pipeline 3D</a>
-<a href="pipeline-2d.html" class="">Pipeline 2D</a>
-<a href="qualidade.html" class="">Qualidade gráfica</a>
+<a href="fisica-2d.html" class="">Física 2D</a>
+<a href="fisica-3d.html" class="">Física 3D</a>
+<a href="audio-source.html" class="">Áudio</a>
+<a href="ui.html" class="">Interface (UI)</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="animacao-2d.html" class="">Animação 2D</a>
+<a href="animacao-3d.html" class="">Animação 3D</a>
 <div class="group">Scripting C#</div>
-<a href="scripting.html" class="">Introdução ao C#</a>
-<a href="script.html" class="">Classe Script e corrotinas</a>
-<a href="entity.html" class="">Entity — referência</a>
-<a href="scene.html" class="">Scene — referência</a>
-<a href="input.html" class="">Input</a>
-<a href="time.html" class="">Time</a>
-<a href="mathf.html" class="">Mathf</a>
-<a href="vectors.html" class="">Vetores (Vector2/3/4)</a>
-<a href="audio-api.html" class="">Audio (API)</a>
+<a href="scripting.html" class="">Scripting C#</a>
+<a href="entity.html" class="">Entity (API)</a>
+<a href="scene.html" class="">Scene (API)</a>
+<a href="input.html" class="">Input (API)</a>
+<a href="time.html" class="">Time (API)</a>
+<a href="mathf.html" class="">Mathf, Rand e Vetores</a>
 <a href="save.html" class="">SaveSystem</a>
-<a href="rand-log.html" class="">Rand e Log</a>
-<a href="fisica-api.html" class="">Rigidbody2D e queries</a>
-<a href="exemplos.html" class="">Exemplos completos</a>
+<a href="fisica-api.html" class="">Física (API C#)</a>
+<a href="audio-api.html" class="">Áudio (API C#)</a>
+<a href="ui-api.html" class="">UI (API C#)</a>
+<div class="group">Gráficos</div>
+<a href="qualidade.html" class="">Qualidade e presets</a>
+<a href="reflexos.html" class="">Reflexos</a>
+<a href="iluminacao.html" class="">Iluminação</a>
+<a href="ceu.html" class="">Céu</a>
+<a href="sombras.html" class="">Sombras</a>
+<a href="pos-processamento.html" class="">Pós-processamento</a>
 <div class="group">Distribuição</div>
 <a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
 <a href="faq.html" class="">Perguntas frequentes</a>
   </nav>
 </aside>
+<div class="overlay" id="overlay"></div>
 <main>
 <header class="top">
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
   <div class="crumbs"><span class="crumb">Editor</span><span class="sep">/</span><span>Atalhos de teclado</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
+    <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
+    <button class="btn" id="printBtn" title="Imprimir">🖨️</button>
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#cena-e-play" class="t2">Cena e Play</a><a href="#gizmos-e-seleo" class="t2">Gizmos e seleção</a><a href="#edio" class="t2">Edição</a><a href="#viewport" class="t2">Viewport</a></nav>
 <article>
 <h1 id="atalhos-de-teclado">Atalhos de teclado</h1>
-<h2 id="jogo-play">Jogo / Play</h2>
-<table><thead><tr><th>Atalho</th><th>Ação</th></tr></thead><tbody><tr><td><kbd>F5</kbd></td><td><strong>Play</strong> — testa a cena (física, scripts, partículas, áudio)</td></tr><tr><td><kbd>Shift+F5</kbd></td><td><strong>Stop</strong> — volta para a cena de edição</td></tr></tbody></table>
+<h2 id="cena-e-play">Cena e Play</h2>
+<div class="tablewrap"><table><thead><tr><th>Atalho</th><th>Ação</th></tr></thead><tbody><tr><td><code>F5</code></td><td><strong>Play</strong> (compila e roda o jogo)</td></tr><tr><td><code>Shift+F5</code></td><td><strong>Stop</strong> (volta para a edição)</td></tr></tbody></table></div>
+<h2 id="gizmos-e-seleo">Gizmos e seleção</h2>
+<div class="tablewrap"><table><thead><tr><th>Atalho</th><th>Ação</th></tr></thead><tbody><tr><td><code>W</code></td><td>Gizmo de <strong>mover</strong></td></tr><tr><td><code>E</code></td><td>Gizmo de <strong>rotacionar</strong></td></tr><tr><td><code>R</code></td><td>Gizmo de <strong>escalar</strong></td></tr><tr><td><code>Ctrl</code> (arrastando)</td><td><strong>Snap</strong> de gizmo (0,5u / 15°)</td></tr><tr><td><code>Ctrl+D</code></td><td><strong>Duplicar</strong> entidade</td></tr><tr><td><code>Del</code></td><td><strong>Excluir</strong> entidade</td></tr></tbody></table></div>
+<h2 id="edio">Edição</h2>
+<div class="tablewrap"><table><thead><tr><th>Atalho</th><th>Ação</th></tr></thead><tbody><tr><td><code>Ctrl+Z</code></td><td>Desfazer</td></tr><tr><td><code>Ctrl+Y</code></td><td>Refazer</td></tr></tbody></table></div>
 <h2 id="viewport">Viewport</h2>
-<table><thead><tr><th>Atalho</th><th>Ação</th></tr></thead><tbody><tr><td><kbd>W</kbd> / <kbd>E</kbd> / <kbd>R</kbd></td><td>Gizmo mover / rotacionar / escalar</td></tr><tr><td><kbd>F11</kbd></td><td>Fullscreen do viewport</td></tr><tr><td>Botão direito arrastando</td><td>Navegar a câmera de edição (2D pan / 3D orbitar)</td></tr><tr><td>Clique esquerdo</td><td>Selecionar entidade (picking)</td></tr></tbody></table>
-<h2 id="edição">Edição</h2>
-<table><thead><tr><th>Atalho</th><th>Ação</th></tr></thead><tbody><tr><td><kbd>Ctrl+Z</kbd></td><td>Desfazer</td></tr><tr><td><kbd>Ctrl+Y</kbd></td><td>Refazer</td></tr><tr><td><kbd>Ctrl+D</kbd></td><td>Duplicar entidade selecionada</td></tr><tr><td><kbd>Del</kbd></td><td>Excluir entidade selecionada</td></tr><tr><td><kbd>Ctrl+S</kbd></td><td>Salvar cena</td></tr><tr><td><kbd>Ctrl+,</kbd></td><td>Configurações</td></tr></tbody></table>
-<h2 id="arquivo">Arquivo</h2>
-<table><thead><tr><th>Atalho</th><th>Ação</th></tr></thead><tbody><tr><td><kbd>Ctrl+O</kbd></td><td>Abrir cena</td></tr><tr><td><kbd>Ctrl+N</kbd></td><td>Nova cena</td></tr></tbody></table>
-<div class="callout info">A lista completa também aparece em <strong>Ajuda → Atalhos do editor</strong>.</div>
+<div class="tablewrap"><table><thead><tr><th>Atalho</th><th>Ação</th></tr></thead><tbody><tr><td><code>F11</code></td><td>Fullscreen do viewport</td></tr><tr><td>Botão direito + <code>WASD</code></td><td>Navegação 3D</td></tr><tr><td>Botão direito + <code>Q/E</code></td><td>Subir/descer</td></tr><tr><td>Scroll</td><td>Zoom (2D)</td></tr><tr><td>Botão direito + arrastar</td><td>Pan (2D)</td></tr></tbody></table></div>
+<div class="callout dica">O menu <strong>Ajuda → Atalhos do editor</strong> mostra esta lista dentro do próprio editor.</div>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="configuracoes.html">← Configurações</a>
-<a class="navbtn next" href="transform.html">Transform →</a>
+<a class="navbtn prev" href="hierarquia-inspetor.html"><small>← Anterior</small><span>Hierarquia e Inspetor</span></a>
+<a class="navbtn next" href="configuracoes.html"><small>Próximo →</small><span>Configurações</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio. Todos os direitos reservados.
+  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>
