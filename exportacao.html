@@ -11,7 +11,7 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.27</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
@@ -79,7 +79,7 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#como-exportar" class="t2">Como exportar</a><a href="#o-que-sai" class="t2">O que sai</a><a href="#recursos-embutidos" class="t2">Recursos embutidos</a><a href="#publicao" class="t2">Publicação</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#como-exportar" class="t2">Como exportar</a><a href="#o-que-sai" class="t2">O que sai</a><a href="#recursos-embutidos" class="t2">Recursos embutidos</a><a href="#publicao" class="t2">Publicação</a><a href="#releases-github" class="t2">Releases (GitHub)</a></nav>
 <article>
 <h1 id="exportar-o-jogo">Exportar o jogo</h1>
 <p>O menu <strong>Arquivo → Exportar Jogo...</strong> gera uma pasta com o <strong>jogo standalone</strong>: executável + cena + assets + seu código compilado.</p>
@@ -90,6 +90,10 @@
 <p>   cena como inicial).</p>
 <ol>
 <li><strong>Arquivo → Exportar Jogo...</strong></li>
+<li>Preencha as <strong>build settings</strong>: nome do jogo, versão e resolução da janela</li>
+</ol>
+<p>   (ficam salvas no projeto).</p>
+<ol>
 <li>Escolha a pasta de destino.</li>
 <li>Opcional: marque <strong>embutir runtime .NET</strong> (gera o executável com o</li>
 </ol>
@@ -110,6 +114,8 @@
 <ul>
 <li>Para distribuir para lojas ou sites, compacte a pasta em um <code>.zip</code>.</li>
 </ul>
+<h2 id="releases-github">Releases (GitHub)</h2>
+<p>A engine é publicada como <strong>Release do GitHub</strong>: ao criar uma tag <code>vX.Y.Z</code> e enviá-la (<code>git tag v0.27.1 &amp;&amp; git push origin v0.27.1</code>), o CI compila e publica os pacotes: executáveis Windows/Linux + assembly C# + Content Pack.</p>
 <div class="callout dica">Teste o export cedo: defina a cena inicial, exporte e rode o executável. Só a cena inicial é carregada automaticamente — o resto é carregado por <code>Scene.Load</code> no jogo.</div>
 
 </article>
@@ -118,7 +124,7 @@
 <a class="navbtn next" href="recursos-embutidos.html"><small>Próximo →</small><span>Recursos embutidos (kzres://)</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
+  © Kizuri Studio · v0.27 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

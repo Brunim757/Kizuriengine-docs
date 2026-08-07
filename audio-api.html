@@ -11,7 +11,7 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.27</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
@@ -79,7 +79,7 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#na-entidade" class="t2">Na entidade</a><a href="#one-shot" class="t2">One-shot</a><a href="#global" class="t2">Global</a><a href="#dicas" class="t2">Dicas</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#na-entidade" class="t2">Na entidade</a><a href="#one-shot" class="t2">One-shot</a><a href="#audio-mixer-grupos" class="t2">Audio mixer (grupos)</a><a href="#global" class="t2">Global</a><a href="#dicas" class="t2">Dicas</a></nav>
 <article>
 <h1 id="udio-api-c">Áudio — API C#</h1>
 <p>Controle de som e música.</p>
@@ -90,6 +90,11 @@ Entity.StopAudio();</code></pre><button class="copy" title="Copiar">📋</button
 <h2 id="one-shot">One-shot</h2>
 <div class="codeblock"><pre><code class="language-csharp">Audio.PlayOneShot("Assets/sons/moeda.wav");
 Audio.PlayOneShotAt("Assets/sons/explosao.wav", 0.7f, x, y, z);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="audio-mixer-grupos">Audio mixer (grupos)</h2>
+<p>Volumes independentes por tipo — o AudioSource tem o campo <strong>Grupo</strong> (SFX, Música ou UI) e o one-shot entra no grupo SFX por padrão:</p>
+<div class="codeblock"><pre><code class="language-csharp">Audio.MusicVolume = 0.7f;  // abaixa a música
+Audio.SFXVolume  = 1.0f;   // efeitos cheios
+Audio.UIVolume   = 0.9f;   // sons de menu</code></pre><button class="copy" title="Copiar">📋</button></div>
 <h2 id="global">Global</h2>
 <div class="codeblock"><pre><code class="language-csharp">Audio.StopAll();</code></pre><button class="copy" title="Copiar">📋</button></div>
 <h2 id="dicas">Dicas</h2>
@@ -109,7 +114,7 @@ Audio.PlayOneShotAt("Assets/sons/explosao.wav", 0.7f, x, y, z);</code></pre><but
 <a class="navbtn next" href="ui-api.html"><small>Próximo →</small><span>UI (API C#)</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
+  © Kizuri Studio · v0.27 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

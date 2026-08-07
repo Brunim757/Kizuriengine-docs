@@ -11,7 +11,7 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.27</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
@@ -79,7 +79,7 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#rigidbody2d" class="t2">Rigidbody2D</a><a href="#rigidbody3d" class="t2">Rigidbody3D</a><a href="#colises" class="t2">Colisões</a><a href="#consultas" class="t2">Consultas</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#rigidbody2d" class="t2">Rigidbody2D</a><a href="#rigidbody3d" class="t2">Rigidbody3D</a><a href="#filtro-de-coliso-por-camada" class="t2">Filtro de colisão por camada</a><a href="#colises" class="t2">Colisões</a><a href="#consultas" class="t2">Consultas</a></nav>
 <article>
 <h1 id="fsica-api-c">Física — API C#</h1>
 <p>Acesse física 2D e 3D direto do script.</p>
@@ -94,6 +94,10 @@ Entity.ApplyImpulse(ix, iy, iz);
 Entity.ApplyTorque(tx, ty, tz);
 Entity.TryGetVelocity(out vx, out vy, out vz);
 Entity.SetVelocity(vx, vy, vz);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="filtro-de-coliso-por-camada">Filtro de colisão por camada</h2>
+<div class="codeblock"><pre><code class="language-csharp">Entity.Layer = 1;                  // "Jogador" fica na camada 1
+Entity.SetCollideWithLayers(0, 2); // colide com camadas 0 e 2 (não com 1)</code></pre><button class="copy" title="Copiar">📋</button></div>
+<p>A física 2D (Box2D) e 3D (Bullet) aplicam o filtro automaticamente.</p>
 <h2 id="colises">Colisões</h2>
 <div class="codeblock"><pre><code class="language-csharp">public override void OnCollisionBegin(Entity other)
 {
@@ -118,7 +122,7 @@ var spheres = Scene.OverlapSphere3D(x, y, z, raio);</code></pre><button class="c
 <a class="navbtn next" href="audio-api.html"><small>Próximo →</small><span>Áudio (API C#)</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
+  © Kizuri Studio · v0.27 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

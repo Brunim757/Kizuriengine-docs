@@ -11,7 +11,7 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.27</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
@@ -79,7 +79,7 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#teclado" class="t2">Teclado</a><a href="#mouse" class="t2">Mouse</a><a href="#eixo-simples" class="t2">Eixo simples</a><a href="#cdigos-comuns" class="t2">Códigos comuns</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#teclado" class="t2">Teclado</a><a href="#mouse" class="t2">Mouse</a><a href="#eixo-simples" class="t2">Eixo simples</a><a href="#input-actions-com-rebind" class="t2">Input Actions (com rebind)</a><a href="#cdigos-comuns" class="t2">Códigos comuns</a></nav>
 <article>
 <h1 id="input-api">Input — API</h1>
 <p>Leitura de <strong>teclado</strong> e <strong>mouse</strong> para controlar o jogo.</p>
@@ -92,9 +92,18 @@ var (x, y) = Input.GetMousePosition();          // posição em pixels na janela
 <h2 id="eixo-simples">Eixo simples</h2>
 <p>Para movimento, combine teclas:</p>
 <div class="codeblock"><pre><code class="language-csharp">float mover = 0f;
-if (Input.IsKeyDown(KeyCode.A)) mover -= 1f;
-if (Input.IsKeyDown(KeyCode.D)) mover += 1f;
+if (Input.IsKeyDown(Key.A)) mover -= 1f;
+if (Input.IsKeyDown(Key.D)) mover += 1f;
 Entity.Move(mover * Time.deltaTime * velocidade, 0f, 0f);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="input-actions-com-rebind">Input Actions (com rebind)</h2>
+<p>Mapeie um <strong>nome de ação</strong> a uma tecla e use o nome no código — o jogo deixa de depender da tecla física e o jogador pode rebindar:</p>
+<div class="codeblock"><pre><code class="language-csharp">// a partir do rebind (ou no início do jogo):
+Input.SetActionKey("Pular", Key.Space);
+
+// usar sempre pelo nome:
+if (Input.IsActionPressed("Pular")) Pular();
+if (Input.IsActionPressed("Esquerda")) Mover(-1f);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<p>Ações padrão já existem: <code>Pular</code>, <code>Esquerda</code>, <code>Direita</code>, <code>Cima</code>, <code>Baixo</code>, <code>Acao</code>, <code>Correr</code>, <code>Cancelar</code>.</p>
 <h2 id="cdigos-comuns">Códigos comuns</h2>
 <div class="tablewrap"><table><thead><tr><th>Código</th><th>Tecla</th></tr></thead><tbody><tr><td><code>KeyCode.Space</code></td><td>Espaço</td></tr><tr><td><code>KeyCode.W/A/S/D</code></td><td>WASD</td></tr><tr><td><code>KeyCode.Up/Down/Left/Right</code></td><td>Setas</td></tr><tr><td><code>KeyCode.Enter</code> / <code>KeyCode.Escape</code></td><td>Enter / Esc</td></tr><tr><td><code>KeyCode.Shift</code> / <code>KeyCode.Ctrl</code></td><td>Shift / Ctrl</td></tr></tbody></table></div>
 <div class="callout nota">O mouse do <strong>Play</strong> acompanha o viewport (e o Game View) — os cliques de UI e do jogo funcionam na janela do editor.</div>
@@ -105,7 +114,7 @@ Entity.Move(mover * Time.deltaTime * velocidade, 0f, 0f);</code></pre><button cl
 <a class="navbtn next" href="time.html"><small>Próximo →</small><span>Time (API)</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
+  © Kizuri Studio · v0.27 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

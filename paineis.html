@@ -11,7 +11,7 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.27</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
@@ -93,9 +93,9 @@
 <li>Barra de ferramentas no topo: modo 2D/3D, Play/Stop, stats</li>
 </ul>
 <h2 id="game-view">Game View</h2>
-<p>Mostra o <strong>jogo</strong> como o jogador vai ver, durante o <strong>Play</strong>. É renderizado em um framebuffer separado — você pode editar a cena no viewport enquanto observa o resultado da câmera do jogo aqui.</p>
+<p>Mostra a <strong>câmera principal</strong> da cena <strong>ao vivo</strong> — em edição E no Play. É renderizado em um framebuffer separado: edite no viewport e veja na hora como fica pro jogador, sem apertar Play. O botão <strong>"Focar câmera"</strong> seleciona a câmera principal no Inspetor.</p>
 <h2 id="hierarquia">Hierarquia</h2>
-<p>A árvore de entidades da cena, com busca por nome. Clique para selecionar, arraste para reordenar/parentar, botão direito para ações (duplicar, salvar prefab, excluir).</p>
+<p>A árvore de entidades da cena, com busca por nome. Clique para selecionar, <strong>Ctrl+clique</strong> para selecionar várias (multi-seleção), arraste para reordenar/parentar, botão direito para ações (duplicar, salvar prefab, excluir).</p>
 <h2 id="inspetor">Inspetor</h2>
 <p>Mostra os <strong>componentes</strong> da entidade selecionada: Transform, MeshRenderer, física, luz, câmera, script, etc. Use <strong>Adicionar Componente</strong> para novos. Toda edição aqui é desfazível (<strong>Ctrl+Z</strong>).</p>
 <h2 id="content-browser">Content Browser</h2>
@@ -103,7 +103,7 @@
 <h2 id="console">Console</h2>
 <p>Logs do editor e dos scripts, com filtros por tipo (info/aviso/erro) e busca. Clique em uma mensagem para limpar ou acompanhar a execução.</p>
 <h2 id="profiler">Profiler</h2>
-<p>Acompanhe o desempenho em tempo real: <strong>FPS</strong>, <strong>tempo de frame</strong> (gráfico), <strong>draw calls</strong>, <strong>triângulos</strong> e <strong>entidades</strong>. Ótimo para encontrar gargalos.</p>
+<p>Acompanhe o desempenho em tempo real: <strong>FPS</strong>, <strong>tempo de frame</strong> (gráfico), <strong>draw calls</strong>, <strong>triângulos</strong>, <strong>entidades</strong>, <strong>GPU</strong> e <strong>RAM do processo</strong>. Ótimo para encontrar gargalos.</p>
 <h2 id="material-editor">Material Editor</h2>
 <p>Selecione uma entidade com malha e ajuste o material aqui: albedo, metal, rugosidade, emissão, POM e espelho — com <strong>preview ao vivo em uma esfera</strong>.</p>
 <h2 id="animator">Animator</h2>
@@ -124,7 +124,7 @@
 <a class="navbtn next" href="viewport.html"><small>Próximo →</small><span>Viewport</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
+  © Kizuri Studio · v0.27 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

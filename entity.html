@@ -11,7 +11,7 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.27</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
@@ -79,7 +79,7 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#propriedades" class="t2">Propriedades</a><a href="#transform" class="t2">Transform</a><a href="#criar-contedo" class="t2">Criar conteúdo</a><a href="#fsica" class="t2">Física</a><a href="#material-e-luz" class="t2">Material e luz</a><a href="#duplicar-e-instanciar" class="t2">Duplicar e instanciar</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#propriedades" class="t2">Propriedades</a><a href="#transform" class="t2">Transform</a><a href="#criar-contedo" class="t2">Criar conteúdo</a><a href="#fsica" class="t2">Física</a><a href="#material-e-luz" class="t2">Material e luz</a><a href="#tags-layers-filtro-de-coliso" class="t2">Tags & Layers (filtro de colisão)</a><a href="#duplicar-e-instanciar" class="t2">Duplicar e instanciar</a></nav>
 <article>
 <h1 id="entity-api">Entity — API</h1>
 <p>A <strong>Entity</strong> é qualquer objeto da cena: personagem, inimigo, câmera, luz, UI. No script, <code>Entity</code> é a entidade que tem o script anexado.</p>
@@ -124,6 +124,11 @@ Entity.SetMaterialHeightMap(path);       // POM
 Entity.SetMaterialEmissive(r, g, b, strength);
 Entity.SetLightColor(r, g, b);
 Entity.SetLightIntensity(x);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="tags-layers-filtro-de-coliso">Tags & Layers (filtro de colisão)</h2>
+<div class="codeblock"><pre><code class="language-csharp">Entity.Layer = 1;                  // camada da entidade (0..15)
+Entity.CollisionMask = 0xFFFFFFFF; // camadas com que colide (bitmask)
+Entity.SetCollideWithLayers(1, 2); // colide só com as camadas 1 e 2</code></pre><button class="copy" title="Copiar">📋</button></div>
+<p>A física (2D e 3D) respeita a camada e a máscara: entidades de camadas diferentes que não se colidem atravessam umas às outras.</p>
 <h2 id="duplicar-e-instanciar">Duplicar e instanciar</h2>
 <div class="codeblock"><pre><code class="language-csharp">Entity.Duplicate();
 Scene.InstantiatePrefab("Assets/Prefabs/inimigo.kzprefab", x, y, z);</code></pre><button class="copy" title="Copiar">📋</button></div>
@@ -135,7 +140,7 @@ Scene.InstantiatePrefab("Assets/Prefabs/inimigo.kzprefab", x, y, z);</code></pre
 <a class="navbtn next" href="scene.html"><small>Próximo →</small><span>Scene (API)</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
+  © Kizuri Studio · v0.27 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

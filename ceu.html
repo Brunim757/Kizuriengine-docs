@@ -11,7 +11,7 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.27</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
@@ -79,18 +79,25 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#cu-fsico-padro" class="t2">Céu físico (padrão)</a><a href="#cu-por-hdri" class="t2">Céu por HDRI</a><a href="#god-rays-luz-volumtrica" class="t2">God rays (luz volumétrica)</a><a href="#lens-flare" class="t2">Lens flare</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#gradiente-procedural-padro" class="t2">Gradiente procedural (padrão)</a><a href="#cu-atmosfrico-rayleighmie-opcional" class="t2">Céu atmosférico Rayleigh/Mie (opcional)</a><a href="#cu-por-hdri" class="t2">Céu por HDRI</a><a href="#god-rays-luz-volumtrica" class="t2">God rays (luz volumétrica)</a><a href="#lens-flare" class="t2">Lens flare</a></nav>
 <article>
 <h1 id="cu">Céu</h1>
-<p>O céu da Kizuri é <strong>físico</strong> por padrão: espalhamento <strong>Rayleigh</strong> (azul) e <strong>Mie</strong> (haze e halos) com raios marchados na atmosfera. O resultado é um pôr-do-sol realista com disco do sol, halo quente e estrelas no lado noturno.</p>
-<h2 id="cu-fsico-padro">Céu físico (padrão)</h2>
+<p>O céu da Kizuri tem três modos, em ordem de prioridade:</p>
+<ol>
+<li><strong>HDRI</strong> — se você carregar um <code>.hdr</code>/<code>.exr</code></li>
+<li><strong>Atmosférico Rayleigh/Mie</strong> — se o modo físico estiver <strong>ligado</strong> (opcional)</li>
+<li><strong>Gradiente procedural</strong> — o padrão (limpo, leve e estável em qualquer GPU)</li>
+</ol>
+<h2 id="gradiente-procedural-padro">Gradiente procedural (padrão)</h2>
+<p>O céu padrão é um <strong>gradiente procedural</strong> (azul no zênite, brilho de pôr-do-sol no horizonte, estrelas à noite), gerado e embutido na engine. É leve e estável até em GPUs fracas/emuladores.</p>
+<h2 id="cu-atmosfrico-rayleighmie-opcional">Céu atmosférico Rayleigh/Mie (opcional)</h2>
+<p>Para um céu <strong>físico</strong> com espalhamento de luz real (pôr-do-sol laranja, halo do sol, estrelas profundas), ligue a opção <strong>"Céu atmosférico Rayleigh/Mie"</strong> em Configurações → Gráficos (ou Project Settings → Gráficos).</p>
+<div class="callout aviso">O Rayleigh/Mie é um <strong>raymarch</strong> pesado — pode gerar pontilhado/lentidão em GPUs fracas e emuladores (ex.: Winlator). Deixe <strong>desligado</strong> neles.</div>
 <ul>
-<li><strong>Azul no zênite</strong>, brilho laranja no horizonte (haze)</li>
 <li>O <strong>disco do sol</strong> segue a <strong>luz direcional</strong> da cena — onde a luz aponta, o sol aparece</li>
-<li><strong>Estrelas</strong> aparecem suavemente no lado oposto ao sol</li>
-<li><strong>Nuvens volumétricas</strong>: raymarch com ruído 3D, iluminadas pelo sol</li>
+<li><strong>Nuvens volumétricas</strong>: camada suave iluminada pelo sol (ligável junto)</li>
+<li><strong>Estrelas</strong> aparecem no céu alto, no lado noturno</li>
 </ul>
-<p>  (ativável em Project Settings → Gráficos)</p>
 <h2 id="cu-por-hdri">Céu por HDRI</h2>
 <p>Para um ambiente específico (ou o seu próprio céu), carregue um arquivo <code>.hdr</code>/<code>.exr</code> <strong>equirectangular</strong> no campo <strong>HDRI do céu</strong>:</p>
 <ol>
@@ -99,7 +106,7 @@
 </ol>
 <p>   a iluminação (IBL).</p>
 <ol>
-<li>Vazio = volta ao céu físico.</li>
+<li>Vazio = volta ao gradiente procedural.</li>
 </ol>
 <div class="callout dica">O <strong>pôr-do-sol</strong> é gratuito: apenas deixe a luz direcional apontando baixa (quase paralela ao chão) — o céu físico faz o resto.</div>
 <h2 id="god-rays-luz-volumtrica">God rays (luz volumétrica)</h2>
@@ -113,7 +120,7 @@
 <a class="navbtn next" href="sombras.html"><small>Próximo →</small><span>Sombras</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
+  © Kizuri Studio · v0.27 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

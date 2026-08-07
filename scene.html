@@ -11,7 +11,7 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação · v0.26</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.27</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
@@ -79,7 +79,7 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#criar-e-destruir-entidades" class="t2">Criar e destruir entidades</a><a href="#prefabs" class="t2">Prefabs</a><a href="#trocar-de-cena" class="t2">Trocar de cena</a><a href="#cmera" class="t2">Câmera</a><a href="#consultas-raycasts" class="t2">Consultas (raycasts)</a><a href="#corrotinas" class="t2">Corrotinas</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#criar-e-destruir-entidades" class="t2">Criar e destruir entidades</a><a href="#prefabs" class="t2">Prefabs</a><a href="#trocar-de-cena" class="t2">Trocar de cena</a><a href="#cmera" class="t2">Câmera</a><a href="#consultas-raycasts" class="t2">Consultas (raycasts)</a><a href="#instancing-de-malhas-florestamultido" class="t2">Instancing de malhas (floresta/multidão)</a><a href="#corrotinas" class="t2">Corrotinas</a></nav>
 <article>
 <h1 id="scene-api">Scene — API</h1>
 <p>A <strong>Scene</strong> é o mundo do jogo. O script acessa a cena atual via <code>Scene</code>.</p>
@@ -102,6 +102,15 @@ var alvos = Scene.OverlapCircle2D(x, y, raio);
 // 3D (Bullet)
 var hit3D = Scene.Raycast3D(origX, origY, origZ, dirX, dirY, dirZ);
 var corpos = Scene.OverlapSphere3D(x, y, z, raio);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="instancing-de-malhas-florestamultido">Instancing de malhas (floresta/multidão)</h2>
+<p>Desenhe a MESMA malha em N posições num <strong>único draw call</strong>:</p>
+<div class="codeblock"><pre><code class="language-csharp">// monta N transformadas (posição + escala)
+var transforms = new float[count * 16];
+for (int i = 0; i &lt; count; i++)
+    Array.Copy(Scene.MakeTransform(x[i], 0f, z[i], 1f), 0, transforms, i * 16, 16);
+
+Scene.DrawInstanced("builtin:cube", new Math.Vector3(0.3f, 0.6f, 0.2f), transforms, count);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<p>Chame dentro de <code>OnUpdate</code> — cada frame desenha as N cópias em um draw call.</p>
 <h2 id="corrotinas">Corrotinas</h2>
 <div class="codeblock"><pre><code class="language-csharp">StartCoroutine(Contador());
 
@@ -118,7 +127,7 @@ IEnumerator Contador()
 <a class="navbtn next" href="input.html"><small>Próximo →</small><span>Input (API)</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio · v0.26 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
+  © Kizuri Studio · v0.27 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>
