@@ -11,7 +11,7 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação · v0.30</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.31</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
@@ -79,12 +79,27 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#componentes" class="t2">Componentes</a><a href="#rigidbody3d" class="t2">Rigidbody3D</a><a href="#consultas" class="t2">Consultas</a><a href="#scripting" class="t2">Scripting</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#componentes" class="t2">Componentes</a><a href="#terreno-com-coliso-v031" class="t2">Terreno com colisão (v0.31)</a><a href="#character-controller-v2-colide-com-paredes" class="t2">Character Controller (v2 — colide com paredes)</a><a href="#rigidbody3d" class="t2">Rigidbody3D</a><a href="#consultas" class="t2">Consultas</a><a href="#scripting" class="t2">Scripting</a></nav>
 <article>
 <h1 id="fsica-3d">Física 3D</h1>
-<p>A física 3D usa <strong>Bullet</strong>: corpos rígidos, colisores de caixa/esfera e forças — ideal para jogos 3D, veículos e quebra-cabeças.</p>
+<p>A física 3D usa <strong>Bullet</strong>: corpos rígidos, colisores de caixa/esfera, <strong>terreno (heightmap)</strong> e <strong>character controller com colisão de paredes</strong> — ideal para jogos 3D, veículos e mundos abertos.</p>
 <h2 id="componentes">Componentes</h2>
-<div class="tablewrap"><table><thead><tr><th>Componente</th><th>O que faz</th></tr></thead><tbody><tr><td><strong>Rigidbody3D</strong></td><td>Corpo físico (estático/dinâmico/cinemático)</td></tr><tr><td><strong>BoxCollider3D</strong></td><td>Caixa de colisão</td></tr><tr><td><strong>SphereCollider3D</strong></td><td>Esfera de colisão</td></tr></tbody></table></div>
+<div class="tablewrap"><table><thead><tr><th>Componente</th><th>O que faz</th></tr></thead><tbody><tr><td><strong>Rigidbody3D</strong></td><td>Corpo físico (estático/dinâmico/cinemático)</td></tr><tr><td><strong>BoxCollider3D</strong></td><td>Caixa de colisão</td></tr><tr><td><strong>SphereCollider3D</strong></td><td>Esfera de colisão</td></tr><tr><td><strong>Terreno + Rigidbody3D (estático)</strong></td><td><strong>Heightfield</strong> do Bullet — objetos e personagens andam no relevo</td></tr><tr><td><strong>CharacterController</strong></td><td>Cápsula com gravidade, colisão com <strong>paredes</strong>, <strong>step</strong> e rampas</td></tr></tbody></table></div>
+<h2 id="terreno-com-coliso-v031">Terreno com colisão (v0.31)</h2>
+<ol>
+<li>Adicione <strong>Terreno</strong> (Inspetor → + Adicionar Componente) — o editor já</li>
+</ol>
+<p>   cria o <strong>Rigidbody3D estático</strong> automaticamente.</p>
+<ol>
+<li>Aperte Play: o relevo ganha um <strong>heightfield</strong> e as entidades/objetos</li>
+</ol>
+<p>   físicos caem e andam sobre ele.</p>
+<div class="codeblock"><pre><code class="language-csharp">// Terreno em runtime via script:
+Entity.AddTerrain(64, 60f, 6f, 42); // segmentos, tamanho, elevação, semente</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="character-controller-v2-colide-com-paredes">Character Controller (v2 — colide com paredes)</h2>
+<p>A cápsula física <strong>esbarra em paredes, sobe degraus (step), escorrega em rampas e cai com gravidade</strong> — bem melhor que a v1 (só raycast de chão).</p>
+<div class="codeblock"><pre><code class="language-csharp">Entity.AddCharacterController(6f, -20f); // velocidade, gravidade
+Entity.MoveCharacter(dirX, dirZ);        // input de movimento todo frame</code></pre><button class="copy" title="Copiar">📋</button></div>
 <h2 id="rigidbody3d">Rigidbody3D</h2>
 <ul>
 <li><strong>Type</strong>: estático, dinâmico ou cinemático</li>
@@ -95,16 +110,22 @@
 <h2 id="consultas">Consultas</h2>
 <ul>
 <li><strong>Scene.Raycast3D</strong> — o raio mais próximo contra os corpos (tiro, mira)</li>
-<li><strong>Scene.OverlapSphere3D</strong> — quais corpos estão numa região (explosão,</li>
+<li><strong>Scene.OverlapSphere3D</strong> — primeiro corpo numa região (explosão)</li>
+<li><strong>Scene.OverlapBox3D</strong> — primeiro corpo numa <strong>caixa</strong> (área de plataforma)</li>
+<li><strong>Scene.OverlapSphereAll3D</strong> — <strong>TODOS</strong> os corpos na área (sensor de dano,</li>
 </ul>
-<p>  área de dano)</p>
+<p>  zona de captura)</p>
 <h2 id="scripting">Scripting</h2>
 <div class="codeblock"><pre><code class="language-csharp">// lançar um corpo
 Entity.ApplyImpulse(0f, 5f, -3f);
-// checar o que está numa área
-foreach (var e in Scene.OverlapSphere3D(posX, posY, posZ, 2f))
-    Scene.Destroy(e);</code></pre><button class="copy" title="Copiar">📋</button></div>
+// checar o que está numa área (todos)
+foreach (var e in Scene.OverlapSphereAll3D(pos, 2f))
+    Scene.Destroy(e);
+// área retangular
+if (Scene.OverlapBox3D(centro, metades, out var alvo))
+    Alvo.Active = false;</code></pre><button class="copy" title="Copiar">📋</button></div>
 <div class="callout dica">O Rigidbody3D é registrado sob demanda: corpos criados em <strong>runtime</strong> entram na física no primeiro frame do update — pode instanciar à vontade.</div>
+<div class="callout aviso">A física só simula durante o <strong>Play</strong> (mesma convenção da 2D). No editor o viewport mostra a cena sem simulação.</div>
 <p>Veja também <a href="fisica-2d.html">Física 2D</a>.</p>
 
 </article>
@@ -113,7 +134,7 @@ foreach (var e in Scene.OverlapSphere3D(posX, posY, posZ, 2f))
 <a class="navbtn next" href="audio-source.html"><small>Próximo →</small><span>Áudio</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio · v0.30 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
+  © Kizuri Studio · v0.31 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>
