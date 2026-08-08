@@ -11,7 +11,7 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação · v0.28</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.28.1</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
@@ -89,7 +89,8 @@
 <li><strong>Gradiente procedural</strong> — o padrão (limpo, leve e estável em qualquer GPU)</li>
 </ol>
 <h2 id="gradiente-procedural-padro">Gradiente procedural (padrão)</h2>
-<p>O céu padrão é um <strong>gradiente procedural</strong> (azul no zênite, brilho de pôr-do-sol no horizonte, estrelas à noite), gerado e embutido na engine. É leve e estável até em GPUs fracas/emuladores.</p>
+<p>O céu padrão é um <strong>gradiente</strong> (azul no zênite, horizonte claro e quente, chão suave), embutido na engine como <code>kzres://skies/sky_gradient.hdr</code>. Leve e estável até em GPUs fracas/emuladores.</p>
+<div class="callout dica">Nas demonstrações (ex.: Demonstração 3D) o editor prefere o <strong>HDRI do Content Pack</strong> quando a pasta <code>content/</code> está ao lado do executável; sem ela, usa o gradiente embutido — o céu nunca deixa de funcionar.</div>
 <h2 id="cu-atmosfrico-rayleighmie-opcional">Céu atmosférico Rayleigh/Mie (opcional)</h2>
 <p>Para um céu <strong>físico</strong> com espalhamento de luz real (pôr-do-sol laranja, halo do sol, estrelas profundas), ligue a opção <strong>"Céu atmosférico Rayleigh/Mie"</strong> em Configurações → Gráficos (ou Project Settings → Gráficos).</p>
 <div class="callout aviso">O Rayleigh/Mie é um <strong>raymarch</strong> pesado — pode gerar pontilhado/lentidão em GPUs fracas e emuladores (ex.: Winlator). Deixe <strong>desligado</strong> neles.</div>
@@ -102,11 +103,11 @@
 <p>Para um ambiente específico (ou o seu próprio céu), carregue um arquivo <code>.hdr</code>/<code>.exr</code> <strong>equirectangular</strong> no campo <strong>HDRI do céu</strong>:</p>
 <ol>
 <li>Project Settings → Gráficos → campo <strong>HDRI do céu</strong>.</li>
-<li>Escolha o arquivo (botão "..."). O editor converte para cubemap e rebakeia</li>
+<li>Escolha o arquivo no botão <strong>"..."</strong> (abre o diálogo nativo do sistema) —</li>
 </ol>
-<p>   a iluminação (IBL).</p>
+<p>   ou digite o caminho direto. O editor converte para cubemap e rebakeia    a iluminação (IBL).</p>
 <ol>
-<li>Vazio = volta ao gradiente procedural.</li>
+<li><strong>Limpar</strong> = volta ao gradiente procedural.</li>
 </ol>
 <div class="callout dica">O <strong>pôr-do-sol</strong> é gratuito: apenas deixe a luz direcional apontando baixa (quase paralela ao chão) — o céu físico faz o resto.</div>
 <h2 id="god-rays-luz-volumtrica">God rays (luz volumétrica)</h2>
@@ -120,7 +121,7 @@
 <a class="navbtn next" href="sombras.html"><small>Próximo →</small><span>Sombras</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio · v0.28 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
+  © Kizuri Studio · v0.28.1 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>
