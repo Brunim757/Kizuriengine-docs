@@ -11,7 +11,7 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação · v0.28.1</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.30</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
@@ -79,7 +79,7 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#criar-e-destruir-entidades" class="t2">Criar e destruir entidades</a><a href="#prefabs" class="t2">Prefabs</a><a href="#trocar-de-cena" class="t2">Trocar de cena</a><a href="#cmera" class="t2">Câmera</a><a href="#consultas-raycasts" class="t2">Consultas (raycasts)</a><a href="#instancing-de-malhas-florestamultido" class="t2">Instancing de malhas (floresta/multidão)</a><a href="#corrotinas" class="t2">Corrotinas</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#criar-e-destruir-entidades" class="t2">Criar e destruir entidades</a><a href="#prefabs" class="t2">Prefabs</a><a href="#trocar-de-cena" class="t2">Trocar de cena</a><a href="#cmera" class="t2">Câmera</a><a href="#buscar-entidades" class="t2">Buscar entidades</a><a href="#consultas-raycasts" class="t2">Consultas (raycasts)</a><a href="#instancing-de-malhas-florestamultido" class="t2">Instancing de malhas (floresta/multidão)</a><a href="#corrotinas" class="t2">Corrotinas</a></nav>
 <article>
 <h1 id="scene-api">Scene — API</h1>
 <p>A <strong>Scene</strong> é o mundo do jogo. O script acessa a cena atual via <code>Scene</code>.</p>
@@ -94,6 +94,13 @@ Scene.InstantiatePrefab(path, x, y, z, rotX, rotY, rotZ);</code></pre><button cl
 <div class="codeblock"><pre><code class="language-csharp">Scene.Load("Assets/Cenas/fase2.kzscene"); // carregamento diferido/assíncrono</code></pre><button class="copy" title="Copiar">📋</button></div>
 <h2 id="cmera">Câmera</h2>
 <div class="codeblock"><pre><code class="language-csharp">var cam = Scene.GetPrimaryCamera();</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="buscar-entidades">Buscar entidades</h2>
+<div class="codeblock"><pre><code class="language-csharp">// Primeira entidade com o nome dado
+var inimigo = Scene.Find("Inimigo");
+
+// Todas as entidades que têm o Tag "Inimigo" (Tags &amp; Layers)
+Entity[] horda = Scene.EntitiesWithTag("Inimigo");
+foreach (var e in horda) { ... }</code></pre><button class="copy" title="Copiar">📋</button></div>
 <h2 id="consultas-raycasts">Consultas (raycasts)</h2>
 <div class="codeblock"><pre><code class="language-csharp">// 2D (Box2D)
 var hit = Scene.Raycast2D(origemX, origemY, dirX, dirY);
@@ -127,7 +134,7 @@ IEnumerator Contador()
 <a class="navbtn next" href="input.html"><small>Próximo →</small><span>Input (API)</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio · v0.28.1 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
+  © Kizuri Studio · v0.30 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

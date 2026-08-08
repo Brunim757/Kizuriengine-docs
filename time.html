@@ -11,7 +11,7 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação · v0.28.1</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.30</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
@@ -87,7 +87,8 @@
 <div class="codeblock"><pre><code class="language-csharp">Time.deltaTime;            // tempo do último frame (segundos)
 Time.time;                 // tempo total de jogo
 Time.unscaledTime;         // tempo real (ignora TimeScale)
-Time.unscaledDeltaTime;    // delta real (ignora TimeScale)</code></pre><button class="copy" title="Copiar">📋</button></div>
+Time.unscaledDeltaTime;    // delta real (ignora TimeScale)
+Time.frameCount;           // quantos frames já rodaram (util p/ alternar a cada N frames)</code></pre><button class="copy" title="Copiar">📋</button></div>
 <h2 id="escala-de-tempo">Escala de tempo</h2>
 <div class="codeblock"><pre><code class="language-csharp">// câmera lenta
 Time.TimeScale = 0.3f;
@@ -110,7 +111,7 @@ if (_tempoRestante &lt;= 0f) TerminarFase();</code></pre><button class="copy" ti
 <a class="navbtn next" href="mathf.html"><small>Próximo →</small><span>Mathf, Rand e Vetores</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio · v0.28.1 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
+  © Kizuri Studio · v0.30 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>
