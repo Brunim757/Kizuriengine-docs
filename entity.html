@@ -79,7 +79,7 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#propriedades" class="t2">Propriedades</a><a href="#transform" class="t2">Transform</a><a href="#criar-contedo" class="t2">Criar conteúdo</a><a href="#fsica" class="t2">Física</a><a href="#material-e-luz" class="t2">Material e luz</a><a href="#tags-layers-filtro-de-coliso" class="t2">Tags & Layers (filtro de colisão)</a><a href="#duplicar-e-instanciar" class="t2">Duplicar e instanciar</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#propriedades" class="t2">Propriedades</a><a href="#transform" class="t2">Transform</a><a href="#criar-contedo" class="t2">Criar conteúdo</a><a href="#fsica" class="t2">Física</a><a href="#material-e-luz" class="t2">Material e luz</a><a href="#sistemas-de-engine-v028" class="t2">Sistemas de engine (v0.28)</a><a href="#tags-layers-filtro-de-coliso" class="t2">Tags & Layers (filtro de colisão)</a><a href="#duplicar-e-instanciar" class="t2">Duplicar e instanciar</a></nav>
 <article>
 <h1 id="entity-api">Entity — API</h1>
 <p>A <strong>Entity</strong> é qualquer objeto da cena: personagem, inimigo, câmera, luz, UI. No script, <code>Entity</code> é a entidade que tem o script anexado.</p>
@@ -124,6 +124,17 @@ Entity.SetMaterialHeightMap(path);       // POM
 Entity.SetMaterialEmissive(r, g, b, strength);
 Entity.SetLightColor(r, g, b);
 Entity.SetLightIntensity(x);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="sistemas-de-engine-v028">Sistemas de engine (v0.28)</h2>
+<div class="codeblock"><pre><code class="language-csharp">// Character Controller (gravidade + chão por raycast)
+Entity.AddCharacterController(6f, -20f);
+Entity.MoveCharacter(dirX, dirZ);
+
+// Timeline (cutscene): keyframes de posição interpolados
+Entity.AddTimeline();
+Entity.AddTimelineKeyframe(0f, new Math.Vector3(0, 1, 0));
+Entity.AddTimelineKeyframe(3f, new Math.Vector3(5, 1, 0));
+Entity.PlayTimeline();</code></pre><button class="copy" title="Copiar">📋</button></div>
+<p>No editor: componentes <strong>LOD</strong> (malhas por distância), <strong>Terreno</strong> (heightmap procedural) e <strong>Timeline</strong> — veja o Inspetor.</p>
 <h2 id="tags-layers-filtro-de-coliso">Tags & Layers (filtro de colisão)</h2>
 <div class="codeblock"><pre><code class="language-csharp">Entity.Layer = 1;                  // camada da entidade (0..15)
 Entity.CollisionMask = 0xFFFFFFFF; // camadas com que colide (bitmask)
