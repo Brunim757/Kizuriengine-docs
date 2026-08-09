@@ -11,7 +11,7 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação · v0.31</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.32</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
@@ -103,10 +103,14 @@ Entity.MoveCharacter(dirX, dirZ);        // input de movimento todo frame</code>
 <h2 id="rigidbody3d">Rigidbody3D</h2>
 <ul>
 <li><strong>Type</strong>: estático, dinâmico ou cinemático</li>
+<li><strong>GravityScale</strong> — gravidade por corpo (<code>0</code> = flutua, negativo = invertida)</li>
+<li><strong>Damping</strong> (linear/angular) — movimento mais macio</li>
 <li>Forças via script: <code>ApplyForce</code>, <code>ApplyImpulse</code></li>
 <li>Velocidade: <code>TryGetVelocity</code>, <code>SetVelocity</code></li>
 <li>Torque: <code>ApplyTorque</code>, <code>SetAngularVelocity</code></li>
 </ul>
+<div class="codeblock"><pre><code class="language-csharp">Entity.SetGravityScale3D(0f);           // flutua (gravidade zerada)
+Entity.SetDamping3D(0.1f, 0.05f);       // amortecimento linear/angular</code></pre><button class="copy" title="Copiar">📋</button></div>
 <h2 id="consultas">Consultas</h2>
 <ul>
 <li><strong>Scene.Raycast3D</strong> — o raio mais próximo contra os corpos (tiro, mira)</li>
@@ -134,7 +138,7 @@ if (Scene.OverlapBox3D(centro, metades, out var alvo))
 <a class="navbtn next" href="audio-source.html"><small>Próximo →</small><span>Áudio</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio · v0.31 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
+  © Kizuri Studio · v0.32 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

@@ -11,7 +11,7 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação · v0.31</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.32</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
@@ -79,7 +79,7 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#componentes" class="t2">Componentes</a><a href="#rigidbody2d" class="t2">Rigidbody2D</a><a href="#colises" class="t2">Colisões</a><a href="#scripting" class="t2">Scripting</a><a href="#overlapcircle2d" class="t2">OverlapCircle2D</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#componentes" class="t2">Componentes</a><a href="#rigidbody2d" class="t2">Rigidbody2D</a><a href="#colises" class="t2">Colisões</a><a href="#scripting" class="t2">Scripting</a><a href="#tilemap-com-coliso-em-runtime" class="t2">Tilemap com colisão em runtime</a><a href="#overlapcircle2d" class="t2">OverlapCircle2D</a></nav>
 <article>
 <h1 id="fsica-2d">Física 2D</h1>
 <p>A física 2D usa <strong>Box2D</strong>: gravidade, colisões e contatos confiáveis para jogos de plataforma, pinball, quebra-cabeças e qualquer coisa 2D.</p>
@@ -102,11 +102,24 @@
 </ul>
 <h2 id="scripting">Scripting</h2>
 <div class="codeblock"><pre><code class="language-csharp">// mover um corpo dinâmico
-Entity.SetLinearVelocity(x, y);
+var rb = Entity.GetRigidbody2D();
+rb.SetLinearVelocity(new Math.Vector2(5f, 0f));
+rb.ApplyForce(new Math.Vector2(0f, 100f));       // força contínua (todo frame)
+rb.ApplyLinearImpulse(new Math.Vector2(0f, 20f)); // impulso único (pulo)
+rb.SetAngularVelocity(3f);                         // gira (rad/s)
+rb.SetFixedRotation(true);                         // não tomba (tank)
 // detectar toque
 public override void OnCollisionBegin(Entity other) {
     if (other.Name == "Moeda") Scene.Destroy(other);
 }</code></pre><button class="copy" title="Copiar">📋</button></div>
+<p><code>Entity.GetRigidbody2D()</code> devolve um <code>Rigidbody2D</code> (ou use <code>TryGetRigidbody2D</code> com <code>out</code>). Tudo aplicado em runtime, durante o Play.</p>
+<h2 id="tilemap-com-coliso-em-runtime">Tilemap com colisão em runtime</h2>
+<p>Além do tilemap do editor, dá pra construir um nível no script — tiles marcados como sólidos geram <strong>collider Box2D estático</strong> automaticamente:</p>
+<div class="codeblock"><pre><code class="language-csharp">var mapa = Scene.CreateEntity("Mapa");
+mapa.AddTilemap("Assets/imgs/atlas.png", atlasCols: 8, atlasRows: 8, mapW: 20, mapH: 12);
+mapa.AddSolidTile(3);                 // tile 3 do atlas = sólido
+mapa.SetTile(2, 3, 3);                // coloca o tile sólido
+// y=0 é a linha de cima; colliders recriam sozinhos quando o mapa muda</code></pre><button class="copy" title="Copiar">📋</button></div>
 <h2 id="overlapcircle2d">OverlapCircle2D</h2>
 <p>O <strong>Raycast2D</strong> e o <strong>OverlapCircle2D</strong> ajudam em plataformas: <code>Scene.Raycast2D(origem, direção)</code> e <code>Scene.OverlapCircle2D(posição, raio)</code>.</p>
 <div class="callout dica">Para física <strong>3D</strong>, veja <a href="fisica-3d.html">Física 3D</a>. Para colisões de tilemap, veja <a href="tilemap.html">Tilemap</a>.</div>
@@ -117,7 +130,7 @@ public override void OnCollisionBegin(Entity other) {
 <a class="navbtn next" href="fisica-3d.html"><small>Próximo →</small><span>Física 3D</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio · v0.31 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
+  © Kizuri Studio · v0.32 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

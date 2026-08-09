@@ -11,7 +11,7 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação · v0.31</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · v0.32</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
@@ -79,7 +79,7 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#propriedades" class="t2">Propriedades</a><a href="#transform" class="t2">Transform</a><a href="#criar-contedo" class="t2">Criar conteúdo</a><a href="#fsica" class="t2">Física</a><a href="#material-e-luz" class="t2">Material e luz</a><a href="#sistemas-de-engine-v028" class="t2">Sistemas de engine (v0.28)</a><a href="#cmera-de-jogo-v030" class="t2">Câmera de jogo (v0.30)</a><a href="#tags-layers-filtro-de-coliso" class="t2">Tags & Layers (filtro de colisão)</a><a href="#duplicar-e-instanciar" class="t2">Duplicar e instanciar</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#propriedades" class="t2">Propriedades</a><a href="#transform" class="t2">Transform</a><a href="#criar-contedo" class="t2">Criar conteúdo</a><a href="#tilemap-procedural" class="t2">Tilemap procedural</a><a href="#fsica" class="t2">Física</a><a href="#material-e-luz" class="t2">Material e luz</a><a href="#sistemas-de-engine-v028" class="t2">Sistemas de engine (v0.28)</a><a href="#cmera-de-jogo-v030" class="t2">Câmera de jogo (v0.30)</a><a href="#tags-layers-filtro-de-coliso" class="t2">Tags & Layers (filtro de colisão)</a><a href="#duplicar-e-instanciar" class="t2">Duplicar e instanciar</a></nav>
 <article>
 <h1 id="entity-api">Entity — API</h1>
 <p>A <strong>Entity</strong> é qualquer objeto da cena: personagem, inimigo, câmera, luz, UI. No script, <code>Entity</code> é a entidade que tem o script anexado.</p>
@@ -98,10 +98,15 @@ Entity.TryGetWorldPosition();   // posição de mundo (respeita o pai)</code></p
 <h2 id="transform">Transform</h2>
 <div class="codeblock"><pre><code class="language-csharp">Entity.Move(x, y, z);                  // translada (espaço local)
 Entity.SetPosition(x, y, z);
+Entity.SetWorldPosition(x, y, z);      // posição de mundo (mesmo com pai)
 Entity.Rotate(0f, 45f, 0f);
 Entity.SetEulerAngles(x, y, z);
 Entity.SetScale(x, y, z);
-Entity.LookAt(outro);</code></pre><button class="copy" title="Copiar">📋</button></div>
+Entity.LookAt(outro);
+Entity.GetForward();                 // direção pra onde olha (Vector3)
+Entity.GetRight();                   // direção lateral
+Entity.MoveForward(distancia);       // move ao longo da própria frente
+Entity.MoveRight(distancia);         // move pro lado</code></pre><button class="copy" title="Copiar">📋</button></div>
 <h2 id="criar-contedo">Criar conteúdo</h2>
 <div class="codeblock"><pre><code class="language-csharp">Entity.AddSprite("Assets/imgs/heroi.png");
 Entity.AddText("Olá!", 24f, 1f, 1f, 1f);
@@ -109,7 +114,21 @@ Entity.AddAudio("Assets/sons/pulo.wav");
 Entity.AddCamera();
 Entity.AddLight(LightType.Directional, r, g, b, intensidade);
 Entity.AddMeshRenderer("builtin:cube");
-Entity.AddAnimator("Assets/Models/Fox.glb");</code></pre><button class="copy" title="Copiar">📋</button></div>
+Entity.AddAnimator("Assets/Models/Fox.glb");
+// Animação de sprite (sprite sheet) em runtime
+Entity.AddSpriteAnimation("Assets/imgs/run.png", fps: 12f, totalFrames: 8, framesPerRow: 4);
+// Partículas configuráveis em runtime
+Entity.SetParticleRate(60f);
+Entity.SetParticleLifetime(0.5f, 1.5f);
+Entity.SetParticleVelocity(min, max);
+Entity.SetParticleGravity(new Math.Vector3(0, -2, 0));
+Entity.SetParticleColors(startColor, endColor);
+Entity.SetParticleSize(0.2f, 0.5f);</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="tilemap-procedural">Tilemap procedural</h2>
+<div class="codeblock"><pre><code class="language-csharp">var mapa = Scene.CreateEntity("Mapa");
+mapa.AddTilemap("Assets/imgs/atlas.png", atlasCols: 8, atlasRows: 8, mapW: 20, mapH: 12);
+mapa.AddSolidTile(3);   // tile 3 do atlas = sólido (collider Box2D)
+mapa.SetTile(2, 3, 3);  // põe o tile no mapa</code></pre><button class="copy" title="Copiar">📋</button></div>
 <h2 id="fsica">Física</h2>
 <div class="codeblock"><pre><code class="language-csharp">Entity.AddRigidbody2D();
 Entity.AddBoxCollider2D();
@@ -164,7 +183,7 @@ Scene.InstantiatePrefab("Assets/Prefabs/inimigo.kzprefab", x, y, z);</code></pre
 <a class="navbtn next" href="scene.html"><small>Próximo →</small><span>Scene (API)</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio · v0.31 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
+  © Kizuri Studio · v0.32 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>
