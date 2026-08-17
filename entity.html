@@ -79,7 +79,7 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#propriedades" class="t2">Propriedades</a><a href="#transform" class="t2">Transform</a><a href="#criar-contedo" class="t2">Criar conteúdo</a><a href="#tilemap-procedural" class="t2">Tilemap procedural</a><a href="#fsica" class="t2">Física</a><a href="#material-e-luz" class="t2">Material e luz</a><a href="#sistemas-de-engine-080" class="t2">Sistemas de engine (0.8.0)</a><a href="#cmera-de-jogo-080" class="t2">Câmera de jogo (0.8.0)</a><a href="#tags-layers-filtro-de-coliso" class="t2">Tags & Layers (filtro de colisão)</a><a href="#duplicar-e-instanciar" class="t2">Duplicar e instanciar</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#propriedades" class="t2">Propriedades</a><a href="#transform" class="t2">Transform</a><a href="#criar-contedo" class="t2">Criar conteúdo</a><a href="#tilemap-procedural" class="t2">Tilemap procedural</a><a href="#fsica" class="t2">Física</a><a href="#material-e-luz" class="t2">Material e luz</a><a href="#sistemas-de-engine-0360" class="t2">Sistemas de engine (0.36.0)</a><a href="#cmera-de-jogo-0360" class="t2">Câmera de jogo (0.36.0)</a><a href="#tags-layers-filtro-de-coliso" class="t2">Tags & Layers (filtro de colisão)</a><a href="#duplicar-e-instanciar" class="t2">Duplicar e instanciar</a></nav>
 <article>
 <h1 id="entity-api">Entity — API</h1>
 <p>A <strong>Entity</strong> é qualquer objeto da cena: personagem, inimigo, câmera, luz, UI. No script, <code>Entity</code> é a entidade que tem o script anexado.</p>
@@ -149,7 +149,7 @@ Entity.SetMaterialHeightMap(path);       // POM
 Entity.SetMaterialEmissive(r, g, b, strength);
 Entity.SetLightColor(r, g, b);
 Entity.SetLightIntensity(x);</code></pre><button class="copy" title="Copiar">📋</button></div>
-<h2 id="sistemas-de-engine-080">Sistemas de engine (0.8.0)</h2>
+<h2 id="sistemas-de-engine-0360">Sistemas de engine (0.36.0)</h2>
 <div class="codeblock"><pre><code class="language-csharp">// Character Controller (gravidade + chão por raycast)
 Entity.AddCharacterController(6f, -20f);
 Entity.MoveCharacter(dirX, dirZ);
@@ -160,7 +160,7 @@ Entity.AddTimelineKeyframe(0f, new Math.Vector3(0, 1, 0));
 Entity.AddTimelineKeyframe(3f, new Math.Vector3(5, 1, 0));
 Entity.PlayTimeline();</code></pre><button class="copy" title="Copiar">📋</button></div>
 <p>No editor: componentes <strong>LOD</strong> (malhas por distância), <strong>Terreno</strong> (heightmap procedural) e <strong>Timeline</strong> — veja o Inspetor.</p>
-<h2 id="cmera-de-jogo-080">Câmera de jogo (0.8.0)</h2>
+<h2 id="cmera-de-jogo-0360">Câmera de jogo (0.36.0)</h2>
 <div class="codeblock"><pre><code class="language-csharp">// Câmera segue a entidade com o nome dado, com suavidade e offset
 Entity.AddCameraFollow("Jogador", new Math.Vector3(0f, 3f, -6f), 8f);
 Entity.SetCameraFollowTarget("Jogador");   // troca de alvo em runtime
