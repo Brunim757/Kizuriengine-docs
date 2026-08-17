@@ -11,7 +11,7 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação · 0.36.4</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · 0.37.0</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
@@ -91,7 +91,7 @@ Entity.Parent;                  // entidade pai (ou Invalid se raiz)
 Entity.ChildCount;              // quantos filhos diretos
 Entity.GetChild(0);             // filho no índice
 Entity.GetChild("Olho");        // filho pelo nome
-Entity.Rotation;                // euler em RADIANOS (Vector3) — use Math.Radians() nos literais
+Entity.Rotation;                // euler em GRAUS (Vector3) — 45f = 45 graus
 Entity.Scale;                   // Vector3
 Entity.TryGetWorldPosition();   // posição de mundo (respeita o pai)</code></pre><button class="copy" title="Copiar">📋</button></div>
 <div class="callout nota"><b>Entidade inativa (`Active = false`)</b> Não é desenhada nem atualizada: animações, timeline, física, áudio e scripts ficam pausados, e os filhos herdam o estado (ativa só se ela e TODOS os pais forem). Igual ao <code>SetActive</code> do GameObject.</div>
@@ -100,7 +100,9 @@ Entity.TryGetWorldPosition();   // posição de mundo (respeita o pai)</code></p
 Entity.MoveRight(distancia);           // lateral
 Entity.SetPosition(x, y, z);
 Entity.SetWorldPosition(x, y, z);      // posição de mundo (mesmo com pai)
-Entity.SetRotation(new Math.Vector3(0f, 45f, 0f));
+Entity.SetRotation(new Math.Vector3(0f, 45f, 0f)); // graus
+Entity.Translate(x, y, z);          // soma à posição
+Entity.Rotate(new Math.Vector3(0f, 45f, 0f)); // soma à rotação (graus)
 Entity.SetRotation(new Math.Vector3(x, y, z));
 Entity.SetScale(x, y, z);
 Entity.LookAt(outro);
@@ -185,7 +187,7 @@ Scene.InstantiatePrefab("Assets/Prefabs/inimigo.kzprefab", x, y, z);</code></pre
 <a class="navbtn next" href="scene.html"><small>Próximo →</small><span>Scene (API)</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio · 0.36.4 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
+  © Kizuri Studio · 0.37.0 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>

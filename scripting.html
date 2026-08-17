@@ -11,7 +11,7 @@
 <aside>
   <div class="brand">
     <div class="logo">K</div>
-    <div><b>Kizuri Engine</b><small>Documentação · 0.36.4</small></div>
+    <div><b>Kizuri Engine</b><small>Documentação · 0.37.0</small></div>
   </div>
   <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
   <nav id="toc">
@@ -143,7 +143,19 @@ public sealed class MeuScript : Script
 </ul>
 <p>  (enums <code>Key</code>/<code>MouseButton</code>).</p>
 <ul>
+<li><strong>Rotação em GRAUS</strong> na API C# (<code>Entity.Rotation</code>, <code>SetRotation</code>, <code>Rotate</code></li>
+</ul>
+<p>  — 45f é 45 graus).</p>
+<ul>
+<li><strong>Callbacks todos opcionais</strong> (v0.37.0): implemente só o que usar —</li>
+</ul>
+<p>  <code>OnCreate</code>, <code>OnUpdate</code>, <code>OnCollisionBegin/End</code>, <code>OnDestroy</code>.</p>
+<ul>
 <li>C# moderno (.NET 10): <code>async/await</code>, LINQ etc. funcionam.</li>
+<li>Ao criar script (botão direito → <strong>Criar Script C#...</strong>) escolha um</li>
+</ul>
+<p>  <strong>template pronto</strong>: PlayerController 3D, Movement2D ou Coletável.</p>
+<ul>
 <li>O registro manual ainda existe (<code>[Kizuri.GameEntryPoint]</code> +</li>
 </ul>
 <p>  <code>Kizuri.GameModule.Register&lt;N&gt;("Nome")</code>) para quem quiser nomes   customizados — o automático tem prioridade menor.</p>
@@ -155,7 +167,7 @@ public sealed class MeuScript : Script
 <a class="navbtn next" href="entity.html"><small>Próximo →</small><span>Entity (API)</span></a>
 </div>
 <footer class="footer">
-  © Kizuri Studio · 0.36.4 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
+  © Kizuri Studio · 0.37.0 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
 </footer>
 </main>
 </div>
