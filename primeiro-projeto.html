@@ -104,6 +104,7 @@
 <li>Abra o arquivo e escreva:</li>
 </ol>
 <div class="codeblock"><pre><code class="language-csharp">using Kizuri;
+using Kizuri.Math;
 
 public sealed class Girar : Script
 {
@@ -111,7 +112,7 @@ public sealed class Girar : Script
     {
         // Rotaciona a entidade 90 graus por segundo
         var e = Entity.Rotation; // euler em radianos
-        Entity.SetRotation(new Math.Vector3(e.X, e.Y + 90f * deltaSeconds, e.Z));
+        Entity.SetRotation(new Vector3(e.X, e.Y + 90f * deltaSeconds, e.Z));
     }
 }</code></pre><button class="copy" title="Copiar">📋</button></div>
 <ol>

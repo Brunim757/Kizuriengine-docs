@@ -119,7 +119,7 @@ var transforms = new float[count * 16];
 for (int i = 0; i &lt; count; i++)
     Array.Copy(Scene.MakeTransform(x[i], 0f, z[i], 1f), 0, transforms, i * 16, 16);
 
-Scene.DrawInstanced("builtin:cube", new Math.Vector3(0.3f, 0.6f, 0.2f), transforms, count);</code></pre><button class="copy" title="Copiar">📋</button></div>
+Scene.DrawInstanced("builtin:cube", new Vector3(0.3f, 0.6f, 0.2f), transforms, count);</code></pre><button class="copy" title="Copiar">📋</button></div>
 <p>Chame dentro de <code>OnUpdate</code> — cada frame desenha as N cópias em um draw call.</p>
 <h2 id="corrotinas">Corrotinas</h2>
 <div class="codeblock"><pre><code class="language-csharp">StartCoroutine(Contador());

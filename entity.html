@@ -100,10 +100,10 @@ Entity.TryGetWorldPosition();   // posição de mundo (respeita o pai)</code></p
 Entity.MoveRight(distancia);           // lateral
 Entity.SetPosition(x, y, z);
 Entity.SetWorldPosition(x, y, z);      // posição de mundo (mesmo com pai)
-Entity.SetRotation(new Math.Vector3(0f, 45f, 0f)); // graus
+Entity.SetRotation(new Vector3(0f, 45f, 0f)); // graus
 Entity.Translate(x, y, z);          // soma à posição
-Entity.Rotate(new Math.Vector3(0f, 45f, 0f)); // soma à rotação (graus)
-Entity.SetRotation(new Math.Vector3(x, y, z));
+Entity.Rotate(new Vector3(0f, 45f, 0f)); // soma à rotação (graus)
+Entity.SetRotation(new Vector3(x, y, z));
 Entity.SetScale(x, y, z);
 Entity.LookAt(outro);
 Entity.GetForward();                 // direção pra onde olha (Vector3)
@@ -124,7 +124,7 @@ Entity.AddSpriteAnimation("Assets/imgs/run.png", fps: 12f, totalFrames: 8, frame
 Entity.SetParticleRate(60f);
 Entity.SetParticleLifetime(0.5f, 1.5f);
 Entity.SetParticleVelocity(min, max);
-Entity.SetParticleGravity(new Math.Vector3(0, -2, 0));
+Entity.SetParticleGravity(new Vector3(0, -2, 0));
 Entity.SetParticleColors(startColor, endColor);
 Entity.SetParticleSize(0.2f, 0.5f);</code></pre><button class="copy" title="Copiar">📋</button></div>
 <h2 id="tilemap-procedural">Tilemap procedural</h2>
@@ -140,7 +140,7 @@ Entity.AddCircleCollider2D();
 Entity.AddRigidbody3D();
 Entity.AddBoxCollider3D();
 Entity.AddSphereCollider3D();
-Entity.SetVelocity(new Math.Vector3(x, y, 0f));          // 2D/3D
+Entity.SetVelocity(new Vector3(x, y, 0f));          // 2D/3D
 Entity.ApplyForce(x, y, z);              // 3D
 Entity.ApplyImpulse(x, y, z);
 Entity.TryGetVelocity(out vx, out vy, out vz);
@@ -160,15 +160,15 @@ Entity.MoveCharacter(dirX, dirZ);
 
 // Timeline (cutscene): keyframes de posição interpolados
 Entity.AddTimeline();
-Entity.AddTimelineKeyframe(0f, new Math.Vector3(0, 1, 0));
-Entity.AddTimelineKeyframe(3f, new Math.Vector3(5, 1, 0));
+Entity.AddTimelineKeyframe(0f, new Vector3(0, 1, 0));
+Entity.AddTimelineKeyframe(3f, new Vector3(5, 1, 0));
 Entity.PlayTimeline();</code></pre><button class="copy" title="Copiar">📋</button></div>
 <p>No editor: componentes <strong>LOD</strong> (malhas por distância), <strong>Terreno</strong> (heightmap procedural) e <strong>Timeline</strong> — veja o Inspetor.</p>
 <h2 id="cmera-de-jogo-0360">Câmera de jogo (0.36.0)</h2>
 <div class="codeblock"><pre><code class="language-csharp">// Câmera segue a entidade com o nome dado, com suavidade e offset
-Entity.AddCameraFollow("Jogador", new Math.Vector3(0f, 3f, -6f), 8f);
+Entity.AddCameraFollow("Jogador", new Vector3(0f, 3f, -6f), 8f);
 Entity.SetCameraFollowTarget("Jogador");   // troca de alvo em runtime
-Entity.SetCameraFollowOffset(new Math.Vector3(0f, 2f, -4f));
+Entity.SetCameraFollowOffset(new Vector3(0f, 2f, -4f));
 Entity.SetCameraFollowSmoothness(5f);</code></pre><button class="copy" title="Copiar">📋</button></div>
 <p>No editor: componente <strong>Camera Follow</strong> (Inspetor) com offset, suavidade, "gira com o alvo" e offset em espaço mundo.</p>
 <h2 id="tags-layers-filtro-de-coliso">Tags & Layers (filtro de colisão)</h2>
