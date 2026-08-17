@@ -110,7 +110,8 @@
 </ul>
 <h2 id="scripting">Scripting</h2>
 <div class="codeblock"><pre><code class="language-csharp">// ler o valor do tile em uma posição
-int valor = Entity.GetTileAt(tileX, tileY);
+int valor = // a API atual do tilemap: criar e pintar tiles
+Entity.SetTile(tileX, tileY, valor);   // pinta um tile
 // mudar um tile em runtime
 Entity.SetTile(tileX, tileY, 3);</code></pre><button class="copy" title="Copiar">📋</button></div>
 <div class="callout dica">Para colisões finas de tilemap (pisos de uma via), o mapa expõe a grade ao <strong>Raycast2D</strong> e aos eventos de colisão — veja <a href="fisica-2d.html">Física 2D</a>.</div>

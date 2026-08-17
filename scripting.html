@@ -79,52 +79,74 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#o-ciclo" class="t2">O ciclo</a><a href="#estrutura-de-um-script" class="t2">Estrutura de um script</a><a href="#o-que-a-api-oferece" class="t2">O que a API oferece</a><a href="#convenes" class="t2">Convenções</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#o-ciclo-simples" class="t2">O ciclo (simples)</a><a href="#estrutura-de-um-script" class="t2">Estrutura de um script</a><a href="#o-que-a-api-oferece" class="t2">O que a API oferece</a><a href="#convenes" class="t2">Convenções</a></nav>
 <article>
 <h1 id="scripting-c">Scripting C#</h1>
-<p>O jogo é um assembly <strong>C#</strong> (<code>Kizuri.Scripting</code>): você escreve scripts, o editor compila no <strong>Play</strong> e o motor conversa com seu código por uma API estável. Você nunca mexe no C++ da engine.</p>
-<h2 id="o-ciclo">O ciclo</h2>
+<p>O jogo é um assembly <strong>C#</strong>: você escreve scripts em <code>Source/</code> do seu projeto, o editor compila no <strong>Play</strong> (ou no export) e o motor conversa com seu código por uma API estável e pronta (<code>Kizuri.Scripting.dll</code> — entregue compilada, fechada). Você nunca mexe no C++ da engine.</p>
+<h2 id="o-ciclo-simples">O ciclo (simples)</h2>
 <ol>
-<li>Crie um script no Content Browser (botão direito → <strong>Novo Script C#</strong>).</li>
-<li>Escreva a lógica herdando de <code>KizuriScript</code>.</li>
-<li>Anexe o script a uma entidade (Inspetor → Adicionar Componente → Script C#).</li>
-<li>Aperte <strong>Play</strong> — o editor compila e roda.</li>
+<li>Botão direito no Content Browser → <strong>Criar Script C#...</strong> (gera um</li>
 </ol>
+<p>   <code>.cs</code> na pasta atual — de preferência em <code>Source/</code> do projeto).</p>
+<ol>
+<li>Escreva a lógica herdando de <code>Script</code>.</li>
+<li>Selecione a entidade → Inspetor → <strong>+ Adicionar Componente → Script C#</strong></li>
+</ol>
+<p>   → escolha a classe no dropdown.</p>
+<ol>
+<li>Aperte <strong>Play</strong> — o editor compila e **registra a classe</li>
+</ol>
+<p>   automaticamente** (qualquer classe pública <code>: Script</code> aparece no    dropdown; não precisa de registro manual).</p>
 <h2 id="estrutura-de-um-script">Estrutura de um script</h2>
 <div class="codeblock"><pre><code class="language-csharp">using Kizuri;
 
-public class MeuScript : KizuriScript
+public sealed class MeuScript : Script
 {
     // roda uma vez, quando a entidade entra na cena
-    public override void OnStart() { }
+    public override void OnCreate() { }
 
-    // roda a cada frame
-    public override void OnUpdate()
+    // roda a cada frame (deltaSeconds = segundos do último frame)
+    public override void OnUpdate(float deltaSeconds)
     {
-        // entidade atual, cena, tempo...
-        Entity.Move(1f, 0f, 0f);
-        if (Input.IsKeyDown(KeyCode.Space)) Scene.Destroy(Entity);
+        Log.Info($"MeuScript na entidade '{Entity.Id}' rodando.");
+        if (Input.IsKeyPressed(Key.Space))
+            Entity.Destroy();
     }
 
-    // opcional: callbacks de colisão
     public override void OnCollisionBegin(Entity other) { }
+    public override void OnCollisionEnd(Entity other) { }
+    public override void OnDestroy() { }
 }</code></pre><button class="copy" title="Copiar">📋</button></div>
 <h2 id="o-que-a-api-oferece">O que a API oferece</h2>
 <ul>
-<li><strong>Entity</strong> — criar, destruir, transform, sprites, texto, áudio, malhas, física, animação</li>
-<li><strong>Scene</strong> — criar entidades, prefabs, trocar cena, raycasts</li>
-<li><strong>Input</strong> — teclado e mouse</li>
-<li><strong>Time</strong> — deltaTime, escala de tempo</li>
+<li><strong>Entity</strong> — nome, ativa/desativa, transform (<code>SetPosition</code>, rotação,</li>
+</ul>
+<p>  escala), criar sprites/texto/áudio/malhas/física, <code>Destroy()</code>, componentes</p>
+<ul>
+<li><strong>Scene</strong> — <code>CreateEntity</code>, <code>InstantiatePrefab</code>, <code>Load</code> (troca de cena),</li>
+</ul>
+<p>  <code>Find(name)</code>, <code>GetPrimaryCamera()</code>, <code>EntitiesWithTag</code></p>
+<ul>
+<li><strong>Input</strong> — <code>IsKeyPressed(Key)</code>, <code>IsKeyDown(Key)</code>, <code>IsMouseButtonPressed</code>,</li>
+</ul>
+<p>  <code>GetMousePosition()</code>, ações (<code>IsActionPressed</code>, <code>SetActionKey</code>)</p>
+<ul>
+<li><strong>Time</strong> — deltaTime, tempo acumulado, escala de tempo</li>
 <li><strong>Mathf / Rand / Vectors</strong> — matemática de jogo</li>
-<li><strong>SaveSystem</strong> — persistência em JSON</li>
+<li><strong>SaveSystem</strong> — persistência em JSON (<code>SaveSystem.SetFloat/GetFloat</code>)</li>
+<li><strong>Audio / Network / Coroutine</strong> — som, multiplayer e loops</li>
 <li><strong>UI</strong> — canvas, botões e callbacks</li>
 </ul>
 <h2 id="convenes">Convenções</h2>
 <ul>
-<li>Tudo é <strong>público e simples</strong>: nada de ponteiros, nada de alocação manual.</li>
-<li>O namespace é <code>Kizuri</code>.</li>
-<li>C# moderno (.NET 8+): async/await, LINQ, etc. funcionam.</li>
+<li>Namespace <code>Kizuri</code>; teclas são <code>Key.Space</code>, <code>Key.A</code>, <code>Key.Left</code> etc.</li>
 </ul>
+<p>  (enums <code>Key</code>/<code>MouseButton</code>).</p>
+<ul>
+<li>C# moderno (.NET 10): <code>async/await</code>, LINQ etc. funcionam.</li>
+<li>O registro manual ainda existe (<code>[Kizuri.GameEntryPoint]</code> +</li>
+</ul>
+<p>  <code>Kizuri.GameModule.Register&lt;N&gt;("Nome")</code>) para quem quiser nomes   customizados — o automático tem prioridade menor.</p>
 <p>Continue em <a href="entity.html">Entity</a> para a API completa.</p>
 
 </article>

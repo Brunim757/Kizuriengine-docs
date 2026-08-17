@@ -79,10 +79,10 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#tipos" class="t2">Tipos</a><a href="#propriedades" class="t2">Propriedades</a><a href="#dicas" class="t2">Dicas</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#tipos" class="t2">Tipos</a><a href="#propriedades" class="t2">Propriedades</a><a href="#orientao-importante" class="t2">Orientação (importante)</a><a href="#editar-vendo-ao-vivo" class="t2">Editar vendo ao vivo</a><a href="#cmera-do-editor" class="t2">Câmera do editor</a></nav>
 <article>
 <h1 id="cmera">Câmera</h1>
-<p>A <strong>câmera</strong> define o que o jogador vê. Um jogo pode ter várias, mas a que tiver <strong>Principal</strong> marcado é a usada pelo <strong>Game View</strong> no Play.</p>
+<p>A <strong>câmera</strong> define o que o jogador vê. Um jogo pode ter várias, mas a que tiver <strong>Principal</strong> marcado é a usada pelo <strong>Play</strong> e pelo <strong>Game View</strong>.</p>
 <h2 id="tipos">Tipos</h2>
 <ul>
 <li><strong>2D (Ortográfica)</strong> — sem perspectiva, ideal para sprites e UI</li>
@@ -90,24 +90,25 @@
 </ul>
 <h2 id="propriedades">Propriedades</h2>
 <ul>
-<li><strong>Primary</strong> — se é a câmera principal (usada no Play)</li>
+<li><strong>Principal</strong> — se é a câmera principal (usada no Play)</li>
 <li><strong>FOV</strong> (3D) — campo de visão (45° é o padrão)</li>
 <li><strong>Near / Far</strong> — planos de recorte (o que fica entre eles é renderizado)</li>
 <li><strong>OrthoSize</strong> (2D) — quanto do mundo aparece na tela</li>
 </ul>
-<h2 id="dicas">Dicas</h2>
+<h2 id="orientao-importante">Orientação (importante)</h2>
+<p>A direção da câmera vem da <strong>matriz do Transform da entidade</strong> — o mesmo que o mesh usa. Com rotação <code>(0,0,0)</code> a câmera olha para <strong>-Z</strong> (frente), que é onde ficam os objetos padrão das cenas de exemplo. Euler <code>Y=-90°</code> aponta para <strong>+X</strong> (lado direito) — não use -90° de yaw pra olhar "pra frente"; deixe <code>Y</code> em 0.</p>
+<h2 id="editar-vendo-ao-vivo">Editar vendo ao vivo</h2>
 <ul>
-<li><strong>Câmera do editor</strong> é independente das câmeras da cena — você pode voar</li>
+<li>Selecione a câmera (botão <strong>Focar câmera</strong> no Game View faz isso) e edite</li>
 </ul>
-<p>  pelo viewport sem mexer no jogo.</p>
+<p>  pelo <strong>Inspetor</strong> — funciona <strong>durante o Play</strong> também.</p>
 <ul>
-<li>Uma cena <strong>2.5D</strong> usa uma câmera perspectiva (fundo 3D) + uma câmera</li>
+<li>Ao parar o Play, os ajustes de câmera (tipo, FOV, near/far, ortho,</li>
 </ul>
-<p>  ortográfica <strong>Principal</strong> para a camada 2D — a engine compõe 3D → 2D → UI   automaticamente.</p>
-<ul>
-<li>No código, veja a <a href="entity.html">API de câmera</a> (FOV, clipes e posição).</li>
-</ul>
-<div class="callout nota">Sem câmera principal, o <strong>Play</strong> não renderiza nada no 3D. Se a tela ficar vazia, adicione uma câmera e marque <strong>Primary</strong>.</div>
+<p>  primary, posição/rotação) <strong>voltam pra cena</strong> — não se perdem.</p>
+<h2 id="cmera-do-editor">Câmera do editor</h2>
+<p>Independente das câmeras da cena: voe com botão direito + WASD, <strong>Alt</strong> + arrastar orbita no pivô (entidade selecionada) e <code>1</code>/<code>3</code>/<code>7</code> dão vistas rápidas (frente/direita/topo).</p>
+<div class="callout nota">Sem câmera principal, o <strong>Play</strong> não renderiza nada no 3D. Se a tela ficar vazia, adicione uma câmera e marque <strong>Principal</strong>.</div>
 
 </article>
 <div class="pager">

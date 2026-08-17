@@ -84,8 +84,8 @@
 <h1 id="fsica-api-c">Física — API C#</h1>
 <p>Acesse física 2D e 3D direto do script.</p>
 <h2 id="rigidbody2d">Rigidbody2D</h2>
-<div class="codeblock"><pre><code class="language-csharp">Entity.AddRigidbody2D();               // dinâmico por padrão
-Entity.SetLinearVelocity(vx, vy);      // velocidade linear
+<div class="codeblock"><pre><code class="language-csharp">// no Inspetor: Rigidbody 2D (+ Box Collider 2D); no script: Entity.GetRigidbody2D()               // dinâmico por padrão
+Entity.SetVelocity(new Math.Vector3(vx, vy, 0f));   // velocidade linear
 Entity.GravityScale = 0.5f;            // &lt;0 flutua, 0 sem gravidade</code></pre><button class="copy" title="Copiar">📋</button></div>
 <h2 id="rigidbody3d">Rigidbody3D</h2>
 <div class="codeblock"><pre><code class="language-csharp">Entity.AddRigidbody3D();

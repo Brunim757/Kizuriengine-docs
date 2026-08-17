@@ -97,26 +97,33 @@
 <p>No <strong>Inspetor</strong> do cubo, clique em <strong>Adicionar Componente → Rigidbody 3D</strong> e depois <strong>Colisor Box 3D</strong>. Agora aperte <strong>Play</strong> (F5): o cubo cai no chão e para. Aperte <strong>Stop</strong> (Shift+F5).</p>
 <h2 id="4-escreva-um-script">4. Escreva um script</h2>
 <ol>
-<li>No painel <strong>Content Browser</strong>, clique com o botão direito na pasta <code>Assets</code> → <strong>Novo Script C#</strong> e nomeie <code>Girar</code>.</li>
-<li>Abra o arquivo (o editor cria o esqueleto) e cole:</li>
+<li>No <strong>Content Browser</strong>, navegue até <code>Source/</code> (use o seletor de pasta</li>
+</ol>
+<p>   na barra do painel: <strong>Raiz / Conteúdo (assets) / Source</strong>), clique com o    botão direito → <strong>Criar Script C#...</strong> e renomeie o arquivo pra <code>Girar.cs</code>    (botão direito no item → Renomear).</p>
+<ol>
+<li>Abra o arquivo e escreva:</li>
 </ol>
 <div class="codeblock"><pre><code class="language-csharp">using Kizuri;
 
-public class Girar : KizuriScript
+public sealed class Girar : Script
 {
-    public override void OnUpdate()
+    public override void OnUpdate(float deltaSeconds)
     {
         // Rotaciona a entidade 90 graus por segundo
-        var euler = Entity.GetEulerAngles();
-        Entity.SetEulerAngles(euler.X, euler.Y + 90f * Time.deltaTime, euler.Z);
+        var e = Entity.Rotation; // euler em radianos
+        Entity.SetRotation(new Math.Vector3(e.X, e.Y + 90f * deltaSeconds, e.Z));
     }
 }</code></pre><button class="copy" title="Copiar">📋</button></div>
 <ol>
-<li>Selecione o cubo e, no Inspetor, <strong>Adicionar Componente → Script C# → Girar</strong>.</li>
+<li>Selecione o cubo e, no Inspetor, **+ Adicionar Componente → Script C# →</li>
+</ol>
+<p>   Girar** (o componente registra a classe sozinho no Play — nem precisa do    registro manual).</p>
+<ol>
 <li>Aperte <strong>Play</strong>: o cubo cai e gira.</li>
 </ol>
+<div class="callout nota">Os scripts live em <code>Source/</code> do projeto (o Content Browser te leva pra lá). Qualquer classe pública <code>: Script</code> vira opção no dropdown automaticamente.</div>
 <h2 id="5-exporte-o-jogo">5. Exporte o jogo</h2>
-<p>Menu <strong>Arquivo → Exportar Jogo...</strong>, escolha a pasta e pronto — um executável standalone com seu jogo.</p>
+<p>Menu <strong>Arquivo → Exportar Jogo...</strong>: no seu PC gera a pasta com o <code>KizuriGame</code> (Windows/Linux) ou o <strong>APK Android</strong> (veja <a href="exportacao.html">Exportar</a>).</p>
 <p>Continue na seção <a href="interface.html">Editor</a> para conhecer cada painel, ou <a href="transform.html">Transform</a> para os componentes de cena.</p>
 
 </article>

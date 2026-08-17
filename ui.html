@@ -91,9 +91,9 @@
 <li>Filhos dela com <strong>Rect</strong> (cores) e <strong>Botão</strong>.</li>
 <li>No botão, defina o callback no script:</li>
 </ol>
-<div class="codeblock"><pre><code class="language-csharp">public class Menu : KizuriScript
+<div class="codeblock"><pre><code class="language-csharp">public sealed class Menu : Script
 {
-    public override void OnStart()
+    public override void OnCreate()
     {
         var botao = Entity; // entidade do botão
         botao.OnButtonClick(() =&gt;

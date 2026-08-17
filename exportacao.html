@@ -79,44 +79,58 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#como-exportar" class="t2">Como exportar</a><a href="#o-que-sai" class="t2">O que sai</a><a href="#recursos-embutidos" class="t2">Recursos embutidos</a><a href="#publicao" class="t2">Publicação</a><a href="#releases-github" class="t2">Releases (GitHub)</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#como-exportar" class="t2">Como exportar</a><a href="#windows-linux-local" class="t2">Windows / Linux (local)</a><a href="#android-apk" class="t2">Android (.apk)</a><a href="#appimage-linux" class="t2">AppImage (Linux)</a><a href="#atualizao-automtica-updater" class="t2">Atualização automática (updater)</a><a href="#releases-github" class="t2">Releases (GitHub)</a></nav>
 <article>
 <h1 id="exportar-o-jogo">Exportar o jogo</h1>
-<p>O menu <strong>Arquivo → Exportar Jogo...</strong> gera uma pasta com o <strong>jogo standalone</strong>: executável + cena + assets + seu código compilado.</p>
+<p>O menu <strong>Arquivo → Exportar Jogo...</strong> exporta cada plataforma do jeito certo, sem misturar:</p>
+<div class="tablewrap"><table><thead><tr><th>Plataforma</th><th>O que sai</th><th>Como</th></tr></thead><tbody><tr><td><strong>Windows</strong></td><td>Pasta pronta com <code>KizuriGame.exe</code></td><td><strong>Exportar</strong> (local, no PC Windows)</td></tr><tr><td><strong>Linux</strong></td><td>Pasta pronta (binários) + <code>.AppImage</code></td><td><strong>Exportar</strong> (local, no PC Linux); o AppImage também sai na CI</td></tr><tr><td><strong>Android</strong></td><td><code>SeuJogo-android-arm64.apk</code></td><td><strong>Exportar (Android)</strong> — a engine compila tudo no seu PC se as ferramentas existirem</td></tr></tbody></table></div>
 <h2 id="como-exportar">Como exportar</h2>
 <ol>
 <li>Tenha uma cena salva e defina-a como <strong>cena inicial</strong> (Arquivo → Definir</li>
 </ol>
-<p>   cena como inicial).</p>
+<p>   cena como inicial). Os scripts ficam em <code>Source/</code> do projeto.</p>
 <ol>
-<li><strong>Arquivo → Exportar Jogo...</strong></li>
-<li>Preencha as <strong>build settings</strong>: nome do jogo, versão e resolução da janela</li>
+<li><strong>Arquivo → Exportar Jogo...</strong> e escolha a plataforma no seletor.</li>
+<li>Preencha <strong>build settings</strong> (nome, versão, resolução — ficam no projeto).</li>
+<li>Escolha a pasta de destino e clique em <strong>Exportar</strong>.</li>
 </ol>
-<p>   (ficam salvas no projeto).</p>
-<ol>
-<li>Escolha a pasta de destino.</li>
-<li>Opcional: marque <strong>embutir runtime .NET</strong> (gera o executável com o</li>
-</ol>
-<p>   runtime do C# incluído — o jogador não precisa instalar nada).</p>
-<h2 id="o-que-sai">O que sai</h2>
+<h2 id="windows-linux-local">Windows / Linux (local)</h2>
+<p>Sai uma pasta pronta pra distribuir:</p>
 <div class="codeblock"><pre><code class="language-">MinhaPasta/
-  KizuriGame.exe          ← o jogo
-  cena.kzscene            ← cena inicial
-  assets/...              ← modelos, texturas, áudios
-  Kizuri.Scripting.dll    ← seu código C# compilado</code></pre><button class="copy" title="Copiar">📋</button></div>
-<h2 id="recursos-embutidos">Recursos embutidos</h2>
-<p>A engine embute os <strong>assets padrão</strong> (<code>kzres://</code>) no executável: modelos de demonstração, céu e fontes. Isso significa que o jogo não depende de pastas externas para as funções básicas — e você pode embutir os seus assets também.</p>
-<h2 id="publicao">Publicação</h2>
+  KizuriGame.exe (ou binário Linux)   ← o jogo
+  KizuriEngine.dll / .so              ← a engine
+  cena.kzscene                        ← cena inicial
+  assets/...                          ← modelos, texturas, áudios
+  Kizuri.Scripting.dll                ← seu código C# compilado</code></pre><button class="copy" title="Copiar">📋</button></div>
+<h2 id="android-apk">Android (.apk)</h2>
+<p>A engine compila o APK <strong>no seu PC</strong> se as ferramentas estiverem instaladas (Android Studio SDK + NDK + .NET 10):</p>
 <ul>
-<li>A pasta exportada é autocontida: copie para qualquer máquina (com GPU</li>
+<li>SDK/NDK: <code>ANDROID_HOME</code> e <code>ANDROID_NDK_HOME</code> (ou instalados via</li>
 </ul>
-<p>  OpenGL 3.3) e rode.</p>
+<p>  <code>sdkmanager</code>); build-tools com <code>aapt2</code>/<code>zipalign</code>/<code>apksigner</code> e JDK.</p>
 <ul>
-<li>Para distribuir para lojas ou sites, compacte a pasta em um <code>.zip</code>.</li>
+<li>A janela de export mostra <strong>o que falta</strong> se você não tiver algo.</li>
+<li>O pipeline é: <code>cmake</code> (NDK) → <code>dotnet publish -r android-arm64</code></li>
 </ul>
+<p>  (CoreCLR) → <code>aapt2</code> → zip de libs/assets → alinhamento → assinatura.</p>
+<div class="callout dica">Sem SDK na máquina, o mesmo <code>.apk</code> é gerado pela <strong>CI do GitHub</strong> ao publicar uma tag <code>vX.Y.Z</code> (job <code>android</code>).</div>
+<h2 id="appimage-linux">AppImage (Linux)</h2>
+<p>Um único arquivo executável: <strong>KizuriGame-linux-x86_64.AppImage</strong> (gerado pela CI no push de tag, ou pelo script <code>platform/linux/make-appimage.sh</code>). Roda sem instalar nada.</p>
+<h2 id="atualizao-automtica-updater">Atualização automática (updater)</h2>
+<p>A engine (editor) consulta a API do seu site:</p>
+<div class="codeblock"><pre><code class="language-">GET https://seusite.com/api/version
+→ { "version": "0.37.0", "download_url": "https://.../MeuJogo-windows.zip" }</code></pre><button class="copy" title="Copiar">📋</button></div>
+<ul>
+<li>Se houver versão maior → pergunta **"Nova versão disponível — deseja</li>
+</ul>
+<p>  atualizar?"** (<code>Sim</code> / <code>Não</code> + "não perguntar novamente").</p>
+<ul>
+<li>O <code>download_url</code> precisa apontar pra um <strong>ZIP de verdade</strong> (não TAR) com</li>
+</ul>
+<p>  <code>bin/KizuriEditor</code> + <code>bin/KizuriEngine</code> + <code>bin/managed/</code> — o formato dos   zips da Release. A URL fica em <strong>Ajuda → Configurar Atualizações...</strong>.</p>
 <h2 id="releases-github">Releases (GitHub)</h2>
-<p>A engine é publicada como <strong>Release do GitHub</strong>: ao criar uma tag <code>vX.Y.Z</code> e enviá-la (<code>git tag v0.36.0 &amp;&amp; git push origin v0.36.0</code>), o CI compila e publica os pacotes: executáveis Windows/Linux + assembly C# + Content Pack.</p>
-<div class="callout dica">Teste o export cedo: defina a cena inicial, exporte e rode o executável. Só a cena inicial é carregada automaticamente — o resto é carregado por <code>Scene.Load</code> no jogo.</div>
+<p><code>git tag vX.Y.Z &amp;&amp; git push origin vX.Y.Z</code> → a CI publica os pacotes de todas as plataformas: zips Windows/Linux (no formato do updater), AppImage, APK e o Content Pack.</p>
+<div class="callout dica">Teste o export cedo: defina a cena inicial, exporte e rode o executável. Só a cena inicial é carregada automaticamente.</div>
 
 </article>
 <div class="pager">

@@ -84,18 +84,18 @@
 <h1 id="input-api">Input — API</h1>
 <p>Leitura de <strong>teclado</strong> e <strong>mouse</strong> para controlar o jogo.</p>
 <h2 id="teclado">Teclado</h2>
-<div class="codeblock"><pre><code class="language-csharp">if (Input.IsKeyDown(KeyCode.Space)) Pular();
-if (Input.IsKeyPressed(KeyCode.Left)) MoverEsquerda();</code></pre><button class="copy" title="Copiar">📋</button></div>
+<div class="codeblock"><pre><code class="language-csharp">if (Input.IsKeyDown(Key.Space)) Pular();
+if (Input.IsKeyPressed(Key.Left)) MoverEsquerda();</code></pre><button class="copy" title="Copiar">📋</button></div>
 <h2 id="mouse">Mouse</h2>
-<div class="codeblock"><pre><code class="language-csharp">if (Input.IsMousePressed(0)) Atirar();          // 0 = esquerdo, 1 = direito
-if (Input.IsMouseButtonDown(MouseButton.Left)) Salto(); // só no frame do clique
+<div class="codeblock"><pre><code class="language-csharp">if (Input.IsMouseButtonPressed(MouseButton.Left)) Atirar();          // 0 = esquerdo, 1 = direito
+if (Input.IsMouseButtonPressed(MouseButton.Left)) Salto(); // só no frame do clique
 var (x, y) = Input.GetMousePosition();          // posição em pixels na janela</code></pre><button class="copy" title="Copiar">📋</button></div>
 <h2 id="eixo-simples">Eixo simples</h2>
 <p>Para movimento, combine teclas:</p>
 <div class="codeblock"><pre><code class="language-csharp">float mover = 0f;
 if (Input.IsKeyDown(Key.A)) mover -= 1f;
 if (Input.IsKeyDown(Key.D)) mover += 1f;
-Entity.Move(mover * Time.deltaTime * velocidade, 0f, 0f);</code></pre><button class="copy" title="Copiar">📋</button></div>
+Entity.MoveRight(mover * deltaSeconds * velocidade);</code></pre><button class="copy" title="Copiar">📋</button></div>
 <h2 id="input-actions-com-rebind">Input Actions (com rebind)</h2>
 <p>Mapeie um <strong>nome de ação</strong> a uma tecla e use o nome no código — o jogo deixa de depender da tecla física e o jogador pode rebindar:</p>
 <div class="codeblock"><pre><code class="language-csharp">// a partir do rebind (ou no início do jogo):
@@ -106,7 +106,7 @@ if (Input.IsActionPressed("Pular")) Pular();
 if (Input.IsActionPressed("Esquerda")) Mover(-1f);</code></pre><button class="copy" title="Copiar">📋</button></div>
 <p>Ações padrão já existem: <code>Pular</code>, <code>Esquerda</code>, <code>Direita</code>, <code>Cima</code>, <code>Baixo</code>, <code>Acao</code>, <code>Correr</code>, <code>Cancelar</code>.</p>
 <h2 id="cdigos-comuns">Códigos comuns</h2>
-<div class="tablewrap"><table><thead><tr><th>Código</th><th>Tecla</th></tr></thead><tbody><tr><td><code>KeyCode.Space</code></td><td>Espaço</td></tr><tr><td><code>KeyCode.W/A/S/D</code></td><td>WASD</td></tr><tr><td><code>KeyCode.Up/Down/Left/Right</code></td><td>Setas</td></tr><tr><td><code>KeyCode.Enter</code> / <code>KeyCode.Escape</code></td><td>Enter / Esc</td></tr><tr><td><code>KeyCode.Shift</code> / <code>KeyCode.Ctrl</code></td><td>Shift / Ctrl</td></tr></tbody></table></div>
+<div class="tablewrap"><table><thead><tr><th>Código</th><th>Tecla</th></tr></thead><tbody><tr><td><code>Key.Space</code></td><td>Espaço</td></tr><tr><td><code>Key.W/A/S/D</code></td><td>WASD</td></tr><tr><td><code>Key.Up/Down/Left/Right</code></td><td>Setas</td></tr><tr><td><code>Key.Enter</code> / <code>Key.Escape</code></td><td>Enter / Esc</td></tr><tr><td><code>Key.Shift</code> / <code>Key.Ctrl</code></td><td>Shift / Ctrl</td></tr></tbody></table></div>
 <div class="callout nota">O mouse do <strong>Play</strong> acompanha o viewport (e o Game View) — os cliques de UI e do jogo funcionam na janela do editor.</div>
 
 </article>
