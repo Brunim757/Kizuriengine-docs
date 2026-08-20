@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chunked World — Kizuri Engine</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div class="brand">
+    <div class="logo">K</div>
+    <div><b>Kizuri Engine</b><small>Documentação · 0.37.0</small></div>
+  </div>
+  <div class="search"><input id="filter" type="text" placeholder="Filtrar páginas…"></div>
+  <nav id="toc">
+<div class="group">Introdução</div>
+<a href="index.html" class="">Bem-vindo</a>
+<a href="instalacao.html" class="">Instalação</a>
+<a href="primeiro-projeto.html" class="">Seu primeiro projeto</a>
+<a href="projeto.html" class="">Gerenciamento de projetos</a>
+<div class="group">Editor</div>
+<a href="interface.html" class="">Interface do editor</a>
+<a href="paineis.html" class="">Painéis do editor</a>
+<a href="viewport.html" class="">Viewport</a>
+<a href="content-browser.html" class="">Content Browser</a>
+<a href="project-settings.html" class="">Project Settings</a>
+<a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
+<a href="atalhos.html" class="">Atalhos de teclado</a>
+<a href="configuracoes.html" class="">Configurações</a>
+<div class="group">Componentes</div>
+<a href="transform.html" class="">Transform</a>
+<a href="camera.html" class="">Câmera</a>
+<a href="meshes-3d.html" class="">Malhas 3D</a>
+<a href="sprites-2d.html" class="">Sprites 2D</a>
+<a href="luzes.html" class="">Luzes</a>
+<a href="particulas.html" class="">Partículas</a>
+<a href="fisica-2d.html" class="">Física 2D</a>
+<a href="fisica-3d.html" class="">Física 3D</a>
+<a href="audio-source.html" class="">Áudio</a>
+<a href="ui.html" class="">Interface (UI)</a>
+<a href="tilemap.html" class="">Tilemap</a>
+<a href="animacao-2d.html" class="">Animação 2D</a>
+<a href="animacao-3d.html" class="">Animação 3D</a>
+<div class="group">Scripting C#</div>
+<a href="scripting.html" class="">Scripting C#</a>
+<a href="entity.html" class="">Entity (API)</a>
+<a href="scene.html" class="">Scene (API)</a>
+<a href="input.html" class="">Input (API)</a>
+<a href="time.html" class="">Time (API)</a>
+<a href="mathf.html" class="">Mathf, Rand e Vetores</a>
+<a href="save.html" class="">SaveSystem</a>
+<a href="fisica-api.html" class="">Física (API C#)</a>
+<a href="audio-api.html" class="">Áudio (API C#)</a>
+<a href="ui-api.html" class="">UI (API C#)</a>
+<div class="group">Gráficos</div>
+<a href="qualidade.html" class="">Qualidade e presets</a>
+<a href="reflexos.html" class="">Reflexos</a>
+<a href="iluminacao.html" class="">Iluminação</a>
+<a href="ceu.html" class="">Céu</a>
+<a href="sombras.html" class="">Sombras</a>
+<a href="pos-processamento.html" class="">Pós-processamento</a>
+<div class="group">Distribuição</div>
+<a href="exportacao.html" class="">Exportar o jogo</a>
+<a href="recursos-embutidos.html" class="">Recursos embutidos (kzres://)</a>
+<a href="faq.html" class="">Perguntas frequentes</a>
+  </nav>
+</aside>
+<div class="overlay" id="overlay"></div>
+<main>
+<header class="top">
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+  <div class="crumbs"><span class="crumb">Mundo / Streaming</span><span class="sep">/</span><span>Chunked World</span></div>
+  <div class="toggles">
+    <a href="busca.html" class="btn">🔎 Buscar</a>
+    <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
+    <button class="btn" id="printBtn" title="Imprimir">🖨️</button>
+    <a href="index.html" class="btn">Início</a>
+  </div>
+</header>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#como-funciona" class="t2">Como funciona</a><a href="#configurando" class="t2">Configurando</a><a href="#ciclo-de-vida-em-runtime" class="t2">Ciclo de vida em runtime</a><a href="#arquivos" class="t2">Arquivos</a><a href="#limitaes-atuais" class="t2">Limitações atuais</a></nav>
+<article>
+<h1 id="chunked-world">Chunked World</h1>
+<p>O <strong>Chunked World</strong> divide o mundo do jogo em uma grade de pedaços (chunks) que são <strong>carregados e descarregados por distância</strong> até um ponto de referência (o jogador ou a câmera). É o primeiro passo para mundos grandes: a cena não precisa mais ter tudo na memória de uma vez.</p>
+<p>Funciona em jogos <strong>2D ou 3D</strong> — o que importa é a posição do alvo no plano XZ.</p>
+<h2 id="como-funciona">Como funciona</h2>
+<ul>
+<li>A cena tem uma entidade com o componente <strong>Chunk World</strong> (a "cena</li>
+</ul>
+<p>  base" — luz, câmera, jogador, sistemas).</p>
+<ul>
+<li>Os chunks são arquivos <code>.kzchunk</code> guardados numa pasta do projeto</li>
+</ul>
+<p>  (padrão <code>Assets/Chunks/</code>), um por célula da grade: <code>chunk_0_0.kzchunk</code>,   <code>chunk_1_-2.kzchunk</code>...</p>
+<ul>
+<li>Em runtime, a engine calcula a grade de chunks ao redor do alvo e</li>
+</ul>
+<p>  <strong>carrega até 2 chunks por frame</strong> (sem travar), descarregando os que   ficaram distantes.</p>
+<h2 id="configurando">Configurando</h2>
+<ol>
+<li>Crie uma entidade na cena e adicione o componente <strong>Chunk World</strong>.</li>
+<li>Ajuste no Inspetor:</li>
+</ol>
+<ul>
+<li><strong>Tamanho do chunk (m)</strong>: quantos metros (X/Z) cada chunk cobre</li>
+<li><strong>Raio de carga</strong>: quantos chunks ao redor do alvo ficam carregados</li>
+<li><strong>Folga antes de descarregar</strong>: chunks extras que continuam</li>
+</ul>
+<p>     carregados ao redor (evita descarregar/carregar em flicka ao      atravessar uma borda de chunk)</p>
+<ul>
+<li><strong>Pasta dos chunks</strong>: subpasta de <code>Assets/</code> onde ficam os <code>.kzchunk</code></li>
+<li><strong>Tag do alvo</strong>: entidade cuja posição define o centro do carregamento</li>
+</ul>
+<ol>
+<li>Monte os chunks:</li>
+</ol>
+<ul>
+<li>Crie as entidades de cada região do mundo.</li>
+<li>Adicione o componente <strong>Chunk Entity</strong> em cada entidade que pertence</li>
+</ul>
+<p>     a um chunk e preencha as coordenadas <strong>Chunk X/Z</strong>.</p>
+<ul>
+<li>Clique em <strong>"Salvar chunks do mundo"</strong> no Inspetor — a engine agrupa</li>
+</ul>
+<p>     as entidades por coordenada e grava um <code>.kzchunk</code> por célula.</p>
+<ol>
+<li>Aperte <strong>Play</strong> — os chunks carregam/descarregam conforme o alvo anda.</li>
+</ol>
+<div class="callout dica">Use <strong>razoes pequenos de carga (1–3)</strong> em jogos de mundo aberto: cada chunk carregado instancia entidades reais (meshes, colisores, scripts). Quanto menor o raio, menos trabalho por frame.</div>
+<div class="callout aviso">Todo <code>ChunkEntityComponent</code> é <strong>removido ao descarregar o chunk</strong> — scripts dentro do chunk também são destruídos. Mantenha o jogador, a câmera e o som do mundo na <strong>cena base</strong>, fora dos chunks.</div>
+<h2 id="ciclo-de-vida-em-runtime">Ciclo de vida em runtime</h2>
+<ol>
+<li>O alvo entra numa célula → os chunks vizinhos entram na fila de carga.</li>
+<li>Até <strong>2 chunks por frame</strong> são instanciados (entidades criadas).</li>
+<li>O alvo se afasta → chunks fora do anel (raio + folga) são</li>
+</ol>
+<p>   destruídos, junto com todas as entidades marcadas com Chunk Entity.</p>
+<h2 id="arquivos">Arquivos</h2>
+<p>Formato dos arquivos <code>.kzchunk</code></p>
+<div class="codeblock"><pre><code class="language-json">{
+  "Chunk": { "cx": 0, "cz": 0 },
+  "Entities": [ ... ]
+}</code></pre><button class="copy" title="Copiar">📋</button></div>
+<p>O array <code>Entities</code> usa o mesmo formato das entidades de cena — ou seja, você pode abrir, editar ou gerar chunks fora da engine.</p>
+<h2 id="limitaes-atuais">Limitações atuais</h2>
+<ul>
+<li>O carregamento é <strong>esparso</strong>: células sem arquivo são simplesmente</li>
+</ul>
+<p>  ignoradas (não há geração procedural automática).</p>
+<ul>
+<li>Os chunks são descarregados por <strong>anéis retangulares</strong>, não por</li>
+</ul>
+<p>  distância euclidiana (também válido, só visualmente mais "quadrado").</p>
+
+</article>
+<div class="pager">
+<a class="navbtn prev" href="faq.html"><small>← Anterior</small><span>Perguntas frequentes</span></a>
+<span class="navbtn"></span>
+</div>
+<footer class="footer">
+  © Kizuri Studio · 0.37.0 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
+</footer>
+</main>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>
