@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mathf, Rand e Vetores — Kizuri Engine</title>
+<title>Demonstrações — Kizuri Engine</title>
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -29,7 +29,7 @@
 <a href="hierarquia-inspetor.html" class="">Hierarquia e Inspetor</a>
 <a href="atalhos.html" class="">Atalhos de teclado</a>
 <a href="configuracoes.html" class="">Configurações</a>
-<a href="demonstracoes.html" class="">Demonstrações</a>
+<a href="demonstracoes.html" class="active">Demonstrações</a>
 <div class="group">Componentes</div>
 <a href="transform.html" class="">Transform</a>
 <a href="camera.html" class="">Câmera</a>
@@ -52,7 +52,7 @@
 <a href="scene.html" class="">Scene (API)</a>
 <a href="input.html" class="">Input (API)</a>
 <a href="time.html" class="">Time (API)</a>
-<a href="mathf.html" class="active">Mathf, Rand e Vetores</a>
+<a href="mathf.html" class="">Mathf, Rand e Vetores</a>
 <a href="save.html" class="">SaveSystem</a>
 <a href="fisica-api.html" class="">Física (API C#)</a>
 <a href="audio-api.html" class="">Áudio (API C#)</a>
@@ -74,7 +74,7 @@
 <main>
 <header class="top">
   <button class="burger" id="burger" aria-label="Menu">☰</button>
-  <div class="crumbs"><span class="crumb">Scripting C#</span><span class="sep">/</span><span>Mathf, Rand e Vetores</span></div>
+  <div class="crumbs"><span class="crumb">Editor</span><span class="sep">/</span><span>Demonstrações</span></div>
   <div class="toggles">
     <a href="busca.html" class="btn">🔎 Buscar</a>
     <button class="btn" id="themeToggle" title="Alternar tema">☀️</button>
@@ -82,40 +82,29 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#mathf" class="t2">Mathf</a><a href="#rand" class="t2">Rand</a><a href="#vetores" class="t2">Vetores</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#demos-disponveis" class="t2">Demos disponíveis</a><a href="#como-as-demos-so-organizadas" class="t2">Como as demos são organizadas</a><a href="#fluxo-recomendado" class="t2">Fluxo recomendado</a></nav>
 <article>
-<h1 id="mathf-rand-e-vetores">Mathf, Rand e Vetores</h1>
-<p>Utilitários matemáticos para jogos.</p>
-<h2 id="mathf">Mathf</h2>
-<div class="codeblock"><pre><code class="language-csharp">Mathf.Clamp(valor, min, max);
-Mathf.Lerp(a, b, t);            // interpolação linear
-Mathf.LerpAngle(a, b, t);       // interpolação de ângulos (curto caminho)
-Mathf.SmoothStep(a, b, t);      // interpolação suave
-Mathf.PingPong(t, comprimento); // vai e volta entre 0 e comprimento
-Mathf.Remap(valor, a1, b1, a2, b2); // re-mapeia de uma faixa para outra
-Mathf.Angle(de, para);          // menor diferença angular</code></pre><button class="copy" title="Copiar">📋</button></div>
-<h2 id="rand">Rand</h2>
-<div class="codeblock"><pre><code class="language-csharp">Rand.Float(0f, 1f);     // float aleatório
-Rand.Int(1, 6);         // int aleatório (1..5)
-Rand.Range(-1f, 1f);</code></pre><button class="copy" title="Copiar">📋</button></div>
-<h2 id="vetores">Vetores</h2>
-<p>As entidades usam <code>Vector3</code>:</p>
-<div class="codeblock"><pre><code class="language-csharp">var v = Entity.Position;
-v.X += 1f;
-Entity.Position = v;
-
-var dir = new Vector3(0f, 1f, 0f);
-Vector3.Distance(a, b);
-Vector3.Dot(a, b);
-Vector3.Cross(a, b);
-Vector3.Normalize(a);
-Vector3.Lerp(a, b, t);</code></pre><button class="copy" title="Copiar">📋</button></div>
-<div class="callout dica"><code>Mathf.Remap</code> é ouro para barras de vida: remapeie a vida (0..100) para a largura da barra (0..1).</div>
+<h1 id="demonstraes">Demonstrações</h1>
+<p>O editor vem com <strong>cenas de demonstração</strong> prontas — uma para cada recurso da engine. Elas mostram como montar cada sistema na prática e servem de ponto de partida pra copiar configurações pro seu jogo.</p>
+<p><strong>Menu:</strong> Cena → Demonstrações</p>
+<h2 id="demos-disponveis">Demos disponíveis</h2>
+<div class="tablewrap"><table><thead><tr><th>Demo</th><th>O que mostra</th></tr></thead><tbody><tr><td><strong>2D</strong></td><td>Sprites, física Box2D (caixas que caem), moedas circulares, texto, UI Canvas com botão</td></tr><tr><td><strong>3D</strong></td><td>Malha PBR com esqueleto animado (Fox), luzes, céu físico/HDRI, reflexos</td></tr><tr><td><strong>IA</strong></td><td>NavGrid, patrulha/perseguição com EnemyAI e NavAgent</td></tr><tr><td><strong>Rede</strong></td><td>Multiplayer local (Host/Connect), sincronização de transform via rede</td></tr><tr><td><strong>Jogo completo</strong></td><td>Mini-jogo fechado: colete 8 moedas fugindo dos inimigos, placar, WASD</td></tr></tbody></table></div>
+<div class="callout dica">As demos são o melhor atalho pra aprender: abra uma, entre no Play, depois inspecione cada entidade pra ver como os componentes estão configurados.</div>
+<h2 id="como-as-demos-so-organizadas">Como as demos são organizadas</h2>
+<p>Cada demo é gerada por código dentro do editor (arquivo <code>DemoScenes.cpp</code>) — não são arquivos <code>.kzscene</code> salvos. Isso garante que a demo sempre usa os valores padrão atualizados da engine, sem depender de arquivos antigos.</p>
+<p>Adicionar uma demo nova = uma função nova nesse arquivo + um item no submenu Cena → Demonstrações. Uma demo por recurso da engine é a meta: física de veículos, tilemap, chunked world, partículas avançadas etc. terão as suas.</p>
+<h2 id="fluxo-recomendado">Fluxo recomendado</h2>
+<ol>
+<li>Abra a demo do recurso que você quer aprender (ex.: IA).</li>
+<li>Aperte <strong>Play</strong> e interaja.</li>
+<li>Pare o Play e explore o Inspetor das entidades envolvidas.</li>
+<li>Copie os componentes pro seu próprio jogo.</li>
+</ol>
 
 </article>
 <div class="pager">
-<a class="navbtn prev" href="time.html"><small>← Anterior</small><span>Time (API)</span></a>
-<a class="navbtn next" href="save.html"><small>Próximo →</small><span>SaveSystem</span></a>
+<a class="navbtn prev" href="configuracoes.html"><small>← Anterior</small><span>Configurações</span></a>
+<a class="navbtn next" href="transform.html"><small>Próximo →</small><span>Transform</span></a>
 </div>
 <footer class="footer">
   © Kizuri Studio · 0.39.1 · <a href="index.html">Início</a> · <a href="busca.html">Buscar</a>
