@@ -82,7 +82,7 @@
     <a href="index.html" class="btn">Início</a>
   </div>
 </header>
-<nav class="toc"><div class="toc-title">Nesta página</div><a href="#2d" class="t2">2D</a><a href="#3d" class="t2">3D</a><a href="#hibridos" class="t2">Hibridos</a><a href="#ia-rede-e-mundo" class="t2">IA, Rede e Mundo</a><a href="#jogo" class="t2">Jogo</a><a href="#como-as-demos-so-organizadas" class="t2">Como as demos são organizadas</a><a href="#fluxo-recomendado" class="t2">Fluxo recomendado</a></nav>
+<nav class="toc"><div class="toc-title">Nesta página</div><a href="#2d" class="t2">2D</a><a href="#3d" class="t2">3D</a><a href="#hbridos" class="t2">Híbridos</a><a href="#ia-rede-e-mundo" class="t2">IA, Rede e Mundo</a><a href="#jogo" class="t2">Jogo</a><a href="#fluxo-recomendado" class="t2">Fluxo recomendado</a></nav>
 <article>
 <h1 id="demonstraes">Demonstrações</h1>
 <p>O editor vem com <strong>18 cenas de demonstração</strong> prontas — uma para cada recurso da engine. Elas mostram como montar cada sistema na prática e servem de ponto de partida pra copiar configurações pro seu jogo.</p>
@@ -91,17 +91,14 @@
 <div class="tablewrap"><table><thead><tr><th>Demo</th><th>O que mostra</th></tr></thead><tbody><tr><td><strong>Sprites, física e UI</strong></td><td>Sprite colorido, física Box2D (caixas que caem), moedas circulares, texto, UI Canvas com botão</td></tr><tr><td><strong>Tilemap</strong></td><td>Mapa 24×14 tiles com atlas procedural, tiles sólidos e colisão</td></tr><tr><td><strong>Animação 2D</strong></td><td>Sprite sheet procedural (bola) — loop a diferentes FPS e one-shot</td></tr><tr><td><strong>Câmera Follow</strong></td><td>CameraFollowComponent + TimelineComponent em alvo que se move pelo mapa</td></tr></tbody></table></div>
 <h2 id="3d">3D</h2>
 <div class="tablewrap"><table><thead><tr><th>Demo</th><th>O que mostra</th></tr></thead><tbody><tr><td><strong>PBR, esqueleto e céu</strong></td><td>Malha Fox animada, capacete PBR, torus metálico, céu HDRI</td></tr><tr><td><strong>Física 3D</strong></td><td>Torre de caixas e esferas caindo no chão (Rigidbody3D + BoxCollider3D)</td></tr><tr><td><strong>Luzes</strong></td><td>Luzes pontuais (RGB), spots com sombras, emisivo — cena escura</td></tr><tr><td><strong>Partículas</strong></td><td>Fogo (additive), fumaça (alpha blend), faíscas (fountain)</td></tr><tr><td><strong>Terreno</strong></td><td>TerrainComponent heightmap procedural + água espelhada</td></tr><tr><td><strong>Timeline</strong></td><td>Plataforma que anda em circuito + torus girando via KeyframeComponent</td></tr><tr><td><strong>LOD</strong></td><td>Esferas com LODComponent — afaste pra ver redução de triângulos</td></tr><tr><td><strong>Efeitos</strong></td><td>Decal projetado, foliage instanciada (60 árvores), occluder</td></tr></tbody></table></div>
-<h2 id="hibridos">Hibridos</h2>
+<h2 id="hbridos">Híbridos</h2>
 <div class="tablewrap"><table><thead><tr><th>Demo</th><th>O que mostra</th></tr></thead><tbody><tr><td><strong>2.5D</strong></td><td>Mundo 3D (pilares, chão) + camada 2D (sprites + círculos) + HUD (texto + UI canvas)</td></tr></tbody></table></div>
 <h2 id="ia-rede-e-mundo">IA, Rede e Mundo</h2>
 <div class="tablewrap"><table><thead><tr><th>Demo</th><th>O que mostra</th></tr></thead><tbody><tr><td><strong>IA</strong></td><td>NavGrid + patrulha/perseguição com EnemyAI e NavAgent</td></tr><tr><td><strong>Rede</strong></td><td>Multiplayer local (Host/Connect), sincronização de transform via rede</td></tr><tr><td><strong>Chunk World</strong></td><td>Mundo em pedaços: entidades com ChunkEntityComponent numa grade 3×3</td></tr></tbody></table></div>
 <h2 id="jogo">Jogo</h2>
 <div class="tablewrap"><table><thead><tr><th>Demo</th><th>O que mostra</th></tr></thead><tbody><tr><td><strong>Jogo completo</strong></td><td>Mini-jogo: colete 8 moedas fugindo dos inimigos, placar, WASD</td></tr></tbody></table></div>
 <div class="callout dica">As demos são o melhor atalho pra aprender: abra uma, entre no Play, depois inspecione cada entidade pra ver como os componentes estão configurados.</div>
-<div class="callout dica">Todas as demos usam <strong>texturas procedurais</strong> (geradas em tempo de criação) — não precisam do Content Pack pra funcionar.</div>
-<h2 id="como-as-demos-so-organizadas">Como as demos são organizadas</h2>
-<p>Cada demo é gerada por código dentro do editor (arquivo <code>DemoScenes.cpp</code>) — não são arquivos <code>.kzscene</code> salvos. Isso garante que a demo sempre usa os valores padrão atualizados da engine, sem depender de arquivos antigos.</p>
-<p>Adicionar uma demo nova = uma função nova em <code>DemoScenes.cpp</code> + um item no submenu Cena → Demonstrações.</p>
+<div class="callout dica">Todas as demos usam <strong>texturas procedurais</strong> — não precisam do Content Pack pra funcionar. Abra e rode sem dependências extras.</div>
 <h2 id="fluxo-recomendado">Fluxo recomendado</h2>
 <ol>
 <li>Abra a demo do recurso que você quer aprender (ex.: IA).</li>
